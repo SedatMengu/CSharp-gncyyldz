@@ -1,1 +1,0 @@
-# fonksiyonlar-3

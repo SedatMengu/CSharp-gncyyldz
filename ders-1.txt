@@ -1,0 +1,18 @@
+Using system;
+
+Namespace ConsoleApp1
+
+{ 
+
+	Class program
+	{	
+		static void main (String[] args)
+		{
+			Console.WriteLine("Merhaba Dünya");
+			Console.Read();
+		}
+
+	}
+
+
+}
