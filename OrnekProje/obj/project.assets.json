@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/sedatmengu/Desktop/OrnekProje/OrnekProje/OrnekProje.csproj",
+      "projectUniqueName": "/Users/sedatmengu/Documents/GitHub/CSharp-gncyyldz/OrnekProje/OrnekProje.csproj",
       "projectName": "OrnekProje",
-      "projectPath": "/Users/sedatmengu/Desktop/OrnekProje/OrnekProje/OrnekProje.csproj",
+      "projectPath": "/Users/sedatmengu/Documents/GitHub/CSharp-gncyyldz/OrnekProje/OrnekProje.csproj",
       "packagesPath": "/Users/sedatmengu/.nuget/packages/",
-      "outputPath": "/Users/sedatmengu/Desktop/OrnekProje/OrnekProje/obj/",
+      "outputPath": "/Users/sedatmengu/Documents/GitHub/CSharp-gncyyldz/OrnekProje/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/sedatmengu/.nuget/NuGet/NuGet.Config"
