@@ -1,0 +1,176 @@
+Derleme : c# kodlarını assembly tarzı sadece bilgisayarın anlayabileceği dillere çevirme işlemidir.
+
+Beşeri seviyede algılanabilen dillere yüksek seviyeli diller denir. c# orta seviye bir dildir. 
+
+çok yüksek seviyeli diller ;
+
+Visual Basic , VB.Net , Foxpro , Access...
+
+Yüksek seviyeli diller ;
+
+Pascal ,  Basic , Fortran...
+
+Orta seviyeli diller ;
+
+C , C++ , C# , Java , ADA...
+
+Düşük seviyeli diller ; 
+
+assembly...
+
+Makine dilleri ;
+
+1 veya 0 lardan oluşur.
+
+
+C# ile neler yapılabilir,
+
+1- Web uygulamaları,
+2- Mobil uygulamaları,
+3- Web Servisleri,
+4- Servis Mimarileri,
+5- consol uygulamaları,
+6- .dll uzantılı dosyalar,
+7- Windows form uygulamaları,
+8- oyunlar,
+9- ERP, Muhasebe, Multi Media, İstatistik, Güvenlik Yazılımları...
+
+
+.net microsoft tarafından yazılım geliştiriciler için geliştirdiği teknolojileri sunduğu bir çatıdır.
+microsoft işletim sistemleri için de teknoloji sunarlar ancak bu teknoloji son kullanıcılar içindir.
+
+.net çatısı altındaki paket yayınları şuan .net 8.0 paketi yayında.
+
+.net bir developer'a lazım olabilecek bütün platformlar vardır. mobil, gaming, desktop.....
+
+.net framework ile .net core arasındaki fark nedir?
+
+.net framework da her platformda geliştirme yapabiliyoruz ancak sadece windosw işletim sistemine çalıştırabiliyoruz.
+.net core da ise her platformda geliştime yapabiliyoruz ve her platformda da çalıştırabiliyoruz.
+
+.net core modüler bir yapıya sahiptir.
+.net core ilk sürümü .net 5.0 dır.
+
+C# .net core çatısı altında yayınlanan teknolojilerden birisidir.
+
+derleme nedir ? 
+
+bir uygulama dili derlenen bir dil ise önce derlenir sonra çalıştırılır. (derlemek=makine diline çevirmek)
+
+derlenen diller;
+
+C , C++ , C#
+
+yorumlanan diller ;
+
+Python, JsvsScript, Ruby, PHP, Perl
+
+Derleme sonucu ilgili dosyada 2 şekilde dosya oluşur. 
+
+1- .exe uzantılı dosya 
+2- .dll uzantılı dosya
+bu dosyalar derleme sonucu oluşan ve son kullanıcıya ulaşan dosya uzantılarıdır.
+
+
+Microsoft Visual Studio ;
+
+microsoft tarafından geliştirilmiş ve .net mimarilerinin tamamını kodlayabileceğimiz bir platformdur.
+
+en çok kullanılanlar ;
+
+debug       : kontrollü çalıştırma,
+nuGet       : peket yükleme,
+ErrorList   : Hata Listeleme
+
+proje oluşturma nasıl yapılır.
+
+proje      : içerisinde amaca uygun çözüm geliştirilen operasyonların yürütüldüğü bir bölümdür.
+solution   : içerisinde bir veye birden fazla proje barındırabilen evrensel bir kümedir.
+
+
+gerçek hayatta bir uyglama yazarken bu uygulama bir proje değil bir solution dur. 
+bu solution birden fazla projenin birleşimi olabilir.
+
+
+Visual Studio Code ile proje oluşturma ve derleme;
+
+- create new project ile proje başlatılır.
+- en basit uygulama console uygulamasıdır.
+- solution name ile project name aynı olmak zorunda değildir.
+- bir solution a birden falz proje eklemek istersek solution üzerine sağ tık yaparak Add/New project diyebiliriz.
+- Derleme işleminden sonra oluşan bin klasörü altında yer alır.
+- derleme sonucu : .deps.json, .dll, .pdb, .runtimeconfig.json uzantılı dosyalar oluşur.
+- .net 6.0 ve .net 7.0 da da aynı dosya uzantıları mevcuttur.
+
+
+
+Visual Studio Code , Visual Studio ya nazaran daha hızlı kod yazmaya yarar.
+
+VS Code avantajları , 
+
+- kendinde dahili bir komut satırı barındırır.
+- komut satırında CLI adını verdiğimiz herhangi bir arayüzü olmayan bir asistan mevcuttur.
+
+en yaygın kullanılan CLI komutlar:
+
+ls : mevcut dizindeki dosya ve dizinleri listeler,
+cd : dizinleri değiştirmemize yarar. 
+pwd : şuanki dizinin yolunu gösterir.
+mkdir : yeni bir dizin oluşturur.
+touch : yeni bir dosya oluşturur veya oluşturulan dosyanın tarihinü günceller.
+
+cp : dosyaları koplayalar,
+mv : dosyaları taşır veya yeniden isimlendirir.
+rm : dosyaları veya dizinleri siler 
+cat: dosyaları birleştirir ve içeriklerini görüntüler
+more veya less: uzun metin dosyalarını sayfa sayfa görüntüler.
+
+- dizin ve dosya işlemleri :
+grep : belirli bir metini dosya içerisinde arar.
+find : dizinler arasında dosya arar.
+chmod : dosya ve dizinlerin izinlerini değiştirir.
+chowm : dosya ve dizinlerin sahiplerini değiştirir.
+
+- ağ işlemleri : 
+ping : bir IP adresini veya alan adını belirtilen sayıda paket gönderir ve yanıtları görüntüler,
+ifconfig ve ip : ağ arayüzünü ve IP bilgilerini görüntüler,
+ssh : uzak sunuculara güvenli bir şekilde başlanmamızı sağlar,
+
+- paket yönetimi : 
+apt-get : debian tabanlı işlemler için paketleri yinetir,
+yum : red hat tabanlı işlemler için paketleri yinetir,
+brew : macos tabanlı işlemler için paketleri yinetir,
+
+-sistem bilgileri :
+top veya htop : sistem kaynaklarını ve çalışan işlemleri görüntüler.
+df : disk kullanımını gösterir.
+free : bellek kullanımını gösterir.
+uname : sistem bilgilerini gösterir.
+
+- kullanıcı ve izinler ;
+who veya w:aktif kullanıcıları ve oturum bilgilerini görüntüler,
+useradd : kullanıcı ekler,
+userdel : kullanıcı siler,
+passwd : kullanıcı parolasını değiştirir.
+sudo : yönetici veya süper kullanıcı haklarıyla komut çalıştırır.
+
+- metin işlemleri :
+echo : metin çıktısı üretir.
+grep : metin içerisindeki desen eşleştirmeleri yapar.
+sed : metin düzenlemesi yapar.
+
+
+dotnet CLI ile proje oluşturma:
+
+dotnet CLI ile proje oluştururken içerisinde bulunduğumuz komuta dikkat etmemiz gerekir.
+dotnet CLI yı çağırmak için terminal ekranına 'dotnet' yazmamız yeterlidir.
+dotnet --help ile dotnet üzerinden yapabileceklerimizi listeleyebiliriz.
+
+uygulama başlatmak için ;
+
+dotnet new (buraya uygulama tipini yazıyoruz) --name (buraya uygulama ismini yazıyoruz)
+
+başlattığımız uygulamayı derleyebilmek için ;
+
+dotnet build.
+
