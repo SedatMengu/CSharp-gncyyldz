@@ -247,3 +247,4 @@ referans etmek zorundayız.
 
 dotnet add referance (referasn edilen ana dosya).csproj referance (referans eden ufak dosya).csproj
 
+3- 
