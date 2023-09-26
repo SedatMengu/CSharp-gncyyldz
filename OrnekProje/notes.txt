@@ -174,3 +174,76 @@ başlattığımız uygulamayı derleyebilmek için ;
 
 dotnet build.
 
+
+// dotnet CLI nedir?
+
+Visual Studio idesinde kendi yaptığımız işlemleri komut satırı ile yapabilmek için CLI isimli asistandan aracılı ile yapabiliriz.
+
+
+// dotnet CLI komutları nelerdir?
+
+1- help : dotnet CLI tarafından desteklenen komutlar hakkında ayrıntılı bilgi veren kokmuttur. ( dotnet help)
+
+2- new  : dotnet CLI üzerinden proje oluşturmaya yardımcı olan komuttur. (dotnet new (proje tipi) --name (proje ismi))
+
+not : sadece dotnet new yazıp enter tuşuna bastığımızda hangi proje tiplerini oluşturabileceğimiz konusunda CLI bize yardımcı olur.
+
+not: aynı isimde farklı bir dosya olmasından kaynaklı olarak oluşacak hatalarda (dotnet new (proje tipi) --name (proje ismi)) --force
+şeklinde satırın sonuna force keyword unu kullanırsak hata almadan işlemi yapabiliriz.
+
+3- restore : proje sürecinde referans edilen yahut referansı kaldırılan paketlerin restorasyonunu sağlar. (dotnet restore)
+
+referans mantığı nedir ? 
+
+bir yazılım geliştirme sürecinde işlemleri / iş mantıklarını genellikle kah kendimiz tarafından kah başkaları tarafından (ki genelde başkaları tarfından)
+önceden yazılmış kütüphanelerin desteğini alarak çözmeye referans mantığı denir.
+
+restore edilen paketler nuGet ten gelir.
+
+4- build : projeyi ilk önce restore eder ve sonrasında derler. sonuç olarak .exe ve .dll çıktıları verir. 
+bu .dll ve .exe uzantılı dosyalar /bin/Debug/net7.0 dizininde görüntülenir.
+
+not : proje derlemeden önce muhakkak restore edilir.
+
+
+5- publish : projeyi derleyerek yayınlanabilir dosyaların oluşmasını sağlar. çıktılar /bin/Debug/net7.0/publish dizininde bulunur.
+
+publish klasörü altında : 
+
+.dll,
+.deps.json,
+.runtimeconfig.json,
+.uygulama bağlantılarının .dll dosyaları
+
+bulunur.
+
+not : uygulamaya ait algoritmaları yayınlamak istemiyor olabiliriz, böyle bir durumda publish komutu bize yardımcı olur.
+not2: publish dosyalarında herhangi bir güncelleme yapılamaz, yapılan değişikliklerden sonra tekrar oluşturmak gerekir. çıktı almak gibi...
+
+6- run : uygulamayı derler ve ayağa kaldırır. (dotnet run ) 
+
+not : dotnet run --no-build uyulamayı derlemeden ayağa kaldırır.
+
+
+// proje modifikasyon komutları:
+
+proje seviyesinde işlem yapmamızı ve referans ekleyip çıkarmamızı sağlayan komutlardır.
+
+paket / kütüphane : nuGet havuzundan gelir,
+referans          : önceden yazılmış .dll uzantılı dosyalardır.
+.exe uzantısı     : yazdığımız uygulamayı bir insan kullanacaksa bu uzantıda olur.
+.dll uzantısı     : yazdığımız uygulamayı bir yazılım kullanacaksa bu uzantıda olur.
+
+1- add package : uygulamaya nuGet'den paket / kütüphane yüklememizi sağlar.
+
+dotnet add package (paket ismi)  / ile terminalden paket yükleyebiliriz.
+
+2- add referance : uygulamaya fiziksel bir .dll uzantılı dosya referans etmemizi sağlar.
+
+diyelimki solution unumuzda birden fazla uygulama var ve bu uygulamalar birbirlerini referans etmek zorundalar.
+örneğin veri tabanı işlemlerini bir uygulama aracılığı ile yapıyoruz , iş mantığını / ana olayların cereyan ettiği olayları 
+başka bir uygulama ile yapıyoruz. ana olayların cerayan ettiği uygulamaya veri tabanı işlemlerinin yapıldığı uygulamayı
+referans etmek zorundayız.
+
+dotnet add referance (referasn edilen ana dosya).csproj referance (referans eden ufak dosya).csproj
+
