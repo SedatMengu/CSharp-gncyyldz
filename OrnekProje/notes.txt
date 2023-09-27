@@ -247,4 +247,74 @@ referans etmek zorundayız.
 
 dotnet add referance (referasn edilen ana dosya).csproj referance (referans eden ufak dosya).csproj
 
-3- 
+3- remove package : uygulamada add package ile yüklediğimiz paketleri/kütüphaneleri silmeye yarar.
+
+dotnet remove package ( package ismi)
+
+4- remove referance : uygulamaya referans edilmiş dll dosyalarını kaldırmaya yarar.
+
+dotnet remove referance (referans ismi)
+
+list referance : uygulamda referans edilen tüm paketleri / kütüphaneleri listeler.
+
+dotnet list referance 
+
+n adet uygulamanın olduğu bir solutionda çalıştığımızı varsayalım . 
+hangi uygulamanın hangi paketlerin/kütüphanelerin referans edildiğini kodlara bakmadan 
+bu yöntemle öğrenebiliriz
+
+// programlamaya başlarken temel ilkeler:
+
+yeni çıkan her dil bir gelenek ve bir kabul ile yola çıkar. bunlara ilke diyoruz.
+
+ilke-1 : don't repeat your self 
+
+bir kod inşa edilirken kullandığımız dile ait bütün özellikleri bildiğimizi varsayalım ,
+aynı kod parçasını birden fazla yerde aynı yöntemle kullanırsak bu 1.ilkeye aykırı bir davranış olur. 
+günün birinde uygulamada tekrar eden kod parçalarında değişiklik yapmak istersek tek tek bütün kopyalarını bulmamız gerekir.
+bir algoritmayı öğrenerek birden fazla problemde aynı algoritmayı kullanmak 1.ilkeye uymaz.
+
+tecrübeden faydalanmak yaratıcılığı öldürür.
+
+ilke-2 : anlamlı isimlendirme,
+
+isimlendirme yaptığımızda anlamlı ve çağırışım yapan isim vermemiz gerekir.
+
+// main fonkiyonu nedir ? 
+
+bir uygulama içerisinde muhakkak olması gereken bir fonksiyondur.
+program.cs dosyası uygulamanın başlangıç dosyasıdır ve başlangıç kodları burada bulunur.
+
+not : .cs uzantılı dosyalar c# dilinde yazılmış dosyalarıdır.
+
+başlangıç kodlarından kastımız nedir ?
+
+uygulama ayağa kalktığında işletim sistemi ile iletişim kurabilecek fonksiyonun 
+ve bu fonksiyon içerisinde başlangıca dair komutları barındıracak bir yapıdır.
+
+not : işletim sistemi ile sadece program.cs dosyası içerisindeki main fonksiyonu iletişim kurabilir.
+
+main fonksiyonu kuralları : 
+
+1- main fonksiyonu uyglamaya özgüdür ve her projede yanlızca 1 adet olur.
+2- aynı uygulama içerisinde 2.bi main fonksiyonu yoktur.
+
+
+işletim sisteminden parametre ile console'a değer yazdırabiliriz.
+
+static void Main(string[] args)
+{
+    Console.WriteLine("Hello World!");
+    Console.WriteLine(args[0]);
+    Console.WriteLine(args[1])
+}
+
+terminalden dotnet run sedat mengü yazdığımızda çıktı ekranına ;
+
+Hello World!
+sedat
+mengü
+
+// top level statement nedir ? 
+
+C# 9.0 ile gelmiştir.
