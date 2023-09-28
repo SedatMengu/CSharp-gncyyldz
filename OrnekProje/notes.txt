@@ -318,3 +318,64 @@ mengü
 // top level statement nedir ? 
 
 C# 9.0 ile gelmiştir.
+
+// yorum satırları ve region özelliği : 
+
+// tek satırlık yorumlarda kullanılır.
+
+/*
+çok
+satırlık
+yorumlarda
+kullanılır
+*/
+
+region : kod dosyasını kategorik hale getirebilemizi sağlayan bir ön işlemci komutudur. 
+
+developerların yazdıkları kodların daha net görebilmelerine yardımcı olur.
+
+#region A operasyonu
+    Console.WriteLine("Hello, World!");
+    Console.WriteLine(typeof(char).IsPrimitive);
+    Console.WriteLine(typeof(sbyte).IsPrimitive);
+    Console.WriteLine(typeof(byte).IsPrimitive);
+    Console.WriteLine(typeof(short).IsPrimitive);
+    Console.WriteLine(typeof(ushort).IsPrimitive);
+    Console.WriteLine(typeof(int).IsPrimitive);
+    Console.WriteLine(typeof(uint).IsPrimitive);
+    Console.WriteLine(typeof(long).IsPrimitive);
+    Console.WriteLine(typeof(ulong).IsPrimitive);
+    Console.WriteLine(typeof(float).IsPrimitive);
+    Console.WriteLine(typeof(double).IsPrimitive);
+    Console.WriteLine(typeof(decimal).IsPrimitive);
+#endregion
+
+#region A operasyonu
+
+// todo özelliği : (editorun sağlamış olduğu bir özelliktir.)
+kodun içerisinde yazılan notlara bir liste aracılığı ile ulaşmaya yarar. 
+
+todo listesi genelde takım çalışmalarında hangi takım çalışanının müdahale etmesi istenirse o kişiye atıfra bulunulmak için kullanışlıdır.
+
+todo listelerine erişmek için;
+
+vs de görünüm/görevler penceresinden ulaşabilirz.
+vscode da ise sol taraftaki çubukta 'source control' alanı içerisinden ulaşabiliriz.
+
+
+
+// debuging :
+
+projenin her aşamasında en çok kullandığımız özelliklerdendir. platform ve teknoloji farketmeksizin her noktada kullanılır.
+
+brekapoint kavramı ;
+
+debug işleminde hassas olan satıra koyduğumuz ve debuging esnasında durduğumuz noktadır. 
+debug modda 1 adım ilerlemek için F10 tuşuna basaır. her basışımız uygulamanın bir adım daha ilerlemesini sağlar.
+
+F5 ile debug modu salmış oluruz ve uygulama sona kadar gitmiş olur.
+
+watch penceresi nedi ? 
+
+debug modda çalıştırma esnasında bazı değişikliklerin değerlerini izlemek isteyebiliriz. 
+debug çalışırken izlemek istediğimiz değişkenin üzerine tıklayarak 'izleme ekle' seçeneğini seçerek watch penresesine eklemiş oluruz.

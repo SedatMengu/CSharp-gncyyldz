@@ -2,19 +2,22 @@
 using System.Data;
 using System.Reflection.Metadata;
 
-// Console.WriteLine("Hello, World!");
-// Console.WriteLine(typeof(char).IsPrimitive);
-// Console.WriteLine(typeof(sbyte).IsPrimitive);
-// Console.WriteLine(typeof(byte).IsPrimitive);
-// Console.WriteLine(typeof(short).IsPrimitive);
-// Console.WriteLine(typeof(ushort).IsPrimitive);
-// Console.WriteLine(typeof(int).IsPrimitive);
-// Console.WriteLine(typeof(uint).IsPrimitive);
-// Console.WriteLine(typeof(long).IsPrimitive);
-// Console.WriteLine(typeof(ulong).IsPrimitive);
-// Console.WriteLine(typeof(float).IsPrimitive);
-// Console.WriteLine(typeof(double).IsPrimitive);
-// Console.WriteLine(typeof(decimal).IsPrimitive);
+#region A operasyonu
+    Console.WriteLine("Hello, World!");
+    Console.WriteLine(typeof(char).IsPrimitive);
+    Console.WriteLine(typeof(sbyte).IsPrimitive);
+    Console.WriteLine(typeof(byte).IsPrimitive);
+    Console.WriteLine(typeof(short).IsPrimitive);
+    Console.WriteLine(typeof(ushort).IsPrimitive);
+    Console.WriteLine(typeof(int).IsPrimitive);
+    Console.WriteLine(typeof(uint).IsPrimitive);
+    Console.WriteLine(typeof(long).IsPrimitive);
+    Console.WriteLine(typeof(ulong).IsPrimitive);
+    Console.WriteLine(typeof(float).IsPrimitive);
+    Console.WriteLine(typeof(double).IsPrimitive);
+    Console.WriteLine(typeof(decimal).IsPrimitive);
+#endregion
+
 
 
 // string @static = "slm";
