@@ -4,6 +4,7 @@ using System.Reflection.Metadata;
 
 #region A operasyonu
     Console.WriteLine("Hello, World!");
+    Console.WriteLine(typeof(bool).IsPrimitive);
     Console.WriteLine(typeof(char).IsPrimitive);
     Console.WriteLine(typeof(sbyte).IsPrimitive);
     Console.WriteLine(typeof(byte).IsPrimitive);

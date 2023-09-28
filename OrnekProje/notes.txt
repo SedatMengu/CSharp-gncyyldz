@@ -378,4 +378,195 @@ F5 ile debug modu salmış oluruz ve uygulama sona kadar gitmiş olur.
 watch penceresi nedi ? 
 
 debug modda çalıştırma esnasında bazı değişikliklerin değerlerini izlemek isteyebiliriz. 
-debug çalışırken izlemek istediğimiz değişkenin üzerine tıklayarak 'izleme ekle' seçeneğini seçerek watch penresesine eklemiş oluruz.
+debug çalışırken izlemek istediğimiz değişkenin üzerine tıklayarak 'izleme ekle' seçeneğini seçerek 
+watch penresesine eklemiş oluruz.
+
+peki debuguz uygulamayı çalıştırmak nasıl olur?
+
+debug zaman ve performasn açısından maliyetli bir yoldur. genelde projemizden emin olduğumuz durumlarda debugsuz çalıştırabiliriz.
+
+
+
+// değişkenler nelerdir ?
+
+değişkene neden ihtiyaç duyarız.
+
+amaç : elimizdeki verileri doğru yazılımlar ile doğru bir şekilde işleyerek doğru sonuçları elde etmektir.
+
+yazılım herhangi bir veri tutmaz , işlem gerçekleştiği esnada veriler RAM'da tutulurlar , oradan alınır, kullanılır , ve geri yerine konur...
+
+işte bu noktada değişkenleri RAM'de tutabilmek için değişkenleri kullanılırız. 
+
+veri tabanındaki verileri direkt olarak işleyemeyiz, değişken yardımı ile RAM'den alıp değiştirip geri yerine koyarız.
+
+önemli not: iş yapıyorsak RAM'de çalışmalıyız.
+
+tanım : yazılımda işlenecek veriyi yazılım adına RAM'e yerleştirebilmek için biz developerlar değişkenleri kullanırız.
+
+value type ve primitive type nedir ?
+
+C# dili yapısı gereği RAM'e yerleştireceğimiz veri türünü bilmek ister ki ona göre bir alan tahsisinde bulunsun.
+
+. bir değişkenle RAM'de alan tahsisinde bulunulduğunda buna 'değer türlü değişken' ( value type) deriz. yaş,boy,isim,trih vs...
+. birden fazla farklı tipte değişken barındırabilen yapılara 'referans türlü değişken' deriz.
+
+ad : "ali"; -- değer türlü değişken
+soyad:"uzun"; --değer türlü değişken
+yas=23; --değer türlü değişken
+kanGrubu='a' -- değer türlü değişken
+
+yukarıdaki bilgilerin tamamı paket olarak da referans türlü değişken olarak tanımlanır.
+
+tanım : sadece bir tür değer tutan değişkenlere değer türlü değişken denirken, birden faza değişik türde değişken tutabilen türlere referans türlü değişken denir.
+
+primitive type : ham veri , türetilmemiş veri anlamında kullanılır ve en ilkel türdür. (byte)
+
+not : RAM'de değişken için alan tahsis edileceği zaman değişkenin türündne hareket edilir ve hangi türde değişken tanımlandıysa o türde değişken barındırılır.
+string ile tahsis edilen alana double türünde bir veri barındıramazsınız , veya char türünde bir alan tahsisinde bulunduysanız int türünde bir değer barındıramazsınız. barındırtmazlar :)
+
+veri türleri :
+
+bool : true veya false tutabilir.   (1 bit )
+
+char : tek karakter tutabilir.   (16 bit )
+
+sbyte : -128 ile +127 arasındaki değerler tutabilir.   (8 bit )
+
+byte : 0 ile +255 arasındaki değerler tutabilir.   (8 bit )
+
+short : -32768 ile +32767 arasındaki değerler tutabilir.   (16 bit )
+
+ushort : 0 ile 65535 arasındaki değerler tutabilir.   (16 bit )
+
+int : -2147483648 ile +2147483647 arasındaki değerler tutabilir.   (32 bit )
+
+uint : 0 ile +4294697295 arasındaki değerler tutabilir.   (322 bit )
+
+long : -9233372036854775808 ile +9233372036854775807 arasındaki değerler tutabilir.   (64 bit )
+
+ulong : 0 ile +18446744073709551615 arasındaki değerler tutabilir.   (64 bit )
+
+float : +- 1.5 x 10(-45) ile +-3.4x10(38) arasındaki değerler tutabilir.   (32 bit )
+
+double : +- 5x10(-324) ile +-1.7x10(308) arasındaki değerler tutabilir.   (64 bit )
+
+decimal : +-1.5x10(-28) ile +-7.9x10(28) arasındaki değerler tutabilir.   (128 bit )
+
+string : metinsel ifadeleri tuttuğumuz değişken türüdür ve referans tiplidir.
+
+
+yukardaki türlerden sadece 'decimal' primitive değildir , geri kalan türlerin tamamı primitive dir.
+
+bir türün primitve olup olmadığını nasıl kontrol edebiliriz.
+
+
+Console.WriteLine(typeof(bool).IsPrimitive);
+Console.WriteLine(typeof(char).IsPrimitive);
+Console.WriteLine(typeof(sbyte).IsPrimitive);
+Console.WriteLine(typeof(byte).IsPrimitive);
+Console.WriteLine(typeof(short).IsPrimitive);
+Console.WriteLine(typeof(ushort).IsPrimitive);
+Console.WriteLine(typeof(int).IsPrimitive);
+Console.WriteLine(typeof(uint).IsPrimitive);
+Console.WriteLine(typeof(long).IsPrimitive);
+Console.WriteLine(typeof(ulong).IsPrimitive);
+Console.WriteLine(typeof(float).IsPrimitive);
+Console.WriteLine(typeof(double).IsPrimitive);
+Console.WriteLine(typeof(decimal).IsPrimitive);
+
+örnek : 1000 değerini short , ushort , int , uint , long , ulong , float , double , decimal türlerinin tamamı ile tutabiliriz.
+ancak yer proje optimizasyonu için en makul aralık olan short veya ushort u kullanmamız gerekir.
+
+// C# dilinin temel kuralları : 
+
+1- bütün kodlar main fonksiyonu içerisine yazılır.
+2- { } bu yapı scope olarak değerlendiril (faliyet alanı)
+3- C# BÜYÜK ve küçük harf duyarlılığna sahiptir. "ahmet","Ahmet","AhMet","AHMET" tamamen ayrı şeklerdir.
+4- C# dili tip güvenliği olan bir dildir. 
+
+değişken tanımlama;
+
+degisken_turu degisken_adi;
+
+bu şekilde ilk yazılacak olan değişkenin türüdür 2 yazılacak olan değişkenin anlamlı ismidir. (anlamlı olması 2.ilke)
+
+örnek:
+
+string adi;  --> bu şekilde RAM'de "adi" isminde string bir alan rezervasyonu yapılmış oldu. 
+int yas ; --> bu şekilde RAM'de "yas" isminde integer bir alan rezervasyonu yapılmış oldu. 
+
+ram yapısı : 
+
+stack ve heap ram da kullandıığımız 2 alanın adıdır.
+
+stack : içerisinde değer türlü değişkenlerin;
+
+değişken türünün , 
+değişken adının,
+değişken değerininin,
+metot/fonksiyon isimlerinin,
+
+tutulduğu bir bölümdür.
+
+heap : nesnelerin tutulduğu bölümdür.
+
+not : stack içerisinde tutualn değişken ismine nadiren de olsa 'referans' dendiğini görebilirsiniz.
+not : stack alanıda değişkene herhangi bir değer ataması yapılamasa dahi yer tahsisi yapılır.
+not : metotların/fonksiyonların bellek adresleri de stack de tutulur.
+
+metotları / fonksiyonları çağırmak üzere oluşturuyoruz ve bu metotlar/fonksiyonlar isim üzerinden çağırırız ve bu isimde denk gelen adres stack alanında tutulur.
+
+
+değişken tanımlana kuralları:
+
+değişken isimleri ilerleyen süreçte developer açısından karışıklığa mahal vermemek için anlanlı olmalıdır.
+değişken isimleri . ' , gibi özel karakterler barındırmamalıdır. _ istisnadır.
+
+1sayi olmaz , sayi1 olabilir.
+ad? olmaz , ad olabilir,
+stok.adedi olmaz , stok_adedi olabilir.
+
+not : aynı scope içerisinde aynı isimde birden fazla değer tanımlanamaz.
+
+isimlendimre gelenekleri ;
+
+1- snace_case ; tük hrafler küçüktür ve kelimelerin arasına _ konur.
+
+. kullanici_adi;
+. isim_soyisim;
+. personel_giderleri;
+
+2- Pascal Name : her kelimenin ilk harfi büyük yazılır. klaltmalar özellikler büyük harf ile yazılır.
+
+. AdSoyad;
+. TcKimlikNo;
+. Satislar;
+. DogumTarihi;
+. InOut = IO,
+. InOutStream = IOStream;
+
+3- camelCase : sadece ile kelimenin ilk harfi küçük yazılır, takip eden kelimelerin ilk harfleri her zaman büyük yazılır.
+
+. satisDurumu;
+. personeAdi;
+. orderId;
+. userNAme;
+. userNAmePassword;
+
+değişken isimlerinde @ operatörü : 
+
+string x şeklinde bir değişken tanımlayabildiğimiz gibi string @x şeklinde de tanımlama yapabiliriz. 
+ancak ahm@t gibi @ karakteri ismin ortasına kullanılırsa özel karaktere girer ve kabul edilmez.
+
+static , for , if , string , int gibi programa özgü kelimeleri @ ilavesi ile değişken ismi olarak kullanabilirz.
+
+string @string ,
+int @int , 
+double @double , 
+string @static vb.
+
+tanılanmış değişkene değer atama : 
+
+int x ; şekilde herhangi bir değer ataması yapmadan da değişken tanımlayabildiğimiz gibi int x=5; gibi tanımlanmış değişkenlere de tekrardan değer atayabiliriz.
+
+burada dikkat edilmesi gereken şey, bir değere en son atanan değer geçerlidir.
