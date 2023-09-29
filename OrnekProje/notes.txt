@@ -570,3 +570,56 @@ tanılanmış değişkene değer atama :
 int x ; şekilde herhangi bir değer ataması yapmadan da değişken tanımlayabildiğimiz gibi int x=5; gibi tanımlanmış değişkenlere de tekrardan değer atayabiliriz.
 
 burada dikkat edilmesi gereken şey, bir değere en son atanan değer geçerlidir.
+
+değişeken değer atama kuralları ;
+
+değer türleri : 
+
+1- metinsel değerler ; string keywordu ile tutulur, "..." içerisine yazılmalıdır. "gencay" , "12345678901" vb.
+
+not : bir sayısal ifade "..." arasında metinsel bir biçimde tutuluyor ise herahngi bir matematiksel işleme kapalıdır.
+
+2- karaktersel değerler: char keywordu ile tutulur , '...' içerisinde yazılırlar. 'a' , 'b' vb.
+
+not : 'ab' şeklide birden fazla karakter barındırması durumunda program bu noktada hata verecektir.
+
+3- mantıksal değerler : bool keywordu ile tutulur. true ya da false değerleri alabilir.
+
+not : "True" ile true aynı şey değildir.
+
+4- sayısal değerler : int,short,long,decimal .... gibi keyword ler ile tutulurlar. herhangi bir tırnak kullanmayız.
+
+not : sayısal ifadeler varsayılan olarak int türündedirler.
+
+5- ondalıklı değerler : float , double ve decimal keywordu ile tutulurlar. 
+
+not : tüm ondalıklı sayılar tamsayıları karşılayabilirler.
+
+a- float : bu türde bir değişkene değer ataması yapılırken değerin sonuna f veya F ifadesi eklenmelidir.
+
+float @float = 3.14f , float @float2 = 3.15F vb.
+
+b- double : bu türde bir değişkene değer ataması yapılırken değerin sonuna d veya D ifadesi eklenmelidir.
+
+double @double = 3.16d veya double @double2 = 3.17D vb.
+
+c- decimal : bu türde bir değişkene değer ataması yapılırken değerin sonuna m veya M ifadesi eklenmelidir.
+
+decimal @decimal = 3.17m veya decimal @decimal2 = 3.19M vb.
+
+
+not : ondalıklı türlerde bir değer default olarak double dır. (sonuna d veya D gelmesi gerekir.) default olduğundan dolayı değerin sonuna d ve D koymasak da olur.
+
+not : char türünde bir değişken tanımlayacak isek "..." şeklinde çift tırnak kullanamayız.
+not : string türünde bir değişken tanımlayacak isek '...' şeklinde tek tırnak kullanamayız.
+
+tuple türünde veri atama : 
+
+tuple : tek bir syntax üzerinde birden fazla değişken tanımayabilmemizi sağlayan bir nesnedir.
+
+not : tuple değişken içerisinde int, string , double , vs olmak üzere birden fazla aynı veya farklı türde değişken tanımı mevcuttur.
+
+(int a, string b) @tuple = (5,"kemal");
+
+literal düzenleme : int x = 1000000; şeklinde gösterimi int x=1_000_000; şeklinde de gösterebiliriz.
+
