@@ -2,22 +2,22 @@
 using System.Data;
 using System.Reflection.Metadata;
 
-#region A operasyonu
-    Console.WriteLine("Hello, World!");
-    Console.WriteLine(typeof(bool).IsPrimitive);
-    Console.WriteLine(typeof(char).IsPrimitive);
-    Console.WriteLine(typeof(sbyte).IsPrimitive);
-    Console.WriteLine(typeof(byte).IsPrimitive);
-    Console.WriteLine(typeof(short).IsPrimitive);
-    Console.WriteLine(typeof(ushort).IsPrimitive);
-    Console.WriteLine(typeof(int).IsPrimitive);
-    Console.WriteLine(typeof(uint).IsPrimitive);
-    Console.WriteLine(typeof(long).IsPrimitive);
-    Console.WriteLine(typeof(ulong).IsPrimitive);
-    Console.WriteLine(typeof(float).IsPrimitive);
-    Console.WriteLine(typeof(double).IsPrimitive);
-    Console.WriteLine(typeof(decimal).IsPrimitive);
-#endregion
+// #region A operasyonu
+//     Console.WriteLine("Hello, World!");
+//     Console.WriteLine(typeof(bool).IsPrimitive);
+//     Console.WriteLine(typeof(char).IsPrimitive);
+//     Console.WriteLine(typeof(sbyte).IsPrimitive);
+//     Console.WriteLine(typeof(byte).IsPrimitive);
+//     Console.WriteLine(typeof(short).IsPrimitive);
+//     Console.WriteLine(typeof(ushort).IsPrimitive);
+//     Console.WriteLine(typeof(int).IsPrimitive);
+//     Console.WriteLine(typeof(uint).IsPrimitive);
+//     Console.WriteLine(typeof(long).IsPrimitive);
+//     Console.WriteLine(typeof(ulong).IsPrimitive);
+//     Console.WriteLine(typeof(float).IsPrimitive);
+//     Console.WriteLine(typeof(double).IsPrimitive);
+//     Console.WriteLine(typeof(decimal).IsPrimitive);
+// #endregion
 
 
 
@@ -71,3 +71,9 @@ using System.Reflection.Metadata;
 
 // double sayi = 1_000_00000_000;
 
+// string? x = default;
+
+// Console.WriteLine(x);
+
+
+const @string = "ali";
