@@ -76,4 +76,13 @@ using System.Reflection.Metadata;
 // Console.WriteLine(x);
 
 
-const @string = "ali";
+// const string name = "kemal";
+
+// readonly string isim = "idris";
+
+
+// Console.WriteLine(name);
+
+object adi = "ozan";
+
+Console.WriteLine(adi);
