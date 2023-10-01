@@ -83,6 +83,20 @@ using System.Reflection.Metadata;
 
 // Console.WriteLine(name);
 
-object adi = "ozan";
+// object rakam = 7;
 
-Console.WriteLine(adi);
+// rakam = rakam*8;
+
+// Console.WriteLine(rakam);
+
+
+// object @string = "hello world!";
+
+// Console.WriteLine(@string.GetType());
+
+
+object @objectString = "cem";
+
+string isim = (string)objectString ;
+
+Console.WriteLine(isim.ToUpper());
