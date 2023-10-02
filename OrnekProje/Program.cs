@@ -71,7 +71,7 @@ using System.Reflection.Metadata;
 
 // double sayi = 1_000_00000_000;
 
-// string? x = default;
+// bool x = default;
 
 // Console.WriteLine(x);
 
@@ -89,14 +89,20 @@ using System.Reflection.Metadata;
 
 // Console.WriteLine(rakam);
 
-
 // object @string = "hello world!";
 
 // Console.WriteLine(@string.GetType());
 
 
-object @objectString = "cem";
+// object @objectString = "cem";
 
-string isim = (string)objectString ;
+// string isim = (string)objectString ;
 
-Console.WriteLine(isim.ToUpper());
+// Console.WriteLine(isim.ToUpper());
+
+int a = 7;
+int b = a;
+b = b * 3;
+
+Console.WriteLine(a);
+Console.WriteLine(b);

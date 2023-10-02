@@ -623,3 +623,195 @@ not : tuple değişken içerisinde int, string , double , vs olmak üzere birden
 
 literal düzenleme : int x = 1000000; şeklinde gösterimi int x=1_000_000; şeklinde de gösterebiliriz.
 
+
+// değişken türüne uygun default değer atama;
+
+tüm değişkenlerin bir default değeri vardır. 
+
+not : main fonksiyonu içerisinde tanımlanan bütün değişkenlerin default değerleri otomatik olarak atanmaz,
+class içerisinde tanımlanan fonksiyonların değerleri default olarak atanır.
+
+varsayılan değerler : 
+
+bool : false,
+sayısal : 0,
+char = '0',
+strign = null
+
+main içerisinde bu deperler otomatik olarka gelmez class içerisinde tanımlanan değerlerde otomarik olarak gelir.
+
+main scopu içerisinde default değeri atamak için,
+
+bool x = default;
+
+Console.WriteLine(x);
+
+console a False değeri yazılır.
+
+// tanımlanmış bir değerin değerini okuma :
+
+int x = 5;  // (integer türünde x adında bir alan tahsis edildi ve içerisine 5 değeri atandı.)
+
+int y = 10;  // (integer türünde y adında bir alan tahsis edildi ve içerisine 10 değeri atandı )
+
+int z = x ;  // (integer türünde z adında bir alan tahsis edildi ve içerisine x (yani 5 değeri) atandı)
+
+z = y ;  // (daha önce z adını alan ve türü belirtilen bir alan tahsis edildiğinden herhangi bir hata oluşturmadan z değişkenine y ( yani 10 değeri) atanır.)
+
+b = x ;  // (daha önce b adında bir değişken adı ve türü belirtilmediği için bu kod satırı hata verecektir.)
+
+
+RAM'da alan tahsis edilirken 2 kritik vardır. bunlardan bir tanesi eksik olursa değişken tanımlanamaz.
+
+1- veri tipi ( int , string, bool, char vb.)
+2- değişken ismi ( isim , numarala, sira , sayi vb.)
+
+
+önemsiz not : int a = 5; a = a ; dediğimizde herhangi bir hataya sebebiyet vermez. bir değişkene aynı türde aynı değeri saklaması için verebiliriz.
+
+
+// değeri olmayan değişkenler. 
+
+main içerisinde atanmış bir karşılığı olmayan değer ile ( int x ;) hiç bir şey yapamayız. 
+çünkü burada uygulamaya int türünde ve x isminde bir alan tahsis edeceğiz dedik ve main yapısı gereği default değer atamaz.
+ancak bu (int x;) ataşmış karşılığı olmayan bir değişkeni class içerisinde kullanabiliriz. default değerler otomatik atanır.
+
+
+
+// değişken davranışlarına genel bakış , 
+
+bir değişkenin kendini göndermek ile değerini göndermek arasında fark vardır. 
+değerini göndermek şu şekilde olur.
+
+int x = 9;  // (burada stack alanında int türünde x adında içerisinde 5 değerinin tutulduğu bir alan tahsisi yaptık.)
+int y = x;  // (burada stack alanında int türünde y adına içerisnde x in değerinin tutulduğu bir alan tahsisi yaptık.) x in kendisini atmadık , değerini tanımladık.
+y = 20;  // (burada stack te barındırılan y değişkenine 20 değerini atadık. x değişkenine herhangi bir şey olmadı.)
+
+Console.WriteLine(y);  // 20 
+
+
+// değişkenlerin faliyet alanları : 
+
+scope : değişken ve fonksiyonların sınırlarını belirler. tanımlamalarda ve algoritmik çalışmalarda karışıklığı önler.
+
+{ } --> scope 
+
+
+not : bir scope içerisinde tanımlanan değişkene o scope içerisinde tanımladığı satırdan sonra herhangi bir yerden erişebiliriz.
+iç içe tanımlanan scope larda en dışta tanımlanan scope daki değişkene en içteki scope dan erişebiliriz ancak tersi mümkün değildir.
+
+
+scope lar nerelerde kullanılır;
+
+1- namespace , classlarda , metotlarda , döngülerde , if yapısında scope kullanılır.
+2- herhangi bir keyword e bağlı kalmadan da scope oluşturabiliriz.
+
+
+// değişmezler.
+
+sabitlere neden ihtiyaç duyarız?
+
+- bazen sabit değerler ile de çalışmamız gerekebilir. 
+sabitlerin asıl amacı bir başka yazılımcı tarafından değiştirilmesini istemediğimiz durumlarda kullanırız. bir diğer avantajı ise
+kendi hatalarımızın önüne geçmektir. dalgınlıkl değiştirmememiz gereken bir noktada deişmemesi gereken bir değeri değiştirebiliriz.
+
+development aşamasında 'sabit' olarak tanımlanmayan bir değer değiştirilirse hehrangi bir hata ile karşılaşmadan compiler işlemi tamamlanır.
+en erken uygulama çıktılarını görüntüleme aşamasında mantıksal hatalar olduğunu anlayabiliriz. bu noktadan sonra hatanın yerini tespit etmemiz birhayli uzun sürecektir.
+
+sabitleri nasıl tanımlayabiliriz ? 
+
+- const keywordu ile tanımlarız.
+
+prototip olarak değişkenlere çok benzer ancak davranışsal olarak değeri bir daha değiştirilemez. değiştirme aşamasında hata mesajı alırız.
+özünde staticdir.
+
+static nedir ? 
+
+- static uygulama bazlı veri depolayabildiğimiz bellekte bir alandır.
+
+- scope içerisinde tanımlanan bir değişken gene sadece aynı scope içerisinden erişime izin verir, static'e konulan bir değer / değişken evrenseldir ve uygulamanın herhangi bir yerinden erişime açıktır.
+
+static ile const arasındaki fark nedir ? 
+
+- static değişkendirler , const'lar değişmezdirler.
+
+readonly : sadece okunabilir değişkenler tanımlanmaktadır.
+
+const tanımlandığı anda değer ataması yapılmak zorundadır. alan tahsis edeyim, ileride bu alanı dolduracağım olmaz.
+
+readonly de ise const'a ilave olarak constructure da da değer ataması yapabiliriz. 3.bi değer ataması yapamayız, bir defa değer ataması yapınca değiştiremeyiz.
+
+readonly static değildir.
+
+const değişken tanımlama : 
+
+int a = 5 ;         // (bu şekilde int türünde a adında içerisinde 5 rakamının tutulduğu alan tahsis ettik ama kapı her zaman açık)
+
+a = 8;              // (bu şekilde a değişkenine giderek değiştirebiliriz.)
+
+const int b = 7;    // (bu şekilde int türünde b adında içerisinde 7 değerinin tutulduğu alan tahsis ettik ve const ile kapıyı kilitledik.)
+
+b = 11;             // (const ile kapıyı kiltlediğimizden dolayı b değeri üzerinde değişiklik yapamayız.)
+
+
+
+// global ve local değişkenler , 
+
+bir değişken konumlandığı yere göre locak veya global diye isimlendirilirler. yapı ve işleyişte herhangi bir değişiklik olmaz sadece isimlendirme yapılmıştır.
+
+class scope u içerisinde tanımlanan değişkenlere global değişken denir.
+metotlar içerisinde tanımlanan değişkenlere local değişlen denir.
+
+
+// değişken tanımlama varyasyonları: 
+
+1- int a; veya int a = 5;   // klasik varyasyon
+
+2- aynı türde birden fazla değişken oluşturulması gereken durumlarda kullanılabilir.
+int x = 3, y= 4, z=5; --> alan tahsis ettik ve değer atamsı yaptık.
+int x,y,z;  --> alan tahsis ettik ve değer ataması yapmadık.
+
+// değişkenler arası değer atama.
+
+1- deep copy : eldeki veri klonlanır. 1 iken 2 veri oluşur.
+
+not : değer türlü değişkenler birbirine atanırken default olarak deep copy geçerlidir. yani veri otomatik olarak türetilir.
+
+int a = 7;  ---> (stack alanında int türünde a isminde 7 değişkenini tahsis ettik.)
+int b = a;  ---> (stack alanında int türünde b isminde a değişken (değerini deep copy olarak) tanınladık. )
+b = b * 3;  ---> (deep copy olarak kopyaladığımız a değişken değeri değişmeden b üzerinde matematiksel işlem yapabiliriz.)
+
+Console.WriteLine(a);  // 7
+Console.WriteLine(b);  // 21 
+
+b değişkeni a değişkeninden deep copy copyalandı ve sonrasında a değişkeni bu kopyalamadan etkilenmeyecektir.
+
+2- shallow copy :  birden fazla referansla işaretlemeye dayalı kopyalama yöntemidir.
+
+bellekte birden fazla referansın tek bir veriyi işaret etmesidir.
+
+neticede ilgili değer bir değişikliğie uğradığında tüm işaretleyen referanslara da bu değişiklik yansıtılacaktır. (Autocaddeki blok editor mantığı)
+
+A ve B değişkenleri heap daki aynı değeri kullanıyorlar, heap daki değer değişirse A ve B bu durumdan etkilenecek.
+
+not : değer türlü değişkenlerde bilinçli olarak shallow copy yaptırılabilir. 
+
+not2 : nesne ve referans arasındaki ilişkide varsayılan davranış olarak kabul edilmektedir.
+
+// object türü : 
+
+tüm türleti karşılayabilen , referans türlü ve stack de tutulmayan bir türdür.
+object olarak tanımlanan değişkenler şeffaf bir kutu gibi içerisinde tutulmuş gibidir. object içerisinde herhangi bir türde , tür değişmeden tutulur. (boxing özelliği)
+
+
+boxing özelliği : 
+
+object bir değişkene herhangi bir türdeki değer türünde bir değişikliğe uğramadan göndermektir. boxing işlemi neticesinde ilgili değer object in içerisinde kendi türünde saklanır.
+
+object türünde tutulan hangi tür veri olursa olsun o türde bir işleme tabi tutulamaz. int ise matematiksel olarak işlem yapılamaz, string ise metinsel işlemler yapılamaz.
+
+boxing işlemini şeffaf bir kutu olarak düşünebiliriz. içerisi görünüyor ancak işlem yapmaya kapalı.
+
+şeffaf kutulama olarak adlandırdığımız boxing de tutulan değişkeni işlem yapılabilir hale getirmek için unboxing işlemi yapmak gerekir.
+
+
