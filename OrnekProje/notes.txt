@@ -814,4 +814,113 @@ boxing işlemini şeffaf bir kutu olarak düşünebiliriz. içerisi görünüyor
 
 şeffaf kutulama olarak adlandırdığımız boxing de tutulan değişkeni işlem yapılabilir hale getirmek için unboxing işlemi yapmak gerekir.
 
+// cast operatörü : 
+
+boxing edilmiş bir veriyi kendi türünde işleme açabilmemize yardımcı olan bir opeartördür.
+
+not : bilinçli tür dönüşümünde de cast operatörü kullanılır. 
+not2: kalıtımsal durumlarda da cast operatörü kullanılır.
+
+() ---> cast operatörü . object değeri alır.
+
+cast kullanımı : 
+
+object A = "cem";                   ----> veri türü : object , değişken ismi : A 
+
+string isim = (string)A ;           ----> veri türü : string , değişken ismi : isim (cast ı burada kullandık) (cast olarak türüne uygun olarak değeri istemek gerekir.)
+
+Console.WriteLine(isim.ToUpper());  ----> veri türü : string , değişken ismi : isim 
+
+cast object boxing unboxing iç içe ifadelerdir. buna bi örnek verelim.
+
+object _yas = 32; ---> veri türü : object , değişken ismi : _yas olan bir alan tahsis ettik. 
+
+Console.WriteLine(_yas*3);  ---> sonuç ekrana bastırılamaz.
+
+int yas = (int)_yas ; ---> _yas isimli değişkenini cast operatörünü kullanarak unboxing yaparak int değişkeni içerisine koyduk.
+
+object neden kullanılır? 
+
+- dışarıdan alınan verilerin türleri bilinemediği durumlarda kullanılır.
+
+not : int olarak boxing edilen bir veriyi string veya char türünde unboxing edersek runtime esnasında (tam son noktada) hata verir. bigbang
+
+
+// var keywordu nedir ? ne işe yarar? 
+ 
+Tutulacak değerin türüne uygun bir değişken tanımlamak bizim elimizdedir. ancak bazen bunu biz compilera yaptırmak isteriz. bunu var keywordu ile tanımlarız.
+
+bool medeniHal = true;     // var medeniHal = true;
+string isim = "nazmi";     // var isim = "nazmi";
+
+bunları biz tanımladık          bunları compiler yaptı.
+
+
+'var' keywordu atanan değerin türüne bürünür.
+
+var ne zaman kullanılır ? 
+
+diller arası entegrasyonda kullanılır. X dilinde tanımlanan t adında bir değişken vardır diyelim , biz bu t adındaki değişkenin C# dilindeki karşılığını bilemeyebiliriz.
+bu noktada 'var' yazıp geçeriz.
+
+
+not1: 'var' keywordu ile tanımlanan değişkenin değeri tanımlama aşamasında verilmelidir.
+not2: 'var' keywordu ile tanımlanan değişkene ilk değer verildikten sonra o türe bürüneceğinden dolayı aynı tür üzerinden ilerlemek gerekir.
+not3: 'var' ile object arasındaki fark , var işleme açıktır , object unboxing etmeden işleme kapalıdır.
+
+
+// dynamic keywordu : 
+
+dynamic b = 5; ---> development sürecinde b her daim dynamic türde görünecektir. uygulama derlenip çalıştırıldığında dynamic ilgili değerin türüne bürünmüş olur.
+
+var x = 5;   ---> bu satırdan sonra x integer bir davranış sergiler ve integer e has işlemlere tabi tutulabilir.
+
+dynamic y = 10 ; ---> bu satırdan sonra runtime a kadar y dynamic davranışlar sergiler.
+
+
+dynamic özelliği nedir ? 
+
+- . ya bastıktan sonra otomatik olarak kullanılabilecek özellikler listelenir.
+
+Console.SetWindowSize
+Console.Write
+Console.WriteLine
+Console.SetWindowPosition
+
+buradan Console. dan sonra liste çıkar ve kullanılabilecek olan özellikler listelenmiş olur. burada Console dynamic olsaydı . ya bastıktan sonra hiç bir özellik görünmeyecekti.
+
+dynamic olan verilerde manuel olarak .Write , .WriteLine şeklinde yazmamız gerekir. buna karşılık bir hata olup olmayacağını dotnet run demeden bilemeyiz.
+
+not : dynamic keywordu runtime türü belirleyecektir ancak kararlı davranmayacaktır. bunu bi örnekle açıklayalım.
+
+
+dynamic x = "ali";
+Console.WriteLine(x.Gettype());
+x = true;
+Console.WriteLine(x.GetType());
+
+// string
+// boolean
+
+
+dynamic geçici veri tutma yeridir diyebiliriz.
+
+dynamic nerelerde tercih edilir?
+
+türünü bilmediğimiz ve verinin geldiğini düşünelim. var keywordu uzaktan gelen verilerde kullanılmaz.
+
+not : uzaktan gelen verilerin hangi türde olduğunu bilmediğimiz verileri karşılarken dynamic keywordu kullanılır. 
+uzaktan gelen veriyi var ile tanımlayamayız çünkü var tanımlandığı anda verinin atanmasını ister. dynamic runtime'a kadar bekleyebilir.
+
+int b = 5;
+b="kale";
+b = true;
+
+int veya başka bir belirli tür bu değişikliğe izin vermez.
+
+dynamic a = 3;
+a = true;
+a="isim";
+
+dynamic türde esneklik sağlar.
 

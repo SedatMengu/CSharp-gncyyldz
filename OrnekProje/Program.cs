@@ -94,15 +94,28 @@ using System.Reflection.Metadata;
 // Console.WriteLine(@string.GetType());
 
 
-// object @objectString = "cem";
+// object A = "cem";
 
-// string isim = (string)objectString ;
+// string isim = (string)A ;
 
 // Console.WriteLine(isim.ToUpper());
 
-int a = 7;
-int b = a;
-b = b * 3;
+// int a = 7;
+// int b = a;
+// b = b * 3;
+
+// Console.WriteLine(a);
+// Console.WriteLine(b);
+
+
+int b = 5;
+b="kale";
+b = true;
+
+
+dynamic a = 3;
+a = true;
+a="isim";
 
 Console.WriteLine(a);
-Console.WriteLine(b);
+Console.WriteLine(a.GetType());
