@@ -923,4 +923,4 @@ a = true;
 a="isim";
 
 dynamic türde esneklik sağlar.
-
+...
