@@ -108,14 +108,93 @@ using System.Reflection.Metadata;
 // Console.WriteLine(b);
 
 
-int b = 5;
-b="kale";
-b = true;
+// int b = 5;
+// b="kale";
+// b = true;
 
 
-dynamic a = 3;
-a = true;
-a="isim";
+// dynamic a = 3;
+// a = true;
+// a="isim";
 
-Console.WriteLine(a);
-Console.WriteLine(a.GetType());
+// Console.WriteLine(a);
+// Console.WriteLine(a.GetType());
+
+
+// string x = "123";
+
+// Console.WriteLine(int.Parse(x) * 2);
+
+// string y = "true";
+
+// if (bool.Parse(y) == true) ;
+//     Console.WriteLine("yes")
+// else;
+// {
+//     Console.WriteLine("no")
+// };
+
+// dynamic x = "12";
+
+// Console.WriteLine(short.Parse(x)*2);
+
+// var a = "9";
+
+// Console.WriteLine(double.Parse(a)*2);
+
+
+// object a = "7";
+
+// string b = (string)a;
+
+// Console.WriteLine(int.Parse(b)*3);
+
+// string @string = "2";
+
+
+// int a = Convert.ToBase64CharArray(@string);
+// // Convert.ToBase64String();
+// Convert.ToBoolean();
+// Convert.ToByte();
+// Convert.ToChar();
+// Convert.ToDateTime();
+// Convert.ToDecimal();
+// Convert.ToDouble();
+// Convert.ToHexString();
+// Convert.ToInt16();
+// Convert.ToInt32();
+// Convert.ToInt64();
+// Convert.ToSByte();
+// Convert.ToSingle();
+// Convert.ToString();
+// Convert.ToUInt16();
+// Convert.ToUInt32();
+// Convert.ToUInt64();
+// Convert.TryToBase64Chars();
+// Convert.TryFromBase64Chars();
+// Convert.TryFromBase64String();
+// Convert.GetTypeCode();
+
+
+// int x = 300;
+
+// // double y = x;   // herhangi bir veri kaybına yol açmayacağını bildiği için compiler bunu otomatik olarak yaptı. implicit type convertion
+
+
+// // byte z = x;   // explicit tür dönüşümü olacağı için şu şekilde hata verdi. Cannot implicitly convert type 'int' to 'byte'.An explicit conversion exists (are you missing a cast?)CS0266
+
+// byte w = (byte)x; // () cast operatörü ile bu dönüşümü explicit olarak yaptık. 
+// Console.WriteLine(w);
+
+
+// bool c = false;
+
+// decimal d = Convert.ToDecimal(c);
+
+// Console.WriteLine(d);
+
+int i = 1;
+
+bool b = Convert.ToBoolean(i);
+
+Console.WriteLine(b);
