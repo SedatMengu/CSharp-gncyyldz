@@ -193,8 +193,39 @@ using System.Reflection.Metadata;
 
 // Console.WriteLine(d);
 
-int i = 1;
+// int i = 1;
 
-bool b = Convert.ToBoolean(i);
+// bool b = Convert.ToBoolean(i);
 
-Console.WriteLine(b);
+// Console.WriteLine(b);
+
+
+// int l = 97;
+
+// char c = (char)l;
+
+// Console.WriteLine(c);
+
+// int a = 4;
+// int b = 6;
+
+// int c = a+b;
+
+// Console.WriteLine(c);
+
+// int i = 10;
+
+// Console.WriteLine(i++);
+// Console.WriteLine(++i);
+
+
+// int a = 9;
+// int b = a++;
+
+// Console.WriteLine(a);
+// Console.WriteLine(b);
+
+string a = "adnan";
+string b = "ziyagil";
+
+Console.WriteLine(a+b);
