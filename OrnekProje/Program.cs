@@ -225,7 +225,7 @@ using System.Reflection.Metadata;
 // Console.WriteLine(a);
 // Console.WriteLine(b);
 
-string a = "adnan";
-string b = "ziyagil";
+// string a = "adnan";
+// string b = "ziyagil";
 
-Console.WriteLine(a+b);
+// Console.WriteLine(a+b);
