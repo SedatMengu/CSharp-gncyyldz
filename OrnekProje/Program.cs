@@ -229,3 +229,8 @@ using System.Reflection.Metadata;
 // string b = "ziyagil";
 
 // Console.WriteLine(a+b);
+
+string a = "kemal";
+int b = 10;
+
+Console.WriteLine(a+b);
