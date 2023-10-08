@@ -230,7 +230,38 @@ using System.Reflection.Metadata;
 
 // Console.WriteLine(a+b);
 
-string a = "kemal";
-int b = 10;
+// string a = "kemal";
+// int b = 10;
 
-Console.WriteLine(a+b);
+// Console.WriteLine(a+b);
+
+// int  i = 9 ;
+
+// int i2 = 5;
+
+// Console.WriteLine((i == i2));
+// Console.WriteLine(!(i == i2));
+// Console.WriteLine((i == i2)!);
+
+
+// string value ="hello World";
+// string value11 = "";
+
+// String result = value ?? "null";
+// String result11 = value11 ?? "null";
+
+
+// Console.WriteLine(result);
+// Console.WriteLine(result11);
+
+// bool medeniHal = true;
+
+// int rakamsal = medeniHal==true ? 2:3;
+
+Console.WriteLine("lütfen bir sayı giriniz:" );
+
+int sayi = int.Parse(Console.ReadLine());
+
+int @ternary = sayi<3 ? sayi * 5 : (sayi>3 && sayi<9 ? sayi*3: (sayi>=9 && sayi%2 ==0 ? sayi*10 : (sayi%2==1 ? sayi : -1 )));
+
+
