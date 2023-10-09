@@ -258,10 +258,52 @@ using System.Reflection.Metadata;
 
 // int rakamsal = medeniHal==true ? 2:3;
 
-Console.WriteLine("lütfen bir sayı giriniz:" );
+// Console.Write("lütfen bir sayı giriniz: " );
 
-int sayi = int.Parse(Console.ReadLine());
+// int sayi = int.Parse(Console.ReadLine());
 
-int @ternary = sayi<3 ? sayi * 5 : (sayi>3 && sayi<9 ? sayi*3: (sayi>=9 && sayi%2 ==0 ? sayi*10 : (sayi%2==1 ? sayi : -1 )));
+// int @ternary = sayi<3 ? sayi * 5 : 
+//             (sayi >= 3 && sayi < 9 ? sayi*3 : 
+//             (sayi >= 9 && sayi % 2 ==0 ? sayi*10 : 
+//             (sayi % 2 == 1 ? sayi : -1 )));
+
+// Console.WriteLine(@ternary);
 
 
+// Console.Write("lütfen ihtimal giriniz: ");
+
+// string ihtimal = Console.ReadLine();
+
+// string sonuc = ihtimal == "1" ? "yağmur yağabilir şemsiye al!": 
+//                 ( ihtimal =="2" ? "güneşli , bol bol d vitamini alman dileğiyle..." :
+//                 ( ihtimal =="3" ? "hava kapalı , yağmur yağabilir": "ihtimal dışı seçenek"));
+
+// Console.WriteLine(sonuc);
+
+// Console.Write("lütfen hava durumu giriniz: ");
+
+// string ihtimal1 = Console.ReadLine();
+
+// string sonuc1 = ihtimal1 == "yağmurlu" ? "şemsiye al!": 
+//                 ( ihtimal1 =="güneşli" ? "bol bol d vitamini alman dileğiyle..." :
+//                 ( ihtimal1 =="kapalı" ? "yağmur yağabilir": "ihtimal dışı seçenek"));
+
+// Console.WriteLine(sonuc1);
+
+// Console.Write("lütfen hava durumu giriniz: ");
+
+// string ihtimal1 = Console.ReadLine();
+
+// string sonuc1 = ihtimal1 == "yağmurlu" ? "şemsiye al!": 
+//                 ( ihtimal1 =="güneşli" ? "bol bol d vitamini alman dileğiyle..." :
+//                 "yağmur yağabilir");
+
+// Console.WriteLine(sonuc1);
+
+// string b = null;
+
+// Console.WriteLine(b ?? " hiç bir değer girmediniz");
+
+int? a = 19;
+
+Console.WriteLine(a ?? 10);
