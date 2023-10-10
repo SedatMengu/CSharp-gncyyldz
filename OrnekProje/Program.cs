@@ -172,7 +172,8 @@ using System.Reflection.Metadata;
 
 int a = 100 ;
 
-Console.WriteLine(Convert.ToString(a)+2);
+Console.WriteLine(a.ToString()+100);
+
 // Console.WriteLine(typeof(a)
 
 
@@ -307,4 +308,13 @@ Console.WriteLine(Convert.ToString(a)+2);
 // int? a = 19;
 
 // Console.WriteLine(a ?? 10);
+
+// byte b = 100;
+
+// short a1 = b;
+
+
+long @longOrnek = 100;
+
+int @convertLong = (byte)@longOrnek;
 

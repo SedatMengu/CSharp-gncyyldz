@@ -1098,4 +1098,72 @@ int a = 100 ;
 Console.WriteLine(Convert.ToString(a)+2);         -----> // 1002
 Console.WriteLine(typeof(a));                     -----> tür dönüşümü yapılan bir değişkenin typeof ile türünü bulamadık.
 
+/// metinsel olmayan ifadeleri metinsel ifadeye dönüştürmeye alternatif 
 
+metinsel olayan ifadeleri convret fonksiyonu yardımı ile yapıyorduk ancak burada bir yöntem daha var. tostring fonksiyonu.
+
+int a = 100 ;
+
+Console.WriteLine(a.ToString()+100); -----> //100100  
+
+(herhangi bir türdeki verileri string ifadeye çevirmek istersek Convert kullanmadan da bu şekilde yapabiliriz.)
+
+bu özellik sadece string e çevirmek için kullanılır. 
+
+/// sayılar verilerde kendi aralarında tür dönüşümleri .
+
+2 şekilde bu tür dönüşümü mümkünüdür.
+
+1- en dar aralıktaki türden en geniş aralıktaki türe dönüş. 
+
+(en dardan en genişe türler)
+
+byte < short < int < long < float < double < decimal
+
+örnek vermek gerekirse byte türünde bir değişkeni herhangi programa herhangi bir açıklama yapmadan short veya daha üst bir sınıfa dönüştürebiliriz.
+
+byte a = 10;
+short b = a;        // burada herhangi bir hata ile karşılaşmayacağız ve program bu dönüşümü otomatik olarak yapacaktır.
+
+
+2- en geniş aralıktaki türden en dar aralıktaki türe dönüş,
+
+byte < short < int < long < float < double < decimal
+
+örnek vermek gerekirse long türünde tanımlanmış herhangi bir değeri herhangi bir açıklama yapmadan (değer aralığı içerisinde ols dahi) int , short , byte türlerine dönüşüm yapamayız.
+
+long a = 100;
+int b = a;      // burada hata ile karşılaşırız. sebebi herhangi bir açıklama yapmadan türü daraltıyor olmamızdır.
+
+long a = 100;
+int b = (int)a ;    // bu şekilde cast operatörleri içerisine a dönüşüm yapmak istediğimiz türü yazarsak hata ile karşılaşmayız. bir nevi programa açıklama yapmış oluyoruz.
+
+bu örnekte long bir alt tür olan int e dönüştü ancak short veya byte türüne de dönüşebilirdi. 
+
+not : eğer değer aralığı dışında kalan bir rakam olursa modunu alarak kalan sayıyı ekrana yazdırır.
+
+?? tür dönüşümlerine neden ihtiyaç duyarız ??
+
+farklı türlerdeki verileri birbirleri ile işleme alabilmek için , örneğin bir tam sayı ve bir metin değerini toplamak gerekse bunu yapabilmek için her 2 değerin de 
+aynı türde olması gerekir.
+
+- veri kaybını önlemek için,
+- veriler ile işlem yapabilmek için,
+- veri türü karışıklığını çözebilmek için,
+- veri türü uyuşmazlığını giderebilmek için...
+
+tür dönüşümleri yapılır.
+
+not : ister değer aralığında olsun ister olmasın ne zaman alt türe dönüşüm yapmamız gerekse cast opertörü ile dönüştüreceğimiz türü bildirmemiz gerekir.
+
+detay : 
+
+int a = 3000 ;
+
+short s = (byte)a;  -----> burada int ifadesi byte türüne explicit edilmiş ve oluşan değer short türüne implicit edilmiştir.
+
+
+/// checked ve unchecked 
+
+
+checked : explicit tür dönüşümü yapılırken runtime de bir hata fırlatılmasını sağlar. bu checked kullanılmaz ise herhangi bir hata almadan veri kaybı arka planda gerçekleşir.
