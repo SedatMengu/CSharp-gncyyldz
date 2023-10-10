@@ -2,22 +2,22 @@
 using System.Data;
 using System.Reflection.Metadata;
 
-// #region A operasyonu
-//     Console.WriteLine("Hello, World!");
-//     Console.WriteLine(typeof(bool).IsPrimitive);
-//     Console.WriteLine(typeof(char).IsPrimitive);
-//     Console.WriteLine(typeof(sbyte).IsPrimitive);
-//     Console.WriteLine(typeof(byte).IsPrimitive);
-//     Console.WriteLine(typeof(short).IsPrimitive);
-//     Console.WriteLine(typeof(ushort).IsPrimitive);
-//     Console.WriteLine(typeof(int).IsPrimitive);
-//     Console.WriteLine(typeof(uint).IsPrimitive);
-//     Console.WriteLine(typeof(long).IsPrimitive);
-//     Console.WriteLine(typeof(ulong).IsPrimitive);
-//     Console.WriteLine(typeof(float).IsPrimitive);
-//     Console.WriteLine(typeof(double).IsPrimitive);
-//     Console.WriteLine(typeof(decimal).IsPrimitive);
-// #endregion
+// Console.WriteLine(typeof(bool).IsPrimitive);
+// Console.WriteLine(typeof(char).IsPrimitive);
+// Console.WriteLine(typeof(sbyte).IsPrimitive);
+// Console.WriteLine(typeof(byte).IsPrimitive);
+// Console.WriteLine(typeof(short).IsPrimitive);
+// Console.WriteLine(typeof(ushort).IsPrimitive);
+// Console.WriteLine(typeof(int).IsPrimitive);
+// Console.WriteLine(typeof(uint).IsPrimitive);
+// Console.WriteLine(typeof(long).IsPrimitive);
+// Console.WriteLine(typeof(ulong).IsPrimitive);
+// Console.WriteLine(typeof(float).IsPrimitive);
+// Console.WriteLine(typeof(double).IsPrimitive);
+// Console.WriteLine(typeof(decimal).IsPrimitive);
+// Console.WriteLine(typeof(object).IsPrimitive);
+// Console.WriteLine(typeof(string).IsPrimitive);
+
 
 
 
@@ -125,31 +125,21 @@ using System.Reflection.Metadata;
 
 // Console.WriteLine(int.Parse(x) * 2);
 
-// string y = "true";
+// dynamic x1 = "12";
 
-// if (bool.Parse(y) == true) ;
-//     Console.WriteLine("yes")
-// else;
-// {
-//     Console.WriteLine("no")
-// };
-
-// dynamic x = "12";
-
-// Console.WriteLine(short.Parse(x)*2);
+// Console.WriteLine(short.Parse(x1)*2);
 
 // var a = "9";
 
 // Console.WriteLine(double.Parse(a)*2);
 
 
-// object a = "7";
+// object a1 = "7";
 
 // string b = (string)a;
 
 // Console.WriteLine(int.Parse(b)*3);
 
-// string @string = "2";
 
 
 // int a = Convert.ToBase64CharArray(@string);
@@ -175,6 +165,16 @@ using System.Reflection.Metadata;
 // Convert.TryFromBase64String();
 // Convert.GetTypeCode();
 
+// string x3 = "123";
+
+// Console.WriteLine(Convert.ToDouble(x3)*2);
+
+
+int a = 100 ;
+
+Console.WriteLine(Convert.ToString(a)+2);
+// Console.WriteLine(typeof(a)
+
 
 // int x = 300;
 
@@ -197,7 +197,7 @@ using System.Reflection.Metadata;
 
 // bool b = Convert.ToBoolean(i);
 
-// Console.WriteLine(b);
+// Console.WriteLine(b);"
 
 
 // int l = 97;
@@ -304,6 +304,7 @@ using System.Reflection.Metadata;
 
 // Console.WriteLine(b ?? " hiç bir değer girmediniz");
 
-int? a = 19;
+// int? a = 19;
 
-Console.WriteLine(a ?? 10);
+// Console.WriteLine(a ?? 10);
+

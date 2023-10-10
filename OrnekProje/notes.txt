@@ -923,6 +923,179 @@ a = true;
 a="isim";
 
 dynamic türde esneklik sağlar.
-...
-...
-...
+
+
+// değişkenler genel tekrar soruları:
+
+1- değişken nedir ve neden ihtiyaç duyarız.
+
+yazılımın amacı eldeki verileri bir şekilde anlamlı hale getirmektir. elimize bir şekilde geçen verileri , bu elimize geçme bir işlem neticesinde olabilir , 
+bir veri tabanından gelebilir , bir client tarafından gelebilir. developer ların amacı bu veriyi amacına uygun bir şekilde yönlendirerek arzu edilen sorulara
+cevap vermektir.
+
+2- value type , primitive type , nedir ? 
+
+value type      : yas , isim , tckimlik gibi değişkenleri tutan değerlerdir.
+primitive type  : diğer türler tarafından türetilmiş türlerdir.
+
+Console.WriteLine(typeof(bool).IsPrimitive);        // True
+Console.WriteLine(typeof(char).IsPrimitive);        // True
+Console.WriteLine(typeof(sbyte).IsPrimitive);       // True
+Console.WriteLine(typeof(byte).IsPrimitive);        // True
+Console.WriteLine(typeof(short).IsPrimitive);       // True
+Console.WriteLine(typeof(ushort).IsPrimitive);      // True
+Console.WriteLine(typeof(int).IsPrimitive);         // True
+Console.WriteLine(typeof(uint).IsPrimitive);        // True
+Console.WriteLine(typeof(long).IsPrimitive);        // True
+Console.WriteLine(typeof(ulong).IsPrimitive);       // True
+Console.WriteLine(typeof(float).IsPrimitive);       // True
+Console.WriteLine(typeof(double).IsPrimitive);      // True
+Console.WriteLine(typeof(decimal).IsPrimitive);     // False
+Console.WriteLine(typeof(object).IsPrimitive);      // False
+Console.WriteLine(typeof(string).IsPrimitive);      // False
+
+
+buradan çıkartılacak sonuç decimal , object ve string türleri primitive tür değillerdir.
+
+not : tanımlanmış bir dğeişkene değer atamak için önceden o değişkenin tanımlanmış olması zorunludur.
+
+örnek :
+
+int a ;
+
+a = 6;  // dada önce stack alanında 'a' isminde bir değişken ve alan oluşturduğumuz için içerisine türüne uygun bir değer ataması yapabiliriz,
+b = 9;  // daha önce stack alanına 'b' isminde bir değişken ve alan oluşturmadığımız için içerisine herhangi bir değer ataması yapamayız.
+
+
+tuple türü : içerisinde birden fazla değişken barındırabilen bir yapıdır.
+
+
+/// kod nasıl çalışır ;
+
+kodun çalışması için geliştrilmiş 2 adet yöntem vardır.
+
+1- senkron çalışma  : bir işlem bitmeden diğer bir işlemin başlamadığı , yöntemdir. (trafikte öndeki araba gitmeden arkadaki araba gidemez).
+                    bu yöntemde herhangi bir t anında yapılan işi tespit edebiliriz.
+
+2- asenkron çalışma : paralel olarak birden fazla işin aynı anda yapılması yöntemidir. (oyun oynarken müzik dinlemeyebiliriz).
+                    bu yöntemde herhangi bir t zamanında yapılan işi tespit edemeyiz.
+
+
+not : yazılımlar varsayılan olarak senkron çalışırlar , ancak gelişen teknolojiler sayesine tamamına yakını asenkron olarak yola devam ederler.
+
+
+
+/// kod konsepti nasıldır ? nasıl oluşturulur
+
+kod inşa edilirken her zaman şu yapı vardır.
+
+_____________ = _____________
+tür ,           bu taraftaki yazılı olan kodlar bir işlem
+referans,       yapacak ve geriye bir değer döndürecek.
+değişken vs.    (değer döndürmeyede bilir , böyle durumlarda bu kısım olmaz.)
+
+sağ tarafta bir işlem yapılacak ve sol taraftarki tür , referans , değişken vs ye atanacak.
+
+
+/// ; operatörü
+
+; operatörü compiler tarafından konseptin bittiğini işaret eder. compiler satır satır değil konsept konsept çalıştığından dolayı bu ; operatör üçok önemlidir.
+
+not : bir konsept biter ve konseptin sonuna ; işaretini koymaz isek hata alırız:
+nor : ; operatörü birden fazla kullanılabilir herhangi bir hataya sebebiyet vermez ancak hoş karşılanmaz. 
+not : compiler tarafından kodlar satır satır değil konsept konsept derlenir.
+
+
+/// tür dönüşümü nedir ve neden ihtiyaç duyarız?
+
+development sürecinde elimizdeki verilerin türlerini değiştirebiliriz. ancak her tür istediğimiz bir türe dönüşemez. 
+örneğin elimizde bir 'elma' var ve biz bu elmayı en fazla bir üst sınıf olan 'meyve' türünde saklayabiliriz.
+bir development hiçbir şeyi boş yere yapmaz. kodlamanın temel mantığını biz elimze bir şekilde gelen veriyi uygun hale getirerek,
+uygun çıktılar oluşturmak için bu yola girdik , ve bu yolculukta elimze string bir değişken geldiğini varsayalım. 
+bu string ifadenin değeri "123" olsun. bu veriyi string olarak *2 işlemine tabi tutamıyoruz ancak çarpmamız gerekiyor.
+tam bu noktada tür dönüşümüne ihtiyacımız vardır.
+
+
+not : tür dönüşümleri mantıksız olmamalı.
+not : farklı servislerden gelen verileri uygun türlere dönüştürme ihtiyacı olabilir, bu noktada tür dönüşümü yapılmalıdır.
+not : elimzideki veriye uygun olmayan bir türe dönüştürmeye çalışmak hatalara sebebiyet verebilir. örneğin bool türündeki bir veriyi char içinde tutamayız.
+
+örnek  : elimizde 'meyve' verisi var. 'meyve' içerisinde elam olduğunu biliyoruz, bu türü 'armut' olarak dönüştürürsek patlarız.
+örnek2 : bir şekilde elimize 'ahmet' diye bir veri geldi. biz bu veriyi bool türüne dönüştüremeyiz.
+örnek3 : bir şekilde elimize "123" diye bir veri geldi . biz bu veriyi char türüne dönüştüremeyiz.
+
+
+/// Parse fonksiyonu:
+
+metinsel ifadeleri diğer türlere dönüştürmeye yarayan fonksiyondur.
+herhangi bir string ifadeyi int , bool , char gibi türlere dönüştürür.
+
+not : sadece string ifadelerde dönüşüm yapabilir.
+
+
+string ------> Parse ------> char (olur)
+string ------> Parse ------> int (olur)
+string ------> Parse ------> bool (olur)
+int    ------> Parse ------> string (olmazzzzzz)
+
+kullanımı : 
+
+string x = "123";
+
+Console.WriteLine(int.Parse(x) * 2); -----> // 246 
+
+çözülmesi gereken soru:
+
+dışarıdan elimze string bir ifade geldi ve biz bu ifadenin 2 katını alacağız.
+
+çözüm :
+
+sonuca ulaşmak için 2 ile çarpabilmek için matematiksel bir ifadeizin olması gerekir. 
+bu sebepten dolayı elimizdeki veriyi matematiksel bir veriye dönüştürdük ve sonuca ulaştık.
+
+
+önemli not : tür dönüşümlerinde dikkat edilmesi gereken tek husus dönüşüm yapılacak verinin türüne uygun bir hedef belirlemektir.
+
+dynamic x1 = "12";
+
+Console.WriteLine(short.Parse(x1)*2); -----> // 24
+
+var a = "9";
+
+Console.WriteLine(double.Parse(a)*2); -----> // 18
+
+object a1 = "7";
+
+string b = (string)a;       ---> object türündeki veriyi burada unboxing yaparak string bir veriye dönüştürdük.
+
+Console.WriteLine(int.Parse(b)*3);  -----> // 21
+
+bu son örnekte object türünden bir veri üzerinde işlem yaptığımızdan kaynaklı olarak boxing-unboxing işlemine tabi tutma ihtiyacı oluştu.
+
+/// convert fonksiyonu : 
+
+herhangi bir türü herhangi bir türe dönüştürmek için kullanılır. Parse komutunun yaptıklarını da yapabilir.
+
+not : int16 - short türüdür
+      int32 - int türüdür
+      int64 - long türüdür.
+
+
+parse fonksiyonu ile dönüşüm : 
+
+string x = "123";
+
+Console.WriteLine(int.Parse(x) * 2); -----> // 246 
+
+convert fonksiyonu ile dönüşüm:
+
+string x = "123";
+
+Console.WriteLine(Convert.ToDouble(x) * 2); -----> // 246 
+
+int a = 100 ;
+
+Console.WriteLine(Convert.ToString(a)+2);         -----> // 1002
+Console.WriteLine(typeof(a));                     -----> tür dönüşümü yapılan bir değişkenin typeof ile türünü bulamadık.
+
+
