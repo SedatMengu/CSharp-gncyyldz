@@ -1167,11 +1167,58 @@ short s = (byte)a;  -----> burada int ifadesi byte türüne explicit edilmiş ve
 
 
 checked : explicit tür dönüşümü yapılırken runtime de bir hata fırlatılmasını sağlar. bu checked kullanılmaz ise herhangi bir hata almadan veri kaybı arka planda gerçekleşir.
-...
-...
-...
-...
-...
-...
-...
-...
+
+{
+    veri kaybı potansiyeli olan dönüşüm kodları bu alana yazılır
+}
+
+unchecked : explicit tür dönüşümü yapılırken hata fırlatmadan uygulamanın çalışmaya devam etmesini sağlar. 
+
+NOT : tür dönüşümleri default olarak unchecked dir.
+
+/// özel türler arasında tür dönüşümleri 
+
+1- bool ile sayısal değerler arasında tür dönüşümü,
+2- sayısal değerler ile bool arasında tür dönüşümü,
+3- char ile sayılar türler arasında tür dönüşümü,
+4- sayılar türler ile char arasında tür dönüşümü
+
+1- bool ile sayısal değerler arasında tür dönüşümü,
+    elimizdeki mantıksal değer taşına bir veriyi herhangi bir sayısal veriye convert edersek ilgili değerin sayısal karşılığını elde ederiz.
+
+    true ---> 1
+    false ---> 0
+
+    örnek : bool b = true;
+            int i = Convert.ToInt32(b);
+
+            Console.WriteLine(i);       ---> 1
+
+            içerisinde true değeri taşıan b isimli boolean türündeki bir veriyi dönüştürdük.
+
+2- sayısal değerler ile bool arasında tür dönüşümü,
+    Elimizdeki sayısal değer taşıyan bir veiriyi mantıksal bir veriye convert edersek ilgili değerin mantıksal karşılığını elde ederiz.
+
+    örnek : 
+        short s = 1;
+        bool a = Convert.ToBoolean(s);
+        Console.WriteLine(a);       ---> true
+    
+not : 0 dışındaki bütün değerlerin mantıksal karşılığı true dur.
+
+3- char ile sayılar türler arasında tür dönüşümü,
+    klavyede görünen her bir karakterin arka planda bir ASCII kodu vardır.
+
+
+    ASCII kodları :
+
+    A   B    C   D   E   F   G   H   İ   J   K   L   M   N   O   P   R   S   T   U   V  W   X   Y   Z 
+    65  66  67  68  69  70   71 72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+
+
+    a   b    c   d   e   f   g   h   ı   j   k   l   m   n   o   p   r   s   t   u   v   w   x   y   z
+    97  98  99  100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121
+
+    ASCII : bilgisayardaki her bir karakterin sayısal bir karşlığı vardır. bu sayısal değerlere ascii kodları denir.
+
+    char türündeki herahngi bir veriyi integer veri türüne dönüştürmek istersek bize ascii kodlarını verir.
