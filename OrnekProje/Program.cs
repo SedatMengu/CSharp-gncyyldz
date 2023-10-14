@@ -170,9 +170,9 @@ using System.Reflection.Metadata;
 // Console.WriteLine(Convert.ToDouble(x3)*2);
 
 
-int a = 100 ;
+// int a = 100 ;
 
-Console.WriteLine(a.ToString()+100);
+// Console.WriteLine(a.ToString()+100);
 
 // Console.WriteLine(typeof(a)
 
@@ -314,7 +314,15 @@ Console.WriteLine(a.ToString()+100);
 // short a1 = b;
 
 
-long @longOrnek = 100;
+// long @longOrnek = 100;
 
-int @convertLong = (byte)@longOrnek;
+// // int @convertLong = (byte)@longOrnek;
 
+// bool b = true;
+// int i = Convert.ToInt32(b);
+
+// Console.WriteLine(i);
+
+short s = 8;
+bool a = Convert.ToBoolean(s);
+Console.WriteLine(a);
