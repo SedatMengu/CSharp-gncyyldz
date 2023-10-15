@@ -323,6 +323,76 @@ using System.Reflection.Metadata;
 
 // Console.WriteLine(i);
 
-short s = 8;
-bool a = Convert.ToBoolean(s);
-Console.WriteLine(a);
+// short s = 8;
+// bool a = Convert.ToBoolean(s);
+// Console.WriteLine(a);
+
+// char x = 'ğ';
+
+// short b = (short)x;
+
+// Console.WriteLine(b);
+
+// short i = 312 ;
+
+// char a = (char)i;
+
+// Console.WriteLine(a);
+
+// int deger = 97;
+// char @char = (char)deger;
+// Console.WriteLine(@char);
+
+// checked
+// {
+//     short @short = 300;
+
+//     byte @byte = (byte)@short;
+
+//     Console.WriteLine(@byte);
+// }
+
+// byte b1 = 156;
+// byte b2 = 3;
+// int sonuc = b1 + b2;
+// Console.WriteLine(b1+b2);
+
+// int i = 5;
+// i /=2;
+// Console.WriteLine(i);
+
+// string s1 = "adnan";
+// string s2 = "Ziyagil";
+// Console.WriteLine(s1!=s2);
+
+// int i1 = 2;
+// int i2 = 3;
+// (i1!=i2);
+// Console.WriteLine(i1==i2);
+
+// int i1 = 100;
+// int i2 = 200;
+
+// bool max = (i1>i2) ? true : false ;
+// Console.Write(max);
+
+// string value = "Hello World!";
+// string result = value ?? "null";
+// Console.WriteLine(result);
+
+// bool medeniHal= false;
+
+// if (medeniHal == true)
+// { 
+//     Console.WriteLine("Evlilere Kampamya");
+// }
+// else
+// {
+//     Console.WriteLine('a');
+// }
+
+int yas = 32;
+
+string sonuc = (yas<25) ? "A" : ((yas==25)? "B":"C");
+
+Console.WriteLine(sonuc);

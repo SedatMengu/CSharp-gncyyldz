@@ -1181,7 +1181,7 @@ NOT : tür dönüşümleri default olarak unchecked dir.
 1- bool ile sayısal değerler arasında tür dönüşümü,
 2- sayısal değerler ile bool arasında tür dönüşümü,
 3- char ile sayılar türler arasında tür dönüşümü,
-4- sayılar türler ile char arasında tür dönüşümü
+4- sayılar türler ile char arasında tür dönüşümü.
 
 1- bool ile sayısal değerler arasında tür dönüşümü,
     elimizdeki mantıksal değer taşına bir veriyi herhangi bir sayısal veriye convert edersek ilgili değerin sayısal karşılığını elde ederiz.
@@ -1221,4 +1221,317 @@ not : 0 dışındaki bütün değerlerin mantıksal karşılığı true dur.
 
     ASCII : bilgisayardaki her bir karakterin sayısal bir karşlığı vardır. bu sayısal değerlere ascii kodları denir.
 
-    char türündeki herahngi bir veriyi integer veri türüne dönüştürmek istersek bize ascii kodlarını verir.
+    char türündeki herhangi bir veriyi integer veri türüne dönüştürmek istersek bize ascii kodlarını verir. tersi de mümkündür.
+    
+
+    örnek :
+        char a = 'a';
+        int b = (int)a ;
+        Console.WriteLine(b);           ---> 97
+
+
+        char a = '-';
+        int b = (int)a;
+        Console.WriteLine(b);           ---> 45
+
+    bu tür dönüşümlerde explicit tür dönüşümü yapılır. 
+
+
+
+4- sayılar türler ile char arasında tür dönüşümü.
+
+    örnek;
+
+        int deger = 97;
+        char @char = (char)deger;
+        Console.WriteLine(@char);           --->    a
+
+
+// tür dönüşümleri genel konu tekrarı:
+
+1- tür dönüşümlerini neden yaparız ?
+    yazılım demek elde edilen verileri uygun algoritmalar yardımı ile doğru yöntem ve şekiller yardımı ile istenen çıktıyı oluşturmaktır. 
+    veriler bu yolculuk esnasında bazı işlemlere tabi tutulurlar , bunlardan bir tanesi de tür dönüşümleridir.
+    bu dönüşümlere veriler arasında karşılaştırma yapabilmek , veriler üzerine matematiksel işlemler yapabilmek , bellek optimizasyonu gibi sebeplerden ihtiyaç duyarız.
+2- parse fonksiyonu nedir ne için kullanılır?
+    sadece string ifadeler üzerinde çalışan bir fonksiyondur. string türe veya string türden bi dönüşüm olması durumunda kullanılır.
+3- convert fonksiyonu nedir ne için kullanılır?
+    bütün tür dönüşümlerinde çalışan bir fonksiyondur. 
+4- sayılar türlü verilerin kendi aralarında tür dönüşümleri nelerdir?
+    genel anlamda bellek optimizasyonu için kullanılır. byte türü 8 bit lik yer tutarken decimal 128 bit lik yer kaplamaktadır.
+    byte ile tutulabilecek bir veriyi decimal ile tutarak gereksiz bellek kullanımına yol açmışız demektir.
+5- implicit ve explicit tür dönüşümleri nasıl yapılır?
+    implicit tür dönüşümü sayılar veri türlerinde daha geniş bir değer aralığı tutan verilere bilgisayar yardımı ile dönüştümeye denir. 
+    bu dönüşümde developer ilave herahngi bir şey yapmasına gerek yoktur. 
+
+    explicit tür dönüşümü sayısal verileri daha dar bir değer araşoğı tutan verilere dönüştürmeye denir.
+    bu dönüşümde bilgisayarın herhangi bir sorumluluğu yoktur. bütün sorumluluk developer dadır. 
+    burada dikkat edilmesi gereken nokta byte kapasitesini aşmayan bir değeri daha üst segmentte bir türde saklıyorsak ve bunu byte türüne dönüştürmek istersek 
+    gene explicit tür dönüşümü yapmak gerekir. BİLGİSAYAR VERİNİN TÜRÜ İLE İLGİLENİR , VERİNİN DEĞERİ İLE DEĞİL...
+6- checked ve unchecked kavramları?
+    normal şartlarda bilinçli tür dönüşümlerinde herhangi bir hata ile karşılaşmadan arka planda işlemler gerçekleşir.
+    burada bilinçli olarak tür dönüşümünde hata fırtlatmak istediğimiz bir durumda 'checked' olayını kullanabiliriz.
+
+    checked
+    {
+        short @short = 300;
+        byte @byte = (byte)@short;
+        Console.WriteLine(@byte);
+    }
+
+    bu kodlar checked arasına yazılı olmasaydı herahangi bir hat görünmeden arka planda yapılacaktı. 
+
+7- özel tür dönüşümleri ?
+    bool - sayısal , sayısal - bool , char - sayısal , sayısal - char arasındaki tür dönüşümleridir.
+
+    sayısal - bool dönüşümlerinde 0 harici bütün değerler true olarak gelir.
+    sayısal-bool , bool-sayısal tür dönüşümleri convert ile yapılır.
+    char-sayısal , sayısal-char tür dönüşümleri explicit olarak yapılır. ve sonuç olarak ascii kaynak kodlarını döner.
+
+    
+8- ascii kaynak kodları nedir ve ne işe yararlar ?
+    klavyedeki her bir ifadenin ascii kaynak kodu karşılığı vardır. bu kodlar bilgiayar sistemlerinde sıkça kullanılırlar.
+
+
+/// operatörler nedir ?
+
+bir işin sorumluluğunu üstlenen temel yapı taşlarıdır , bir operasyon gerçekleştirirler.
+
+bir operatör teorik olarak sağında ve solunda bulunan değerler üzerinde bir bağıntı oluştururlar.
+
+opertörler kullanılırken geriye dönüş değerlerine dikkat edilmelidir. 
+
+operatör çeşitleri;
+
+1- aritmatik operatörler,
+2- karşılaştırma operatörleri,
+3- mantıksal operatörler,
+4- özel işlemler operatörleri.
+5- metinsel ifalerde kullanılan operatörler.
+
+1- matematiksel operatörler
+    + , - , * , / , % 
+    iki sayısal değer üzerinde işlem yapan operatörler oldukları için işlem neticesinde 'uygun' türde sonuç return ederler.
+
+    oparetörler geriye hangi değer dönüreceğini visaul studio code özelliği gereği önizmele olarak bizlere söyler.
+
+    not : aynı türde yapılan aritmatik işlemlerin sonucu gene aynı türde return edilir. bu noktada istisna olarak 2 tane byte türü arasınd yapılan işlemler 
+    int türünde return edilmektedir. 2 farklı türde yapılan aritmatik işlemlerde sonuç büyük olan türde olacaktır.
+
+    int x = 3;
+    double y = 325;
+    sonuc = x + y ;
+    Console.WriteLine(sonuc)        ---> sonuç double türünde olacaktır.
+
+    not : 2 'byte' türü arasında yapılan aritmatik işlemlerin sonucu 'int' türündedir.
+
+2- karşılaştırma operatörleri,
+
+    > , < , >= , <= , == 
+
+    iki sayısal değer arasında büyüklük , küçüklük , eşitlik durumuna göre karşılaştırma yapan operatörlerdir.
+
+    not : metinsel ifadelerdede == operatörü kullanılabilir.
+
+    karşılaştırma operatörleri true ya da false döner.
+
+3- mantıksal operatörler,
+    && , || , ^ 
+    tüm şartları değerlendirip kendine göre sonuç döndüren operatörlerdir. bu operatörler geriye bool değer döndürürler.
+
+    || ile ^ arasındaki temel fark : 
+
+    || operaötünde en az 1 adet true olması gerekir,
+    ^ operatöründe 2 durumdan yanlızca 1 tanesi doğru olması gerekir.
+
+    && (ve operatörü)
+    true && true ---> true
+    true && false ---> false
+    false && true ---> false
+    false && false ---> false
+
+    || (veya opertörü)
+    true || true ---> true
+    true || false ---> true
+    fasle || true ---> true
+    false || false ---> false
+
+    ^ (ya da operaötür) her 2 ihtimalden yanlız birisi gerçekleşecek.
+    true ^ true ---> fasle
+    false ^ true ---> true
+    true ^ false ---> true
+    false ^ false ---> false
+
+
+4- özel işlemler operatörleri.
+    ++ , -- , += , -= , *= , /= , ! , != 
+
+    ++ , -- operatörleri : bir artırma veya 1 azaltmaya yarayan operatörlerdir.
+
+    int i = 5;  ---> i ye 5 değerini atadık.
+    i ++;   ---> compiler bunu (i = i+1) olarak okudu.
+
+    i++ ile ++i arasındaki fark nedir ?
+
+    ++i önce i değerini 1 artırır sonra i değerini return eder , i++ da ise önce i değerini return eder daha sonra değeri 1 artırır.
+
+    Örnek : int i = 10;
+            Console.WriteLine(i++);     ---> 10
+
+            int i = 10 ;
+            Console.WriteLine(++i);     ---> 11
+        
+    += , -= , *= , /= operatörleri : üzerine ekleme ve yığma oparetörleridir. tamamı aritmatik işlemlerde kullanılır. ilave olarak += operatörü metinsel ifadeler için de kullanılabilir.
+
+    örnek : int i = 5;
+            i += 4 ;
+            Console.Writeline(i);       ---> 9
+
+            int i = 5;
+            i -= 1 ;
+            Console.Writeline(i);       ---> 4
+
+            int i = 5;
+            i *= 2 ;
+            Console.Writeline(i);       ---> 10
+
+            int i = 5;
+            i /= 2 ;
+            Console.Writeline(i);       ---> 2
+
+    ! operatörü : değil operatörü olarak bilinir. tek başına bir anlam ifade etmez, 
+
+        ! operatörü kullanım örnekler;
+
+        Console.WriteLine(!true);   ---> false
+        Console.WriteLine(true);    ---> true
+
+        Console.WriteLine(2 != 3 ); ---> true
+        Console.WriteLine(3 != 3 ); ---> false
+
+
+5- metinsel ifalerde kullanılan operatörler.
+
+    + , += , == , !=
+
+    + operatörü : metinsel ifadelerde birleştirme de yapan operötlerdir.
+
+    string s1 = "adnan";
+    string s2 = "Ziyagil";
+
+    Console.WriteLine(s1+s2);       ---> adnanZiyagil
+
+    += operatörü : bir metin üzerine başka bir metin ekleme yapan operatördür.
+
+    string s1 = "adnan";
+    string s2 = "Ziyagil";
+    s1 += s2 ;              (tam bu noktada s2 değişkenini s1 değişkeni üzerine yığdık).
+    Console.WriteLine(s1)  ---> adnanZiyagil
+
+    == operatörü : 2 metinsel ifadeyi karşılaştırmak için kullanılır. sonuç olarak true veya false döner.
+
+    string s1 = "adnan";
+    string s2 = "Ziyagil";
+    Console.WriteLine(s1==s1)  ---> false
+
+    not : stirng ifadelerde > veya < karşılaştırma olarak kullanılamaz. 
+
+    != operatörü : == ifadesinin tersini almada kullanılan operatördür. (eşit değilmi)
+
+    string s1 = "adnan";
+    string s2 = "Ziyagil";
+    Console.WriteLine(s1!=s1)  ---> true
+
+/// ternary operatörü : 
+
+    kalıpsal bir operatördür ve çok fazla kullanılır. şarta bağlı değer döndüren bir operatördür.
+
+    not : bir değişkene , değere, property e değer atarken , eğerki bu değer bir şarta göre fark edecekse satır bazlı / tek satırda bu şart kontrolünü yaparak 
+    duruma göre değer döndürmemizi sağlayan kalıpsal bir operatördür
+
+    not : ternary operaötür bir koşulu değerlendirir ve koşul doğru ise bir değeri , yanlış ise bir başka değeri döndürür.
+        ternary opertörü if-else yapısının daha kısa bir  alternatifi olarak kullanılır.
+    
+    ternary operatörü 3 kısımdan oluşur.
+
+    1- koşul : koşulu değerlendiren bir ifade (bool türünde olmalı),
+    2- eğer doğruysa : koşul doğru ise döndürülecek değer,
+    3- eğer yanlışsa : koşul yanlışsa döndürülecek değer.
+
+    ___________________________ ? ___________________________: ___________________________;
+    (bool sonuç üretecek alan)      (true ise dönecek alan)     (false ise dönecek alan)
+   
+    terbary operaötür ile yapılabilecek işlemler ,
+
+    1- karşılatırmalar,
+    2- atama işlemleri,
+    3- döndürme işlemleri,
+    4- null kontrolü,
+
+
+    1- karşılaştırma :
+
+     örnek :
+        int i1 = 100 , i2 = 200;
+        int max = (i1>i2) ? true : false;
+        Console.Write(max);         ---> false
+
+    2- atama : 
+        int i1 = 100 , i2 = 200;
+        int max = (i1>i2) ? i1 : i2;
+        Console.Write(max);         ---> 200
+
+    3- döndürme :
+        int i1 = 100 , i2 = 200;
+        int max = (i1>i2) ? i1 : i2;
+        Console.Write(max);         ---> 200
+
+    4- null kontrolü :
+        string value = "hello world!";
+        string result = value == "" ? value : "null";
+        Console.WriteLine(result);          ---> hello world!
+
+        bu kontrolün özelleştirilmiş bir hali vardır. şöyle ki,
+
+        string value = "hello world!";
+        string result = value ?? "null";
+        Console.WriteLine(result);          ---> hello world!
+
+    if-else yapısı ile ternary karşılaştırması :
+
+    if-esle yapısı :
+
+    bool medeniHal= true;
+
+    if (medeniHal == true)
+    {
+        Console.WriteLine("Evlilere Kampamya");
+    }
+    else
+    {
+        Console.WriteLine("Bekarlara Kampanya");
+    }
+
+    ternary yapısı :
+
+    bool medeniHal= true;
+
+    string message = (medeniHal == true) ? "Evlilere Kampanya" : "Bekarlara Kampanya" ;
+
+    Console.WriteLine(message);
+
+    not : ternary operatöründe her iki ihtiamlde de döndürülecek değer aynı olmak zorundadır. if else yapısında döndürülecek sonuçlar farklı türlerde olabilir.
+
+    ternary örnek :
+
+    yaşı 25 den küçük olanlara A,
+        25 e eşit olanlara B,
+        25 den büyük olanlara C değerini döndüren bi ternary operatörü oluşturalım.
+
+    int yas = 32;
+
+    string sonuc = (yas<25) ? "A" : ((yas==25)? "B":"C");  
+    Console.WriteLine(sonuc);           ---> c
+
+
+/// assign operatörü
