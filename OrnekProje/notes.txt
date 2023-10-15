@@ -1535,3 +1535,117 @@ operatör çeşitleri;
 
 
 /// assign operatörü
+
+atama operatörlerinde sağ-sol önemlidir. 
+eğer değişken sol tarafta çağırılıyor ise değişkenin kendisi , sağ tarafta çağırılıyorsa değişkenin taşıdığı değer gelir.
+
+not : assign operatörü bazı durumlarda davranış değiştirerek referans etme davranışı sergileyebilir.
+
+/// member access (üye erişim operatörü ".")
+
+elimizdeki değerlerin türleri alt elemanlara sahiptir. bu alt elemanlara ulaşmak için "." operatörü kullanılır.
+
+üye erşimi ne demektir ?
+
+-   bir nesnenin veya sınıfın üyelerine erişmek için kullanılan bir işlemdir.
+
+not : "." operetörü bir nesnenin üyelerine erişmenin yanında static üyelere erişmek için de kullanılabilir.
+
+not : static üyeler nesne özellikleri oluşturmadan erişilebilen sınıf üyeleridir.
+
+int a = 5;
+
+a.CompareTo
+ .Equals
+ .GetHashCode
+ .GetType
+ .GetTypeCode
+ .ToString
+ .TryFormat
+
+buradaki "." operatöründen sonra gelenler int türüne ait member access lerdir.
+
+string b = "ali";
+
+b.Aggregate
+ .All
+ .Any
+ .Append
+ .AsEnumerable
+ .AsMemory
+ .AsParallel
+ .
+ .
+ .
+
+buradaki "." operatöründen sonra gelenler string türüne ait member access lerdir.
+
+/// cast operatörü 
+
+daha mnce cast operatörlerini 3 yerde gördük
+
+1- boxing edilmiş bir veriyi unboxing ederken,
+2- explicit tür dönüşümünde 
+3- char - sayısal özel tür dönüşümlerinde (ASCII Kodlarını verirdi)
+4- polimorfizm durumunda base class referansı ile işaretlenen bir nesneyi kendi türünde elde edebilmemizi sağlamaktadır. (ileride göreceğiz)
+
+
+/// sizeof operatörü:
+
+bir verinin veya ifadenin bellekte ne kadar yer kapladığını integer olarak geriye döndüren operatördür. (kaç byte olduğunu verir.)
+
+Console.WriteLine(sizeof(byte));    ---> 1
+Console.WriteLine(sizeof(sbyte));   ---> 1
+Console.WriteLine(sizeof(int));     ---> 4
+Console.WriteLine(sizeof(uint));    ---> 4
+Console.WriteLine(sizeof(double));  ---> 8
+Console.WriteLine(sizeof(decimal)); ---> 16
+Console.WriteLine(sizeof(float));   ---> 4
+Console.WriteLine(sizeof(char));    ---> 2
+Console.WriteLine(sizeof(long));    ---> 8
+
+
+/// typeof operatörü :
+bir veri veya ifadenin türünü döndürmek için kullanılan operatördür. türü tespit etmek için kullanılır.
+
+
+/// default operatörü :
+
+herhangi bir operatörün default değerini döndüren bir operatördür. 
+
+default değer nedir ?
+
+- geçerli her tür için yazılım tarafından varsayılan olarak tanımlanmış değerdir.
+
+Console.WriteLine(default(decimal));    ---> 0
+Console.WriteLine(default(string));     ---> null
+Console.WriteLine(default(short));      --->0
+Console.WriteLine(default(byte));       --->0
+Console.WriteLine(default(long));       --->0
+Console.WriteLine(default(int));        --->0
+Console.WriteLine(default(byte));       --->0
+Console.WriteLine(default(char));       ---> null
+
+herhangi bir değişkene default değer atamak için;
+
+short a = default;
+int b = defaul;
+string c = default;
+
+
+/// is operatörü :
+
+asıl kıllanım amacı boxing işlemine tabi tutulmuş herhangi bir değerin öz türüne ulaşmak için kullanılır.
+is operatörü denetleme neticesinde boolean türünde değer döndürür.
+
+object @object = true;
+
+Console.WriteLine(@object is null);     -->False
+Console.WriteLine(@object is Program);  -->False
+Console.WriteLine(@object is int);      -->False
+Console.WriteLine(@object is null);     -->False
+Console.WriteLine(@object is bool);     -->True
+
+
+not : is ope
+

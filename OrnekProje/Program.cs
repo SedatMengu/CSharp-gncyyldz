@@ -391,8 +391,13 @@ using System.Reflection.Metadata;
 //     Console.WriteLine('a');
 // }
 
-int yas = 32;
+object @object = true;
 
-string sonuc = (yas<25) ? "A" : ((yas==25)? "B":"C");
+Console.WriteLine(@object is null);
+Console.WriteLine(@object is Program);
+Console.WriteLine(@object is int);
+Console.WriteLine(@object is null);
+Console.WriteLine(@object is bool);
 
-Console.WriteLine(sonuc);
+
+
