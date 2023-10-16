@@ -1647,5 +1647,5 @@ Console.WriteLine(@object is null);     -->False
 Console.WriteLine(@object is bool);     -->True
 
 
-not : is ope
+not : is operatörü 
 
