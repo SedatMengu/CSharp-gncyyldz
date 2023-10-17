@@ -1635,7 +1635,7 @@ string c = default;
 
 /// is operatörü :
 
-asıl kıllanım amacı boxing işlemine tabi tutulmuş herhangi bir değerin öz türüne ulaşmak için kullanılır.
+asıl kıllanım amacı boxing işlemine tabi tutulmuş herhangi bir değerin öz türüne ulaşmaktır.
 is operatörü denetleme neticesinde boolean türünde değer döndürür.
 
 object @object = true;
@@ -1647,5 +1647,131 @@ Console.WriteLine(@object is null);     -->False
 Console.WriteLine(@object is bool);     -->True
 
 
-not : is operatörü 
+/// is null operatörü
 
+    bir değerin null olup olmmadığnı kontrol etmek için kullanılan ve geriye boolean değer döndüren opeartördür.
+
+    örnek :
+
+    string @string ="abcd";
+    string @string2 ="";
+    Console.WriteLine(@string is null);         ---> false
+    Console.WriteLine(@string2 is null);        ---> True
+
+
+not : 'is null' operatörünü sadece nullable olan değerler için kullanabiliriz.
+
+not2: 2 tür değişken vardır.
+
+1- değer türlü değişkenler : bunlar null olamazlar.
+2- referans türlü değişkenler : bunlar null olabilirler. (string referans türlü bir değişkendir.)
+
+/// 'is not null' 
+    is null ile aynı görevlere sahiptir.
+
+
+/// as operatörü:
+    cast operatörüne alternatif olarak üretilmiştir. dönüşümlerde kullanılır.
+
+    cast operatörünü sadece 3 alanda kullanabiliyorduk.
+
+    1- boxing edilmiş bir veriyi unboxing ederken,
+    2- explicit (bilinçli) tür dönüşümünde 
+    3- char - sayısal özel tür dönüşümlerinde (ASCII Kodlarını verirdi)
+    4- polimorfizm durumunda base class referansı ile işaretlenen bir nesneyi kendi türünde elde edebilmemizi sağlamaktadır. (ileride göreceğiz)
+
+buradaki maddelerden 1.madde olan boxing-unboxing durumuna alterantif olarak türetilmiştir.
+
+cast operötür ile boxing içerisinden everi alırken içerisindeki verinin türüne uygun bir değişkene atama yapmak gerekirdi. 
+aksi halde hata alarak uygulamanın sonlanmasına sebebiyet verir.
+as operatörü bu hatayı almamızı engelleyerek null değer dönüdrür. işlem gene yapılmaz ancak hata alarak programın durmasının önüne geçilmiş olur.
+
+örnek : 
+
+1- cast operatörü yardımı ile boxing edilmiş bir veriyi unboxing yaptık.
+
+object @object = 123;
+int a = (int)@object;   
+
+2- as operatörü yardımı ile boxing edilmiş bir veriyi unboxing yaptık.
+
+object @object = 123;
+Type a = @object as Type ;
+
+önemli not : 
+
+as operaötörü kullanımlarında tür uygun olmadığında geriye null değer döndürür. 
+geri döndüreeği null değerini karşılayabilecek bir tür ile karşılanmak isteyecektir.
+buradaki ihtiyaca istinaden şunu söyleyebiliriz.
+"as operatörü değer türlü değişkenler için kullanılamaz!"
+
+detaylı örnek :
+
+object @object = "ahmet";
+string @object2 = (string)@object;
+
+Console.WriteLine(@object);         ---> ahmet
+
+object türü referans türlü olduğundan dolayı string ile cast edilmesinde herahangi bir hata ile karşılaşmadık.
+
+
+object @object = "ahmet";
+int @object2 = @object as int;
+
+Console.WriteLine(@object);         ---> hata verdi.
+Console.WriteLine("hello!!");       ---> hello!!
+
+hatanın sebebi ise @object içerisinde taşınan değer string bir ifadedir. biz bunu int içerisine koymaya çalıştık. hata verip kapandığı için 'hello!!' ekrana yazılmadı.
+
+
+object @object = "ahmet";
+Program @object2 = @object as Program;
+
+Console.WriteLine(@object2);        ---> null
+Console.WriteLine("hello!!");       ---> hello!!
+
+yukarıdaki koddan farklı olarak burada referans türlü bir değişkene atamaya çalıştık. int değer türlü değişken olduğundan veri ile uyumlu olması gerekirdir.
+ancak referans türlü bir değişkene atanması durumunda null değer döndürebiliyoruz.
+bu kod parçasına 2.satırda @object 'program' türünde mi diye sorduk. eğer 'program' türünde ise @object değerini ekrana bastıracaktı. değilse null dönecek. ve uygulamaya çalışmaya devam ederek 'hello!!' yazısı bastırılmış oldu.
+as ile bu işlemi yapmamızın avantajı program sonlanmadan bu işlemi yapabiliyoruz. 
+cast ile aynı işlemi yapmaya çalışsak program hata verip kapanacaktır.
+
+/// nullable opearötürü(?) 
+
+c# programlama dilinde değer türlü değişkenler normal şartlarda null değer alamazlar.
+bir değer türlü değişkenin null değer alabilmesi için nullable opeartörünün (?) kullanıması gerekir.
+
+int a = null;  (böyle bir satır hemen hata verir. bunu yapmamız program tarafından engellenmiştir.)
+int? a = null; (bu şekilde ? ilavesini yaparak nullable olabilen olarak yolumuza devam edebiliriz.)
+
+ayrıntı detay :
+
+object x = 123;
+int y = x as int;
+
+normal şartlar altında bu şekilde işlem yapılamaz. çünkü as operötürünün çalışma mantığına göre null değer alabilen değerlere dönüşüm yapmak gerekir.
+int null alabilen bir değişken türü değildir.
+
+as çalışma mantığında 2 seçenek vardır.
+1- bir değer döndürecek
+2- null değer döndürecek
+c# object türü içerisindeki değer ile ilgilenmez. 123 normal şartlarda int olabilir ancak programın çalışma mantığında değer ile ilgilenme yoktur. object türü boş bir değer de taşıayabilir.
+bu sebepten dolayı null değer alabilen değişken türleri ile çalışmak ister bizim object.
+
+yukarıdaki işlemde oluşan hataya sebep programın durmaması için kodları şu şekilde düzeltmemiz gerekir.
+
+object x = 123;
+int? y = x as int?;
+
+burada int? nullable olduğundan dolayı object in gönlü oldu ve yola devam ediyoruz.
+
+/// null-coalescing opearötürü (??)
+
+    elimizde null olan bir değişken var ise null içerisine herhangi bir değer gönderebilmemizi sağlayan operatördür.
+
+    string a = null;
+    a ?? "merhaba" ;
+
+    a değeri null değil ise a değerini al , null ise "merhaba" ifadesini alır.
+
+    

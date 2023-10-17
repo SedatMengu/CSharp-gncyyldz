@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Data;
 using System.Reflection.Metadata;
+using System.Runtime.CompilerServices;
 
 // Console.WriteLine(typeof(bool).IsPrimitive);
 // Console.WriteLine(typeof(char).IsPrimitive);
@@ -391,13 +392,27 @@ using System.Reflection.Metadata;
 //     Console.WriteLine('a');
 // }
 
-object @object = true;
+// object @object = true;
 
-Console.WriteLine(@object is null);
-Console.WriteLine(@object is Program);
-Console.WriteLine(@object is int);
-Console.WriteLine(@object is null);
-Console.WriteLine(@object is bool);
+// Console.WriteLine(@object is null);
+// Console.WriteLine(@object is Program);
+// Console.WriteLine(@object is int);
+// Console.WriteLine(@object is null);
+// Console.WriteLine(@object is bool);
 
 
+// "string @string ="abcd";
+// string @string2 =null;
+// Console.WriteLine(@string is null);
+// Console.WriteLine(@string2 is null);"
 
+// örnek : 
+
+// object @object = 123;
+// Type a = @object as Type ;
+
+object x = 123;
+int y = x as int;
+
+object x1 = 123;
+int? y1 = x1 as int?;
