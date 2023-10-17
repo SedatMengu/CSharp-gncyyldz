@@ -411,8 +411,16 @@ using System.Runtime.CompilerServices;
 // object @object = 123;
 // Type a = @object as Type ;
 
-object x = 123;
-int y = x as int;
+// object x = 123;
+// int y = x as int;
 
-object x1 = 123;
-int? y1 = x1 as int?;
+// object x1 = 123;
+// int? y1 = x1 as int?;
+
+// string a = null;
+// Console.WriteLine(a ?? "merhaba") ;
+// Console.WriteLine(a ==null ? "merhaba": a);
+
+int? id = null;
+Console.WriteLine(id ??= 1);
+Console.WriteLine(id);

@@ -1769,9 +1769,50 @@ burada int? nullable olduğundan dolayı object in gönlü oldu ve yola devam ed
 
     elimizde null olan bir değişken var ise null içerisine herhangi bir değer gönderebilmemizi sağlayan operatördür.
 
+örnek:
+
     string a = null;
-    a ?? "merhaba" ;
+    Console.WriteLine(a ?? "merhaba") ;
 
-    a değeri null değil ise a değerini al , null ise "merhaba" ifadesini alır.
+    a null değil ise a değerini yazdır , null ise "merhaba" yazdır dedik. 
 
-    
+daha önceki derslerde gördüğümüz teranry operaötür ile de bunu yapabilirdik.
+
+Console.WriteLine(a ?? "merhaba") ;
+Console.WriteLine(a ==null ? "merhaba": a);
+
+örnek2: 
+    string a = "kemal";
+    Console.WriteLine(a ?? "merhaba") ;
+
+    bu kod parçasında;
+    eğer a ifadesi null ise "merahaba" yazdır değil ise a ifadesini yazdır dedik. buradan yola çıkarak '??' operaötür kullanılırken her 2 veri de aynı türde olması gerekir.
+    string bir değişkenin null olup olmadığını kontrol ediyorsak null olması durumunda elimize aynı türde başka bir veri geçmeli.
+    işlem sonucu olarak elimize elimize int türünde veya bool türünde bir veri geçmemeli.
+
+/// null-coalescing assignment (??=)
+
+    c# 8.0 ile gelen bir özelliktir.
+    amacı değeri null olan bir değişkeni hem ekrana bastırırken hem de devamında null yerine değer ataması yapmış oluyoruz.
+
+    karşılaştırmalı örnek:
+
+    string isim = null ;
+    Console.WriteLine( isim ?? "merhaba");      ---> ?? operatörü kullandığımız için null olan değere karşılık "merhaba" ifadesi ekrana basıldı.
+    Console.WriteLine(isim);                    ---> ?? operatörü kullandığımızdan için kodun devamındaki çağırmalarda "merhaba" yazmayacak.
+
+    string isim1 = null ;
+    Console.WriteLine( isim1 ??= "merhaba");    ---> ??= operatörü kullandığımız için null olan değere karşılık "merhaba" ifadesi ekrana basıldı.
+    Console.WriteLine(isim1);                   ---> ??= operatörü kullandığımız için null olan değere karşılık "merhaba" ifadesi ekrana basılacak.
+
+
+    örnek :
+
+    int? id = null;                             ---> normal şartlarda int null almaz, ? operatörü yardımı ile nullable özelliği kazandırdık.
+    Console.WriteLine(id ?? 1);                 ---> ?? operatörü kullandığımız için null olan değere karşılık 1 ifadesi ekrana basıldı.
+    Console.WriteLine(id);                      ---> ?? operatörü kullandığımız için kodun devamındaki çağırmalarda 1 yazmayacak.
+
+    int? id = null;                             ---> normal şartlarda int null almaz, ? operatörü yardımı ile nullable özelliği kazandırdık.
+    Console.WriteLine(id ??= 1);                ---> ??= operatörü kullandığımız için null olan değere karşılık 1 ifadesi ekrana basıldı.
+    Console.WriteLine(id);                      ---> ??= operatörü kullandığımız için kodun devamındaki çağırmalarda 1 yazacak.
+
