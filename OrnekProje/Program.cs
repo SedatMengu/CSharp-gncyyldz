@@ -421,6 +421,84 @@ using System.Runtime.CompilerServices;
 // Console.WriteLine(a ?? "merhaba") ;
 // Console.WriteLine(a ==null ? "merhaba": a);
 
-int? id = null;
-Console.WriteLine(id ??= 1);
-Console.WriteLine(id);
+// int? id = null;
+// Console.WriteLine(id ??= 1);
+// Console.WriteLine(id);
+
+
+// int rakam = 8 ;
+
+// switch (rakam)
+// {
+//     case 8 :
+//     Console.WriteLine("adi mehmettir.");
+//     break;
+
+//     case "ayşe" :
+//     Console.WriteLine("adi ayşedir");
+//     break;
+
+//     case "hilmi" :
+//     Console.WriteLine("adi hilmidir");
+//     break;
+//     // default:
+//     // Console.WriteLine("adi mehmet , ayşe veya hilmi değildir.");
+//     // break;
+// }
+
+
+// int i = 10;
+
+// switch (i)
+// {
+//     case 5:
+//     Console.WriteLine(i*10);
+//     break;
+//     case 8:
+//     Console.WriteLine(i*8);
+//     break;
+//     case 10:
+//     goto case 5 ;
+//     default:
+//     goto case 5;
+// }
+
+// string mesaj ="";
+// switch (DateTime.Now.DayOfWeek)
+// {
+//     case DayOfWeek.Monday :
+//         mesaj = "bu gün pazartesi";
+//     break;
+//     case DayOfWeek.Tuesday :
+//         mesaj = "bu gün salı";
+//     break;
+//     case DayOfWeek.Wednesday:
+//         mesaj = "bu gün çarşamba";
+//     break;
+//     case DayOfWeek.Thursday :
+//         mesaj = "bu gün perşembe";
+//     break;
+//     case DayOfWeek.Friday :
+//         mesaj = "bu gün cuma";
+//     break;
+//     case DayOfWeek.Saturday :
+//         mesaj = "bu gün cumartesi";
+//     break;
+//     case DayOfWeek.Sunday :
+//         mesaj = "bu gün pazar";
+//     break;
+// }
+// Console.WriteLine(mesaj);
+
+string mesaj1 =DateTime.Now.DayOfWeek switch
+{
+    DayOfWeek.Monday => "bu gün pazartesi",
+    DayOfWeek.Tuesday => "bu gün salı",
+    DayOfWeek.Wednesday=> "bu gün çarşamba",
+    DayOfWeek.Thursday => "bu gün perşembe",
+    DayOfWeek.Friday => "bu gün cuma",
+    DayOfWeek.Saturday =>"bugün cumartesi",
+    DayOfWeek.Sunday => "bugün pazar"
+};
+
+Console.WriteLine(mesaj1);
