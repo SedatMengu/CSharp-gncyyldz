@@ -490,15 +490,45 @@ using System.Runtime.CompilerServices;
 // }
 // Console.WriteLine(mesaj);
 
-string mesaj1 =DateTime.Now.DayOfWeek switch
-{
-    DayOfWeek.Monday => "bu gün pazartesi",
-    DayOfWeek.Tuesday => "bu gün salı",
-    DayOfWeek.Wednesday=> "bu gün çarşamba",
-    DayOfWeek.Thursday => "bu gün perşembe",
-    DayOfWeek.Friday => "bu gün cuma",
-    DayOfWeek.Saturday =>"bugün cumartesi",
-    DayOfWeek.Sunday => "bugün pazar"
-};
+// string mesaj1 =DateTime.Now.DayOfWeek switch
+// {
+//     DayOfWeek.Monday => "bu gün pazartesi",
+//     DayOfWeek.Tuesday => "bu gün salı",
+//     DayOfWeek.Wednesday=> "bu gün çarşamba",
+//     DayOfWeek.Thursday => "bu gün perşembe",
+//     DayOfWeek.Friday => "bu gün cuma",
+//     DayOfWeek.Saturday =>"bugün cumartesi",
+//     DayOfWeek.Sunday => "bugün pazar"
+// };
 
-Console.WriteLine(mesaj1);
+// Console.WriteLine(mesaj1);
+
+
+// int i = 31;
+
+// if(i<30)
+// {
+//     Console.WriteLine("i değeri 30 dan küçüktür.");
+// }
+// else
+// {
+//     Console.WriteLine("i değeri 30 dan büyüktür.");
+// }
+
+Console.WriteLine("1.ürün fiyatını yazınız");
+int urunFiyat1 = int.Parse(Console.ReadLine());
+Console.WriteLine("2.ürün fiyatını yazınız");
+int urunFiyat2 = int.Parse(Console.ReadLine());
+
+int toplam = urunFiyat1 + urunFiyat2;
+
+if (toplam>= 200)
+{
+    urunFiyat2 = urunFiyat2 / 4;
+    Console.WriteLine("Toplam Fiyat: " +toplam);
+}
+
+if (toplam <200)
+{
+    Console.WriteLine("Toplam Fiyat: " +toplam);
+}
