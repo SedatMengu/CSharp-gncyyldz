@@ -1815,5 +1815,4 @@ Console.WriteLine(a ==null ? "merhaba": a);
     int? id = null;                             ---> normal şartlarda int null almaz, ? operatörü yardımı ile nullable özelliği kazandırdık.
     Console.WriteLine(id ??= 1);                ---> ??= operatörü kullandığımız için null olan değere karşılık 1 ifadesi ekrana basıldı.
     Console.WriteLine(id);                      ---> ??= operatörü kullandığımız için kodun devamındaki çağırmalarda 1 yazacak.
-...
-....
+
