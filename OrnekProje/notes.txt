@@ -1820,3 +1820,8 @@ Console.WriteLine(a ==null ? "merhaba": a);
     1- switch - case metodu
 
     2- if -elif - else metodu
+    ..
+    .
+    .
+    .
+    

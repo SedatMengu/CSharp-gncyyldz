@@ -515,20 +515,29 @@ using System.Runtime.CompilerServices;
 //     Console.WriteLine("i değeri 30 dan büyüktür.");
 // }
 
-Console.WriteLine("1.ürün fiyatını yazınız");
-int urunFiyat1 = int.Parse(Console.ReadLine());
-Console.WriteLine("2.ürün fiyatını yazınız");
-int urunFiyat2 = int.Parse(Console.ReadLine());
+// Console.WriteLine("1.ürün fiyatını yazınız");
+// int urunFiyat1 = int.Parse(Console.ReadLine());
+// Console.WriteLine("2.ürün fiyatını yazınız");
+// int urunFiyat2 = int.Parse(Console.ReadLine());
 
-int toplam = urunFiyat1 + urunFiyat2;
+// int toplam = urunFiyat1 + urunFiyat2;
 
-if (toplam>= 200)
+// if (toplam>= 200)
+// {
+//     urunFiyat2 = urunFiyat2 / 4;
+//     Console.WriteLine("Toplam Fiyat: " +toplam);
+// }
+
+// if (toplam <200)
+// {
+//     Console.WriteLine("Toplam Fiyat: " +toplam);
+// }
+
+int p = 20;
+
+switch (p)
 {
-    urunFiyat2 = urunFiyat2 / 4;
-    Console.WriteLine("Toplam Fiyat: " +toplam);
-}
+    case 10 
 
-if (toplam <200)
-{
-    Console.WriteLine("Toplam Fiyat: " +toplam);
+    default:
 }
