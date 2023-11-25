@@ -533,11 +533,115 @@ using System.Runtime.CompilerServices;
 //     Console.WriteLine("Toplam Fiyat: " +toplam);
 // }
 
-int p = 20;
+// int number = 10;
 
-switch (p)
+// switch (number)
+// {
+//     case 5:
+//         Console.WriteLine("Number is 5");
+//         break;
+
+//     case 10 when IsEven(number):
+//         Console.WriteLine("Number is 10 and even");
+//         break;
+
+//     case 10 when !IsEven(number):
+//         Console.WriteLine("Number is 10 and odd");
+//         break;
+
+//     default:
+//         Console.WriteLine("Number is neither 5 nor 10");
+//         break;
+// }
+
+// bool IsEven(int number)
+// {
+//     throw new NotImplementedException();
+// }
+
+// int satisTutari = 1000;
+
+// switch (satisTutari)
+// {
+//     case 100 when (true):
+//     Console.WriteLine("1");
+//     break;
+// }
+
+// int i = 10;
+// switch(i)
+// {
+//     case 5:
+//     Console.WriteLine(i*10);
+//     break;
+
+//     case 7:
+//     Console.WriteLine(i*7);
+//     break;
+
+//     case 10:
+//     goto case 5;
+
+//     default:
+//     goto case 5;
+// }
+
+string mesaj = DateTime.Now.DayOfWeek switch
 {
-    case 10 
+    DayOfWeek.Monday => "bugün pazartesi",
+    DayOfWeek.Tuesday => "bugün salı",
+    DayOfWeek.Wednesday => "bugün çarşamba",
+    DayOfWeek.Thursday => "bugün perşembe",
+    DayOfWeek.Friday => "bugün cuma",
+    DayOfWeek.Saturday => "bugün cumartesi",
+    DayOfWeek.Sunday => "bugün pazar",
+    _ => throw new NotImplementedException(),
+};
+Console.WriteLine(mesaj);
 
-    default:
+string isim = "";
+
+int a = 10;
+
+    switch(a)
+    {
+        case 5 :
+        isim = "hilmi";
+        break;
+        case 7 :
+        isim = "rıfkı";
+        break;
+        case 10:
+        isim = "cem";
+        break;
+    }
+    Console.WriteLine(isim);
+
+
+int i = 10;
+    string isim1 = i switch
+    {
+        5=>"hilmi",
+        7=>"rıfkı",
+        10=>"cem",
+        _ => throw new NotImplementedException(),
+    };
+    Console.WriteLine(isim1);
+
+
+int b = 10;
+string uzay = "";
+
+switch (b)
+{
+    case 5 when (true):
+    uzay = "hilmi";
+    break;
+    case 7 when(false):
+    uzay = "rıfkı";
+    break;
+    case 10 when(3==3):
+    uzay = "cem";
+    break;
 }
+Console.WriteLine(uzay);
