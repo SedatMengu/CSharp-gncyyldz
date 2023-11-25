@@ -1815,8 +1815,320 @@ Console.WriteLine(a ==null ? "merhaba": a);
     int? id = null;                             ---> normal şartlarda int null almaz, ? operatörü yardımı ile nullable özelliği kazandırdık.
     Console.WriteLine(id ??= 1);                ---> ??= operatörü kullandığımız için null olan değere karşılık 1 ifadesi ekrana basıldı.
     Console.WriteLine(id);                      ---> ??= operatörü kullandığımız için kodun devamındaki çağırmalarda 1 yazacak.
+
+
+
+    /// operatörler ile ilgili özetler
+
+    1- operatör nedir ?
+    2- operatör okuryazarlığı
+    3- aritmatik operatörler
+    4- aritmatik operatörlerde geriye dönüş değeri
+    5- (int)*(double) = ?
+    6- (byte)*(int) = ?
+    7- (byte)*(byte) = ?
+    8- matematiksel işlemler(öncelik sırası)
+    9- karşılaştırma operatörleri
+    10- karşılaştırma operatörlerinde geriye dönüş değerleri
+    11- mantıksal operatörler
+    12- mantıksal operatörlerin kullanım mantığı
+    13- mantıksal operatörlerin geriye dönüş değerleri
+    14- arttırma-azaltma operatörleri
+    15- üzeine ekleme / yığma operatörleri
+    16- aynı için farklı opratörler ile yapılması
+    17- metinsel operatörlerde + operatörü
+    18- metinsel operatörlerde += operatörü
+    19- metinsel operatörlerde == operatörü
+    20- diğer operatörler
+    21- ! operatörü
+    22- ternary operatörü
+    23- birden fazla condition uygulama
+    24- atama operatörün
+    25- member-access operatörü
+    26- cast opearötürü
+    27- sizeof operatörü
+    28- typeof operatörü
+    29- default operatörü
+    30- is operatörü
+    31- is null operatörü
+    32- is not null operatörü
+    33- as operatörü
+    34- ? nullable operatörü
+    35- ?? null coal escing operatörü
+    36- ??= operatörü
+
+    
+    
 /// akış kontrol mekanizmaları
 
-    1- switch - case metodu
+belirli şartlara göre akışın yönünü değiştiren mekanizmalardır.
 
-    2- if -elif - else metodu
+
+1- switch-case yapısı
+2- if elif else yapısı
+
+temel farklar
+1- switch yapısı bir değişkenin veya ifadenin değerine göre farklı işlemler gerçekleştirir. if-elif-else yapısı ise bir koşulun sonucuna göre farklı eylemler gerçekleştirir.
+
+2- switch-case yapısı birden fazla koşulu kontrol edebilir , if-elif-else yapısı yanlızca 1 koşulu kontrol edebilir.
+
+3- switch yapısı daha okunaklı olabilir , if-elif-else yapısı daha karmaşık koşullar için daha uygun olabilir.
+
+    switch-case yapısı : 
+
+    kodun akışında belirli bir şarta göre yönlendirme yapmamızı şu şekillerde sağlayabilir.
+
+    1- farklı bir algoritma çalıştırabiliriz.
+    2- farklı bir operasyon gerçekleştirebiliriz.
+    3- bir olayı tetikleyebiliriz.
+
+    not : bir switch-case yapılanmasında bir değişken sadece eşitlik(=) durumu üzerinden kurgu yapılabilir. => , =< , < , > gibi ifadeler üzerinde işlem yapamaz.
+
+    switch case prototipi
+
+    switch(.......A.....)
+    {
+        case B1:
+        //kodlar
+        //kodlar
+        break;
+
+        case B2:
+        //kodlar
+        //kodlar
+        break;
+
+        case B3:
+        //kodlar
+        //kodlar
+        break;
+
+        default:
+        //kodlar
+        //kodlar
+        break;
+    }
+
+
+    A : süreçte eşitlik durumu kontrol edilecek değer.
+    not : her bir case bir adımı temsil etmektedir. case içerisindeki şart sağlanırsa break ile switch sonlanır ve kod akmaya devam eder.
+    B : A ile eşitlik durumlarında kontrol edilen değerler.
+    not2 : case ile break keywordleri arasında yazılı olan kodlar case in doğrulanması sürecinde işlenecek kodlardır.
+    not3 : hiç bir case durumu sağlanmıyorsa bir 'default' keywordu yardımı ile kodlar çalıştırılır. 'default' kalıbı zorunlu değildir. olmasa da olur.
+
+    örnek : 
+    string p = "ahmet";
+
+    switch (p)
+    {
+        case "mehmet":
+        Console.WriteLine("adı mehmettir");
+        break;
+
+
+        case "ozan":
+        Console.WriteLine("adı ozan");
+        break;
+
+        
+        case "cem":
+        Console.WriteLine("adı cem");
+        break;
+
+        default:
+        Console.WriteLine("ismi bilemedik");
+        break;
+    }
+
+
+    // sonuç olarak "ismi bilemedik" dedi.
+
+    notlar :
+
+    1- kontrol edilen verinin türü ne ise case türleride o türde olmalıdır.
+    2- case ile yazılan ifadeler sabit olmalı. herhangi bir değişken kabul edilemez. 
+        örnekte "p" üzerindne işlem yaptık ancak string p = "ahmet"; satırını iptal ederek switch("ahmet") olarak da yazabilirdik. ancak case alanına "mehmet" yerine herhangi bir değişken yazamayız.
+    3- default satırı switch in en sonunda olmayadabilir."default" yazısı ile en son çalışması gerektiğini vermiş olduk. aynı durum case blokları için de geçerlidir. herhangi bir sıralama önemli değildir.
+
+    switch case içerisinde when şartı :
+
+    switch case yapılanmasında sadece elimizdeki değerin eşitlik durumu üzerinden işlem yapabiliriz. bunu dışında işlem işlem esnasında farklı şartları da değerlendirmek istiyorsak 'when' kulllanmamız gerekir.
+    not : sadece 1 adet when ekleyebiliriz.
+    not2: when içerisinin boolean türünde olması gerekir.
+    örnek :
+   
+    int satisTutari = 1000;
+
+        switch (satisTutari)
+        {
+            case 100 when (true):
+            Console.WriteLine("1");
+            break;
+        }
+
+    switch case içerisinde go to şartı :
+
+    switch-case yapılanmasında sadece eşitlik durumu incelendiğinde mantıksal bir işlem gerçekleştirememekteyiz.
+    herhangi 2 case neticesinde aynı kodların çalışması istenecekse aynı kodları tekrar yazmak yerinde "go to" kullanırız.
+
+    yapı : 
+
+
+    switch (value)
+    {
+        case A :
+        A işlemini yap;
+        break;
+        case B :
+        B işlemini yap;
+        break;
+        case C :
+        A işlemini yap;
+        break;
+    }
+        birden fazla kontrol yapamadığımızdan bu yapılanmaya gittik. switch edilen değer hem A hem C değerlerine eşit olması gereken bir durum ile karşılaşabilriiz. 
+        burada kod tekrarından kaçmak için "go to" kullanmak gerekir.
+
+
+        örnek : 
+
+        int i = 10;
+            switch(i)
+            {
+                case 5:
+                Console.WriteLine(i*10);
+                break;
+
+                case 7:
+                Console.WriteLine(i*7);
+                break;
+
+                case 10:
+                Console.WriteLine(i*10);
+                break;
+
+                default:
+                Console.WriteLine(i*10);
+                break;
+            }
+
+        analiz : i değerine 10 verdik. eğer değer 5 ise 10 ile çarp , 7 ise 10 ile çarp , 10 ise 10 ile çarp , hiç bir case geçerli değilse de 10 ile çarp dedik. tekrar eden kısımlara "go to" kullanalım.
+
+
+        int i = 10;
+            switch(i)
+            {
+                case 5:
+                Console.WriteLine(i*10);
+                break;
+
+                case 7:
+                Console.WriteLine(i*7);
+                break;
+
+                case 10:
+                go to case 5;
+
+                default:
+                go to case 5;
+            }
+    
+    switch expressions:
+
+    c# 8.0 ile birlikte gelen bir yapılanmadır. yapılanmanın amacı uzun uzadıya switch yapısından kurtuluk daha az satır ile sonuca ulaşmaktır.
+    bu işlem case ile break arasında tek bir satırlık işlem yapılıyorsa geçerlidir. 
+
+    örnek :
+
+        string mesaj = "";
+
+        switch(DateTime.Now.DayOfWeek)
+        {
+            case DayOfWeek.Monday:
+            mesaj = "bugün pazartesi";
+            break;
+            case DayOfWeek.Tuesday:
+            mesaj = "bugün salı";
+            break;
+            case DayOfWeek.Wednesday:
+            mesaj = "bugün çarşamba";
+            break;
+            case DayOfWeek.Thursday:
+            mesaj = "bugün perşembe";
+            break;
+            case DayOfWeek.Friday:
+            mesaj = "bugün cuma";
+            break;
+            case DayOfWeek.Saturday:
+            mesaj = "bugün cumartesi";
+            break;
+            case DayOfWeek.Sunday:
+            mesaj = "bugün pazar";
+            break;
+        }
+
+        Console.WriteLine(mesaj);
+
+        analiz : "mesaj" isminde , string türünde ram da bir alan tahsis ettik.
+                DateTime.Now.DayOfWeek ile haftanın günlerini belirledik. ve mesaj değişkeni içerisine attık.
+
+        switch expressions kullanılmış hali :
+
+        string mesaj = DateTime.Now.DayOfWeek switch
+        {
+            DayOfWeek.Monday => "bugün pazartesi",
+            DayOfWeek.Tuesday => "bugün salı",
+            DayOfWeek.Wednesday => "bugün çarşamba",
+            DayOfWeek.Thursday => "bugün perşembe",
+            DayOfWeek.Friday => "bugün cuma",
+            DayOfWeek.Saturday => "bugün cumartesi",
+            DayOfWeek.Sunday => "bugün pazar",
+            _ => throw new NotImplementedException(),
+        };
+        Console.WriteLine(mesaj);
+
+        not : DateTime.Now.DayOfWeek ifadesi, mevcut zamanın haftanın hangi gününe karşılık geldiğini belirten bir DayOfWeek enum değeri döndürür. 
+        DayOfWeek enumu, haftanın günlerini temsil eden bir türdür ve Pazartesi'den Pazar'a kadar olan günleri içerir.
+
+        enum nedir? 
+        enum, C# (ve birçok diğer programlama dilinde) bir türdür ve belirli bir değeri temsil eden bir sabit küme oluşturmak için kullanılır. 
+        "enum" kısaltması, "enumeration" yani "sıralama" kelimesinden gelir. Enumerations, genellikle bir dizi benzersiz değeri temsil etmek için kullanılır.
+
+    örnek2:
+
+    eski yöntem ile ;
+
+    string isim = "";
+    int i = 10;
+
+    switch(i)
+    {
+        case 5 :
+        isim = "hilmi";
+        break;
+        case 7 :
+        isim = "rıfkı";
+        break;
+        case 10:
+        isim = "cem";
+        break;
+    }
+    Console.WriteLine(isim);
+
+    yeni yöntem ile;
+
+    int i = 10;
+    string isim = i switch
+    {
+        5=>"hilmi",
+        7=>"rıfkı",
+        10=>"cem"
+        _ => throw new NotImplementedException(),     /// bu satır olmazsa olmuyor.
+    };
+    Console.WriteLine(isim);
+
+
+    /// when şartı ile switch expressions
+
+
+    
