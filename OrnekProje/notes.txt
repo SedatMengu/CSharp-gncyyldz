@@ -2123,12 +2123,210 @@ temel farklar
         5=>"hilmi",
         7=>"rıfkı",
         10=>"cem"
-        _ => throw new NotImplementedException(),     /// bu satır olmazsa olmuyor.
+        _ => throw new NotImplementedException(),     /// bu satır default yerine geçiyor.
     };
     Console.WriteLine(isim);
 
 
     /// when şartı ile switch expressions
 
+        örnek: eski yöntem
 
-    
+        int b = 10;
+        string uzay = "";
+
+        switch (b)
+        {
+            case 5 when (true):
+            uzay = "hilmi";
+            break;
+            case 7 when(2==2):
+            uzay = "rıfkı";
+            break;
+            case 10 when(3==3):
+            uzay = "cem";
+            break;
+        }
+Console.WriteLine(uzay);
+
+        örnek : yeni yöntem-1
+
+        int i = 10;
+    string isim = i switch
+    {
+        5 when (false)=>"hilmi",
+        7 when (4==4)=>"rıfkı",
+        10 when (2==3)=>"cem",
+        10 when (3==3)=> "doğru",
+        _ => throw new NotImplementedException(),     /// bu satır default yerine geçiyor.
+    };
+    Console.WriteLine(isim);
+
+        örnek : ynei yöntem-2
+
+    int a=10;
+    string isim = a switch
+    {
+        var b when a==7 && a%2==1 => "rıfkı",
+        var b when a==10 && a%2==0 => "rıfkı2",
+        var b =>"hiçbiri"       // _ => throw new NotImplementedException(),  // bu satırdaki her 2 kodda default anlamı taşır.
+        
+    };
+    Console.WriteLine(isim);
+
+    not-1 : eğer 2.yöntemdeki gibi 'var' keywordu ile bir değişken tanımlanması gerçekleştiriyorsak sabit bir eşitlik durumu kontrol ettiğimiz değeri ( bu örnekteki 7,10 değerlerini) çat diye yazamayız.
+    not-2 : 2.yöntemde b değeri case de manuel olarak girilen değere tekabul etmektedir.
+    not-3 : b değeri kullandığımız için manuel değer veremiyoruz.
+    not-4 : 'var' zorunlu bir keyword değil. değerine türüne uygun bir değişekn ile tanımlama yapmamız mümkündür.
+
+
+
+/// tuple patterns
+
+açıklama : tuple patterns switch yapılanmasını tuple nesnelerini kontrol edebilecek şekilde standart ve yeni yapılanmayla bizlere sunmaktadır.
+
+örnek : eski yöntem
+
+    string adi = "nevin";
+    int yasi = 32;
+    string mesaj="";
+
+    switch (adi , yasi)
+    {
+        case ("hüseyin" , 20):
+        mesaj = "hoşgeldin Hüseyin";
+        break;
+        case("cansu",23):
+        mesaj="hoşegldin cansu";
+        break;
+        default:
+        mesaj="tanımlanamadı";
+        break;
+    }
+    Console.WriteLine(mesaj);       // tanımlanamdı.
+
+örnek : yeni yöntem 
+
+    string adi2 = "nevin";
+    int yasi2 = 32;
+    string mesaj2=(adi2 , yasi2) switch 
+    {
+        ("hüseyin" , 20) => mesaj2 = "hoşgeldin Hüseyin",
+        ("nevin",32) =>    mesaj2="hoşegldin nevin",
+        _ => throw new NotImplementedException(),
+    };
+    Console.WriteLine(mesaj2);      
+
+analiz : eski yöntemde klasik case break keywordleri vardı , yeni yöntemde case ve break yerine => sembolü kullanılıyor.
+
+önemli not : öncedek switch case break ile tek bir değeri kontrol edebiliyorduk , şimdi işler değişti if yapılanmasından daha efektif hale geldiği noktalar oluştu.
+
+
+örnek : eski yöntem
+
+int s1 = 10;
+int s2 = 20;
+
+string mesaj ="";
+
+switch (s1,s2)
+{
+    case (5,10):
+    mesaj ="sayılar 5 ile 10";
+    break;
+    case(10,20):
+    mesaj="sayılar 10 ile 20";
+    break;
+    default:
+    mesaj="sayıları bilemedik.";
+    break;
+}
+
+Console.WriteLine(mesaj);           // sayıları  10 ile 20
+
+
+örnek yeni yöntem :
+
+int s1 = 10;
+int s2 = 20;
+
+string mesaj =(s1,s2)
+switch 
+{
+    (5,10) => mesaj ="sayılar 5 ile 10",
+    (10,20) =>mesaj="sayılar 10 ile 20",
+    _ => throw new NotImplementedException(),
+};
+
+Console.WriteLine(mesaj);
+
+
+
+/// when şartı ile tuple patterns
+
+örnek : eski yöntem
+
+    string adi = "nevin";
+    int yasi = 32;
+    string mesaj=(adi , yasi)
+
+    switch 
+    {
+        ("hüseyin" , 20) => mesaj = "hoşgeldin Hüseyin",
+        ("cansu",23)=> mesaj="hoşegldin cansu",
+        _ => throw new NotImplementedException(),
+    };
+    Console.WriteLine(mesaj);
+
+örnek : yeni yöntem :
+
+string adi = "nevin";
+int yasi = 32;
+string mesaj=(adi , yasi)
+
+switch 
+{
+    var a when a.adi=="hüseyin" && a.yasi== 20 => mesaj = "hoşgeldin Hüseyin",
+    var a when a.adi=="cansu" && a.yasi==21 => mesaj="hoşheldin cansu",
+    var a when a.adi=="nevin" && a.yasi==32 => mesaj="hoşgeldin nevin",
+    _ => throw new NotImplementedException(),
+};
+Console.WriteLine(mesaj);
+
+önemli not : daaha önceki derslerde değişken tanımlarken herhangi bir değer alabilir (int,byte,bool vs.) demiştik , ancak tuple da bu dğişkeni sadece var ile karşılayabiliriz.
+
+
+/// positional patterns 
+
+positional patterns ise deconstruct özelliği olan mesmeleri kıyaslamak veyahut değersel olarak karşılaştırmak için kullanılan bir gelişimdir.
+
+/// when kullanarak positional patterns 
+
+diğer whenler ile aynı mantıkla çalışır.
+
+/// property patterns
+
+nesnenin propertylerine girerek belirli durumları hızlı bir şekilde kontrol etmemizi gerçekleştiren ve bunu farklı değerler için birden fazla kez tekrarlı bir şekilde yapmamıza olanak sağlayan güzel bir gelişimdir.
+
+/// when kullanarak property patterns
+
+diğer whenler ile aynı mantıkla çalışır.
+
+/// if - elif - else yapısı
+
+switch yapısında sadece eşitlik durumlarına göre kontrol sağlanabilirken if-elif-else yapılanmasında ise bütün durumlarda (<,>,=>,=<) kontrol sağlamak mümkündür.
+switchi kapsar ve mantıksal operatörler neticesinde oluşan sonuçları da kıyaslayabilir.
+
+prototip
+
+if(şart)
+{
+    şart true ise burası tetiklenir
+}
+şart false ise ifden çıkıp yola kod yola devam eder.
+
+
+not1: if yapılanması tek başına kullanılıyorsa sadece şarta bağlı çalışacak koda odaklanır.
+not2: esle kullanmasak , sadece if kullansak bile olur,
+not3: bool türündeki değişkenlerin değerleri zaten bool olduğu için;
+    if (medeniHal==true) yerine if(medeniHal) yazmamız yeterlidir.

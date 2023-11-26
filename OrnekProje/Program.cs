@@ -438,210 +438,319 @@ using System.Runtime.CompilerServices;
 //     Console.WriteLine("adi ayşedir");
 //     break;
 
-//     case "hilmi" :
-//     Console.WriteLine("adi hilmidir");
-//     break;
-//     // default:
-//     // Console.WriteLine("adi mehmet , ayşe veya hilmi değildir.");
-//     // break;
-// }
+// //     case "hilmi" :
+// //     Console.WriteLine("adi hilmidir");
+// //     break;
+// //     // default:
+// //     // Console.WriteLine("adi mehmet , ayşe veya hilmi değildir.");
+// //     // break;
+// // }
+
+
+// // int i = 10;
+
+// // switch (i)
+// // {
+// //     case 5:
+// //     Console.WriteLine(i*10);
+// //     break;
+// //     case 8:
+// //     Console.WriteLine(i*8);
+// //     break;
+// //     case 10:
+// //     goto case 5 ;
+// //     default:
+// //     goto case 5;
+// // }
+
+// // string mesaj ="";
+// // switch (DateTime.Now.DayOfWeek)
+// // {
+// //     case DayOfWeek.Monday :
+// //         mesaj = "bu gün pazartesi";
+// //     break;
+// //     case DayOfWeek.Tuesday :
+// //         mesaj = "bu gün salı";
+// //     break;
+// //     case DayOfWeek.Wednesday:
+// //         mesaj = "bu gün çarşamba";
+// //     break;
+// //     case DayOfWeek.Thursday :
+// //         mesaj = "bu gün perşembe";
+// //     break;
+// //     case DayOfWeek.Friday :
+// //         mesaj = "bu gün cuma";
+// //     break;
+// //     case DayOfWeek.Saturday :
+// //         mesaj = "bu gün cumartesi";
+// //     break;
+// //     case DayOfWeek.Sunday :
+// //         mesaj = "bu gün pazar";
+// //     break;
+// // }
+// // Console.WriteLine(mesaj);
+
+// // string mesaj1 =DateTime.Now.DayOfWeek switch
+// // {
+// //     DayOfWeek.Monday => "bu gün pazartesi",
+// //     DayOfWeek.Tuesday => "bu gün salı",
+// //     DayOfWeek.Wednesday=> "bu gün çarşamba",
+// //     DayOfWeek.Thursday => "bu gün perşembe",
+// //     DayOfWeek.Friday => "bu gün cuma",
+// //     DayOfWeek.Saturday =>"bugün cumartesi",
+// //     DayOfWeek.Sunday => "bugün pazar"
+// // };
+
+// // Console.WriteLine(mesaj1);
+
+
+// // int i = 31;
+
+// // if(i<30)
+// // {
+// //     Console.WriteLine("i değeri 30 dan küçüktür.");
+// // }
+// // else
+// // {
+// //     Console.WriteLine("i değeri 30 dan büyüktür.");
+// // }
+
+// // Console.WriteLine("1.ürün fiyatını yazınız");
+// // int urunFiyat1 = int.Parse(Console.ReadLine());
+// // Console.WriteLine("2.ürün fiyatını yazınız");
+// // int urunFiyat2 = int.Parse(Console.ReadLine());
+
+// // int toplam = urunFiyat1 + urunFiyat2;
+
+// // if (toplam>= 200)
+// // {
+// //     urunFiyat2 = urunFiyat2 / 4;
+// //     Console.WriteLine("Toplam Fiyat: " +toplam);
+// // }
+
+// // if (toplam <200)
+// // {
+// //     Console.WriteLine("Toplam Fiyat: " +toplam);
+// // }
+
+// // int number = 10;
+
+// // switch (number)
+// // {
+// //     case 5:
+// //         Console.WriteLine("Number is 5");
+// //         break;
+
+// //     case 10 when IsEven(number):
+// //         Console.WriteLine("Number is 10 and even");
+// //         break;
+
+// //     case 10 when !IsEven(number):
+// //         Console.WriteLine("Number is 10 and odd");
+// //         break;
+
+// //     default:
+// //         Console.WriteLine("Number is neither 5 nor 10");
+// //         break;
+// // }
+
+// // bool IsEven(int number)
+// // {
+// //     throw new NotImplementedException();
+// // }
+
+// // int satisTutari = 1000;
+
+// // switch (satisTutari)
+// // {
+// //     case 100 when (true):
+// //     Console.WriteLine("1");
+// //     break;
+// // }
+
+// // int i = 10;
+// // switch(i)
+// // {
+// //     case 5:
+// //     Console.WriteLine(i*10);
+// //     break;
+
+// //     case 7:
+// //     Console.WriteLine(i*7);
+// //     break;
+
+// //     case 10:
+// //     goto case 5;
+
+// //     default:
+// //     goto case 5;
+// // }
+
+// string mesaj = DateTime.Now.DayOfWeek switch
+// {
+//     DayOfWeek.Monday => "bugün pazartesi",
+//     DayOfWeek.Tuesday => "bugün salı",
+//     DayOfWeek.Wednesday => "bugün çarşamba",
+//     DayOfWeek.Thursday => "bugün perşembe",
+//     DayOfWeek.Friday => "bugün cuma",
+//     DayOfWeek.Saturday => "bugün cumartesi",
+//     DayOfWeek.Sunday => "bugün pazar",
+//     _ => throw new NotImplementedException(),
+// };
+// Console.WriteLine(mesaj);
+
+// int a = 10;
+
+// string isim = "";
+
+//     switch(a)
+//     {
+//         case 5 :
+//         isim = "hilmi";
+//         break;
+//         case 7 :
+//         isim = "rıfkı";
+//         break;
+//         case 10:
+//         isim = "cem";
+//         break;
+//     }
+//     Console.WriteLine(isim);
 
 
 // int i = 10;
+//     string isim1 = i switch
+//     {
+//         5=>"hilmi",
+//         7=>"rıfkı",
+//         10=>"cem",
+//         _ => throw new NotImplementedException(),
+//     };
+//     Console.WriteLine(isim1);
 
-// switch (i)
+
+// int b = 10;
+// string uzay = "";
+
+// switch (b)
 // {
-//     case 5:
-//     Console.WriteLine(i*10);
+//     case 5 when (true):
+//     uzay = "hilmi";
 //     break;
-//     case 8:
-//     Console.WriteLine(i*8);
+//     case 7 when(2==2):
+//     uzay = "rıfkı";
 //     break;
-//     case 10:
-//     goto case 5 ;
-//     default:
-//     goto case 5;
+//     case 10 when(3==3):
+//     uzay = "cem";
+//     break;
 // }
+// Console.WriteLine(uzay);
 
-// string mesaj ="";
-// switch (DateTime.Now.DayOfWeek)
+
+// int i = 10;
+//     string isim = i switch
+//     {
+//         5 when (false)=>"hilmi",
+//         7 when (4==4)=>"rıfkı",
+//         10 when (2==3)=>"cem",
+//         10 when (3==3)=> "doğru",
+//         _ => throw new NotImplementedException(),     /// bu satır default yerine geçiyor.
+//     };
+//     Console.WriteLine(isim);
+
+// int a=10;
+//     string isim = a switch
+//     {
+//         var b when a==5 && a%2==1 => "rıfkı",
+//         var b when a==7 && a%2==0 => "rıfkı2",
+//         var b => "hiçbiri",
+//         // _ => throw new NotImplementedException(),
+//     };
+//     Console.WriteLine(isim);
+
+
+// string adi = "nevin";
+// int yasi = 32;
+// string mesaj="";
+
+// switch (adi , yasi)
 // {
-//     case DayOfWeek.Monday :
-//         mesaj = "bu gün pazartesi";
+//     case ("hüseyin" , 20):
+//     mesaj = "hoşgeldin Hüseyin";
 //     break;
-//     case DayOfWeek.Tuesday :
-//         mesaj = "bu gün salı";
+//     case("cansu",23):
+//     mesaj="hoşegldin cansu";
 //     break;
-//     case DayOfWeek.Wednesday:
-//         mesaj = "bu gün çarşamba";
-//     break;
-//     case DayOfWeek.Thursday :
-//         mesaj = "bu gün perşembe";
-//     break;
-//     case DayOfWeek.Friday :
-//         mesaj = "bu gün cuma";
-//     break;
-//     case DayOfWeek.Saturday :
-//         mesaj = "bu gün cumartesi";
-//     break;
-//     case DayOfWeek.Sunday :
-//         mesaj = "bu gün pazar";
+//     default:
+//     mesaj="tanımlanamadı";
 //     break;
 // }
 // Console.WriteLine(mesaj);
 
-// string mesaj1 =DateTime.Now.DayOfWeek switch
+// string adi2 = "nevin";
+// int yasi2 = 32;
+// string mesaj2=(adi2 , yasi2) switch 
 // {
-//     DayOfWeek.Monday => "bu gün pazartesi",
-//     DayOfWeek.Tuesday => "bu gün salı",
-//     DayOfWeek.Wednesday=> "bu gün çarşamba",
-//     DayOfWeek.Thursday => "bu gün perşembe",
-//     DayOfWeek.Friday => "bu gün cuma",
-//     DayOfWeek.Saturday =>"bugün cumartesi",
-//     DayOfWeek.Sunday => "bugün pazar"
+//     ("hüseyin" , 20) => mesaj2 = "hoşgeldin Hüseyin",
+//     ("nevin",32) =>    mesaj2="hoşegldin nevin",
+//     _ => throw new NotImplementedException(),
+// };
+// Console.WriteLine(mesaj2);
+
+// int s1 = 10;
+// int s2 = 20;
+
+// string mesaj =(s1,s2)
+// switch 
+// {
+//     (5,10) => mesaj ="sayılar 5 ile 10",
+//     (10,20) =>mesaj="sayılar 10 ile 20",
+//     _ => throw new NotImplementedException(),
 // };
 
-// Console.WriteLine(mesaj1);
+// Console.WriteLine(mesaj);
 
 
-// int i = 31;
+// string adi = "nevin";
+// int yasi = 32;
+// string mesaj="";
 
-// if(i<30)
+// switch (adi , yasi)
 // {
-//     Console.WriteLine("i değeri 30 dan küçüktür.");
-// }
-// else
-// {
-//     Console.WriteLine("i değeri 30 dan büyüktür.");
-// }
-
-// Console.WriteLine("1.ürün fiyatını yazınız");
-// int urunFiyat1 = int.Parse(Console.ReadLine());
-// Console.WriteLine("2.ürün fiyatını yazınız");
-// int urunFiyat2 = int.Parse(Console.ReadLine());
-
-// int toplam = urunFiyat1 + urunFiyat2;
-
-// if (toplam>= 200)
-// {
-//     urunFiyat2 = urunFiyat2 / 4;
-//     Console.WriteLine("Toplam Fiyat: " +toplam);
-// }
-
-// if (toplam <200)
-// {
-//     Console.WriteLine("Toplam Fiyat: " +toplam);
-// }
-
-// int number = 10;
-
-// switch (number)
-// {
-//     case 5:
-//         Console.WriteLine("Number is 5");
-//         break;
-
-//     case 10 when IsEven(number):
-//         Console.WriteLine("Number is 10 and even");
-//         break;
-
-//     case 10 when !IsEven(number):
-//         Console.WriteLine("Number is 10 and odd");
-//         break;
-
+//     case ("hüseyin" , 20):
+//     mesaj = "hoşgeldin Hüseyin";
+//     break;
+//     case("cansu",23):
+//     mesaj="hoşegldin cansu";
+//     break;
 //     default:
-//         Console.WriteLine("Number is neither 5 nor 10");
-//         break;
-// }
-
-// bool IsEven(int number)
-// {
-//     throw new NotImplementedException();
-// }
-
-// int satisTutari = 1000;
-
-// switch (satisTutari)
-// {
-//     case 100 when (true):
-//     Console.WriteLine("1");
+//     mesaj="tanımlanamadı";
 //     break;
 // }
+// Console.WriteLine(mesaj);
 
-// int i = 10;
-// switch(i)
-// {
-//     case 5:
-//     Console.WriteLine(i*10);
-//     break;
+string adi = "nevin";
+int yasi = 32;
+string mesaj=(adi , yasi)
 
-//     case 7:
-//     Console.WriteLine(i*7);
-//     break;
-
-//     case 10:
-//     goto case 5;
-
-//     default:
-//     goto case 5;
-// }
-
-string mesaj = DateTime.Now.DayOfWeek switch
+switch 
 {
-    DayOfWeek.Monday => "bugün pazartesi",
-    DayOfWeek.Tuesday => "bugün salı",
-    DayOfWeek.Wednesday => "bugün çarşamba",
-    DayOfWeek.Thursday => "bugün perşembe",
-    DayOfWeek.Friday => "bugün cuma",
-    DayOfWeek.Saturday => "bugün cumartesi",
-    DayOfWeek.Sunday => "bugün pazar",
+    ("hüseyin" , 20) => mesaj = "hoşgeldin Hüseyin",
+    ("cansu",23)=> mesaj="hoşegldin cansu",
     _ => throw new NotImplementedException(),
 };
 Console.WriteLine(mesaj);
 
-string isim = "";
 
-int a = 10;
+string adi = "nevin";
+int yasi = 32;
+string mesaj=(adi , yasi)
 
-    switch(a)
-    {
-        case 5 :
-        isim = "hilmi";
-        break;
-        case 7 :
-        isim = "rıfkı";
-        break;
-        case 10:
-        isim = "cem";
-        break;
-    }
-    Console.WriteLine(isim);
-
-
-int i = 10;
-    string isim1 = i switch
-    {
-        5=>"hilmi",
-        7=>"rıfkı",
-        10=>"cem",
-        _ => throw new NotImplementedException(),
-    };
-    Console.WriteLine(isim1);
-
-
-int b = 10;
-string uzay = "";
-
-switch (b)
+switch 
 {
-    case 5 when (true):
-    uzay = "hilmi";
-    break;
-    case 7 when(false):
-    uzay = "rıfkı";
-    break;
-    case 10 when(3==3):
-    uzay = "cem";
-    break;
-}
-Console.WriteLine(uzay);
+    var a when a.adi=="hüseyin" && a.yasi== 20 => mesaj = "hoşgeldin Hüseyin",
+    var a when a.adi=="cansu" && a.yasi==21 => mesaj="hoşheldin cansu",
+    var a when a.adi=="nevin" && a.yasi==32 => mesaj="hoşgeldin nevin",
+    _ => throw new NotImplementedException(),
+};
+Console.WriteLine(mesaj);
