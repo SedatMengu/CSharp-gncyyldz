@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using System.ComponentModel;
 using System.Data;
 using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
@@ -729,28 +730,80 @@ using System.Runtime.CompilerServices;
 // }
 // Console.WriteLine(mesaj);
 
-string adi = "nevin";
-int yasi = 32;
-string mesaj=(adi , yasi)
+// string adi = "nevin";
+// int yasi = 32;
+// string mesaj=(adi , yasi)
 
-switch 
+// switch 
+// {
+//     ("hüseyin" , 20) => mesaj = "hoşgeldin Hüseyin",
+//     ("cansu",23)=> mesaj="hoşegldin cansu",
+//     _ => throw new NotImplementedException(),
+// };
+// Console.WriteLine(mesaj);
+
+
+// string adi = "nevin";
+// int yasi = 32;
+// string mesaj=(adi , yasi)
+
+// switch 
+// {
+//     var a when a.adi=="hüseyin" && a.yasi== 20 => mesaj = "hoşgeldin Hüseyin",
+//     var a when a.adi=="cansu" && a.yasi==21 => mesaj="hoşheldin cansu",
+//     var a when a.adi=="nevin" && a.yasi==32 => mesaj="hoşgeldin nevin",
+//     _ => throw new NotImplementedException(),
+// };
+// Console.WriteLine(mesaj);
+
+// int i = 10;
+// if(i==10)
+// {
+//     Console.WriteLine("i değeri 10 dur");
+//     Console.WriteLine("merhabalar");
+// }
+// else
+// {
+//     Console.WriteLine("i değeri 10 değildir.");
+//     Console.WriteLine("merhabalar");
+// }
+
+// int sayi = 250;
+
+// if (sayi>100 && sayi<=200)
+// {
+//     Console.WriteLine("100 ile 200 arasındadır.");
+// }
+// else if(sayi>200 && sayi<=300)
+// {
+//     Console.WriteLine("200 ile 300 arasındadır.");
+// }
+// else if (sayi>200 && sayi<=300)
+// {
+//     Console.WriteLine("200 ile 400 arasındadır.");
+// }
+// else
+// {
+//     Console.WriteLine("hata1");
+// }
+// if(true) Console.WriteLine("t1");
+
+// if (true) Console.WriteLine("b1");
+// Console.WriteLine("c1");
+
+
+Console.Write("Lütfen Birinci Ürünün Fiyatını Giriniz: ");
+int fiyat1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Lütfen ikinci Ürünün Fiyatını Giriniz: ");
+int fiyat2 = Convert.ToInt32(Console.ReadLine());
+
+int toplam1 = fiyat1 + fiyat2;
+int toplam2 = fiyat1 + fiyat2*3/4;
+if ((fiyat1+fiyat2)>200)
 {
-    ("hüseyin" , 20) => mesaj = "hoşgeldin Hüseyin",
-    ("cansu",23)=> mesaj="hoşegldin cansu",
-    _ => throw new NotImplementedException(),
-};
-Console.WriteLine(mesaj);
-
-
-string adi = "nevin";
-int yasi = 32;
-string mesaj=(adi , yasi)
-
-switch 
+   Console.WriteLine(toplam2);
+}
+else
 {
-    var a when a.adi=="hüseyin" && a.yasi== 20 => mesaj = "hoşgeldin Hüseyin",
-    var a when a.adi=="cansu" && a.yasi==21 => mesaj="hoşheldin cansu",
-    var a when a.adi=="nevin" && a.yasi==32 => mesaj="hoşgeldin nevin",
-    _ => throw new NotImplementedException(),
-};
-Console.WriteLine(mesaj);
+    Console.WriteLine(toplam1);
+}

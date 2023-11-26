@@ -2330,3 +2330,141 @@ not1: if yapılanması tek başına kullanılıyorsa sadece şarta bağlı çal�
 not2: esle kullanmasak , sadece if kullansak bile olur,
 not3: bool türündeki değişkenlerin değerleri zaten bool olduğu için;
     if (medeniHal==true) yerine if(medeniHal) yazmamız yeterlidir.
+
+
+/// if-else yapılanması
+
+sadece if yapılanmasında bir şarta göre kontrol yap değilse yola devam et diyorduk , if-else yapısında ise bir şarta göre kontrol yap , değilse else kısmındaki davranışları yap diyoruz.
+
+prototip
+
+if(şart)
+{
+    şart true ise burası çalışacak
+}
+else
+{
+    şart true değil ise burası çalışacak.
+}
+
+not : if yapılanmasında şaft false ise if den çıkıp yola devam ediyordu , if - else yapısında ise else komutları devreye giriyor.
+not2 : if ile else aynı anda tetiklenemez.
+
+her 2 durumda da (if durumu veya else durumu) aynı kod parçalarını kullanabiliriz. 
+
+örnek :
+
+int i = 10;
+if(i==10)
+{
+    Console.WriteLine("i değeri 10 dur");
+    Console.WriteLine("merhabalar");        // tekrar eden kod parçası
+}
+else
+{
+    Console.WriteLine("i değeri 10 değildir.");
+    Console.WriteLine("merhabalar");        // tekrar eden kod parçası
+}
+
+
+int i = 10;
+if(i==10)
+{
+    Console.WriteLine("i değeri 10 dur");
+}
+else
+{
+    Console.WriteLine("i değeri 10 değildir.");
+}
+
+Console.WriteLine("merhabalar");        // tekrar eden kod parçasını buraya aldık. "don't repeat your self" prensibinden yola çıkarak.
+
+/// if-else if yapılanması.
+
+if-else yapısı sadece 2 durumda kontrol yapabiliyordu. kontrol edilen şart true ise if bloğu içerisindeki kodlar çalışır, kontrol edilen şart false ise else bloğundaki kodlar çalışırdı.
+
+if - else if yapılanmasında ise 3 veya daha fazla durumu kontrol edebiliriz.
+
+prototip
+
+if(şart1)
+{
+    şart1 true ise bu bloktaki kodlar çalışacak.
+}
+else if(şart2)
+{
+    şart2 true ise bu bloktaki kodlar çalışacak.
+}
+else if(şart3)
+{
+    şart3 true ise bu bloktaki kodlar çalışacak.
+}
+else
+{
+    şart1 , şart2 , şart3 false ise bu blokraki kodlar çalışacak.
+}
+
+not1: if-else if yapısı else olmadan da çalışır. kontrol edilen şartın sağlantığı ilk else if bloğundaki kodlar tetiklenir ve kod if else if yapılanmasından çıkarak yola devam eder.
+
+not2: kontrol edilecek bir şart her 2 durum için de geçerli ise else if de ilk yazılan şartı sağladıktan sonra kod if-else if bloğunu terk ederek yola devam eder.
+
+örnek :
+
+int sayi = 250;
+
+if (sayi>100 && sayi<=200)
+{
+    Console.WriteLine("100 ile 200 arasındadır.");
+}
+else if(sayi>200 && sayi<=300)
+{
+    Console.WriteLine("200 ile 300 arasındadır.");
+}
+else if (sayi>200 && sayi<=300)
+{
+    Console.WriteLine("200 ile 400 arasındadır.");
+}
+else
+{
+    Console.WriteLine("hata1");
+}
+
+analiz : buradaki 250 değeri hem 200-300 arasında olma şartını hem de 200 - 400 arasında olma şartını sağlıyor. sağlanan ilk şartta kodlar çalıştı (burada konsola yazı yazdırdık) ve if yapısını terk etti.
+
+/// scopesuz if yapısı
+
+bütün if - else if - else yapıları için geçerlidir.
+
+not : tek bir satırlık işlemlerde kullanılır.
+
+if(true)
+{
+    Console.WriteLine("a");
+}
+
+alternatif :
+
+if(true) Console.WriteLine("b");   // çıktı ekranına b değerini verir.
+
+if (true) Console.WriteLine("b1");
+Console.WriteLine("c1");        // çıktı ekranına b1 ve c1 değerlerini verir ancak c1 değeri if şartından başımsızdır.
+
+not : birden fazla konsept var ise { } içerisine yazmak gerekir.
+
+/// örnek-1 klavyden girilen 2 ürünün fiyatı girildiğinde toplam tutar 200 tl den fazla ise 2.ürüne %25 indirim yaparak toplam tutarı gösteren bir uygulama.
+
+Console.Write("Lütfen Birinci Ürünün Fiyatını Giriniz: ");
+int fiyat1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Lütfen ikinci Ürünün Fiyatını Giriniz: ");
+int fiyat2 = Convert.ToInt32(Console.ReadLine());
+
+int toplam1 = fiyat1 + fiyat2;
+int toplam2 = fiyat1 + fiyat2*3/4;
+if ((fiyat1+fiyat2)>200)
+{
+   Console.WriteLine(toplam2);
+}
+else
+{
+    Console.WriteLine(toplam1);
+}
