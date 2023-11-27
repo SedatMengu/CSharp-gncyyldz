@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Reflection.Metadata;
@@ -792,18 +793,60 @@ using System.Runtime.CompilerServices;
 // Console.WriteLine("c1");
 
 
-Console.Write("Lütfen Birinci Ürünün Fiyatını Giriniz: ");
-int fiyat1 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Lütfen ikinci Ürünün Fiyatını Giriniz: ");
-int fiyat2 = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Lütfen Birinci Ürünün Fiyatını Giriniz: ");
+// int fiyat1 = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Lütfen ikinci Ürünün Fiyatını Giriniz: ");
+// int fiyat2 = Convert.ToInt32(Console.ReadLine());
 
-int toplam1 = fiyat1 + fiyat2;
-int toplam2 = fiyat1 + fiyat2*3/4;
-if ((fiyat1+fiyat2)>200)
-{
-   Console.WriteLine(toplam2);
-}
-else
-{
-    Console.WriteLine(toplam1);
-}
+// int toplam1 = fiyat1 + fiyat2;
+// int toplam2 = fiyat1 + fiyat2*3/4;
+// if ((fiyat1+fiyat2)>200)
+// {
+//    Console.WriteLine(toplam2);
+// }
+// else
+// {
+//     Console.WriteLine(toplam1);
+
+
+// string kullaniciAdi = "kullanıcı";
+// string parola = "12345";
+
+// Console.Write("Lütfen Kullanıcı adını giriniz : ");
+// string? girilenKullaniciAdi = Console.ReadLine();
+
+// Console.Write("lütfen parola giriniz : ");
+// string? girilenParola= Console.ReadLine();
+
+// if ( kullaniciAdi == girilenKullaniciAdi)
+// {
+//     if (parola==girilenParola)
+//     {
+//         Console.WriteLine("giriş başarılı");
+//     }
+//     else
+//     {
+//         Console.WriteLine("parola hatalı");
+//     }
+// }
+// else
+// {
+//     Console.WriteLine("kullanıcı adı hatalı");
+// }
+
+// 3- döndürme :
+//         int i1 = 100 , i2 = 200;
+//         int max = (i1>i2) ? i1 : i2;
+//         Console.Write(max);         ---> 200
+
+// Console.Write("kullancı adı giriniz : ");
+// string? kullaniciAdi = Console.ReadLine();
+
+// Console.Write("parola giriniz : ");
+// string? parola = Console.ReadLine();
+
+// string mesaj = (kullaniciAdi=="kullanıcı") ? "kullanıcı adı doğrulandı" : "kullanıcı adı hatalı";
+// Console.WriteLine(mesaj);
+// string mesaj2 = (parola=="12345") ? "parola doğrulandı" : "parola hatalı";
+// Console.WriteLine(mesaj2);
+

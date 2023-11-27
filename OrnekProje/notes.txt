@@ -2468,3 +2468,76 @@ else
 {
     Console.WriteLine(toplam1);
 }
+
+/// Örnek2 : belirlenen kullanıcı adı ve parola doğru girildiğinde "giriş başarılı" , yanlış girildiğinde "kullanıcı adı veya şifre hatalı" mesajı veren bir console uygulaması.
+
+string kullaniciAdi = "kullanıcı";
+string parola = "12345";
+
+Console.Write("Lütfen Kullanıcı adını giriniz : ");
+string? girilenKullaniciAdi = Console.ReadLine();           // buradaki ? ile string ifadeyi nullable yaptık.
+
+Console.Write("lütfen parola giriniz : ");
+string? girilenParola= Console.ReadLine();                  / buradaki ? ile string ifadeyi nullable yaptık.
+
+if ( kullaniciAdi == girilenKullaniciAdi)
+{
+    if (parola==girilenParola)
+    {
+        Console.WriteLine("giriş başarılı");
+    }
+    else
+    {
+        Console.WriteLine("parola hatalı");
+    }
+}
+else
+{
+    Console.WriteLine("kullanıcı adı hatalı");
+}
+
+kritik1 : tek satırlık işlem yaptığımız için { } leri kaldırabiliriz.
+kritik2 : true olması durumunda if bloğu çalışacaktı. "!" ile false olması durumunda if bloğunu çalıştırabiliriz.
+kritik3 : 
+
+ternary operatörü ile 
+
+Console.Write("kullancı adı giriniz : ");
+string? kullaniciAdi = Console.ReadLine();
+
+Console.Write("parola giriniz : ");
+string? parola = Console.ReadLine();
+
+string mesaj = (kullaniciAdi=="kullanıcı") ? "kullanıcı adı doğrulandı" : "kullanıcı adı hatalı";
+Console.WriteLine(mesaj);
+string mesaj2 = (parola=="12345") ? "parola doğrulandı" : "parola hatalı";
+Console.WriteLine(mesaj2);
+
+switch-case ile 
+
+Console.Write("kullancı adı giriniz : ");
+string? kullaniciAdi = Console.ReadLine();
+
+Console.Write("parola giriniz : ");
+string? parola = Console.ReadLine();
+
+switch (kullaniciAdi)
+{
+    case "kullanıcı":
+    Console.WriteLine("kullanıcı adı başarılı");
+    break;
+    default:
+    Console.WriteLine("kullanıcı adı hatalı");
+    break;
+}
+
+switch (parola)
+{
+    case "12345":
+    Console.WriteLine("kullanıcı adı başarılı");
+    break;
+    default:
+    Console.WriteLine("kullanıcı adı hatalı");
+    break;
+}
+
