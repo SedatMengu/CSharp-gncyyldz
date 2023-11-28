@@ -2,6 +2,7 @@
 using System.Collections;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
 
@@ -850,3 +851,110 @@ using System.Runtime.CompilerServices;
 // string mesaj2 = (parola=="12345") ? "parola doğrulandı" : "parola hatalı";
 // Console.WriteLine(mesaj2);
 
+// Console.Write("1.sayıyı giriniz : ");
+// int? sayi1 = int.Parse(Console.ReadLine());
+
+// Console.Write("2.sayıyı giriniz : ");
+// int? sayi2 = int.Parse(Console.ReadLine());
+
+// Console.Write("işlem türünü yazınız : ");
+// char islem = char.Parse(Console.ReadLine());
+
+#region if yapısı ile
+    // if (islem=='a')
+//     Console.WriteLine(sayi1+sayi2);
+// else if (islem=='b')
+//     Console.WriteLine(sayi1-sayi2);
+// else if(islem=='c')
+//     Console.WriteLine(sayi1/sayi2);
+// else if(islem=='d')
+//     Console.WriteLine(sayi1*sayi2);
+// else
+//     Console.WriteLine("işlem türü yanlış seçildi.");
+#endregion
+
+#region switch ile
+    // switch (islem)
+    // {
+    //     case 'a' :
+    //     Console.WriteLine(sayi1+sayi2);
+    //     break;
+    //     case 'b' :
+    //     Console.WriteLine(sayi1-sayi2);
+    //     break;
+    //     case 'c' :
+    //     Console.WriteLine(sayi1*sayi2);
+    //     break;
+    //     case 'd' :
+    //     Console.WriteLine(sayi1/sayi2);
+    //     break;
+    //     default:
+    //     Console.WriteLine("işlem türü hatalı girildi");
+    //     break;
+    // }
+#endregion
+
+#region switc expression
+// int? sonuc = islem switch
+// {
+//     'a'=> sayi1+sayi2 ,
+//     'b'=> sayi1-sayi2 ,
+//     'c'=> sayi1*sayi2 ,
+//     'd'=> sayi1/sayi2 ,
+//     _ => throw new NotImplementedException(),
+// };
+// Console.WriteLine(sonuc);
+#endregion
+
+#region if-elseif ile 
+    // Console.Write("1.sayıyı giriniz : ");
+    // int? sayi1 = int.Parse(Console.ReadLine());
+
+    // Console.Write("2.sayıyı giriniz : ");
+    // int? sayi2 = int.Parse(Console.ReadLine());
+
+    // Console.Write("işlem türünü yazınız : ");
+    // char islem = char.Parse(Console.ReadLine());
+
+    // if (islem=='a')
+    //     Console.WriteLine(sayi1+sayi2);
+    // else if (islem=='b')
+    //     Console.WriteLine(sayi1-sayi2);
+    // else if(islem=='c')
+    //     Console.WriteLine(sayi1/sayi2);
+    // else if(islem=='d')
+    //     Console.WriteLine(sayi1*sayi2);
+    // else
+    //     Console.WriteLine("işlem türü yanlış seçildi.");
+#endregion
+
+#region ternary operatörü ile
+    // Console.Write("1.sayıyı giriniz : ");
+    // int? sayi1 = int.Parse(Console.ReadLine());
+
+    // Console.Write("2.sayıyı giriniz : ");
+    // int? sayi2 = int.Parse(Console.ReadLine());
+
+    // Console.Write("işlem türünü yazınız : ");
+    // char islem = char.Parse(Console.ReadLine());
+
+    // Console.WriteLine(islem=='a' ? sayi1+sayi2:(islem=='b'? sayi1-sayi2:(islem=='c'? sayi1*sayi2:(islem=='d'?sayi1/sayi2:"işlem başarısız"))));
+#endregion
+
+#region if ile
+    // Console.Write("lütfen bir sayı giriniz : ");
+    // int? sayi1 = int.Parse(Console.ReadLine());
+    // if(sayi1!=10)
+    // Console.WriteLine("sayı 10 değildir.");
+#endregion
+
+#region ternary operatörü ile
+    // Console.Write("lütfen bir sayı giriniz : ");
+    // int? sayi1 = int.Parse(Console.ReadLine());
+    // Console.WriteLine(sayi1==10 ? "":  "sayı 10 değildir.");
+#endregion
+
+
+#region if yapısı ile
+    
+#endregion
