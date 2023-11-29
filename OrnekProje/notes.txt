@@ -25,15 +25,15 @@ Makine dilleri ;
 
 C# ile neler yapılabilir,
 
-1- Web uygulamaları,
-2- Mobil uygulamaları,
-3- Web Servisleri,
-4- Servis Mimarileri,
-5- consol uygulamaları,
-6- .dll uzantılı dosyalar,
-7- Windows form uygulamaları,
-8- oyunlar,
-9- ERP, Muhasebe, Multi Media, İstatistik, Güvenlik Yazılımları...
+    1- Web uygulamaları,
+    2- Mobil uygulamaları,
+    3- Web Servisleri,
+    4- Servis Mimarileri,
+    5- consol uygulamaları,
+    6- .dll uzantılı dosyalar,
+    7- Windows form uygulamaları,
+    8- oyunlar,
+    9- ERP, Muhasebe, Multi Media, İstatistik, Güvenlik Yazılımları...
 
 
 .net microsoft tarafından yazılım geliştiriciler için geliştirdiği teknolojileri sunduğu bir çatıdır.
@@ -182,142 +182,142 @@ Visual Studio idesinde kendi yaptığımız işlemleri komut satırı ile yapabi
 
 // dotnet CLI komutları nelerdir?
 
-1- help : dotnet CLI tarafından desteklenen komutlar hakkında ayrıntılı bilgi veren kokmuttur. ( dotnet help)
+    1- help : dotnet CLI tarafından desteklenen komutlar hakkında ayrıntılı bilgi veren kokmuttur. ( dotnet help)
 
-2- new  : dotnet CLI üzerinden proje oluşturmaya yardımcı olan komuttur. (dotnet new (proje tipi) --name (proje ismi))
+    2- new  : dotnet CLI üzerinden proje oluşturmaya yardımcı olan komuttur. (dotnet new (proje tipi) --name (proje ismi))
 
-not : sadece dotnet new yazıp enter tuşuna bastığımızda hangi proje tiplerini oluşturabileceğimiz konusunda CLI bize yardımcı olur.
+    not : sadece dotnet new yazıp enter tuşuna bastığımızda hangi proje tiplerini oluşturabileceğimiz konusunda CLI bize yardımcı olur.
 
-not: aynı isimde farklı bir dosya olmasından kaynaklı olarak oluşacak hatalarda (dotnet new (proje tipi) --name (proje ismi)) --force
-şeklinde satırın sonuna force keyword unu kullanırsak hata almadan işlemi yapabiliriz.
+    not: aynı isimde farklı bir dosya olmasından kaynaklı olarak oluşacak hatalarda (dotnet new (proje tipi) --name (proje ismi)) --force
+    şeklinde satırın sonuna force keyword unu kullanırsak hata almadan işlemi yapabiliriz.
 
-3- restore : proje sürecinde referans edilen yahut referansı kaldırılan paketlerin restorasyonunu sağlar. (dotnet restore)
+    3- restore : proje sürecinde referans edilen yahut referansı kaldırılan paketlerin restorasyonunu sağlar. (dotnet restore)
 
-referans mantığı nedir ? 
+    referans mantığı nedir ? 
 
-bir yazılım geliştirme sürecinde işlemleri / iş mantıklarını genellikle kah kendimiz tarafından kah başkaları tarafından (ki genelde başkaları tarfından)
-önceden yazılmış kütüphanelerin desteğini alarak çözmeye referans mantığı denir.
+    bir yazılım geliştirme sürecinde işlemleri / iş mantıklarını genellikle kah kendimiz tarafından kah başkaları tarafından (ki genelde başkaları tarfından)
+    önceden yazılmış kütüphanelerin desteğini alarak çözmeye referans mantığı denir.
 
-restore edilen paketler nuGet ten gelir.
+    restore edilen paketler nuGet ten gelir.
 
-4- build : projeyi ilk önce restore eder ve sonrasında derler. sonuç olarak .exe ve .dll çıktıları verir. 
-bu .dll ve .exe uzantılı dosyalar /bin/Debug/net7.0 dizininde görüntülenir.
+    4- build : projeyi ilk önce restore eder ve sonrasında derler. sonuç olarak .exe ve .dll çıktıları verir. 
+    bu .dll ve .exe uzantılı dosyalar /bin/Debug/net7.0 dizininde görüntülenir.
 
-not : proje derlemeden önce muhakkak restore edilir.
+    not : proje derlemeden önce muhakkak restore edilir.
 
 
-5- publish : projeyi derleyerek yayınlanabilir dosyaların oluşmasını sağlar. çıktılar /bin/Debug/net7.0/publish dizininde bulunur.
+    5- publish : projeyi derleyerek yayınlanabilir dosyaların oluşmasını sağlar. çıktılar /bin/Debug/net7.0/publish dizininde bulunur.
 
-publish klasörü altında : 
+    publish klasörü altında : 
 
-.dll,
-.deps.json,
-.runtimeconfig.json,
-.uygulama bağlantılarının .dll dosyaları
+    .dll,
+    .deps.json,
+    .runtimeconfig.json,
+    .uygulama bağlantılarının .dll dosyaları
 
-bulunur.
+    bulunur.
 
-not : uygulamaya ait algoritmaları yayınlamak istemiyor olabiliriz, böyle bir durumda publish komutu bize yardımcı olur.
-not2: publish dosyalarında herhangi bir güncelleme yapılamaz, yapılan değişikliklerden sonra tekrar oluşturmak gerekir. çıktı almak gibi...
+    not : uygulamaya ait algoritmaları yayınlamak istemiyor olabiliriz, böyle bir durumda publish komutu bize yardımcı olur.
+    not2: publish dosyalarında herhangi bir güncelleme yapılamaz, yapılan değişikliklerden sonra tekrar oluşturmak gerekir. çıktı almak gibi...
 
-6- run : uygulamayı derler ve ayağa kaldırır. (dotnet run ) 
+    6- run : uygulamayı derler ve ayağa kaldırır. (dotnet run ) 
 
-not : dotnet run --no-build uyulamayı derlemeden ayağa kaldırır.
+    not : dotnet run --no-build uyulamayı derlemeden ayağa kaldırır.
 
 
 // proje modifikasyon komutları:
 
-proje seviyesinde işlem yapmamızı ve referans ekleyip çıkarmamızı sağlayan komutlardır.
+    proje seviyesinde işlem yapmamızı ve referans ekleyip çıkarmamızı sağlayan komutlardır.
 
-paket / kütüphane : nuGet havuzundan gelir,
-referans          : önceden yazılmış .dll uzantılı dosyalardır.
-.exe uzantısı     : yazdığımız uygulamayı bir insan kullanacaksa bu uzantıda olur.
-.dll uzantısı     : yazdığımız uygulamayı bir yazılım kullanacaksa bu uzantıda olur.
+    paket / kütüphane : nuGet havuzundan gelir,
+    referans          : önceden yazılmış .dll uzantılı dosyalardır.
+    .exe uzantısı     : yazdığımız uygulamayı bir insan kullanacaksa bu uzantıda olur.
+    .dll uzantısı     : yazdığımız uygulamayı bir yazılım kullanacaksa bu uzantıda olur.
 
-1- add package : uygulamaya nuGet'den paket / kütüphane yüklememizi sağlar.
+    1- add package : uygulamaya nuGet'den paket / kütüphane yüklememizi sağlar.
 
-dotnet add package (paket ismi)  / ile terminalden paket yükleyebiliriz.
+    dotnet add package (paket ismi)  / ile terminalden paket yükleyebiliriz.
 
-2- add referance : uygulamaya fiziksel bir .dll uzantılı dosya referans etmemizi sağlar.
+    2- add referance : uygulamaya fiziksel bir .dll uzantılı dosya referans etmemizi sağlar.
 
-diyelimki solution unumuzda birden fazla uygulama var ve bu uygulamalar birbirlerini referans etmek zorundalar.
-örneğin veri tabanı işlemlerini bir uygulama aracılığı ile yapıyoruz , iş mantığını / ana olayların cereyan ettiği olayları 
-başka bir uygulama ile yapıyoruz. ana olayların cerayan ettiği uygulamaya veri tabanı işlemlerinin yapıldığı uygulamayı
-referans etmek zorundayız.
+    diyelimki solution unumuzda birden fazla uygulama var ve bu uygulamalar birbirlerini referans etmek zorundalar.
+    örneğin veri tabanı işlemlerini bir uygulama aracılığı ile yapıyoruz , iş mantığını / ana olayların cereyan ettiği olayları 
+    başka bir uygulama ile yapıyoruz. ana olayların cerayan ettiği uygulamaya veri tabanı işlemlerinin yapıldığı uygulamayı
+    referans etmek zorundayız.
 
-dotnet add referance (referasn edilen ana dosya).csproj referance (referans eden ufak dosya).csproj
+    dotnet add referance (referasn edilen ana dosya).csproj referance (referans eden ufak dosya).csproj
 
-3- remove package : uygulamada add package ile yüklediğimiz paketleri/kütüphaneleri silmeye yarar.
+    3- remove package : uygulamada add package ile yüklediğimiz paketleri/kütüphaneleri silmeye yarar.
 
-dotnet remove package ( package ismi)
+    dotnet remove package ( package ismi)
 
-4- remove referance : uygulamaya referans edilmiş dll dosyalarını kaldırmaya yarar.
+    4- remove referance : uygulamaya referans edilmiş dll dosyalarını kaldırmaya yarar.
 
-dotnet remove referance (referans ismi)
+    dotnet remove referance (referans ismi)
 
-list referance : uygulamda referans edilen tüm paketleri / kütüphaneleri listeler.
+    list referance : uygulamda referans edilen tüm paketleri / kütüphaneleri listeler.
 
-dotnet list referance 
+    dotnet list referance 
 
-n adet uygulamanın olduğu bir solutionda çalıştığımızı varsayalım . 
-hangi uygulamanın hangi paketlerin/kütüphanelerin referans edildiğini kodlara bakmadan 
-bu yöntemle öğrenebiliriz
+    n adet uygulamanın olduğu bir solutionda çalıştığımızı varsayalım . 
+    hangi uygulamanın hangi paketlerin/kütüphanelerin referans edildiğini kodlara bakmadan 
+    bu yöntemle öğrenebiliriz
 
 // programlamaya başlarken temel ilkeler:
 
-yeni çıkan her dil bir gelenek ve bir kabul ile yola çıkar. bunlara ilke diyoruz.
+    yeni çıkan her dil bir gelenek ve bir kabul ile yola çıkar. bunlara ilke diyoruz.
 
-ilke-1 : don't repeat your self 
+    ilke-1 : don't repeat your self 
 
-bir kod inşa edilirken kullandığımız dile ait bütün özellikleri bildiğimizi varsayalım ,
-aynı kod parçasını birden fazla yerde aynı yöntemle kullanırsak bu 1.ilkeye aykırı bir davranış olur. 
-günün birinde uygulamada tekrar eden kod parçalarında değişiklik yapmak istersek tek tek bütün kopyalarını bulmamız gerekir.
-bir algoritmayı öğrenerek birden fazla problemde aynı algoritmayı kullanmak 1.ilkeye uymaz.
+    bir kod inşa edilirken kullandığımız dile ait bütün özellikleri bildiğimizi varsayalım ,
+    aynı kod parçasını birden fazla yerde aynı yöntemle kullanırsak bu 1.ilkeye aykırı bir davranış olur. 
+    günün birinde uygulamada tekrar eden kod parçalarında değişiklik yapmak istersek tek tek bütün kopyalarını bulmamız gerekir.
+    bir algoritmayı öğrenerek birden fazla problemde aynı algoritmayı kullanmak 1.ilkeye uymaz.
 
-tecrübeden faydalanmak yaratıcılığı öldürür.
+    tecrübeden faydalanmak yaratıcılığı öldürür.
 
-ilke-2 : anlamlı isimlendirme,
+    ilke-2 : anlamlı isimlendirme,
 
-isimlendirme yaptığımızda anlamlı ve çağırışım yapan isim vermemiz gerekir.
+    isimlendirme yaptığımızda anlamlı ve çağırışım yapan isim vermemiz gerekir.
 
 // main fonkiyonu nedir ? 
 
-bir uygulama içerisinde muhakkak olması gereken bir fonksiyondur.
-program.cs dosyası uygulamanın başlangıç dosyasıdır ve başlangıç kodları burada bulunur.
+    bir uygulama içerisinde muhakkak olması gereken bir fonksiyondur.
+    program.cs dosyası uygulamanın başlangıç dosyasıdır ve başlangıç kodları burada bulunur.
 
-not : .cs uzantılı dosyalar c# dilinde yazılmış dosyalarıdır.
+    not : .cs uzantılı dosyalar c# dilinde yazılmış dosyalarıdır.
 
-başlangıç kodlarından kastımız nedir ?
+    başlangıç kodlarından kastımız nedir ?
 
-uygulama ayağa kalktığında işletim sistemi ile iletişim kurabilecek fonksiyonun 
-ve bu fonksiyon içerisinde başlangıca dair komutları barındıracak bir yapıdır.
+    uygulama ayağa kalktığında işletim sistemi ile iletişim kurabilecek fonksiyonun 
+    ve bu fonksiyon içerisinde başlangıca dair komutları barındıracak bir yapıdır.
 
-not : işletim sistemi ile sadece program.cs dosyası içerisindeki main fonksiyonu iletişim kurabilir.
+    not : işletim sistemi ile sadece program.cs dosyası içerisindeki main fonksiyonu iletişim kurabilir.
 
-main fonksiyonu kuralları : 
+    main fonksiyonu kuralları : 
 
-1- main fonksiyonu uyglamaya özgüdür ve her projede yanlızca 1 adet olur.
-2- aynı uygulama içerisinde 2.bi main fonksiyonu yoktur.
+    1- main fonksiyonu uyglamaya özgüdür ve her projede yanlızca 1 adet olur.
+    2- aynı uygulama içerisinde 2.bi main fonksiyonu yoktur.
 
 
-işletim sisteminden parametre ile console'a değer yazdırabiliriz.
+    işletim sisteminden parametre ile console'a değer yazdırabiliriz.
 
-static void Main(string[] args)
-{
-    Console.WriteLine("Hello World!");
-    Console.WriteLine(args[0]);
-    Console.WriteLine(args[1])
-}
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Hello World!");
+        Console.WriteLine(args[0]);
+        Console.WriteLine(args[1])
+    }
 
-terminalden dotnet run sedat mengü yazdığımızda çıktı ekranına ;
+    terminalden dotnet run sedat mengü yazdığımızda çıktı ekranına ;
 
-Hello World!
-sedat
-mengü
+    Hello World!
+    sedat
+    mengü
 
 // top level statement nedir ? 
 
-C# 9.0 ile gelmiştir.
+    C# 9.0 ile gelmiştir.
 
 // yorum satırları ve region özelliği : 
 
@@ -366,26 +366,24 @@ vscode da ise sol taraftaki çubukta 'source control' alanı içerisinden ulaşa
 
 // debuging :
 
-projenin her aşamasında en çok kullandığımız özelliklerdendir. platform ve teknoloji farketmeksizin her noktada kullanılır.
+    projenin her aşamasında en çok kullandığımız özelliklerdendir. platform ve teknoloji farketmeksizin her noktada kullanılır.
 
-brekapoint kavramı ;
+    brekapoint kavramı ;
 
-debug işleminde hassas olan satıra koyduğumuz ve debuging esnasında durduğumuz noktadır. 
-debug modda 1 adım ilerlemek için F10 tuşuna basaır. her basışımız uygulamanın bir adım daha ilerlemesini sağlar.
+    debug işleminde hassas olan satıra koyduğumuz ve debuging esnasında durduğumuz noktadır. 
+    debug modda 1 adım ilerlemek için F10 tuşuna basaır. her basışımız uygulamanın bir adım daha ilerlemesini sağlar.
 
-F5 ile debug modu salmış oluruz ve uygulama sona kadar gitmiş olur.
+    F5 ile debug modu salmış oluruz ve uygulama sona kadar gitmiş olur.
 
-watch penceresi nedi ? 
+    watch penceresi nedi ? 
 
-debug modda çalıştırma esnasında bazı değişikliklerin değerlerini izlemek isteyebiliriz. 
-debug çalışırken izlemek istediğimiz değişkenin üzerine tıklayarak 'izleme ekle' seçeneğini seçerek 
-watch penresesine eklemiş oluruz.
+    debug modda çalıştırma esnasında bazı değişikliklerin değerlerini izlemek isteyebiliriz. 
+    debug çalışırken izlemek istediğimiz değişkenin üzerine tıklayarak 'izleme ekle' seçeneğini seçerek 
+    watch penresesine eklemiş oluruz.
 
-peki debuguz uygulamayı çalıştırmak nasıl olur?
+    peki debuguz uygulamayı çalıştırmak nasıl olur?
 
-debug zaman ve performasn açısından maliyetli bir yoldur. genelde projemizden emin olduğumuz durumlarda debugsuz çalıştırabiliriz.
-
-
+    debug zaman ve performasn açısından maliyetli bir yoldur. genelde projemizden emin olduğumuz durumlarda debugsuz çalıştırabiliriz.
 
 // değişkenler nelerdir ?
 
@@ -426,34 +424,33 @@ string ile tahsis edilen alana double türünde bir veri barındıramazsınız ,
 
 veri türleri :
 
-bool : true veya false tutabilir.   (1 bit )
+    bool : true veya false tutabilir.   (1 bit )
 
-char : tek karakter tutabilir.   (16 bit )
+    char : tek karakter tutabilir.   (16 bit )
 
-sbyte : -128 ile +127 arasındaki değerler tutabilir.   (8 bit )
+    sbyte : -128 ile +127 arasındaki değerler tutabilir.   (8 bit )
 
-byte : 0 ile +255 arasındaki değerler tutabilir.   (8 bit )
+    byte : 0 ile +255 arasındaki değerler tutabilir.   (8 bit )
 
-short : -32768 ile +32767 arasındaki değerler tutabilir.   (16 bit )
+    short : -32768 ile +32767 arasındaki değerler tutabilir.   (16 bit )
 
-ushort : 0 ile 65535 arasındaki değerler tutabilir.   (16 bit )
+    ushort : 0 ile 65535 arasındaki değerler tutabilir.   (16 bit )
 
-int : -2147483648 ile +2147483647 arasındaki değerler tutabilir.   (32 bit )
+    int : -2147483648 ile +2147483647 arasındaki değerler tutabilir.   (32 bit )
 
-uint : 0 ile +4294697295 arasındaki değerler tutabilir.   (322 bit )
+    uint : 0 ile +4294697295 arasındaki değerler tutabilir.   (322 bit )
 
-long : -9233372036854775808 ile +9233372036854775807 arasındaki değerler tutabilir.   (64 bit )
+    long : -9233372036854775808 ile +9233372036854775807 arasındaki değerler tutabilir.   (64 bit )
 
-ulong : 0 ile +18446744073709551615 arasındaki değerler tutabilir.   (64 bit )
+    ulong : 0 ile +18446744073709551615 arasındaki değerler tutabilir.   (64 bit )
 
-float : +- 1.5 x 10(-45) ile +-3.4x10(38) arasındaki değerler tutabilir.   (32 bit )
+    float : +- 1.5 x 10(-45) ile +-3.4x10(38) arasındaki değerler tutabilir.   (32 bit )
 
-double : +- 5x10(-324) ile +-1.7x10(308) arasındaki değerler tutabilir.   (64 bit )
+    double : +- 5x10(-324) ile +-1.7x10(308) arasındaki değerler tutabilir.   (64 bit )
 
-decimal : +-1.5x10(-28) ile +-7.9x10(28) arasındaki değerler tutabilir.   (128 bit )
+    decimal : +-1.5x10(-28) ile +-7.9x10(28) arasındaki değerler tutabilir.   (128 bit )
 
-string : metinsel ifadeleri tuttuğumuz değişken türüdür ve referans tiplidir.
-
+    string : metinsel ifadeleri tuttuğumuz değişken türüdür ve referans tiplidir.
 
 yukardaki türlerden sadece 'decimal' primitive değildir , geri kalan türlerin tamamı primitive dir.
 
@@ -1144,44 +1141,37 @@ not : eğer değer aralığı dışında kalan bir rakam olursa modunu alarak ka
 
 ?? tür dönüşümlerine neden ihtiyaç duyarız ??
 
-farklı türlerdeki verileri birbirleri ile işleme alabilmek için , örneğin bir tam sayı ve bir metin değerini toplamak gerekse bunu yapabilmek için her 2 değerin de 
-aynı türde olması gerekir.
+    farklı türlerdeki verileri birbirleri ile işleme alabilmek için , örneğin bir tam sayı ve bir metin değerini toplamak gerekse bunu yapabilmek için her 2 değerin de 
+    aynı türde olması gerekir.
 
-- veri kaybını önlemek için,
-- veriler ile işlem yapabilmek için,
-- veri türü karışıklığını çözebilmek için,
-- veri türü uyuşmazlığını giderebilmek için...
+    - veri kaybını önlemek için,
+    - veriler ile işlem yapabilmek için,
+    - veri türü karışıklığını çözebilmek için,
+    - veri türü uyuşmazlığını giderebilmek için...
 
-tür dönüşümleri yapılır.
+    tür dönüşümleri yapılır.
 
-not : ister değer aralığında olsun ister olmasın ne zaman alt türe dönüşüm yapmamız gerekse cast opertörü ile dönüştüreceğimiz türü bildirmemiz gerekir.
+    not : ister değer aralığında olsun ister olmasın ne zaman alt türe dönüşüm yapmamız gerekse cast opertörü ile dönüştüreceğimiz türü bildirmemiz gerekir.
 
-detay : 
+    detay : 
 
-int a = 3000 ;
+    int a = 3000 ;
 
-short s = (byte)a;  -----> burada int ifadesi byte türüne explicit edilmiş ve oluşan değer short türüne implicit edilmiştir.
-
+    short s = (byte)a;  -----> burada int ifadesi byte türüne explicit edilmiş ve oluşan değer short türüne implicit edilmiştir.
 
 /// checked ve unchecked 
 
+    checked : explicit tür dönüşümü yapılırken runtime de bir hata fırlatılmasını sağlar. bu checked kullanılmaz ise herhangi bir hata almadan veri kaybı arka planda gerçekleşir.
 
-checked : explicit tür dönüşümü yapılırken runtime de bir hata fırlatılmasını sağlar. bu checked kullanılmaz ise herhangi bir hata almadan veri kaybı arka planda gerçekleşir.
+    {
+        veri kaybı potansiyeli olan dönüşüm kodları bu alana yazılır
+    }
 
-{
-    veri kaybı potansiyeli olan dönüşüm kodları bu alana yazılır
-}
+    unchecked : explicit tür dönüşümü yapılırken hata fırlatmadan uygulamanın çalışmaya devam etmesini sağlar. 
 
-unchecked : explicit tür dönüşümü yapılırken hata fırlatmadan uygulamanın çalışmaya devam etmesini sağlar. 
-
-NOT : tür dönüşümleri default olarak unchecked dir.
+    NOT : tür dönüşümleri default olarak unchecked dir.
 
 /// özel türler arasında tür dönüşümleri 
-
-1- bool ile sayısal değerler arasında tür dönüşümü,
-2- sayısal değerler ile bool arasında tür dönüşümü,
-3- char ile sayılar türler arasında tür dönüşümü,
-4- sayılar türler ile char arasında tür dönüşümü.
 
 1- bool ile sayısal değerler arasında tür dönüşümü,
     elimizdeki mantıksal değer taşına bir veriyi herhangi bir sayısal veriye convert edersek ilgili değerin sayısal karşılığını elde ederiz.
@@ -1190,11 +1180,11 @@ NOT : tür dönüşümleri default olarak unchecked dir.
     false ---> 0
 
     örnek : bool b = true;
-            int i = Convert.ToInt32(b);
+        int i = Convert.ToInt32(b);
 
-            Console.WriteLine(i);       ---> 1
+        Console.WriteLine(i);       ---> 1
 
-            içerisinde true değeri taşıan b isimli boolean türündeki bir veriyi dönüştürdük.
+        içerisinde true değeri taşıan b isimli boolean türündeki bir veriyi dönüştürdük.
 
 2- sayısal değerler ile bool arasında tür dönüşümü,
     Elimizdeki sayısal değer taşıyan bir veiriyi mantıksal bir veriye convert edersek ilgili değerin mantıksal karşılığını elde ederiz.
@@ -1204,7 +1194,7 @@ NOT : tür dönüşümleri default olarak unchecked dir.
         bool a = Convert.ToBoolean(s);
         Console.WriteLine(a);       ---> true
     
-not : 0 dışındaki bütün değerlerin mantıksal karşılığı true dur.
+    not : 0 dışındaki bütün değerlerin mantıksal karşılığı true dur.
 
 3- char ile sayılar türler arasında tür dönüşümü,
     klavyede görünen her bir karakterin arka planda bir ASCII kodu vardır.
@@ -1236,8 +1226,6 @@ not : 0 dışındaki bütün değerlerin mantıksal karşılığı true dur.
 
     bu tür dönüşümlerde explicit tür dönüşümü yapılır. 
 
-
-
 4- sayılar türler ile char arasında tür dönüşümü.
 
     örnek;
@@ -1246,20 +1234,23 @@ not : 0 dışındaki bütün değerlerin mantıksal karşılığı true dur.
         char @char = (char)deger;
         Console.WriteLine(@char);           --->    a
 
-
 // tür dönüşümleri genel konu tekrarı:
 
 1- tür dönüşümlerini neden yaparız ?
     yazılım demek elde edilen verileri uygun algoritmalar yardımı ile doğru yöntem ve şekiller yardımı ile istenen çıktıyı oluşturmaktır. 
     veriler bu yolculuk esnasında bazı işlemlere tabi tutulurlar , bunlardan bir tanesi de tür dönüşümleridir.
     bu dönüşümlere veriler arasında karşılaştırma yapabilmek , veriler üzerine matematiksel işlemler yapabilmek , bellek optimizasyonu gibi sebeplerden ihtiyaç duyarız.
+
 2- parse fonksiyonu nedir ne için kullanılır?
     sadece string ifadeler üzerinde çalışan bir fonksiyondur. string türe veya string türden bi dönüşüm olması durumunda kullanılır.
+
 3- convert fonksiyonu nedir ne için kullanılır?
     bütün tür dönüşümlerinde çalışan bir fonksiyondur. 
+    
 4- sayılar türlü verilerin kendi aralarında tür dönüşümleri nelerdir?
     genel anlamda bellek optimizasyonu için kullanılır. byte türü 8 bit lik yer tutarken decimal 128 bit lik yer kaplamaktadır.
     byte ile tutulabilecek bir veriyi decimal ile tutarak gereksiz bellek kullanımına yol açmışız demektir.
+
 5- implicit ve explicit tür dönüşümleri nasıl yapılır?
     implicit tür dönüşümü sayılar veri türlerinde daha geniş bir değer aralığı tutan verilere bilgisayar yardımı ile dönüştümeye denir. 
     bu dönüşümde developer ilave herahngi bir şey yapmasına gerek yoktur. 
@@ -1268,6 +1259,7 @@ not : 0 dışındaki bütün değerlerin mantıksal karşılığı true dur.
     bu dönüşümde bilgisayarın herhangi bir sorumluluğu yoktur. bütün sorumluluk developer dadır. 
     burada dikkat edilmesi gereken nokta byte kapasitesini aşmayan bir değeri daha üst segmentte bir türde saklıyorsak ve bunu byte türüne dönüştürmek istersek 
     gene explicit tür dönüşümü yapmak gerekir. BİLGİSAYAR VERİNİN TÜRÜ İLE İLGİLENİR , VERİNİN DEĞERİ İLE DEĞİL...
+
 6- checked ve unchecked kavramları?
     normal şartlarda bilinçli tür dönüşümlerinde herhangi bir hata ile karşılaşmadan arka planda işlemler gerçekleşir.
     burada bilinçli olarak tür dönüşümünde hata fırtlatmak istediğimiz bir durumda 'checked' olayını kullanabiliriz.
@@ -1288,26 +1280,24 @@ not : 0 dışındaki bütün değerlerin mantıksal karşılığı true dur.
     sayısal-bool , bool-sayısal tür dönüşümleri convert ile yapılır.
     char-sayısal , sayısal-char tür dönüşümleri explicit olarak yapılır. ve sonuç olarak ascii kaynak kodlarını döner.
 
-    
 8- ascii kaynak kodları nedir ve ne işe yararlar ?
     klavyedeki her bir ifadenin ascii kaynak kodu karşılığı vardır. bu kodlar bilgiayar sistemlerinde sıkça kullanılırlar.
 
-
 /// operatörler nedir ?
 
-bir işin sorumluluğunu üstlenen temel yapı taşlarıdır , bir operasyon gerçekleştirirler.
+    bir işin sorumluluğunu üstlenen temel yapı taşlarıdır , bir operasyon gerçekleştirirler.
 
-bir operatör teorik olarak sağında ve solunda bulunan değerler üzerinde bir bağıntı oluştururlar.
+    bir operatör teorik olarak sağında ve solunda bulunan değerler üzerinde bir bağıntı oluştururlar.
 
-opertörler kullanılırken geriye dönüş değerlerine dikkat edilmelidir. 
+    opertörler kullanılırken geriye dönüş değerlerine dikkat edilmelidir. 
 
-operatör çeşitleri;
+    operatör çeşitleri;
 
-1- aritmatik operatörler,
-2- karşılaştırma operatörleri,
-3- mantıksal operatörler,
-4- özel işlemler operatörleri.
-5- metinsel ifalerde kullanılan operatörler.
+    1- aritmatik operatörler,
+    2- karşılaştırma operatörleri,
+    3- mantıksal operatörler,
+    4- özel işlemler operatörleri.
+    5- metinsel ifalerde kullanılan operatörler.
 
 1- matematiksel operatörler
     + , - , * , / , % 
@@ -1362,7 +1352,6 @@ operatör çeşitleri;
     true ^ false ---> true
     false ^ false ---> false
 
-
 4- özel işlemler operatörleri.
     ++ , -- , += , -= , *= , /= , ! , != 
 
@@ -1376,41 +1365,40 @@ operatör çeşitleri;
     ++i önce i değerini 1 artırır sonra i değerini return eder , i++ da ise önce i değerini return eder daha sonra değeri 1 artırır.
 
     Örnek : int i = 10;
-            Console.WriteLine(i++);     ---> 10
+    Console.WriteLine(i++);     ---> 10
 
-            int i = 10 ;
-            Console.WriteLine(++i);     ---> 11
+    int i = 10 ;
+    Console.WriteLine(++i);     ---> 11
         
     += , -= , *= , /= operatörleri : üzerine ekleme ve yığma oparetörleridir. tamamı aritmatik işlemlerde kullanılır. ilave olarak += operatörü metinsel ifadeler için de kullanılabilir.
 
     örnek : int i = 5;
-            i += 4 ;
-            Console.Writeline(i);       ---> 9
+    i += 4 ;
+    Console.Writeline(i);       ---> 9
 
-            int i = 5;
-            i -= 1 ;
-            Console.Writeline(i);       ---> 4
+    int i = 5;
+    i -= 1 ;
+    Console.Writeline(i);       ---> 4
 
-            int i = 5;
-            i *= 2 ;
-            Console.Writeline(i);       ---> 10
+    int i = 5;
+    i *= 2 ;
+    Console.Writeline(i);       ---> 10
 
-            int i = 5;
-            i /= 2 ;
-            Console.Writeline(i);       ---> 2
+    int i = 5;
+    i /= 2 ;
+    Console.Writeline(i);       ---> 2
 
     ! operatörü : değil operatörü olarak bilinir. tek başına bir anlam ifade etmez, 
 
-        ! operatörü kullanım örnekler;
+    ! operatörü kullanım örnekler;
 
-        Console.WriteLine(!true);   ---> false
-        Console.WriteLine(true);    ---> true
+    Console.WriteLine(!true);   ---> false
+    Console.WriteLine(true);    ---> true
 
-        Console.WriteLine(2 != 3 ); ---> true
-        Console.WriteLine(3 != 3 ); ---> false
+    Console.WriteLine(2 != 3 ); ---> true
+    Console.WriteLine(3 != 3 ); ---> false
 
-
-5- metinsel ifalerde kullanılan operatörler.
+5- metinsel operatörler.
 
     + , += , == , !=
 
@@ -1533,119 +1521,114 @@ operatör çeşitleri;
     string sonuc = (yas<25) ? "A" : ((yas==25)? "B":"C");  
     Console.WriteLine(sonuc);           ---> c
 
-
 /// assign operatörü
 
-atama operatörlerinde sağ-sol önemlidir. 
-eğer değişken sol tarafta çağırılıyor ise değişkenin kendisi , sağ tarafta çağırılıyorsa değişkenin taşıdığı değer gelir.
+    atama operatörlerinde sağ-sol önemlidir. 
+    eğer değişken sol tarafta çağırılıyor ise değişkenin kendisi , sağ tarafta çağırılıyorsa değişkenin taşıdığı değer gelir.
 
-not : assign operatörü bazı durumlarda davranış değiştirerek referans etme davranışı sergileyebilir.
+    not : assign operatörü bazı durumlarda davranış değiştirerek referans etme davranışı sergileyebilir.
 
 /// member access (üye erişim operatörü ".")
 
-elimizdeki değerlerin türleri alt elemanlara sahiptir. bu alt elemanlara ulaşmak için "." operatörü kullanılır.
+    elimizdeki değerlerin türleri alt elemanlara sahiptir. bu alt elemanlara ulaşmak için "." operatörü kullanılır.
 
-üye erşimi ne demektir ?
+    üye erşimi ne demektir ?
 
--   bir nesnenin veya sınıfın üyelerine erişmek için kullanılan bir işlemdir.
+    -   bir nesnenin veya sınıfın üyelerine erişmek için kullanılan bir işlemdir.
 
-not : "." operetörü bir nesnenin üyelerine erişmenin yanında static üyelere erişmek için de kullanılabilir.
+    not : "." operetörü bir nesnenin üyelerine erişmenin yanında static üyelere erişmek için de kullanılabilir.
 
-not : static üyeler nesne özellikleri oluşturmadan erişilebilen sınıf üyeleridir.
+    not : static üyeler nesne özellikleri oluşturmadan erişilebilen sınıf üyeleridir.
 
-int a = 5;
+    int a = 5;
 
-a.CompareTo
- .Equals
- .GetHashCode
- .GetType
- .GetTypeCode
- .ToString
- .TryFormat
+    a.CompareTo
+    .Equals
+    .GetHashCode
+    .GetType
+    .GetTypeCode
+    .ToString
+    .TryFormat
 
-buradaki "." operatöründen sonra gelenler int türüne ait member access lerdir.
+    buradaki "." operatöründen sonra gelenler int türüne ait member access lerdir.
 
-string b = "ali";
+    string b = "ali";
 
-b.Aggregate
- .All
- .Any
- .Append
- .AsEnumerable
- .AsMemory
- .AsParallel
- .
- .
- .
+    b.Aggregate
+    .All
+    .Any
+    .Append
+    .AsEnumerable
+    .AsMemory
+    .AsParallel
+    .
+    .
+    .
 
-buradaki "." operatöründen sonra gelenler string türüne ait member access lerdir.
+    buradaki "." operatöründen sonra gelenler string türüne ait member access lerdir.
 
 /// cast operatörü 
 
-daha mnce cast operatörlerini 3 yerde gördük
+    daha mnce cast operatörlerini 3 yerde gördük
 
-1- boxing edilmiş bir veriyi unboxing ederken,
-2- explicit tür dönüşümünde 
-3- char - sayısal özel tür dönüşümlerinde (ASCII Kodlarını verirdi)
-4- polimorfizm durumunda base class referansı ile işaretlenen bir nesneyi kendi türünde elde edebilmemizi sağlamaktadır. (ileride göreceğiz)
-
+    1- boxing edilmiş bir veriyi unboxing ederken,
+    2- explicit tür dönüşümünde 
+    3- char - sayısal özel tür dönüşümlerinde (ASCII Kodlarını verirdi)
+    4- polimorfizm durumunda base class referansı ile işaretlenen bir nesneyi kendi türünde elde edebilmemizi sağlamaktadır. (ileride göreceğiz)
 
 /// sizeof operatörü:
 
-bir verinin veya ifadenin bellekte ne kadar yer kapladığını integer olarak geriye döndüren operatördür. (kaç byte olduğunu verir.)
+    bir verinin veya ifadenin bellekte ne kadar yer kapladığını integer olarak geriye döndüren operatördür. (kaç byte olduğunu verir.)
 
-Console.WriteLine(sizeof(byte));    ---> 1
-Console.WriteLine(sizeof(sbyte));   ---> 1
-Console.WriteLine(sizeof(int));     ---> 4
-Console.WriteLine(sizeof(uint));    ---> 4
-Console.WriteLine(sizeof(double));  ---> 8
-Console.WriteLine(sizeof(decimal)); ---> 16
-Console.WriteLine(sizeof(float));   ---> 4
-Console.WriteLine(sizeof(char));    ---> 2
-Console.WriteLine(sizeof(long));    ---> 8
-
+    Console.WriteLine(sizeof(byte));    ---> 1
+    Console.WriteLine(sizeof(sbyte));   ---> 1
+    Console.WriteLine(sizeof(int));     ---> 4
+    Console.WriteLine(sizeof(uint));    ---> 4
+    Console.WriteLine(sizeof(double));  ---> 8
+    Console.WriteLine(sizeof(decimal)); ---> 16
+    Console.WriteLine(sizeof(float));   ---> 4
+    Console.WriteLine(sizeof(char));    ---> 2
+    Console.WriteLine(sizeof(long));    ---> 8
 
 /// typeof operatörü :
-bir veri veya ifadenin türünü döndürmek için kullanılan operatördür. türü tespit etmek için kullanılır.
+    bir veri veya ifadenin türünü döndürmek için kullanılan operatördür. türü tespit etmek için kullanılır.
 
 
-/// default operatörü :
+    /// default operatörü :
 
-herhangi bir operatörün default değerini döndüren bir operatördür. 
+    herhangi bir operatörün default değerini döndüren bir operatördür. 
 
-default değer nedir ?
+    default değer nedir ?
 
-- geçerli her tür için yazılım tarafından varsayılan olarak tanımlanmış değerdir.
+    - geçerli her tür için yazılım tarafından varsayılan olarak tanımlanmış değerdir.
 
-Console.WriteLine(default(decimal));    ---> 0
-Console.WriteLine(default(string));     ---> null
-Console.WriteLine(default(short));      --->0
-Console.WriteLine(default(byte));       --->0
-Console.WriteLine(default(long));       --->0
-Console.WriteLine(default(int));        --->0
-Console.WriteLine(default(byte));       --->0
-Console.WriteLine(default(char));       ---> null
+    Console.WriteLine(default(decimal));    ---> 0
+    Console.WriteLine(default(string));     ---> null
+    Console.WriteLine(default(short));      --->0
+    Console.WriteLine(default(byte));       --->0
+    Console.WriteLine(default(long));       --->0
+    Console.WriteLine(default(int));        --->0
+    Console.WriteLine(default(byte));       --->0
+    Console.WriteLine(default(char));       ---> null
 
-herhangi bir değişkene default değer atamak için;
+    herhangi bir değişkene default değer atamak için;
 
-short a = default;
-int b = defaul;
-string c = default;
-
+    short a = default;
+    int b = defaul;
+    string c = default;
 
 /// is operatörü :
 
-asıl kıllanım amacı boxing işlemine tabi tutulmuş herhangi bir değerin öz türüne ulaşmaktır.
-is operatörü denetleme neticesinde boolean türünde değer döndürür.
+    asıl kıllanım amacı boxing işlemine tabi tutulmuş herhangi bir değerin öz türüne ulaşmaktır.
+    is operatörü denetleme neticesinde boolean türünde değer döndürür.
 
-object @object = true;
+    object @object = true;
 
-Console.WriteLine(@object is null);     -->False
-Console.WriteLine(@object is Program);  -->False
-Console.WriteLine(@object is int);      -->False
-Console.WriteLine(@object is null);     -->False
-Console.WriteLine(@object is bool);     -->True
-
+    Console.WriteLine(@object is null);     -->False
+    Console.WriteLine(@object is Program);  -->False
+    Console.WriteLine(@object is int);      -->False
+    Console.WriteLine(@object is null);     -->False
+    Console.WriteLine(@object is bool);     -->True
 
 /// is null operatörü
 
@@ -1659,16 +1642,15 @@ Console.WriteLine(@object is bool);     -->True
     Console.WriteLine(@string2 is null);        ---> True
 
 
-not : 'is null' operatörünü sadece nullable olan değerler için kullanabiliriz.
+    not : 'is null' operatörünü sadece nullable olan değerler için kullanabiliriz.
 
-not2: 2 tür değişken vardır.
+    not2: 2 tür değişken vardır.
 
-1- değer türlü değişkenler : bunlar null olamazlar.
-2- referans türlü değişkenler : bunlar null olabilirler. (string referans türlü bir değişkendir.)
+    1- değer türlü değişkenler : bunlar null olamazlar.
+    2- referans türlü değişkenler : bunlar null olabilirler. (string referans türlü bir değişkendir.)
 
 /// 'is not null' 
     is null ile aynı görevlere sahiptir.
-
 
 /// as operatörü:
     cast operatörüne alternatif olarak üretilmiştir. dönüşümlerde kullanılır.
@@ -1680,115 +1662,115 @@ not2: 2 tür değişken vardır.
     3- char - sayısal özel tür dönüşümlerinde (ASCII Kodlarını verirdi)
     4- polimorfizm durumunda base class referansı ile işaretlenen bir nesneyi kendi türünde elde edebilmemizi sağlamaktadır. (ileride göreceğiz)
 
-buradaki maddelerden 1.madde olan boxing-unboxing durumuna alterantif olarak türetilmiştir.
+    buradaki maddelerden 1.madde olan boxing-unboxing durumuna alterantif olarak türetilmiştir.
 
-cast operötür ile boxing içerisinden everi alırken içerisindeki verinin türüne uygun bir değişkene atama yapmak gerekirdi. 
-aksi halde hata alarak uygulamanın sonlanmasına sebebiyet verir.
-as operatörü bu hatayı almamızı engelleyerek null değer dönüdrür. işlem gene yapılmaz ancak hata alarak programın durmasının önüne geçilmiş olur.
+    cast operötür ile boxing içerisinden everi alırken içerisindeki verinin türüne uygun bir değişkene atama yapmak gerekirdi. 
+    aksi halde hata alarak uygulamanın sonlanmasına sebebiyet verir.
+    as operatörü bu hatayı almamızı engelleyerek null değer dönüdrür. işlem gene yapılmaz ancak hata alarak programın durmasının önüne geçilmiş olur.
 
-örnek : 
+    örnek : 
 
-1- cast operatörü yardımı ile boxing edilmiş bir veriyi unboxing yaptık.
+    1- cast operatörü yardımı ile boxing edilmiş bir veriyi unboxing yaptık.
 
-object @object = 123;
-int a = (int)@object;   
+    object @object = 123;
+    int a = (int)@object;   
 
-2- as operatörü yardımı ile boxing edilmiş bir veriyi unboxing yaptık.
+    2- as operatörü yardımı ile boxing edilmiş bir veriyi unboxing yaptık.
 
-object @object = 123;
-Type a = @object as Type ;
+    object @object = 123;
+    Type a = @object as Type ;
 
-önemli not : 
+    önemli not : 
 
-as operaötörü kullanımlarında tür uygun olmadığında geriye null değer döndürür. 
-geri döndüreeği null değerini karşılayabilecek bir tür ile karşılanmak isteyecektir.
-buradaki ihtiyaca istinaden şunu söyleyebiliriz.
-"as operatörü değer türlü değişkenler için kullanılamaz!"
+    as operaötörü kullanımlarında tür uygun olmadığında geriye null değer döndürür. 
+    geri döndüreeği null değerini karşılayabilecek bir tür ile karşılanmak isteyecektir.
+    buradaki ihtiyaca istinaden şunu söyleyebiliriz.
+    "as operatörü değer türlü değişkenler için kullanılamaz!"
 
-detaylı örnek :
+    detaylı örnek :
 
-object @object = "ahmet";
-string @object2 = (string)@object;
+    object @object = "ahmet";
+    string @object2 = (string)@object;
 
-Console.WriteLine(@object);         ---> ahmet
+    Console.WriteLine(@object);         ---> ahmet
 
-object türü referans türlü olduğundan dolayı string ile cast edilmesinde herahangi bir hata ile karşılaşmadık.
-
-
-object @object = "ahmet";
-int @object2 = @object as int;
-
-Console.WriteLine(@object);         ---> hata verdi.
-Console.WriteLine("hello!!");       ---> hello!!
-
-hatanın sebebi ise @object içerisinde taşınan değer string bir ifadedir. biz bunu int içerisine koymaya çalıştık. hata verip kapandığı için 'hello!!' ekrana yazılmadı.
+    object türü referans türlü olduğundan dolayı string ile cast edilmesinde herahangi bir hata ile karşılaşmadık.
 
 
-object @object = "ahmet";
-Program @object2 = @object as Program;
+    object @object = "ahmet";
+    int @object2 = @object as int;
 
-Console.WriteLine(@object2);        ---> null
-Console.WriteLine("hello!!");       ---> hello!!
+    Console.WriteLine(@object);         ---> hata verdi.
+    Console.WriteLine("hello!!");       ---> hello!!
 
-yukarıdaki koddan farklı olarak burada referans türlü bir değişkene atamaya çalıştık. int değer türlü değişken olduğundan veri ile uyumlu olması gerekirdir.
-ancak referans türlü bir değişkene atanması durumunda null değer döndürebiliyoruz.
-bu kod parçasına 2.satırda @object 'program' türünde mi diye sorduk. eğer 'program' türünde ise @object değerini ekrana bastıracaktı. değilse null dönecek. ve uygulamaya çalışmaya devam ederek 'hello!!' yazısı bastırılmış oldu.
-as ile bu işlemi yapmamızın avantajı program sonlanmadan bu işlemi yapabiliyoruz. 
-cast ile aynı işlemi yapmaya çalışsak program hata verip kapanacaktır.
+    hatanın sebebi ise @object içerisinde taşınan değer string bir ifadedir. biz bunu int içerisine koymaya çalıştık. hata verip kapandığı için 'hello!!' ekrana yazılmadı.
+
+
+    object @object = "ahmet";
+    Program @object2 = @object as Program;
+
+    Console.WriteLine(@object2);        ---> null
+    Console.WriteLine("hello!!");       ---> hello!!
+
+    yukarıdaki koddan farklı olarak burada referans türlü bir değişkene atamaya çalıştık. int değer türlü değişken olduğundan veri ile uyumlu olması gerekirdir.
+    ancak referans türlü bir değişkene atanması durumunda null değer döndürebiliyoruz.
+    bu kod parçasına 2.satırda @object 'program' türünde mi diye sorduk. eğer 'program' türünde ise @object değerini ekrana bastıracaktı. değilse null dönecek. ve uygulamaya çalışmaya devam ederek 'hello!!' yazısı bastırılmış oldu.
+    as ile bu işlemi yapmamızın avantajı program sonlanmadan bu işlemi yapabiliyoruz. 
+    cast ile aynı işlemi yapmaya çalışsak program hata verip kapanacaktır.
 
 /// nullable opearötürü(?) 
 
-c# programlama dilinde değer türlü değişkenler normal şartlarda null değer alamazlar.
-bir değer türlü değişkenin null değer alabilmesi için nullable opeartörünün (?) kullanıması gerekir.
+    c# programlama dilinde değer türlü değişkenler normal şartlarda null değer alamazlar.
+    bir değer türlü değişkenin null değer alabilmesi için nullable opeartörünün (?) kullanıması gerekir.
 
-int a = null;  (böyle bir satır hemen hata verir. bunu yapmamız program tarafından engellenmiştir.)
-int? a = null; (bu şekilde ? ilavesini yaparak nullable olabilen olarak yolumuza devam edebiliriz.)
+    int a = null;  (böyle bir satır hemen hata verir. bunu yapmamız program tarafından engellenmiştir.)
+    int? a = null; (bu şekilde ? ilavesini yaparak nullable olabilen olarak yolumuza devam edebiliriz.)
 
-ayrıntı detay :
+    ayrıntı detay :
 
-object x = 123;
-int y = x as int;
+    object x = 123;
+    int y = x as int;
 
-normal şartlar altında bu şekilde işlem yapılamaz. çünkü as operötürünün çalışma mantığına göre null değer alabilen değerlere dönüşüm yapmak gerekir.
-int null alabilen bir değişken türü değildir.
+    normal şartlar altında bu şekilde işlem yapılamaz. çünkü as operötürünün çalışma mantığına göre null değer alabilen değerlere dönüşüm yapmak gerekir.
+    int null alabilen bir değişken türü değildir.
 
-as çalışma mantığında 2 seçenek vardır.
-1- bir değer döndürecek
-2- null değer döndürecek
-c# object türü içerisindeki değer ile ilgilenmez. 123 normal şartlarda int olabilir ancak programın çalışma mantığında değer ile ilgilenme yoktur. object türü boş bir değer de taşıayabilir.
-bu sebepten dolayı null değer alabilen değişken türleri ile çalışmak ister bizim object.
+    as çalışma mantığında 2 seçenek vardır.
+    1- bir değer döndürecek
+    2- null değer döndürecek
+    c# object türü içerisindeki değer ile ilgilenmez. 123 normal şartlarda int olabilir ancak programın çalışma mantığında değer ile ilgilenme yoktur. object türü boş bir değer de taşıayabilir.
+    bu sebepten dolayı null değer alabilen değişken türleri ile çalışmak ister bizim object.
 
-yukarıdaki işlemde oluşan hataya sebep programın durmaması için kodları şu şekilde düzeltmemiz gerekir.
+    yukarıdaki işlemde oluşan hataya sebep programın durmaması için kodları şu şekilde düzeltmemiz gerekir.
 
-object x = 123;
-int? y = x as int?;
+    object x = 123;
+    int? y = x as int?;
 
-burada int? nullable olduğundan dolayı object in gönlü oldu ve yola devam ediyoruz.
+    burada int? nullable olduğundan dolayı object in gönlü oldu ve yola devam ediyoruz.
 
 /// null-coalescing opearötürü (??)
 
     elimizde null olan bir değişken var ise null içerisine herhangi bir değer gönderebilmemizi sağlayan operatördür.
 
-örnek:
+    örnek:
 
-    string a = null;
+        string a = null;
+        Console.WriteLine(a ?? "merhaba") ;
+
+        a null değil ise a değerini yazdır , null ise "merhaba" yazdır dedik. 
+
+    daha önceki derslerde gördüğümüz teranry operaötür ile de bunu yapabilirdik.
+
     Console.WriteLine(a ?? "merhaba") ;
+    Console.WriteLine(a ==null ? "merhaba": a);
 
-    a null değil ise a değerini yazdır , null ise "merhaba" yazdır dedik. 
+    örnek2: 
+        string a = "kemal";
+        Console.WriteLine(a ?? "merhaba") ;
 
-daha önceki derslerde gördüğümüz teranry operaötür ile de bunu yapabilirdik.
-
-Console.WriteLine(a ?? "merhaba") ;
-Console.WriteLine(a ==null ? "merhaba": a);
-
-örnek2: 
-    string a = "kemal";
-    Console.WriteLine(a ?? "merhaba") ;
-
-    bu kod parçasında;
-    eğer a ifadesi null ise "merahaba" yazdır değil ise a ifadesini yazdır dedik. buradan yola çıkarak '??' operaötür kullanılırken her 2 veri de aynı türde olması gerekir.
-    string bir değişkenin null olup olmadığını kontrol ediyorsak null olması durumunda elimize aynı türde başka bir veri geçmeli.
-    işlem sonucu olarak elimize elimize int türünde veya bool türünde bir veri geçmemeli.
+        bu kod parçasında;
+        eğer a ifadesi null ise "merahaba" yazdır değil ise a ifadesini yazdır dedik. buradan yola çıkarak '??' operaötür kullanılırken her 2 veri de aynı türde olması gerekir.
+        string bir değişkenin null olup olmadığını kontrol ediyorsak null olması durumunda elimize aynı türde başka bir veri geçmeli.
+        işlem sonucu olarak elimize elimize int türünde veya bool türünde bir veri geçmemeli.
 
 /// null-coalescing assignment (??=)
 
@@ -1805,7 +1787,6 @@ Console.WriteLine(a ==null ? "merhaba": a);
     Console.WriteLine( isim1 ??= "merhaba");    ---> ??= operatörü kullandığımız için null olan değere karşılık "merhaba" ifadesi ekrana basıldı.
     Console.WriteLine(isim1);                   ---> ??= operatörü kullandığımız için null olan değere karşılık "merhaba" ifadesi ekrana basılacak.
 
-
     örnek :
 
     int? id = null;                             ---> normal şartlarda int null almaz, ? operatörü yardımı ile nullable özelliği kazandırdık.
@@ -1816,9 +1797,7 @@ Console.WriteLine(a ==null ? "merhaba": a);
     Console.WriteLine(id ??= 1);                ---> ??= operatörü kullandığımız için null olan değere karşılık 1 ifadesi ekrana basıldı.
     Console.WriteLine(id);                      ---> ??= operatörü kullandığımız için kodun devamındaki çağırmalarda 1 yazacak.
 
-
-
-    /// operatörler ile ilgili özetler
+/// operatörler ile ilgili özetler
 
     1- operatör nedir ?
     2- operatör okuryazarlığı
@@ -1857,22 +1836,20 @@ Console.WriteLine(a ==null ? "merhaba": a);
     35- ?? null coal escing operatörü
     36- ??= operatörü
 
-    
-    
 /// akış kontrol mekanizmaları
 
-belirli şartlara göre akışın yönünü değiştiren mekanizmalardır.
+    belirli şartlara göre akışın yönünü değiştiren mekanizmalardır.
 
 
-1- switch-case yapısı
-2- if elif else yapısı
+    1- switch-case yapısı
+    2- if elif else yapısı
 
-temel farklar
-1- switch yapısı bir değişkenin veya ifadenin değerine göre farklı işlemler gerçekleştirir. if-elif-else yapısı ise bir koşulun sonucuna göre farklı eylemler gerçekleştirir.
+    temel farklar
+    1- switch yapısı bir değişkenin veya ifadenin değerine göre farklı işlemler gerçekleştirir. if-elif-else yapısı ise bir koşulun sonucuna göre farklı eylemler gerçekleştirir.
 
-2- switch-case yapısı birden fazla koşulu kontrol edebilir , if-elif-else yapısı yanlızca 1 koşulu kontrol edebilir.
+    2- switch-case yapısı birden fazla koşulu kontrol edebilir , if-elif-else yapısı yanlızca 1 koşulu kontrol edebilir.
 
-3- switch yapısı daha okunaklı olabilir , if-elif-else yapısı daha karmaşık koşullar için daha uygun olabilir.
+    3- switch yapısı daha okunaklı olabilir , if-elif-else yapısı daha karmaşık koşullar için daha uygun olabilir.
 
     switch-case yapısı : 
 
@@ -1892,17 +1869,14 @@ temel farklar
         //kodlar
         //kodlar
         break;
-
         case B2:
         //kodlar
         //kodlar
         break;
-
         case B3:
         //kodlar
         //kodlar
         break;
-
         default:
         //kodlar
         //kodlar
@@ -1925,11 +1899,9 @@ temel farklar
         Console.WriteLine("adı mehmettir");
         break;
 
-
         case "ozan":
         Console.WriteLine("adı ozan");
         break;
-
         
         case "cem":
         Console.WriteLine("adı cem");
@@ -1939,7 +1911,6 @@ temel farklar
         Console.WriteLine("ismi bilemedik");
         break;
     }
-
 
     // sonuç olarak "ismi bilemedik" dedi.
 
@@ -1959,12 +1930,12 @@ temel farklar
    
     int satisTutari = 1000;
 
-        switch (satisTutari)
-        {
-            case 100 when (true):
-            Console.WriteLine("1");
-            break;
-        }
+    switch (satisTutari)
+    {
+        case 100 when (true):
+        Console.WriteLine("1");
+        break;
+    }
 
     switch case içerisinde go to şartı :
 
@@ -1972,7 +1943,6 @@ temel farklar
     herhangi 2 case neticesinde aynı kodların çalışması istenecekse aynı kodları tekrar yazmak yerinde "go to" kullanırız.
 
     yapı : 
-
 
     switch (value)
     {
@@ -1989,7 +1959,6 @@ temel farklar
         birden fazla kontrol yapamadığımızdan bu yapılanmaya gittik. switch edilen değer hem A hem C değerlerine eşit olması gereken bir durum ile karşılaşabilriiz. 
         burada kod tekrarından kaçmak için "go to" kullanmak gerekir.
 
-
         örnek : 
 
         int i = 10;
@@ -1998,15 +1967,12 @@ temel farklar
                 case 5:
                 Console.WriteLine(i*10);
                 break;
-
                 case 7:
                 Console.WriteLine(i*7);
                 break;
-
                 case 10:
                 Console.WriteLine(i*10);
                 break;
-
                 default:
                 Console.WriteLine(i*10);
                 break;
@@ -2093,7 +2059,6 @@ temel farklar
         enum nedir? 
         enum, C# (ve birçok diğer programlama dilinde) bir türdür ve belirli bir değeri temsil eden bir sabit küme oluşturmak için kullanılır. 
         "enum" kısaltması, "enumeration" yani "sıralama" kelimesinden gelir. Enumerations, genellikle bir dizi benzersiz değeri temsil etmek için kullanılır.
-
     örnek2:
 
     eski yöntem ile ;
@@ -2127,29 +2092,28 @@ temel farklar
     };
     Console.WriteLine(isim);
 
+/// when şartı ile switch expressions
 
-    /// when şartı ile switch expressions
+    örnek: eski yöntem
 
-        örnek: eski yöntem
+    int b = 10;
+    string uzay = "";
 
-        int b = 10;
-        string uzay = "";
+    switch (b)
+    {
+        case 5 when (true):
+        uzay = "hilmi";
+        break;
+        case 7 when(2==2):
+        uzay = "rıfkı";
+        break;
+        case 10 when(3==3):
+        uzay = "cem";
+        break;
+    }
+    Console.WriteLine(uzay);
 
-        switch (b)
-        {
-            case 5 when (true):
-            uzay = "hilmi";
-            break;
-            case 7 when(2==2):
-            uzay = "rıfkı";
-            break;
-            case 10 when(3==3):
-            uzay = "cem";
-            break;
-        }
-Console.WriteLine(uzay);
-
-        örnek : yeni yöntem-1
+    örnek : yeni yöntem-1
 
         int i = 10;
     string isim = i switch
@@ -2162,7 +2126,7 @@ Console.WriteLine(uzay);
     };
     Console.WriteLine(isim);
 
-        örnek : ynei yöntem-2
+    örnek : ynei yöntem-2
 
     int a=10;
     string isim = a switch
@@ -2170,7 +2134,6 @@ Console.WriteLine(uzay);
         var b when a==7 && a%2==1 => "rıfkı",
         var b when a==10 && a%2==0 => "rıfkı2",
         var b =>"hiçbiri"       // _ => throw new NotImplementedException(),  // bu satırdaki her 2 kodda default anlamı taşır.
-        
     };
     Console.WriteLine(isim);
 
@@ -2179,13 +2142,11 @@ Console.WriteLine(uzay);
     not-3 : b değeri kullandığımız için manuel değer veremiyoruz.
     not-4 : 'var' zorunlu bir keyword değil. değerine türüne uygun bir değişekn ile tanımlama yapmamız mümkündür.
 
-
-
 /// tuple patterns
 
-açıklama : tuple patterns switch yapılanmasını tuple nesnelerini kontrol edebilecek şekilde standart ve yeni yapılanmayla bizlere sunmaktadır.
+    açıklama : tuple patterns switch yapılanmasını tuple nesnelerini kontrol edebilecek şekilde standart ve yeni yapılanmayla bizlere sunmaktadır.
 
-örnek : eski yöntem
+    örnek : eski yöntem
 
     string adi = "nevin";
     int yasi = 32;
@@ -2205,7 +2166,7 @@ açıklama : tuple patterns switch yapılanmasını tuple nesnelerini kontrol ed
     }
     Console.WriteLine(mesaj);       // tanımlanamdı.
 
-örnek : yeni yöntem 
+    örnek : yeni yöntem 
 
     string adi2 = "nevin";
     int yasi2 = 32;
@@ -2217,54 +2178,65 @@ açıklama : tuple patterns switch yapılanmasını tuple nesnelerini kontrol ed
     };
     Console.WriteLine(mesaj2);      
 
-analiz : eski yöntemde klasik case break keywordleri vardı , yeni yöntemde case ve break yerine => sembolü kullanılıyor.
+    analiz : eski yöntemde klasik case break keywordleri vardı , yeni yöntemde case ve break yerine => sembolü kullanılıyor.
 
-önemli not : öncedek switch case break ile tek bir değeri kontrol edebiliyorduk , şimdi işler değişti if yapılanmasından daha efektif hale geldiği noktalar oluştu.
+    önemli not : öncedek switch case break ile tek bir değeri kontrol edebiliyorduk , şimdi işler değişti if yapılanmasından daha efektif hale geldiği noktalar oluştu.
 
+    örnek : eski yöntem
 
-örnek : eski yöntem
+    int s1 = 10;
+    int s2 = 20;
 
-int s1 = 10;
-int s2 = 20;
+    string mesaj ="";
 
-string mesaj ="";
+    switch (s1,s2)
+    {
+        case (5,10):
+        mesaj ="sayılar 5 ile 10";
+        break;
+        case(10,20):
+        mesaj="sayılar 10 ile 20";
+        break;
+        default:
+        mesaj="sayıları bilemedik.";
+        break;
+    }
 
-switch (s1,s2)
-{
-    case (5,10):
-    mesaj ="sayılar 5 ile 10";
-    break;
-    case(10,20):
-    mesaj="sayılar 10 ile 20";
-    break;
-    default:
-    mesaj="sayıları bilemedik.";
-    break;
-}
-
-Console.WriteLine(mesaj);           // sayıları  10 ile 20
-
-
-örnek yeni yöntem :
-
-int s1 = 10;
-int s2 = 20;
-
-string mesaj =(s1,s2)
-switch 
-{
-    (5,10) => mesaj ="sayılar 5 ile 10",
-    (10,20) =>mesaj="sayılar 10 ile 20",
-    _ => throw new NotImplementedException(),
-};
-
-Console.WriteLine(mesaj);
+    Console.WriteLine(mesaj);           // sayıları  10 ile 20
 
 
+    örnek yeni yöntem :
+
+    int s1 = 10;
+    int s2 = 20;
+
+    string mesaj =(s1,s2)
+    switch 
+    {
+        (5,10) => mesaj ="sayılar 5 ile 10",
+        (10,20) =>mesaj="sayılar 10 ile 20",
+        _ => throw new NotImplementedException(),
+    };
+
+    Console.WriteLine(mesaj);
 
 /// when şartı ile tuple patterns
 
-örnek : eski yöntem
+    örnek : eski yöntem
+
+        string adi = "nevin";
+        int yasi = 32;
+        string mesaj=(adi , yasi)
+
+        switch 
+        {
+            ("hüseyin" , 20) => mesaj = "hoşgeldin Hüseyin",
+            ("cansu",23)=> mesaj="hoşegldin cansu",
+            _ => throw new NotImplementedException(),
+        };
+        Console.WriteLine(mesaj);
+
+    örnek : yeni yöntem :
 
     string adi = "nevin";
     int yasi = 32;
@@ -2272,396 +2244,380 @@ Console.WriteLine(mesaj);
 
     switch 
     {
-        ("hüseyin" , 20) => mesaj = "hoşgeldin Hüseyin",
-        ("cansu",23)=> mesaj="hoşegldin cansu",
+        var a when a.adi=="hüseyin" && a.yasi== 20 => mesaj = "hoşgeldin Hüseyin",
+        var a when a.adi=="cansu" && a.yasi==21 => mesaj="hoşheldin cansu",
+        var a when a.adi=="nevin" && a.yasi==32 => mesaj="hoşgeldin nevin",
         _ => throw new NotImplementedException(),
     };
     Console.WriteLine(mesaj);
 
-örnek : yeni yöntem :
-
-string adi = "nevin";
-int yasi = 32;
-string mesaj=(adi , yasi)
-
-switch 
-{
-    var a when a.adi=="hüseyin" && a.yasi== 20 => mesaj = "hoşgeldin Hüseyin",
-    var a when a.adi=="cansu" && a.yasi==21 => mesaj="hoşheldin cansu",
-    var a when a.adi=="nevin" && a.yasi==32 => mesaj="hoşgeldin nevin",
-    _ => throw new NotImplementedException(),
-};
-Console.WriteLine(mesaj);
-
-önemli not : daaha önceki derslerde değişken tanımlarken herhangi bir değer alabilir (int,byte,bool vs.) demiştik , ancak tuple da bu dğişkeni sadece var ile karşılayabiliriz.
-
+    önemli not : daaha önceki derslerde değişken tanımlarken herhangi bir değer alabilir (int,byte,bool vs.) demiştik , ancak tuple da bu dğişkeni sadece var ile karşılayabiliriz.
 
 /// positional patterns 
 
-positional patterns ise deconstruct özelliği olan mesmeleri kıyaslamak veyahut değersel olarak karşılaştırmak için kullanılan bir gelişimdir.
+    positional patterns ise deconstruct özelliği olan mesmeleri kıyaslamak veyahut değersel olarak karşılaştırmak için kullanılan bir gelişimdir.
 
-/// when kullanarak positional patterns 
+/// when kullanarak positional patterns     
 
-diğer whenler ile aynı mantıkla çalışır.
+    diğer whenler ile aynı mantıkla çalışır.
 
 /// property patterns
 
-nesnenin propertylerine girerek belirli durumları hızlı bir şekilde kontrol etmemizi gerçekleştiren ve bunu farklı değerler için birden fazla kez tekrarlı bir şekilde yapmamıza olanak sağlayan güzel bir gelişimdir.
+    nesnenin propertylerine girerek belirli durumları hızlı bir şekilde kontrol etmemizi gerçekleştiren ve bunu farklı değerler için birden fazla kez tekrarlı bir şekilde yapmamıza olanak sağlayan güzel bir gelişimdir.
 
 /// when kullanarak property patterns
 
-diğer whenler ile aynı mantıkla çalışır.
+    diğer whenler ile aynı mantıkla çalışır.
 
 /// if - elif - else yapısı
 
-switch yapısında sadece eşitlik durumlarına göre kontrol sağlanabilirken if-elif-else yapılanmasında ise bütün durumlarda (<,>,=>,=<) kontrol sağlamak mümkündür.
-switchi kapsar ve mantıksal operatörler neticesinde oluşan sonuçları da kıyaslayabilir.
+    switch yapısında sadece eşitlik durumlarına göre kontrol sağlanabilirken if-elif-else yapılanmasında ise bütün durumlarda (<,>,=>,=<) kontrol sağlamak mümkündür.
+    switchi kapsar ve mantıksal operatörler neticesinde oluşan sonuçları da kıyaslayabilir.
 
-prototip
+    prototip
 
-if(şart)
-{
-    şart true ise burası tetiklenir
-}
-şart false ise ifden çıkıp yola kod yola devam eder.
+    if(şart)
+    {
+        şart true ise burası tetiklenir
+    }
+    şart false ise ifden çıkıp yola kod yola devam eder.
 
 
-not1: if yapılanması tek başına kullanılıyorsa sadece şarta bağlı çalışacak koda odaklanır.
-not2: esle kullanmasak , sadece if kullansak bile olur,
-not3: bool türündeki değişkenlerin değerleri zaten bool olduğu için;
-    if (medeniHal==true) yerine if(medeniHal) yazmamız yeterlidir.
-
+    not1: if yapılanması tek başına kullanılıyorsa sadece şarta bağlı çalışacak koda odaklanır.
+    not2: esle kullanmasak , sadece if kullansak bile olur,
+    not3: bool türündeki değişkenlerin değerleri zaten bool olduğu için;
+        if (medeniHal==true) yerine if(medeniHal) yazmamız yeterlidir.
 
 /// if-else yapılanması
 
-sadece if yapılanmasında bir şarta göre kontrol yap değilse yola devam et diyorduk , if-else yapısında ise bir şarta göre kontrol yap , değilse else kısmındaki davranışları yap diyoruz.
+    sadece if yapılanmasında bir şarta göre kontrol yap değilse yola devam et diyorduk , if-else yapısında ise bir şarta göre kontrol yap , değilse else kısmındaki davranışları yap diyoruz.
 
-prototip
+    prototip
 
-if(şart)
-{
-    şart true ise burası çalışacak
-}
-else
-{
-    şart true değil ise burası çalışacak.
-}
-
-not : if yapılanmasında şaft false ise if den çıkıp yola devam ediyordu , if - else yapısında ise else komutları devreye giriyor.
-not2 : if ile else aynı anda tetiklenemez.
-
-her 2 durumda da (if durumu veya else durumu) aynı kod parçalarını kullanabiliriz. 
-
-örnek :
-
-int i = 10;
-if(i==10)
-{
-    Console.WriteLine("i değeri 10 dur");
-    Console.WriteLine("merhabalar");        // tekrar eden kod parçası
-}
-else
-{
-    Console.WriteLine("i değeri 10 değildir.");
-    Console.WriteLine("merhabalar");        // tekrar eden kod parçası
-}
-
-
-int i = 10;
-if(i==10)
-{
-    Console.WriteLine("i değeri 10 dur");
-}
-else
-{
-    Console.WriteLine("i değeri 10 değildir.");
-}
-
-Console.WriteLine("merhabalar");        // tekrar eden kod parçasını buraya aldık. "don't repeat your self" prensibinden yola çıkarak.
-
-/// if-else if yapılanması.
-
-if-else yapısı sadece 2 durumda kontrol yapabiliyordu. kontrol edilen şart true ise if bloğu içerisindeki kodlar çalışır, kontrol edilen şart false ise else bloğundaki kodlar çalışırdı.
-
-if - else if yapılanmasında ise 3 veya daha fazla durumu kontrol edebiliriz.
-
-prototip
-
-if(şart1)
-{
-    şart1 true ise bu bloktaki kodlar çalışacak.
-}
-else if(şart2)
-{
-    şart2 true ise bu bloktaki kodlar çalışacak.
-}
-else if(şart3)
-{
-    şart3 true ise bu bloktaki kodlar çalışacak.
-}
-else
-{
-    şart1 , şart2 , şart3 false ise bu blokraki kodlar çalışacak.
-}
-
-not1: if-else if yapısı else olmadan da çalışır. kontrol edilen şartın sağlantığı ilk else if bloğundaki kodlar tetiklenir ve kod if else if yapılanmasından çıkarak yola devam eder.
-
-not2: kontrol edilecek bir şart her 2 durum için de geçerli ise else if de ilk yazılan şartı sağladıktan sonra kod if-else if bloğunu terk ederek yola devam eder.
-
-örnek :
-
-int sayi = 250;
-
-if (sayi>100 && sayi<=200)
-{
-    Console.WriteLine("100 ile 200 arasındadır.");
-}
-else if(sayi>200 && sayi<=300)
-{
-    Console.WriteLine("200 ile 300 arasındadır.");
-}
-else if (sayi>200 && sayi<=300)
-{
-    Console.WriteLine("200 ile 400 arasındadır.");
-}
-else
-{
-    Console.WriteLine("hata1");
-}
-
-analiz : buradaki 250 değeri hem 200-300 arasında olma şartını hem de 200 - 400 arasında olma şartını sağlıyor. sağlanan ilk şartta kodlar çalıştı (burada konsola yazı yazdırdık) ve if yapısını terk etti.
-
-/// scopesuz if yapısı
-
-bütün if - else if - else yapıları için geçerlidir.
-
-not : tek bir satırlık işlemlerde kullanılır.
-
-if(true)
-{
-    Console.WriteLine("a");
-}
-
-alternatif :
-
-if(true) Console.WriteLine("b");   // çıktı ekranına b değerini verir.
-
-if (true) Console.WriteLine("b1");
-Console.WriteLine("c1");        // çıktı ekranına b1 ve c1 değerlerini verir ancak c1 değeri if şartından başımsızdır.
-
-not : birden fazla konsept var ise { } içerisine yazmak gerekir.
-
-/// örnek-1 klavyden girilen 2 ürünün fiyatı girildiğinde toplam tutar 200 tl den fazla ise 2.ürüne %25 indirim yaparak toplam tutarı gösteren bir uygulama.
-
-Console.Write("Lütfen Birinci Ürünün Fiyatını Giriniz: ");
-int fiyat1 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Lütfen ikinci Ürünün Fiyatını Giriniz: ");
-int fiyat2 = Convert.ToInt32(Console.ReadLine());
-
-int toplam1 = fiyat1 + fiyat2;
-int toplam2 = fiyat1 + fiyat2*3/4;
-if ((fiyat1+fiyat2)>200)
-{
-   Console.WriteLine(toplam2);
-}
-else
-{
-    Console.WriteLine(toplam1);
-}
-
-/// Örnek2 : belirlenen kullanıcı adı ve parola doğru girildiğinde "giriş başarılı" , yanlış girildiğinde "kullanıcı adı veya şifre hatalı" mesajı veren bir console uygulaması.
-
-string kullaniciAdi = "kullanıcı";
-string parola = "12345";
-
-Console.Write("Lütfen Kullanıcı adını giriniz : ");
-string? girilenKullaniciAdi = Console.ReadLine();           // buradaki ? ile string ifadeyi nullable yaptık.
-
-Console.Write("lütfen parola giriniz : ");
-string? girilenParola= Console.ReadLine();                  / buradaki ? ile string ifadeyi nullable yaptık.
-
-if ( kullaniciAdi == girilenKullaniciAdi)
-{
-    if (parola==girilenParola)
+    if(şart)
     {
-        Console.WriteLine("giriş başarılı");
+        şart true ise burası çalışacak
     }
     else
     {
-        Console.WriteLine("parola hatalı");
+        şart true değil ise burası çalışacak.
     }
-}
-else
-{
-    Console.WriteLine("kullanıcı adı hatalı");
-}
 
-kritik1 : tek satırlık işlem yaptığımız için { } leri kaldırabiliriz.
-kritik2 : true olması durumunda if bloğu çalışacaktı. "!" ile false olması durumunda if bloğunu çalıştırabiliriz.
-kritik3 : 
+    not : if yapılanmasında şaft false ise if den çıkıp yola devam ediyordu , if - else yapısında ise else komutları devreye giriyor.
+    not2 : if ile else aynı anda tetiklenemez.
 
-ternary operatörü ile 
+    her 2 durumda da (if durumu veya else durumu) aynı kod parçalarını kullanabiliriz. 
 
-Console.Write("kullancı adı giriniz : ");
-string? kullaniciAdi = Console.ReadLine();
+    örnek :
 
-Console.Write("parola giriniz : ");
-string? parola = Console.ReadLine();
-
-string mesaj = (kullaniciAdi=="kullanıcı") ? "kullanıcı adı doğrulandı" : "kullanıcı adı hatalı";
-Console.WriteLine(mesaj);
-string mesaj2 = (parola=="12345") ? "parola doğrulandı" : "parola hatalı";
-Console.WriteLine(mesaj2);
-
-switch-case ile 
-
-Console.Write("kullancı adı giriniz : ");
-string? kullaniciAdi = Console.ReadLine();
-
-Console.Write("parola giriniz : ");
-string? parola = Console.ReadLine();
-
-switch (kullaniciAdi)
-{
-    case "kullanıcı":
-    Console.WriteLine("kullanıcı adı başarılı");
-    break;
-    default:
-    Console.WriteLine("kullanıcı adı hatalı");
-    break;
-}
-
-switch (parola)
-{
-    case "12345":
-    Console.WriteLine("kullanıcı adı başarılı");
-    break;
-    default:
-    Console.WriteLine("kullanıcı adı hatalı");
-    break;
-}
-
-örnek : kullanıcıdan alınan 2 sayının ve yapılacak işlermin (topama  çıkarma , çarpma , bölme) seçimiyle sonucu hesaplayan console uygulamasını yazalım.
-
-#region if-elseif ile 
-    // Console.Write("1.sayıyı giriniz : ");
-    // int? sayi1 = int.Parse(Console.ReadLine());
-
-    // Console.Write("2.sayıyı giriniz : ");
-    // int? sayi2 = int.Parse(Console.ReadLine());
-
-    // Console.Write("işlem türünü yazınız : ");
-    // char islem = char.Parse(Console.ReadLine());
-
-    // if (islem=='a')
-    //     Console.WriteLine(sayi1+sayi2);
-    // else if (islem=='b')
-    //     Console.WriteLine(sayi1-sayi2);
-    // else if(islem=='c')
-    //     Console.WriteLine(sayi1/sayi2);
-    // else if(islem=='d')
-    //     Console.WriteLine(sayi1*sayi2);
-    // else
-    //     Console.WriteLine("işlem türü yanlış seçildi.");
-#endregion
-
-#region if yapısı ile
-    Console.Write("1.sayıyı giriniz : ");
-    // int? sayi1 = int.Parse(Console.ReadLine());
-
-    // Console.Write("2.sayıyı giriniz : ");
-    // int? sayi2 = int.Parse(Console.ReadLine());
-
-    // Console.Write("işlem türünü yazınız : ");
-    // char islem = char.Parse(Console.ReadLine());
-    // if (islem=='a')
-    //     Console.WriteLine(sayi1+sayi2);
-    // else if (islem=='b')
-    //     Console.WriteLine(sayi1-sayi2);
-    // else if(islem=='c')
-    //     Console.WriteLine(sayi1/sayi2);
-    // else if(islem=='d')
-    //     Console.WriteLine(sayi1*sayi2);
-    // else
-    //     Console.WriteLine("işlem türü yanlış seçildi.");
-#endregion
-
-#region switch ile
-    //Console.Write("1.sayıyı giriniz : ");
-    // int? sayi1 = int.Parse(Console.ReadLine());
-
-    // Console.Write("2.sayıyı giriniz : ");
-    // int? sayi2 = int.Parse(Console.ReadLine());
-
-    // Console.Write("işlem türünü yazınız : ");
-    // char islem = char.Parse(Console.ReadLine());
-    // switch (islem)
-    // {
-    //     case 'a' :
-    //     Console.WriteLine(sayi1+sayi2);
-    //     break;
-    //     case 'b' :
-    //     Console.WriteLine(sayi1-sayi2);
-    //     break;
-    //     case 'c' :
-    //     Console.WriteLine(sayi1*sayi2);
-    //     break;
-    //     case 'd' :
-    //     Console.WriteLine(sayi1/sayi2);
-    //     break;
-    //     default:
-    //     Console.WriteLine("işlem türü hatalı girildi");
-    //     break;
-    // }
-#endregion
-
-#region switc expression
-    //Console.Write("1.sayıyı giriniz : ");
-    // int? sayi1 = int.Parse(Console.ReadLine());
-
-    // Console.Write("2.sayıyı giriniz : ");
-    // int? sayi2 = int.Parse(Console.ReadLine());
-
-    // Console.Write("işlem türünü yazınız : ");
-    // char islem = char.Parse(Console.ReadLine());
-    int? sonuc = islem switch
+    int i = 10;
+    if(i==10)
     {
-        'a'=> sayi1+sayi2 ,
-        'b'=> sayi1-sayi2 ,
-        'c'=> sayi1*sayi2 ,
-        'd'=> sayi1/sayi2 ,
-        _ => throw new NotImplementedException(),
-    };
-    Console.WriteLine(sonuc);
-#endregion
+        Console.WriteLine("i değeri 10 dur");
+        Console.WriteLine("merhabalar");        // tekrar eden kod parçası
+    }
+    else
+    {
+        Console.WriteLine("i değeri 10 değildir.");
+        Console.WriteLine("merhabalar");        // tekrar eden kod parçası
+    }
 
-#region ternary operatörü ile
-    Console.Write("1.sayıyı giriniz : ");
-    int? sayi1 = int.Parse(Console.ReadLine());
 
-    Console.Write("2.sayıyı giriniz : ");
-    int? sayi2 = int.Parse(Console.ReadLine());
+    int i = 10;
+    if(i==10)
+    {
+        Console.WriteLine("i değeri 10 dur");
+    }
+    else
+    {
+        Console.WriteLine("i değeri 10 değildir.");
+    }
 
-    Console.Write("işlem türünü yazınız : ");
-    char islem = char.Parse(Console.ReadLine());
+    Console.WriteLine("merhabalar");        // tekrar eden kod parçasını buraya aldık. "don't repeat your self" prensibinden yola çıkarak.
 
-    Console.WriteLine(islem=='a' ? sayi1+sayi2:(islem=='b'? sayi1-sayi2:(islem=='c'? sayi1*sayi2:(islem=='d'?sayi1/sayi2:"işlem başarısız"))));
-#endregion
+/// if-else if yapılanması.
 
-örnek : girilen sayının değeri 10 değil ise ekrana "sayı hatalı" yazdır.
+    if-else yapısı sadece 2 durumda kontrol yapabiliyordu. kontrol edilen şart true ise if bloğu içerisindeki kodlar çalışır, kontrol edilen şart false ise else bloğundaki kodlar çalışırdı.
 
-#region if ile
-    // Console.Write("lütfen bir sayı giriniz : ");
-    // int? sayi1 = int.Parse(Console.ReadLine());
-    // if(sayi1!=10)
-    // Console.WriteLine("sayı 10 değildir.");
-#endregion
+    if - else if yapılanmasında ise 3 veya daha fazla durumu kontrol edebiliriz.
 
-#region ternary operatörü ile
-    // Console.Write("lütfen bir sayı giriniz : ");
-    // int? sayi1 = int.Parse(Console.ReadLine());
-    // Console.WriteLine(sayi1==10 ? "":  "sayı 10 değildir.");
-#endregion
+    prototip
+
+    if(şart1)
+    {
+        şart1 true ise bu bloktaki kodlar çalışacak.
+    }
+    else if(şart2)
+    {
+        şart2 true ise bu bloktaki kodlar çalışacak.
+    }
+    else if(şart3)
+    {
+        şart3 true ise bu bloktaki kodlar çalışacak.
+    }
+    else
+    {
+        şart1 , şart2 , şart3 false ise bu blokraki kodlar çalışacak.
+    }
+
+    not1: if-else if yapısı else olmadan da çalışır. kontrol edilen şartın sağlantığı ilk else if bloğundaki kodlar tetiklenir ve kod if else if yapılanmasından çıkarak yola devam eder.
+
+    not2: kontrol edilecek bir şart her 2 durum için de geçerli ise else if de ilk yazılan şartı sağladıktan sonra kod if-else if bloğunu terk ederek yola devam eder.
+
+örnek :
+
+    int sayi = 250;
+
+    if (sayi>100 && sayi<=200)
+    {
+        Console.WriteLine("100 ile 200 arasındadır.");
+    }
+    else if(sayi>200 && sayi<=300)
+    {
+        Console.WriteLine("200 ile 300 arasındadır.");
+    }
+    else if (sayi>200 && sayi<=300)
+    {
+        Console.WriteLine("200 ile 400 arasındadır.");
+    }
+    else
+    {
+        Console.WriteLine("hata1");
+    }
+
+    analiz : buradaki 250 değeri hem 200-300 arasında olma şartını hem de 200 - 400 arasında olma şartını sağlıyor. sağlanan ilk şartta kodlar çalıştı (burada konsola yazı yazdırdık) ve if yapısını terk etti.
+
+/// scopesuz if yapısı
+
+    bütün if - else if - else yapıları için geçerlidir.
+
+    not : tek bir satırlık işlemlerde kullanılır.
+
+    if(true)
+    {
+        Console.WriteLine("a");
+    }
+
+    alternatif :
+
+    if(true) Console.WriteLine("b");   // çıktı ekranına b değerini verir.
+
+    if (true) Console.WriteLine("b1");
+    Console.WriteLine("c1");        // çıktı ekranına b1 ve c1 değerlerini verir ancak c1 değeri if şartından başımsızdır.
+
+    not : birden fazla konsept var ise { } içerisine yazmak gerekir.
+
+/// örnek1 klavyden girilen 2 ürünün fiyatı girildiğinde toplam tutar 200 tl den fazla ise 2.ürüne %25 indirim yaparak toplam tutarı gösteren bir uygulama.
+
+    Console.Write("Lütfen Birinci Ürünün Fiyatını Giriniz: ");
+    int fiyat1 = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Lütfen ikinci Ürünün Fiyatını Giriniz: ");
+    int fiyat2 = Convert.ToInt32(Console.ReadLine());
+
+    int toplam1 = fiyat1 + fiyat2;
+    int toplam2 = fiyat1 + fiyat2*3/4;
+    if ((fiyat1+fiyat2)>200)
+    {
+    Console.WriteLine(toplam2);
+    }
+    else
+    {
+        Console.WriteLine(toplam1);
+    }
+
+/// Örnek2 : belirlenen kullanıcı adı ve parola doğru girildiğinde "giriş başarılı" , yanlış girildiğinde "kullanıcı adı veya şifre hatalı" mesajı veren bir console uygulaması.
+
+    string kullaniciAdi = "kullanıcı";
+    string parola = "12345";
+
+    Console.Write("Lütfen Kullanıcı adını giriniz : ");
+    string? girilenKullaniciAdi = Console.ReadLine();           // buradaki ? ile string ifadeyi nullable yaptık.
+
+    Console.Write("lütfen parola giriniz : ");
+    string? girilenParola= Console.ReadLine();                  / buradaki ? ile string ifadeyi nullable yaptık.
+
+    if ( kullaniciAdi == girilenKullaniciAdi)
+    {
+        if (parola==girilenParola)
+        {
+            Console.WriteLine("giriş başarılı");
+        }
+        else
+        {
+            Console.WriteLine("parola hatalı");
+        }
+    }
+    else
+    {
+        Console.WriteLine("kullanıcı adı hatalı");
+    }
+
+    kritik1 : tek satırlık işlem yaptığımız için { } leri kaldırabiliriz.
+    kritik2 : true olması durumunda if bloğu çalışacaktı. "!" ile false olması durumunda if bloğunu çalıştırabiliriz.
+    kritik3 : 
+
+    ternary operatörü ile 
+
+    Console.Write("kullancı adı giriniz : ");
+    string? kullaniciAdi = Console.ReadLine();
+
+    Console.Write("parola giriniz : ");
+    string? parola = Console.ReadLine();
+
+    string mesaj = (kullaniciAdi=="kullanıcı") ? "kullanıcı adı doğrulandı" : "kullanıcı adı hatalı";
+    Console.WriteLine(mesaj);
+    string mesaj2 = (parola=="12345") ? "parola doğrulandı" : "parola hatalı";
+    Console.WriteLine(mesaj2);
+
+    switch-case ile 
+
+    Console.Write("kullancı adı giriniz : ");
+    string? kullaniciAdi = Console.ReadLine();
+
+    Console.Write("parola giriniz : ");
+    string? parola = Console.ReadLine();
+
+    switch (kullaniciAdi)
+    {
+        case "kullanıcı":
+        Console.WriteLine("kullanıcı adı başarılı");
+        break;
+        default:
+        Console.WriteLine("kullanıcı adı hatalı");
+        break;
+    }
+
+    switch (parola)
+    {
+        case "12345":
+        Console.WriteLine("kullanıcı adı başarılı");
+        break;
+        default:
+        Console.WriteLine("kullanıcı adı hatalı");
+        break;
+    }
+
+/// örnek3 : kullanıcıdan alınan 2 sayının ve yapılacak işlermin (topama  çıkarma , çarpma , bölme) seçimiyle sonucu hesaplayan console uygulamasını yazalım.
+
+    #region if-elseif ile 
+        // Console.Write("1.sayıyı giriniz : ");
+        // int? sayi1 = int.Parse(Console.ReadLine());
+
+        // Console.Write("2.sayıyı giriniz : ");
+        // int? sayi2 = int.Parse(Console.ReadLine());
+
+        // Console.Write("işlem türünü yazınız : ");
+        // char islem = char.Parse(Console.ReadLine());
+
+        // if (islem=='a')
+        //     Console.WriteLine(sayi1+sayi2);
+        // else if (islem=='b')
+        //     Console.WriteLine(sayi1-sayi2);
+        // else if(islem=='c')
+        //     Console.WriteLine(sayi1/sayi2);
+        // else if(islem=='d')
+        //     Console.WriteLine(sayi1*sayi2);
+        // else
+        //     Console.WriteLine("işlem türü yanlış seçildi.");
+    #endregion
+
+    #region if yapısı ile
+        Console.Write("1.sayıyı giriniz : ");
+        // int? sayi1 = int.Parse(Console.ReadLine());
+
+        // Console.Write("2.sayıyı giriniz : ");
+        // int? sayi2 = int.Parse(Console.ReadLine());
+
+        // Console.Write("işlem türünü yazınız : ");
+        // char islem = char.Parse(Console.ReadLine());
+        // if (islem=='a')
+        //     Console.WriteLine(sayi1+sayi2);
+        // else if (islem=='b')
+        //     Console.WriteLine(sayi1-sayi2);
+        // else if(islem=='c')
+        //     Console.WriteLine(sayi1/sayi2);
+        // else if(islem=='d')
+        //     Console.WriteLine(sayi1*sayi2);
+        // else
+        //     Console.WriteLine("işlem türü yanlış seçildi.");
+    #endregion
+
+    #region switch ile
+        //Console.Write("1.sayıyı giriniz : ");
+        // int? sayi1 = int.Parse(Console.ReadLine());
+
+        // Console.Write("2.sayıyı giriniz : ");
+        // int? sayi2 = int.Parse(Console.ReadLine());
+
+        // Console.Write("işlem türünü yazınız : ");
+        // char islem = char.Parse(Console.ReadLine());
+        // switch (islem)
+        // {
+        //     case 'a' :
+        //     Console.WriteLine(sayi1+sayi2);
+        //     break;
+        //     case 'b' :
+        //     Console.WriteLine(sayi1-sayi2);
+        //     break;
+        //     case 'c' :
+        //     Console.WriteLine(sayi1*sayi2);
+        //     break;
+        //     case 'd' :
+        //     Console.WriteLine(sayi1/sayi2);
+        //     break;
+        //     default:
+        //     Console.WriteLine("işlem türü hatalı girildi");
+        //     break;
+        // }
+    #endregion
+
+    #region switc expression
+        //Console.Write("1.sayıyı giriniz : ");
+        // int? sayi1 = int.Parse(Console.ReadLine());
+
+        // Console.Write("2.sayıyı giriniz : ");
+        // int? sayi2 = int.Parse(Console.ReadLine());
+
+        // Console.Write("işlem türünü yazınız : ");
+        // char islem = char.Parse(Console.ReadLine());
+        int? sonuc = islem switch
+        {
+            'a'=> sayi1+sayi2 ,
+            'b'=> sayi1-sayi2 ,
+            'c'=> sayi1*sayi2 ,
+            'd'=> sayi1/sayi2 ,
+            _ => throw new NotImplementedException(),
+        };
+        Console.WriteLine(sonuc);
+    #endregion
+
+    #region ternary operatörü ile
+        Console.Write("1.sayıyı giriniz : ");
+        int? sayi1 = int.Parse(Console.ReadLine());
+
+        Console.Write("2.sayıyı giriniz : ");
+        int? sayi2 = int.Parse(Console.ReadLine());
+
+        Console.Write("işlem türünü yazınız : ");
+        char islem = char.Parse(Console.ReadLine());
+
+        Console.WriteLine(islem=='a' ? sayi1+sayi2:(islem=='b'? sayi1-sayi2:(islem=='c'? sayi1*sayi2:(islem=='d'?sayi1/sayi2:"işlem başarısız"))));
+    #endregion
+
+    örnek : girilen sayının değeri 10 değil ise ekrana "sayı hatalı" yazdır.
+
+    #region if ile
+        // Console.Write("lütfen bir sayı giriniz : ");
+        // int? sayi1 = int.Parse(Console.ReadLine());
+        // if(sayi1!=10)
+        // Console.WriteLine("sayı 10 değildir.");
+    #endregion
+
+    #region ternary operatörü ile
+        // Console.Write("lütfen bir sayı giriniz : ");
+        // int? sayi1 = int.Parse(Console.ReadLine());
+        // Console.WriteLine(sayi1==10 ? "":  "sayı 10 değildir.");
+    #endregion
 
 örnek : girilen sayının negatif veya pozitif olduğunu gösteren console uygulamasını yazdıralım.
 
