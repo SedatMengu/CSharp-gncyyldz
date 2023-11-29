@@ -1097,47 +1097,47 @@ Console.WriteLine(typeof(a));                     -----> tür dönüşümü yap�
 
 /// metinsel olmayan ifadeleri metinsel ifadeye dönüştürmeye alternatif 
 
-metinsel olayan ifadeleri convret fonksiyonu yardımı ile yapıyorduk ancak burada bir yöntem daha var. tostring fonksiyonu.
+    metinsel olayan ifadeleri convret fonksiyonu yardımı ile yapıyorduk ancak burada bir yöntem daha var. tostring fonksiyonu.
 
-int a = 100 ;
+    int a = 100 ;
 
-Console.WriteLine(a.ToString()+100); -----> //100100  
+    Console.WriteLine(a.ToString()+100); -----> //100100  
 
-(herhangi bir türdeki verileri string ifadeye çevirmek istersek Convert kullanmadan da bu şekilde yapabiliriz.)
+    (herhangi bir türdeki verileri string ifadeye çevirmek istersek Convert kullanmadan da bu şekilde yapabiliriz.)
 
-bu özellik sadece string e çevirmek için kullanılır. 
-
+    bu özellik sadece string e çevirmek için kullanılır. 
+    
 /// sayılar verilerde kendi aralarında tür dönüşümleri .
 
-2 şekilde bu tür dönüşümü mümkünüdür.
+    2 şekilde bu tür dönüşümü mümkünüdür.
 
-1- en dar aralıktaki türden en geniş aralıktaki türe dönüş. 
+    1- en dar aralıktaki türden en geniş aralıktaki türe dönüş. 
 
-(en dardan en genişe türler)
+    (en dardan en genişe türler)
 
-byte < short < int < long < float < double < decimal
+    byte < short < int < long < float < double < decimal
 
-örnek vermek gerekirse byte türünde bir değişkeni herhangi programa herhangi bir açıklama yapmadan short veya daha üst bir sınıfa dönüştürebiliriz.
+    örnek vermek gerekirse byte türünde bir değişkeni herhangi programa herhangi bir açıklama yapmadan short veya daha üst bir sınıfa dönüştürebiliriz.
 
-byte a = 10;
-short b = a;        // burada herhangi bir hata ile karşılaşmayacağız ve program bu dönüşümü otomatik olarak yapacaktır.
+    byte a = 10;
+    short b = a;        // burada herhangi bir hata ile karşılaşmayacağız ve program bu dönüşümü otomatik olarak yapacaktır.
 
 
-2- en geniş aralıktaki türden en dar aralıktaki türe dönüş,
+    2- en geniş aralıktaki türden en dar aralıktaki türe dönüş,
 
-byte < short < int < long < float < double < decimal
+    byte < short < int < long < float < double < decimal
 
-örnek vermek gerekirse long türünde tanımlanmış herhangi bir değeri herhangi bir açıklama yapmadan (değer aralığı içerisinde ols dahi) int , short , byte türlerine dönüşüm yapamayız.
+    örnek vermek gerekirse long türünde tanımlanmış herhangi bir değeri herhangi bir açıklama yapmadan (değer aralığı içerisinde ols dahi) int , short , byte türlerine dönüşüm yapamayız.
 
-long a = 100;
-int b = a;      // burada hata ile karşılaşırız. sebebi herhangi bir açıklama yapmadan türü daraltıyor olmamızdır.
+    long a = 100;
+    int b = a;      // burada hata ile karşılaşırız. sebebi herhangi bir açıklama yapmadan türü daraltıyor olmamızdır.
 
-long a = 100;
-int b = (int)a ;    // bu şekilde cast operatörleri içerisine a dönüşüm yapmak istediğimiz türü yazarsak hata ile karşılaşmayız. bir nevi programa açıklama yapmış oluyoruz.
+    long a = 100;
+    int b = (int)a ;    // bu şekilde cast operatörleri içerisine a dönüşüm yapmak istediğimiz türü yazarsak hata ile karşılaşmayız. bir nevi programa açıklama yapmış oluyoruz.
 
-bu örnekte long bir alt tür olan int e dönüştü ancak short veya byte türüne de dönüşebilirdi. 
+    bu örnekte long bir alt tür olan int e dönüştü ancak short veya byte türüne de dönüşebilirdi. 
 
-not : eğer değer aralığı dışında kalan bir rakam olursa modunu alarak kalan sayıyı ekrana yazdırır.
+    not : eğer değer aralığı dışında kalan bir rakam olursa modunu alarak kalan sayıyı ekrana yazdırır.
 
 ?? tür dönüşümlerine neden ihtiyaç duyarız ??
 
