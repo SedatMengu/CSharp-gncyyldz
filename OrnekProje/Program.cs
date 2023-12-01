@@ -958,3 +958,9 @@ using System.Runtime.CompilerServices;
 #region if yapısı ile
     
 #endregion
+
+object x = "ali";
+if(x is string)
+{
+    string? _x = x as string ;
+}
