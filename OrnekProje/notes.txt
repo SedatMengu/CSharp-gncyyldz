@@ -2622,7 +2622,3 @@ Console.WriteLine(typeof(a));                     -----> tür dönüşümü yap�
 örnek : girilen sayının negatif veya pozitif olduğunu gösteren console uygulamasını yazdıralım.
 
 /// patternler
-
-.
-.
-.
