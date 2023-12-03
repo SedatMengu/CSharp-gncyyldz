@@ -957,10 +957,20 @@ using System.Runtime.CompilerServices;
 
 #region if yapısı ile
     
+// #endregion
+
+// object x = "ali";
+// if(x is string)
+// {
+//     string? _x = x as string ;
+// }
+
 #endregion
 
-object x = "ali";
-if(x is string)
-{
-    string? _x = x as string ;
-}
+
+object x = 123;
+
+if(x is string xx)
+    Console.WriteLine("x değişkeni string tipindedir.");
+else (x is int aa)
+    Console.WriteLine("x değişkeni int türündedir.");
