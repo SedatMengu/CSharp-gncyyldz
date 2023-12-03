@@ -2269,7 +2269,7 @@ Console.WriteLine(typeof(a));                     -----> tür dönüşümü yap�
 
     diğer whenler ile aynı mantıkla çalışır.
 
-/// if - elif - else yapısı
+/// ifyapısı
 
     switch yapısında sadece eşitlik durumlarına göre kontrol sağlanabilirken if-elif-else yapılanmasında ise bütün durumlarda (<,>,=>,=<) kontrol sağlamak mümkündür.
     switchi kapsar ve mantıksal operatörler neticesinde oluşan sonuçları da kıyaslayabilir.
@@ -2621,4 +2621,38 @@ Console.WriteLine(typeof(a));                     -----> tür dönüşümü yap�
 
 örnek : girilen sayının negatif veya pozitif olduğunu gösteren console uygulamasını yazdıralım.
 
-/// patternler
+/// pattern machine (tasarım eşleştirmesi)
+
+    akış kontrol mekanizmalarında yaptığımız işlemleri daha akıcı ve daha ptarik bir şekilde yapmamız için türetilen iyileştirmelerdir. 4 tip pattern vardır.
+
+    1- type pattern
+    2- constant pattern
+    3- var pattern
+    4- recursive pattern
+
+/// type pattern 
+    object içerisindeki bir tipin belirlenmesinde kullanılan is operatörünün desenlenmiş halidir.
+    hedef : is ile belirlenen türün direkt dönüşümünü sağlar.
+
+    örnek : eski yöntem
+
+    object x = 123;
+    if (x is string)
+    {
+        string xx = x as string;
+        Console.WriteLine("x değeri string tiptedir.");
+    }
+    else(x is int)
+    {
+        int xx = (int)x;
+        Console.WriteLine("x değeri int tiptedir.");
+    }
+
+     örnek : yeni yöntem
+
+     object x = 123;
+
+    if(x is string xx)
+        Console.WriteLine("x değişkeni string tipindedir.");
+    else (x is int aa)
+        Console.WriteLine("x değişkeni int türündedir.");
