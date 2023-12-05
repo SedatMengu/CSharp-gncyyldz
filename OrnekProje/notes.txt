@@ -2619,8 +2619,6 @@ Console.WriteLine(typeof(a));                     -----> tür dönüşümü yap�
         // Console.WriteLine(sayi1==10 ? "":  "sayı 10 değildir.");
     #endregion
 
-örnek : girilen sayının negatif veya pozitif olduğunu gösteren console uygulamasını yazdıralım.
-
 /// pattern machine (tasarım eşleştirmesi)
 
     akış kontrol mekanizmalarında yaptığımız işlemleri daha akıcı ve daha ptarik bir şekilde yapmamız için türetilen iyileştirmelerdir. 4 tip pattern vardır.
@@ -2656,3 +2654,61 @@ Console.WriteLine(typeof(a));                     -----> tür dönüşümü yap�
         Console.WriteLine("x değişkeni string tipindedir.");
     else (x is int aa)
         Console.WriteLine("x değişkeni int türündedir.");
+
+    analiz : eski yöntemde x türünü if şartı ile kontrol ediyorduk, true durumunda xx değişkenine atayarak türünü kontrol altına almış oluyoruz.
+    bu xx e dönüşümü is operatörü ile de olabilir , () operatörü ile de olabilir.
+
+    type pattern ile birlikte artık bu tarz tür dönüşümü yapmaya gerek kalmıyor. if şartı içerisine yazdığımız "x is string zz" kod parçası ile 
+    x değeri string ise zz olarak yoluna devam etsin demiş oluyoruz.
+
+    object a = "sedat";
+    if (a is string)
+    {
+        string _a  = (string)a;     // burada a değişkenini () operatörü ile unboxing ettik.
+    }
+
+    Console.WriteLine(_a);      // buradaki _a hata verdi.
+
+    kritik : object olan a değeri string türündedir ama null da olabilme ihtimalinden dolayı if scopu dışında cast edildikten sonra değeri istediğimiz gibi kullanamayız.
+    if scope ları içerisinde nullable lık aranmaz, ancak dışardan erişim istenmez ise nullable ihtimalinden dolayı kullanamayız.
+
+
+/// constant pattern
+
+    constant nedir? 
+    
+    Değişkenler için ram dan alan tahsis ettiğimzide hemen içini doldurmamız gerekmiyor , 
+    constant tür değişkenlerde ram da alan tahsis ettiğimizde hemen içini doldurmamız ve daha sonra tekrar değiştirmememiz gerekiyor.
+
+    constant lar sabit olduğu için sabitler ile kontrol etmek için çıkartılmış bir pattern dir. 
+
+    object x = "ali meral";
+
+    if ( x is "ali meral")
+        Console.WriteLine("ali meral");
+    else if (x is null)
+        Console.WriteLine("null");
+
+    object rakam = 123;
+
+    if (rakam is 124)
+        Console.WriteLine("rakam 124");
+    else if (rakam is 123)
+        Console.WriteLine("rakam 123 dür");
+
+    kritik : is operatörünün tür kontrolü yapması standart bir davranıştır. bu pattern bize değer kontrolü de yapabilmemizi sağlar. 
+    int a = 5;
+    Console.WriteLine(a is int);
+    Console.WriteLine(a is string);
+    Console.WriteLine(a is bool);
+
+    bunlar is operatörleri ile yapabileceğimiz standart kontrollerdir.
+
+    Console.WriteLine(a is 5);
+    Console.WriteLine(a is "5");
+    Console.WriteLine(a is "abcd");
+    Console.WriteLine(a is "true");
+
+    bunlar constant pattern ile gelen özelliklerdir.
+
+
