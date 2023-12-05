@@ -968,9 +968,47 @@ using System.Runtime.CompilerServices;
 #endregion
 
 
-object x = 123;
+// object x = "ali meral";
 
-if(x is string xx)
-    Console.WriteLine("x değişkeni string tipindedir.");
-else (x is int aa)
-    Console.WriteLine("x değişkeni int türündedir.");
+// if ( x is "ali meral")
+//     Console.WriteLine("ali meral");
+// else if (x is null)
+//     Console.WriteLine("null");
+
+// object rakam = 123;
+
+// if (rakam is 124)
+//     Console.WriteLine("rakam 124");
+// else if (rakam is 123)
+//     Console.WriteLine("rakam 123 dür");
+
+// Console.Write("lütfen 1.sayıyı giriniz : ");
+// int sayi1 = Convert.ToInt32(Console.ReadLine());
+
+// Console.Write("lütfen 2.sayıyı giriniz : ");
+// int sayi2 = Convert.ToInt32(Console.ReadLine());
+
+// Console.WriteLine("girilen sayıların toplamı : " + ((sayi1 + sayi2)));
+// Console.WriteLine("girilen sayıların çarpımı : " + ((sayi1 * sayi2)));
+// Console.WriteLine("girilen sayıların farkı : " + ((sayi1 - sayi2)));
+// Console.WriteLine("girilen sayıların bölümü : " + ((sayi1 / sayi2)));
+
+
+try
+{
+    int s1=0,s2=5;
+    int a = s2/s1;
+}
+catch (Exception hata)
+{
+    Console.WriteLine("mesaj : " + hata.Data);
+    Console.WriteLine("mesaj : " + hata.HelpLink);
+    Console.WriteLine("mesaj : " + hata.HResult);
+    Console.WriteLine("mesaj : " + hata.InnerException);
+    Console.WriteLine("mesaj : " + hata.Message);
+    Console.WriteLine("mesaj : " + hata.Source);
+    Console.WriteLine("mesaj : " + hata.StackTrace);
+    Console.WriteLine("mesaj : " + hata.TargetSite);
+}
+
+
