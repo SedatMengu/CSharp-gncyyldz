@@ -994,21 +994,42 @@ using System.Runtime.CompilerServices;
 // Console.WriteLine("girilen sayıların bölümü : " + ((sayi1 / sayi2)));
 
 
-try
-{
-    int s1=0,s2=5;
-    int a = s2/s1;
-}
-catch (Exception hata)
-{
-    Console.WriteLine("mesaj : " + hata.Data);
-    Console.WriteLine("mesaj : " + hata.HelpLink);
-    Console.WriteLine("mesaj : " + hata.HResult);
-    Console.WriteLine("mesaj : " + hata.InnerException);
-    Console.WriteLine("mesaj : " + hata.Message);
-    Console.WriteLine("mesaj : " + hata.Source);
-    Console.WriteLine("mesaj : " + hata.StackTrace);
-    Console.WriteLine("mesaj : " + hata.TargetSite);
-}
+// try
+// {
+//     int s1=0,s2=5;
+//     int a = s2/s1;
+// }
+// catch (Exception hata)
+// {
+//     Console.WriteLine("mesaj : " + hata.Data);
+//     Console.WriteLine("mesaj : " + hata.HelpLink);
+//     Console.WriteLine("mesaj : " + hata.HResult);
+//     Console.WriteLine("mesaj : " + hata.InnerException);
+//     Console.WriteLine("mesaj : " + hata.Message);
+//     Console.WriteLine("mesaj : " + hata.Source);
+//     Console.WriteLine("mesaj : " + hata.StackTrace);
+//     Console.WriteLine("mesaj : " + hata.TargetSite);
+// }
 
+// string a = "r";
 
+// try
+// {
+//     int s1 =0,s2=5;
+//     int s3 = s2/s1;
+// }
+// catch (DivideByZeroException ex) when (a=="r")
+// {
+//    Console.WriteLine("mesaj : " + ex.Message);
+// }
+// catch (DivideByZeroException ex) when (a=="c")
+// {
+//     Console.WriteLine("mesaj : " + ex.Message);
+// }
+
+Console.Write("1.sayıyı giriniz : ");
+int sayi1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("2.sayıyı giriniz : ");
+int sayi2 = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("toplam : " +(sayi1+sayi2));

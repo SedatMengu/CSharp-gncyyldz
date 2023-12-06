@@ -2862,3 +2862,96 @@ literal düzenleme : int x = 1000000; şeklinde gösterimi int x=1_000_000; şek
     25- Relational pattern
     26- logical pattern
     27- not pattern
+
+/// hata kontrol mekanizmaları
+    biz yazılımcı içinn hata olmazsa olmazdır. hata yazılım için bir rutindir.
+
+    bir bardağa su dökerken bile yanlışlıkla masaya/yere dökülebilir. bu çok normaldir.
+
+    önemli olan hata yapmamak değil , hatayı yönetmektir.
+
+    3 tür hata vardır.
+
+    1- syntax hatalarımızın
+    2- runtime hataları
+    3- mantıksal hatalar
+
+/// syntax hataları
+    program diline aykırı olan hatalardır.
+
+    örnek : string keywordu ile int türünde bir değişken tanımlamak gibi.
+
+    özellikle gelişmiş editörler (VS gibi) sayesinde söz dizimi hataları derlemeye bile gerek bırakmakmadan yazım aşamasında uyarı vermektedir.
+
+    hatanın bulunduğu satır derleyici tarafından rapor edildiğinden dolayı fark edilmesi ve çözülmesi en kolay hat türüdür.
+
+/// runtime hataları
+    syntax da herhangi bir hatanın olmadığı , kodun semantiğinde herhangi bir kusurun görünmediği ancak çalışma zamanında patlamaya sebep olan hatalardır.
+    yazılım ayaktayken karşımıza çıkan birtakım aykırı durumlardan dolayı programın işletim sistemi tarafından kesilmesiyle / sonlandırılması ile sonuçlanır.
+
+    çalışma zamanı hataları programın işleyişinin ortasında direkt olarak son kullanıcıya temas edebilecek hatalardır.
+
+    hiç bir yazılımcı son kullanıcının hata ile karşılaşmasını istemez.
+
+    böyle bir durumda çalışma zamanında alınabilecek "olası" alınabilecek hataları yönetmek ve bir şekilde manipüle etmek gerekmektedir.
+
+    runtime hatları genelde ön mimaride tanımlı mesajları verecektir. eğer alınan hatanın ön mimaride bir karşılığı yok ise işletim sistemi dili kullanılcak
+    ve daha komplex bir açıklamayla karşılaşılacaktır.
+
+    olması gereken ise çalışma zamanı hatalarının önceden tespit ediliğ programıc tarafından daha anlaşılabilir bir şekilde düzenlenmesi gerekir.
+    bunun için runtime hatlarını sağlam bir öngörü ile tespit çalışması yapılması gerekmektedir.
+
+    runtime hatalarını önceden kestirebilemk oldukça zor olabilir. bunun için tester ler vardır.
+
+    tüm bunlara rağmen gözden kaçan durumlar olması oldukça normaldir. dolayısıyla bir programın gelişimi sahadaki belli bir sürece bağlıdır.
+    bu süreçte toplanan loglar ve son kullanıcı dönüşleri değerlendirilerek runtime hataları tespit edilerek giderilebilir.
+
+    hata kontrol mekanizmaları neden vardır?
+
+    runtime hatalarını kullanıcıya hissettirmeden yakalayabilmek ve ilgili hatayı manipüle edebilmek için vardır.
+
+    önemli not: try-catch blokları sadece runtime hataları için vardır. syntax veya mantıksal hatalar için değildir.
+    
+/// runtime hatalarının özellikleri
+
+    1- olmayan bir dosyayı açmaya çalışma , üzerine yazma , okumaya çalışmak
+    2- olmayan değer üzerinden işlem yapmaya çalışmak
+    3- uygun olmayan formatlarda çalışmak
+    4- veritabanı, servis , sunucu vb bağlantılarının kopması olarak sınıflandırılabilir.
+
+    örnek : hesap makinesi yapımında karşılabilecek runtime hatalarımızın
+
+    Console.Write("1.sayıyı giriniz : ");
+    int sayi1 = Convert.ToInt32(Console.ReadLine());
+    Console.Write("2.sayıyı giriniz : ");
+    int sayi2 = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("toplam : " +(sayi1+sayi2));
+
+
+    sayılardan bir tanesi string olması durumunda "FormatException" hatası fırlatılır.
+
+/// try - catch blokları
+    runtime da alınan hataları manipüle etmek programlama dahilindedir.
+
+    manipüle etmek : gelen tepkiyi istediğimiz gibi bir etkiye dönüştürebilmek demektir.
+
+    - kullanıcıya alınan hatayı hissettirmemek,
+    - alınan hatanın nedeni ile ilgili son kullanıcıyı bilgilendirmek için vardır.
+
+
+    işletim sistemleri aykırı durum yaşandığında uygulamayı sonlandırmak isterler ve sonladnrırlar.
+    try - catch yapılanması ile alınan hataya dair bir manipülasyon gerçekleştiriliyor ve uygulama kapanmadan yola devam etmesi sağlanıyor.
+
+    prototip 
+
+    try
+    {
+        // olası runtime hatalarına sebebiyet verebilecek kodlar buraya yazılır.
+    }
+    catch
+    {
+        // try içerisinde olası hata söz konusu ise kodun akışı orada kesilecek ve akış buradan devam edecek.
+    }
+
+    önemli not: try da hata yoksa catch çalışmaz.
