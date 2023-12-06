@@ -452,27 +452,27 @@ veri türleri :
 
     string : metinsel ifadeleri tuttuğumuz değişken türüdür ve referans tiplidir.
 
-yukardaki türlerden sadece 'decimal' primitive değildir , geri kalan türlerin tamamı primitive dir.
+    yukardaki türlerden sadece 'decimal' primitive değildir , geri kalan türlerin tamamı primitive dir.
 
-bir türün primitve olup olmadığını nasıl kontrol edebiliriz.
+    bir türün primitve olup olmadığını nasıl kontrol edebiliriz.
 
 
-Console.WriteLine(typeof(bool).IsPrimitive);
-Console.WriteLine(typeof(char).IsPrimitive);
-Console.WriteLine(typeof(sbyte).IsPrimitive);
-Console.WriteLine(typeof(byte).IsPrimitive);
-Console.WriteLine(typeof(short).IsPrimitive);
-Console.WriteLine(typeof(ushort).IsPrimitive);
-Console.WriteLine(typeof(int).IsPrimitive);
-Console.WriteLine(typeof(uint).IsPrimitive);
-Console.WriteLine(typeof(long).IsPrimitive);
-Console.WriteLine(typeof(ulong).IsPrimitive);
-Console.WriteLine(typeof(float).IsPrimitive);
-Console.WriteLine(typeof(double).IsPrimitive);
-Console.WriteLine(typeof(decimal).IsPrimitive);
+    Console.WriteLine(typeof(bool).IsPrimitive);
+    Console.WriteLine(typeof(char).IsPrimitive);
+    Console.WriteLine(typeof(sbyte).IsPrimitive);
+    Console.WriteLine(typeof(byte).IsPrimitive);
+    Console.WriteLine(typeof(short).IsPrimitive);
+    Console.WriteLine(typeof(ushort).IsPrimitive);
+    Console.WriteLine(typeof(int).IsPrimitive);
+    Console.WriteLine(typeof(uint).IsPrimitive);
+    Console.WriteLine(typeof(long).IsPrimitive);
+    Console.WriteLine(typeof(ulong).IsPrimitive);
+    Console.WriteLine(typeof(float).IsPrimitive);
+    Console.WriteLine(typeof(double).IsPrimitive);
+    Console.WriteLine(typeof(decimal).IsPrimitive);
 
-örnek : 1000 değerini short , ushort , int , uint , long , ulong , float , double , decimal türlerinin tamamı ile tutabiliriz.
-ancak yer proje optimizasyonu için en makul aralık olan short veya ushort u kullanmamız gerekir.
+    örnek : 1000 değerini short , ushort , int , uint , long , ulong , float , double , decimal türlerinin tamamı ile tutabiliriz.
+    ancak yer proje optimizasyonu için en makul aralık olan short veya ushort u kullanmamız gerekir.
 
 // C# dilinin temel kuralları : 
 
@@ -623,477 +623,455 @@ literal düzenleme : int x = 1000000; şeklinde gösterimi int x=1_000_000; şek
 
 // değişken türüne uygun default değer atama;
 
-tüm değişkenlerin bir default değeri vardır. 
+    tüm değişkenlerin bir default değeri vardır. 
 
-not : main fonksiyonu içerisinde tanımlanan bütün değişkenlerin default değerleri otomatik olarak atanmaz,
-class içerisinde tanımlanan fonksiyonların değerleri default olarak atanır.
+    not : main fonksiyonu içerisinde tanımlanan bütün değişkenlerin default değerleri otomatik olarak atanmaz,
+    class içerisinde tanımlanan fonksiyonların değerleri default olarak atanır.
 
-varsayılan değerler : 
+    varsayılan değerler : 
 
-bool : false,
-sayısal : 0,
-char = '0',
-strign = null
+    bool : false,
+    sayısal : 0,
+    char = '0',
+    strign = null
 
-main içerisinde bu deperler otomatik olarka gelmez class içerisinde tanımlanan değerlerde otomarik olarak gelir.
+    main içerisinde bu deperler otomatik olarka gelmez class içerisinde tanımlanan değerlerde otomarik olarak gelir.
 
-main scopu içerisinde default değeri atamak için,
+    main scopu içerisinde default değeri atamak için,
 
-bool x = default;
+    bool x = default;
 
-Console.WriteLine(x);
+    Console.WriteLine(x);
 
-console a False değeri yazılır.
+    console a False değeri yazılır.
 
 // tanımlanmış bir değerin değerini okuma :
 
-int x = 5;  // (integer türünde x adında bir alan tahsis edildi ve içerisine 5 değeri atandı.)
+    int x = 5;  // (integer türünde x adında bir alan tahsis edildi ve içerisine 5 değeri atandı.)
 
-int y = 10;  // (integer türünde y adında bir alan tahsis edildi ve içerisine 10 değeri atandı )
+    int y = 10;  // (integer türünde y adında bir alan tahsis edildi ve içerisine 10 değeri atandı )
 
-int z = x ;  // (integer türünde z adında bir alan tahsis edildi ve içerisine x (yani 5 değeri) atandı)
+    int z = x ;  // (integer türünde z adında bir alan tahsis edildi ve içerisine x (yani 5 değeri) atandı)
 
-z = y ;  // (daha önce z adını alan ve türü belirtilen bir alan tahsis edildiğinden herhangi bir hata oluşturmadan z değişkenine y ( yani 10 değeri) atanır.)
+    z = y ;  // (daha önce z adını alan ve türü belirtilen bir alan tahsis edildiğinden herhangi bir hata oluşturmadan z değişkenine y ( yani 10 değeri) atanır.)
 
-b = x ;  // (daha önce b adında bir değişken adı ve türü belirtilmediği için bu kod satırı hata verecektir.)
+    b = x ;  // (daha önce b adında bir değişken adı ve türü belirtilmediği için bu kod satırı hata verecektir.)
 
+    RAM'da alan tahsis edilirken 2 kritik vardır. bunlardan bir tanesi eksik olursa değişken tanımlanamaz.
 
-RAM'da alan tahsis edilirken 2 kritik vardır. bunlardan bir tanesi eksik olursa değişken tanımlanamaz.
+    1- veri tipi ( int , string, bool, char vb.)
+    2- değişken ismi ( isim , numarala, sira , sayi vb.)
 
-1- veri tipi ( int , string, bool, char vb.)
-2- değişken ismi ( isim , numarala, sira , sayi vb.)
-
-
-önemsiz not : int a = 5; a = a ; dediğimizde herhangi bir hataya sebebiyet vermez. bir değişkene aynı türde aynı değeri saklaması için verebiliriz.
-
+    önemsiz not : int a = 5; a = a ; dediğimizde herhangi bir hataya sebebiyet vermez. bir değişkene aynı türde aynı değeri saklaması için verebiliriz.
 
 // değeri olmayan değişkenler. 
 
-main içerisinde atanmış bir karşılığı olmayan değer ile ( int x ;) hiç bir şey yapamayız. 
-çünkü burada uygulamaya int türünde ve x isminde bir alan tahsis edeceğiz dedik ve main yapısı gereği default değer atamaz.
-ancak bu (int x;) ataşmış karşılığı olmayan bir değişkeni class içerisinde kullanabiliriz. default değerler otomatik atanır.
-
-
+    main içerisinde atanmış bir karşılığı olmayan değer ile ( int x ;) hiç bir şey yapamayız. 
+    çünkü burada uygulamaya int türünde ve x isminde bir alan tahsis edeceğiz dedik ve main yapısı gereği default değer atamaz.
+    ancak bu (int x;) ataşmış karşılığı olmayan bir değişkeni class içerisinde kullanabiliriz. default değerler otomatik atanır.
 
 // değişken davranışlarına genel bakış , 
 
-bir değişkenin kendini göndermek ile değerini göndermek arasında fark vardır. 
-değerini göndermek şu şekilde olur.
+    bir değişkenin kendini göndermek ile değerini göndermek arasında fark vardır. 
+    değerini göndermek şu şekilde olur.
 
-int x = 9;  // (burada stack alanında int türünde x adında içerisinde 5 değerinin tutulduğu bir alan tahsisi yaptık.)
-int y = x;  // (burada stack alanında int türünde y adına içerisnde x in değerinin tutulduğu bir alan tahsisi yaptık.) x in kendisini atmadık , değerini tanımladık.
-y = 20;  // (burada stack te barındırılan y değişkenine 20 değerini atadık. x değişkenine herhangi bir şey olmadı.)
+    int x = 9;  // (burada stack alanında int türünde x adında içerisinde 5 değerinin tutulduğu bir alan tahsisi yaptık.)
+    int y = x;  // (burada stack alanında int türünde y adına içerisnde x in değerinin tutulduğu bir alan tahsisi yaptık.) x in kendisini atmadık , değerini tanımladık.
+    y = 20;  // (burada stack te barındırılan y değişkenine 20 değerini atadık. x değişkenine herhangi bir şey olmadı.)
 
-Console.WriteLine(y);  // 20 
-
+    Console.WriteLine(y);  // 20 
 
 // değişkenlerin faliyet alanları : 
 
-scope : değişken ve fonksiyonların sınırlarını belirler. tanımlamalarda ve algoritmik çalışmalarda karışıklığı önler.
+    scope : değişken ve fonksiyonların sınırlarını belirler. tanımlamalarda ve algoritmik çalışmalarda karışıklığı önler.
 
-{ } --> scope 
-
-
-not : bir scope içerisinde tanımlanan değişkene o scope içerisinde tanımladığı satırdan sonra herhangi bir yerden erişebiliriz.
-iç içe tanımlanan scope larda en dışta tanımlanan scope daki değişkene en içteki scope dan erişebiliriz ancak tersi mümkün değildir.
+    { } --> scope 
 
 
-scope lar nerelerde kullanılır;
+    not : bir scope içerisinde tanımlanan değişkene o scope içerisinde tanımladığı satırdan sonra herhangi bir yerden erişebiliriz.
+    iç içe tanımlanan scope larda en dışta tanımlanan scope daki değişkene en içteki scope dan erişebiliriz ancak tersi mümkün değildir.
 
-1- namespace , classlarda , metotlarda , döngülerde , if yapısında scope kullanılır.
-2- herhangi bir keyword e bağlı kalmadan da scope oluşturabiliriz.
 
+    scope lar nerelerde kullanılır;
+
+    1- namespace , classlarda , metotlarda , döngülerde , if yapısında scope kullanılır.
+    2- herhangi bir keyword e bağlı kalmadan da scope oluşturabiliriz.
 
 // değişmezler.
 
-sabitlere neden ihtiyaç duyarız?
+    sabitlere neden ihtiyaç duyarız?
 
-- bazen sabit değerler ile de çalışmamız gerekebilir. 
-sabitlerin asıl amacı bir başka yazılımcı tarafından değiştirilmesini istemediğimiz durumlarda kullanırız. bir diğer avantajı ise
-kendi hatalarımızın önüne geçmektir. dalgınlıkl değiştirmememiz gereken bir noktada deişmemesi gereken bir değeri değiştirebiliriz.
+    - bazen sabit değerler ile de çalışmamız gerekebilir. 
+    sabitlerin asıl amacı bir başka yazılımcı tarafından değiştirilmesini istemediğimiz durumlarda kullanırız. bir diğer avantajı ise
+    kendi hatalarımızın önüne geçmektir. dalgınlıkl değiştirmememiz gereken bir noktada deişmemesi gereken bir değeri değiştirebiliriz.
 
-development aşamasında 'sabit' olarak tanımlanmayan bir değer değiştirilirse hehrangi bir hata ile karşılaşmadan compiler işlemi tamamlanır.
-en erken uygulama çıktılarını görüntüleme aşamasında mantıksal hatalar olduğunu anlayabiliriz. bu noktadan sonra hatanın yerini tespit etmemiz birhayli uzun sürecektir.
+    development aşamasında 'sabit' olarak tanımlanmayan bir değer değiştirilirse hehrangi bir hata ile karşılaşmadan compiler işlemi tamamlanır.
+    en erken uygulama çıktılarını görüntüleme aşamasında mantıksal hatalar olduğunu anlayabiliriz. bu noktadan sonra hatanın yerini tespit etmemiz birhayli uzun sürecektir.
 
-sabitleri nasıl tanımlayabiliriz ? 
+    sabitleri nasıl tanımlayabiliriz ? 
 
-- const keywordu ile tanımlarız.
+    - const keywordu ile tanımlarız.
 
-prototip olarak değişkenlere çok benzer ancak davranışsal olarak değeri bir daha değiştirilemez. değiştirme aşamasında hata mesajı alırız.
-özünde staticdir.
+    prototip olarak değişkenlere çok benzer ancak davranışsal olarak değeri bir daha değiştirilemez. değiştirme aşamasında hata mesajı alırız.
+    özünde staticdir.
 
-static nedir ? 
+    static nedir ? 
 
-- static uygulama bazlı veri depolayabildiğimiz bellekte bir alandır.
+    - static uygulama bazlı veri depolayabildiğimiz bellekte bir alandır.
 
-- scope içerisinde tanımlanan bir değişken gene sadece aynı scope içerisinden erişime izin verir, static'e konulan bir değer / değişken evrenseldir ve uygulamanın herhangi bir yerinden erişime açıktır.
+    - scope içerisinde tanımlanan bir değişken gene sadece aynı scope içerisinden erişime izin verir, static'e konulan bir değer / değişken evrenseldir ve uygulamanın herhangi bir yerinden erişime açıktır.
 
-static ile const arasındaki fark nedir ? 
+    static ile const arasındaki fark nedir ? 
 
-- static değişkendirler , const'lar değişmezdirler.
+    - static değişkendirler , const'lar değişmezdirler.
 
-readonly : sadece okunabilir değişkenler tanımlanmaktadır.
+    readonly : sadece okunabilir değişkenler tanımlanmaktadır.
 
-const tanımlandığı anda değer ataması yapılmak zorundadır. alan tahsis edeyim, ileride bu alanı dolduracağım olmaz.
+    const tanımlandığı anda değer ataması yapılmak zorundadır. alan tahsis edeyim, ileride bu alanı dolduracağım olmaz.
 
-readonly de ise const'a ilave olarak constructure da da değer ataması yapabiliriz. 3.bi değer ataması yapamayız, bir defa değer ataması yapınca değiştiremeyiz.
+    readonly de ise const'a ilave olarak constructure da da değer ataması yapabiliriz. 3.bi değer ataması yapamayız, bir defa değer ataması yapınca değiştiremeyiz.
 
-readonly static değildir.
+    readonly static değildir.
 
-const değişken tanımlama : 
+    const değişken tanımlama : 
 
-int a = 5 ;         // (bu şekilde int türünde a adında içerisinde 5 rakamının tutulduğu alan tahsis ettik ama kapı her zaman açık)
+    int a = 5 ;         // (bu şekilde int türünde a adında içerisinde 5 rakamının tutulduğu alan tahsis ettik ama kapı her zaman açık)
 
-a = 8;              // (bu şekilde a değişkenine giderek değiştirebiliriz.)
+    a = 8;              // (bu şekilde a değişkenine giderek değiştirebiliriz.)
 
-const int b = 7;    // (bu şekilde int türünde b adında içerisinde 7 değerinin tutulduğu alan tahsis ettik ve const ile kapıyı kilitledik.)
+    const int b = 7;    // (bu şekilde int türünde b adında içerisinde 7 değerinin tutulduğu alan tahsis ettik ve const ile kapıyı kilitledik.)
 
-b = 11;             // (const ile kapıyı kiltlediğimizden dolayı b değeri üzerinde değişiklik yapamayız.)
-
-
+    b = 11;             // (const ile kapıyı kiltlediğimizden dolayı b değeri üzerinde değişiklik yapamayız.)
 
 // global ve local değişkenler , 
 
-bir değişken konumlandığı yere göre locak veya global diye isimlendirilirler. yapı ve işleyişte herhangi bir değişiklik olmaz sadece isimlendirme yapılmıştır.
+    bir değişken konumlandığı yere göre locak veya global diye isimlendirilirler. 
+    yapı ve işleyişte herhangi bir değişiklik olmaz sadece isimlendirme yapılmıştır.
 
-class scope u içerisinde tanımlanan değişkenlere global değişken denir.
-metotlar içerisinde tanımlanan değişkenlere local değişlen denir.
-
+    class scope u içerisinde tanımlanan değişkenlere global değişken denir.
+    metotlar içerisinde tanımlanan değişkenlere local değişlen denir.
 
 // değişken tanımlama varyasyonları: 
 
-1- int a; veya int a = 5;   // klasik varyasyon
+    1- int a; veya int a = 5;   // klasik varyasyon
 
-2- aynı türde birden fazla değişken oluşturulması gereken durumlarda kullanılabilir.
-int x = 3, y= 4, z=5; --> alan tahsis ettik ve değer atamsı yaptık.
-int x,y,z;  --> alan tahsis ettik ve değer ataması yapmadık.
+    2- aynı türde birden fazla değişken oluşturulması gereken durumlarda kullanılabilir.
+    int x = 3, y= 4, z=5; --> alan tahsis ettik ve değer atamsı yaptık.
+    int x,y,z;  --> alan tahsis ettik ve değer ataması yapmadık.
 
 // değişkenler arası değer atama.
 
-1- deep copy : eldeki veri klonlanır. 1 iken 2 veri oluşur.
+    1- deep copy : eldeki veri klonlanır. 1 iken 2 veri oluşur.
 
-not : değer türlü değişkenler birbirine atanırken default olarak deep copy geçerlidir. yani veri otomatik olarak türetilir.
+    not : değer türlü değişkenler birbirine atanırken default olarak deep copy geçerlidir. yani veri otomatik olarak türetilir.
 
-int a = 7;  ---> (stack alanında int türünde a isminde 7 değişkenini tahsis ettik.)
-int b = a;  ---> (stack alanında int türünde b isminde a değişken (değerini deep copy olarak) tanınladık. )
-b = b * 3;  ---> (deep copy olarak kopyaladığımız a değişken değeri değişmeden b üzerinde matematiksel işlem yapabiliriz.)
+    int a = 7;  ---> (stack alanında int türünde a isminde 7 değişkenini tahsis ettik.)
+    int b = a;  ---> (stack alanında int türünde b isminde a değişken (değerini deep copy olarak) tanınladık. )
+    b = b * 3;  ---> (deep copy olarak kopyaladığımız a değişken değeri değişmeden b üzerinde matematiksel işlem yapabiliriz.)
 
-Console.WriteLine(a);  // 7
-Console.WriteLine(b);  // 21 
+    Console.WriteLine(a);  // 7
+    Console.WriteLine(b);  // 21 
 
-b değişkeni a değişkeninden deep copy copyalandı ve sonrasında a değişkeni bu kopyalamadan etkilenmeyecektir.
+    b değişkeni a değişkeninden deep copy copyalandı ve sonrasında a değişkeni bu kopyalamadan etkilenmeyecektir.
 
-2- shallow copy :  birden fazla referansla işaretlemeye dayalı kopyalama yöntemidir.
+    2- shallow copy :  birden fazla referansla işaretlemeye dayalı kopyalama yöntemidir.
 
-bellekte birden fazla referansın tek bir veriyi işaret etmesidir.
+    bellekte birden fazla referansın tek bir veriyi işaret etmesidir.
 
-neticede ilgili değer bir değişikliğie uğradığında tüm işaretleyen referanslara da bu değişiklik yansıtılacaktır. (Autocaddeki blok editor mantığı)
+    neticede ilgili değer bir değişikliğie uğradığında tüm işaretleyen referanslara da bu değişiklik yansıtılacaktır. (Autocaddeki blok editor mantığı)
 
-A ve B değişkenleri heap daki aynı değeri kullanıyorlar, heap daki değer değişirse A ve B bu durumdan etkilenecek.
+    A ve B değişkenleri heap daki aynı değeri kullanıyorlar, heap daki değer değişirse A ve B bu durumdan etkilenecek.
 
-not : değer türlü değişkenlerde bilinçli olarak shallow copy yaptırılabilir. 
+    not : değer türlü değişkenlerde bilinçli olarak shallow copy yaptırılabilir. 
 
-not2 : nesne ve referans arasındaki ilişkide varsayılan davranış olarak kabul edilmektedir.
+    not2 : nesne ve referans arasındaki ilişkide varsayılan davranış olarak kabul edilmektedir.
 
 // object türü : 
 
-tüm türleti karşılayabilen , referans türlü ve stack de tutulmayan bir türdür.
-object olarak tanımlanan değişkenler şeffaf bir kutu gibi içerisinde tutulmuş gibidir. object içerisinde herhangi bir türde , tür değişmeden tutulur. (boxing özelliği)
+    tüm türleti karşılayabilen , referans türlü ve stack de tutulmayan bir türdür.
+    object olarak tanımlanan değişkenler şeffaf bir kutu gibi içerisinde tutulmuş gibidir. object içerisinde herhangi bir türde , tür değişmeden tutulur. (boxing özelliği)
 
 
-boxing özelliği : 
+    boxing özelliği : 
 
-object bir değişkene herhangi bir türdeki değer türünde bir değişikliğe uğramadan göndermektir. boxing işlemi neticesinde ilgili değer object in içerisinde kendi türünde saklanır.
+    object bir değişkene herhangi bir türdeki değer türünde bir değişikliğe uğramadan göndermektir. boxing işlemi neticesinde ilgili değer object in içerisinde kendi türünde saklanır.
 
-object türünde tutulan hangi tür veri olursa olsun o türde bir işleme tabi tutulamaz. int ise matematiksel olarak işlem yapılamaz, string ise metinsel işlemler yapılamaz.
+    object türünde tutulan hangi tür veri olursa olsun o türde bir işleme tabi tutulamaz. int ise matematiksel olarak işlem yapılamaz, string ise metinsel işlemler yapılamaz.
 
-boxing işlemini şeffaf bir kutu olarak düşünebiliriz. içerisi görünüyor ancak işlem yapmaya kapalı.
+    boxing işlemini şeffaf bir kutu olarak düşünebiliriz. içerisi görünüyor ancak işlem yapmaya kapalı.
 
-şeffaf kutulama olarak adlandırdığımız boxing de tutulan değişkeni işlem yapılabilir hale getirmek için unboxing işlemi yapmak gerekir.
+    şeffaf kutulama olarak adlandırdığımız boxing de tutulan değişkeni işlem yapılabilir hale getirmek için unboxing işlemi yapmak gerekir.
 
 // cast operatörü : 
 
-boxing edilmiş bir veriyi kendi türünde işleme açabilmemize yardımcı olan bir opeartördür.
+    boxing edilmiş bir veriyi kendi türünde işleme açabilmemize yardımcı olan bir opeartördür.
 
-not : bilinçli tür dönüşümünde de cast operatörü kullanılır. 
-not2: kalıtımsal durumlarda da cast operatörü kullanılır.
+    not : bilinçli tür dönüşümünde de cast operatörü kullanılır. 
+    not2: kalıtımsal durumlarda da cast operatörü kullanılır.
 
-() ---> cast operatörü . object değeri alır.
+    () ---> cast operatörü . object değeri alır.
 
-cast kullanımı : 
+    cast kullanımı : 
 
-object A = "cem";                   ----> veri türü : object , değişken ismi : A 
+    object A = "cem";                   ----> veri türü : object , değişken ismi : A 
 
-string isim = (string)A ;           ----> veri türü : string , değişken ismi : isim (cast ı burada kullandık) (cast olarak türüne uygun olarak değeri istemek gerekir.)
+    string isim = (string)A ;           ----> veri türü : string , değişken ismi : isim (cast ı burada kullandık) (cast olarak türüne uygun olarak değeri istemek gerekir.)
 
-Console.WriteLine(isim.ToUpper());  ----> veri türü : string , değişken ismi : isim 
+    Console.WriteLine(isim.ToUpper());  ----> veri türü : string , değişken ismi : isim 
 
-cast object boxing unboxing iç içe ifadelerdir. buna bi örnek verelim.
+    cast object boxing unboxing iç içe ifadelerdir. buna bi örnek verelim.
 
-object _yas = 32; ---> veri türü : object , değişken ismi : _yas olan bir alan tahsis ettik. 
+    object _yas = 32; ---> veri türü : object , değişken ismi : _yas olan bir alan tahsis ettik. 
 
-Console.WriteLine(_yas*3);  ---> sonuç ekrana bastırılamaz.
+    Console.WriteLine(_yas*3);  ---> sonuç ekrana bastırılamaz.
 
-int yas = (int)_yas ; ---> _yas isimli değişkenini cast operatörünü kullanarak unboxing yaparak int değişkeni içerisine koyduk.
+    int yas = (int)_yas ; ---> _yas isimli değişkenini cast operatörünü kullanarak unboxing yaparak int değişkeni içerisine koyduk.
 
-object neden kullanılır? 
+    object neden kullanılır? 
 
-- dışarıdan alınan verilerin türleri bilinemediği durumlarda kullanılır.
+    - dışarıdan alınan verilerin türleri bilinemediği durumlarda kullanılır.
 
-not : int olarak boxing edilen bir veriyi string veya char türünde unboxing edersek runtime esnasında (tam son noktada) hata verir. bigbang
-
+    not : int olarak boxing edilen bir veriyi string veya char türünde unboxing edersek runtime esnasında (tam son noktada) hata verir. bigbang
 
 // var keywordu nedir ? ne işe yarar? 
- 
-Tutulacak değerin türüne uygun bir değişken tanımlamak bizim elimizdedir. ancak bazen bunu biz compilera yaptırmak isteriz. bunu var keywordu ile tanımlarız.
+    
+    Tutulacak değerin türüne uygun bir değişken tanımlamak bizim elimizdedir. ancak bazen bunu biz compilera yaptırmak isteriz. bunu var keywordu ile tanımlarız.
 
-bool medeniHal = true;     // var medeniHal = true;
-string isim = "nazmi";     // var isim = "nazmi";
+    bool medeniHal = true;     // var medeniHal = true;
+    string isim = "nazmi";     // var isim = "nazmi";
 
-bunları biz tanımladık          bunları compiler yaptı.
-
-
-'var' keywordu atanan değerin türüne bürünür.
-
-var ne zaman kullanılır ? 
-
-diller arası entegrasyonda kullanılır. X dilinde tanımlanan t adında bir değişken vardır diyelim , biz bu t adındaki değişkenin C# dilindeki karşılığını bilemeyebiliriz.
-bu noktada 'var' yazıp geçeriz.
+    bunları biz tanımladık          bunları compiler yaptı.
 
 
-not1: 'var' keywordu ile tanımlanan değişkenin değeri tanımlama aşamasında verilmelidir.
-not2: 'var' keywordu ile tanımlanan değişkene ilk değer verildikten sonra o türe bürüneceğinden dolayı aynı tür üzerinden ilerlemek gerekir.
-not3: 'var' ile object arasındaki fark , var işleme açıktır , object unboxing etmeden işleme kapalıdır.
+    'var' keywordu atanan değerin türüne bürünür.
 
+    var ne zaman kullanılır ? 
+
+    diller arası entegrasyonda kullanılır. X dilinde tanımlanan t adında bir değişken vardır diyelim , biz bu t adındaki değişkenin C# dilindeki karşılığını bilemeyebiliriz.
+    bu noktada 'var' yazıp geçeriz.
+
+    not1: 'var' keywordu ile tanımlanan değişkenin değeri tanımlama aşamasında verilmelidir.
+    not2: 'var' keywordu ile tanımlanan değişkene ilk değer verildikten sonra o türe bürüneceğinden dolayı aynı tür üzerinden ilerlemek gerekir.
+    not3: 'var' ile object arasındaki fark , var işleme açıktır , object unboxing etmeden işleme kapalıdır.
 
 // dynamic keywordu : 
 
-dynamic b = 5; ---> development sürecinde b her daim dynamic türde görünecektir. uygulama derlenip çalıştırıldığında dynamic ilgili değerin türüne bürünmüş olur.
+    dynamic b = 5; ---> development sürecinde b her daim dynamic türde görünecektir. uygulama derlenip çalıştırıldığında dynamic ilgili değerin türüne bürünmüş olur.
 
-var x = 5;   ---> bu satırdan sonra x integer bir davranış sergiler ve integer e has işlemlere tabi tutulabilir.
+    var x = 5;   ---> bu satırdan sonra x integer bir davranış sergiler ve integer e has işlemlere tabi tutulabilir.
 
-dynamic y = 10 ; ---> bu satırdan sonra runtime a kadar y dynamic davranışlar sergiler.
-
-
-dynamic özelliği nedir ? 
-
-- . ya bastıktan sonra otomatik olarak kullanılabilecek özellikler listelenir.
-
-Console.SetWindowSize
-Console.Write
-Console.WriteLine
-Console.SetWindowPosition
-
-buradan Console. dan sonra liste çıkar ve kullanılabilecek olan özellikler listelenmiş olur. burada Console dynamic olsaydı . ya bastıktan sonra hiç bir özellik görünmeyecekti.
-
-dynamic olan verilerde manuel olarak .Write , .WriteLine şeklinde yazmamız gerekir. buna karşılık bir hata olup olmayacağını dotnet run demeden bilemeyiz.
-
-not : dynamic keywordu runtime türü belirleyecektir ancak kararlı davranmayacaktır. bunu bi örnekle açıklayalım.
+    dynamic y = 10 ; ---> bu satırdan sonra runtime a kadar y dynamic davranışlar sergiler.
 
 
-dynamic x = "ali";
-Console.WriteLine(x.Gettype());
-x = true;
-Console.WriteLine(x.GetType());
+    dynamic özelliği nedir ? 
 
-// string
-// boolean
+    - . ya bastıktan sonra otomatik olarak kullanılabilecek özellikler listelenir.
 
+    Console.SetWindowSize
+    Console.Write
+    Console.WriteLine
+    Console.SetWindowPosition
 
-dynamic geçici veri tutma yeridir diyebiliriz.
+    buradan Console. dan sonra liste çıkar ve kullanılabilecek olan özellikler listelenmiş olur. burada Console dynamic olsaydı . ya bastıktan sonra hiç bir özellik görünmeyecekti.
 
-dynamic nerelerde tercih edilir?
+    dynamic olan verilerde manuel olarak .Write , .WriteLine şeklinde yazmamız gerekir. buna karşılık bir hata olup olmayacağını dotnet run demeden bilemeyiz.
 
-türünü bilmediğimiz ve verinin geldiğini düşünelim. var keywordu uzaktan gelen verilerde kullanılmaz.
+    not : dynamic keywordu runtime türü belirleyecektir ancak kararlı davranmayacaktır. bunu bi örnekle açıklayalım.
 
-not : uzaktan gelen verilerin hangi türde olduğunu bilmediğimiz verileri karşılarken dynamic keywordu kullanılır. 
-uzaktan gelen veriyi var ile tanımlayamayız çünkü var tanımlandığı anda verinin atanmasını ister. dynamic runtime'a kadar bekleyebilir.
+    dynamic x = "ali";
+    Console.WriteLine(x.Gettype());
+    x = true;
+    Console.WriteLine(x.GetType());
 
-int b = 5;
-b="kale";
-b = true;
+    // string
+    // boolean
 
-int veya başka bir belirli tür bu değişikliğe izin vermez.
+    dynamic geçici veri tutma yeridir diyebiliriz.
 
-dynamic a = 3;
-a = true;
-a="isim";
+    dynamic nerelerde tercih edilir?
 
-dynamic türde esneklik sağlar.
+    türünü bilmediğimiz ve verinin geldiğini düşünelim. var keywordu uzaktan gelen verilerde kullanılmaz.
 
+    not : uzaktan gelen verilerin hangi türde olduğunu bilmediğimiz verileri karşılarken dynamic keywordu kullanılır. 
+    uzaktan gelen veriyi var ile tanımlayamayız çünkü var tanımlandığı anda verinin atanmasını ister. dynamic runtime'a kadar bekleyebilir.
+
+    int b = 5;
+    b="kale";
+    b = true;
+
+    int veya başka bir belirli tür bu değişikliğe izin vermez.
+
+    dynamic a = 3;
+    a = true;
+    a="isim";
+
+    dynamic türde esneklik sağlar.
 
 // değişkenler genel tekrar soruları:
 
-1- değişken nedir ve neden ihtiyaç duyarız.
+    1- değişken nedir ve neden ihtiyaç duyarız.
 
-yazılımın amacı eldeki verileri bir şekilde anlamlı hale getirmektir. elimize bir şekilde geçen verileri , bu elimize geçme bir işlem neticesinde olabilir , 
-bir veri tabanından gelebilir , bir client tarafından gelebilir. developer ların amacı bu veriyi amacına uygun bir şekilde yönlendirerek arzu edilen sorulara
-cevap vermektir.
+    yazılımın amacı eldeki verileri bir şekilde anlamlı hale getirmektir. elimize bir şekilde geçen verileri , bu elimize geçme bir işlem neticesinde olabilir , 
+    bir veri tabanından gelebilir , bir client tarafından gelebilir. developer ların amacı bu veriyi amacına uygun bir şekilde yönlendirerek arzu edilen sorulara
+    cevap vermektir.
 
-2- value type , primitive type , nedir ? 
+    2- value type , primitive type , nedir ? 
 
-value type      : yas , isim , tckimlik gibi değişkenleri tutan değerlerdir.
-primitive type  : diğer türler tarafından türetilmiş türlerdir.
+    value type      : yas , isim , tckimlik gibi değişkenleri tutan değerlerdir.
+    primitive type  : diğer türler tarafından türetilmiş türlerdir.
 
-Console.WriteLine(typeof(bool).IsPrimitive);        // True
-Console.WriteLine(typeof(char).IsPrimitive);        // True
-Console.WriteLine(typeof(sbyte).IsPrimitive);       // True
-Console.WriteLine(typeof(byte).IsPrimitive);        // True
-Console.WriteLine(typeof(short).IsPrimitive);       // True
-Console.WriteLine(typeof(ushort).IsPrimitive);      // True
-Console.WriteLine(typeof(int).IsPrimitive);         // True
-Console.WriteLine(typeof(uint).IsPrimitive);        // True
-Console.WriteLine(typeof(long).IsPrimitive);        // True
-Console.WriteLine(typeof(ulong).IsPrimitive);       // True
-Console.WriteLine(typeof(float).IsPrimitive);       // True
-Console.WriteLine(typeof(double).IsPrimitive);      // True
-Console.WriteLine(typeof(decimal).IsPrimitive);     // False
-Console.WriteLine(typeof(object).IsPrimitive);      // False
-Console.WriteLine(typeof(string).IsPrimitive);      // False
-
-
-buradan çıkartılacak sonuç decimal , object ve string türleri primitive tür değillerdir.
-
-not : tanımlanmış bir dğeişkene değer atamak için önceden o değişkenin tanımlanmış olması zorunludur.
-
-örnek :
-
-int a ;
-
-a = 6;  // dada önce stack alanında 'a' isminde bir değişken ve alan oluşturduğumuz için içerisine türüne uygun bir değer ataması yapabiliriz,
-b = 9;  // daha önce stack alanına 'b' isminde bir değişken ve alan oluşturmadığımız için içerisine herhangi bir değer ataması yapamayız.
+    Console.WriteLine(typeof(bool).IsPrimitive);        // True
+    Console.WriteLine(typeof(char).IsPrimitive);        // True
+    Console.WriteLine(typeof(sbyte).IsPrimitive);       // True
+    Console.WriteLine(typeof(byte).IsPrimitive);        // True
+    Console.WriteLine(typeof(short).IsPrimitive);       // True
+    Console.WriteLine(typeof(ushort).IsPrimitive);      // True
+    Console.WriteLine(typeof(int).IsPrimitive);         // True
+    Console.WriteLine(typeof(uint).IsPrimitive);        // True
+    Console.WriteLine(typeof(long).IsPrimitive);        // True
+    Console.WriteLine(typeof(ulong).IsPrimitive);       // True
+    Console.WriteLine(typeof(float).IsPrimitive);       // True
+    Console.WriteLine(typeof(double).IsPrimitive);      // True
+    Console.WriteLine(typeof(decimal).IsPrimitive);     // False
+    Console.WriteLine(typeof(object).IsPrimitive);      // False
+    Console.WriteLine(typeof(string).IsPrimitive);      // False
 
 
-tuple türü : içerisinde birden fazla değişken barındırabilen bir yapıdır.
+    buradan çıkartılacak sonuç decimal , object ve string türleri primitive tür değillerdir.
 
+    not : tanımlanmış bir dğeişkene değer atamak için önceden o değişkenin tanımlanmış olması zorunludur.
+
+    örnek :
+
+    int a ;
+
+    a = 6;  // dada önce stack alanında 'a' isminde bir değişken ve alan oluşturduğumuz için içerisine türüne uygun bir değer ataması yapabiliriz,
+    b = 9;  // daha önce stack alanına 'b' isminde bir değişken ve alan oluşturmadığımız için içerisine herhangi bir değer ataması yapamayız.
+
+
+    tuple türü : içerisinde birden fazla değişken barındırabilen bir yapıdır.
 
 /// kod nasıl çalışır ;
 
-kodun çalışması için geliştrilmiş 2 adet yöntem vardır.
+    kodun çalışması için geliştrilmiş 2 adet yöntem vardır.
 
-1- senkron çalışma  : bir işlem bitmeden diğer bir işlemin başlamadığı , yöntemdir. (trafikte öndeki araba gitmeden arkadaki araba gidemez).
-                    bu yöntemde herhangi bir t anında yapılan işi tespit edebiliriz.
+    1- senkron çalışma  : bir işlem bitmeden diğer bir işlemin başlamadığı , yöntemdir. (trafikte öndeki araba gitmeden arkadaki araba gidemez).
+                        bu yöntemde herhangi bir t anında yapılan işi tespit edebiliriz.
 
-2- asenkron çalışma : paralel olarak birden fazla işin aynı anda yapılması yöntemidir. (oyun oynarken müzik dinlemeyebiliriz).
-                    bu yöntemde herhangi bir t zamanında yapılan işi tespit edemeyiz.
+    2- asenkron çalışma : paralel olarak birden fazla işin aynı anda yapılması yöntemidir. (oyun oynarken müzik dinlemeyebiliriz).
+                        bu yöntemde herhangi bir t zamanında yapılan işi tespit edemeyiz.
 
-
-not : yazılımlar varsayılan olarak senkron çalışırlar , ancak gelişen teknolojiler sayesine tamamına yakını asenkron olarak yola devam ederler.
-
-
+    not : yazılımlar varsayılan olarak senkron çalışırlar , ancak gelişen teknolojiler sayesine tamamına yakını asenkron olarak yola devam ederler.
 
 /// kod konsepti nasıldır ? nasıl oluşturulur
 
-kod inşa edilirken her zaman şu yapı vardır.
+    kod inşa edilirken her zaman şu yapı vardır.
 
-_____________ = _____________
-tür ,           bu taraftaki yazılı olan kodlar bir işlem
-referans,       yapacak ve geriye bir değer döndürecek.
-değişken vs.    (değer döndürmeyede bilir , böyle durumlarda bu kısım olmaz.)
+    _____________ = _____________
+    tür ,           bu taraftaki yazılı olan kodlar bir işlem
+    referans,       yapacak ve geriye bir değer döndürecek.
+    değişken vs.    (değer döndürmeyede bilir , böyle durumlarda bu kısım olmaz.)
 
-sağ tarafta bir işlem yapılacak ve sol taraftarki tür , referans , değişken vs ye atanacak.
-
+    sağ tarafta bir işlem yapılacak ve sol taraftarki tür , referans , değişken vs ye atanacak.
 
 /// ; operatörü
 
-; operatörü compiler tarafından konseptin bittiğini işaret eder. compiler satır satır değil konsept konsept çalıştığından dolayı bu ; operatör üçok önemlidir.
+    ; operatörü compiler tarafından konseptin bittiğini işaret eder. compiler satır satır değil konsept konsept çalıştığından dolayı bu ; operatör üçok önemlidir.
 
-not : bir konsept biter ve konseptin sonuna ; işaretini koymaz isek hata alırız:
-nor : ; operatörü birden fazla kullanılabilir herhangi bir hataya sebebiyet vermez ancak hoş karşılanmaz. 
-not : compiler tarafından kodlar satır satır değil konsept konsept derlenir.
-
+    not : bir konsept biter ve konseptin sonuna ; işaretini koymaz isek hata alırız:
+    nor : ; operatörü birden fazla kullanılabilir herhangi bir hataya sebebiyet vermez ancak hoş karşılanmaz. 
+    not : compiler tarafından kodlar satır satır değil konsept konsept derlenir.
 
 /// tür dönüşümü nedir ve neden ihtiyaç duyarız?
 
-development sürecinde elimizdeki verilerin türlerini değiştirebiliriz. ancak her tür istediğimiz bir türe dönüşemez. 
-örneğin elimizde bir 'elma' var ve biz bu elmayı en fazla bir üst sınıf olan 'meyve' türünde saklayabiliriz.
-bir development hiçbir şeyi boş yere yapmaz. kodlamanın temel mantığını biz elimze bir şekilde gelen veriyi uygun hale getirerek,
-uygun çıktılar oluşturmak için bu yola girdik , ve bu yolculukta elimze string bir değişken geldiğini varsayalım. 
-bu string ifadenin değeri "123" olsun. bu veriyi string olarak *2 işlemine tabi tutamıyoruz ancak çarpmamız gerekiyor.
-tam bu noktada tür dönüşümüne ihtiyacımız vardır.
+    development sürecinde elimizdeki verilerin türlerini değiştirebiliriz. ancak her tür istediğimiz bir türe dönüşemez. 
+    örneğin elimizde bir 'elma' var ve biz bu elmayı en fazla bir üst sınıf olan 'meyve' türünde saklayabiliriz.
+    bir development hiçbir şeyi boş yere yapmaz. kodlamanın temel mantığını biz elimze bir şekilde gelen veriyi uygun hale getirerek,
+    uygun çıktılar oluşturmak için bu yola girdik , ve bu yolculukta elimze string bir değişken geldiğini varsayalım. 
+    bu string ifadenin değeri "123" olsun. bu veriyi string olarak *2 işlemine tabi tutamıyoruz ancak çarpmamız gerekiyor.
+    tam bu noktada tür dönüşümüne ihtiyacımız vardır.
 
 
-not : tür dönüşümleri mantıksız olmamalı.
-not : farklı servislerden gelen verileri uygun türlere dönüştürme ihtiyacı olabilir, bu noktada tür dönüşümü yapılmalıdır.
-not : elimzideki veriye uygun olmayan bir türe dönüştürmeye çalışmak hatalara sebebiyet verebilir. örneğin bool türündeki bir veriyi char içinde tutamayız.
+    not : tür dönüşümleri mantıksız olmamalı.
+    not : farklı servislerden gelen verileri uygun türlere dönüştürme ihtiyacı olabilir, bu noktada tür dönüşümü yapılmalıdır.
+    not : elimzideki veriye uygun olmayan bir türe dönüştürmeye çalışmak hatalara sebebiyet verebilir. örneğin bool türündeki bir veriyi char içinde tutamayız.
 
-örnek  : elimizde 'meyve' verisi var. 'meyve' içerisinde elam olduğunu biliyoruz, bu türü 'armut' olarak dönüştürürsek patlarız.
-örnek2 : bir şekilde elimize 'ahmet' diye bir veri geldi. biz bu veriyi bool türüne dönüştüremeyiz.
-örnek3 : bir şekilde elimize "123" diye bir veri geldi . biz bu veriyi char türüne dönüştüremeyiz.
-
+    örnek  : elimizde 'meyve' verisi var. 'meyve' içerisinde elam olduğunu biliyoruz, bu türü 'armut' olarak dönüştürürsek patlarız.
+    örnek2 : bir şekilde elimize 'ahmet' diye bir veri geldi. biz bu veriyi bool türüne dönüştüremeyiz.
+    örnek3 : bir şekilde elimize "123" diye bir veri geldi . biz bu veriyi char türüne dönüştüremeyiz.
 
 /// Parse fonksiyonu:
 
-metinsel ifadeleri diğer türlere dönüştürmeye yarayan fonksiyondur.
-herhangi bir string ifadeyi int , bool , char gibi türlere dönüştürür.
+    metinsel ifadeleri diğer türlere dönüştürmeye yarayan fonksiyondur.
+    herhangi bir string ifadeyi int , bool , char gibi türlere dönüştürür.
 
-not : sadece string ifadelerde dönüşüm yapabilir.
-
-
-string ------> Parse ------> char (olur)
-string ------> Parse ------> int (olur)
-string ------> Parse ------> bool (olur)
-int    ------> Parse ------> string (olmazzzzzz)
-
-kullanımı : 
-
-string x = "123";
-
-Console.WriteLine(int.Parse(x) * 2); -----> // 246 
-
-çözülmesi gereken soru:
-
-dışarıdan elimze string bir ifade geldi ve biz bu ifadenin 2 katını alacağız.
-
-çözüm :
-
-sonuca ulaşmak için 2 ile çarpabilmek için matematiksel bir ifadeizin olması gerekir. 
-bu sebepten dolayı elimizdeki veriyi matematiksel bir veriye dönüştürdük ve sonuca ulaştık.
+    not : sadece string ifadelerde dönüşüm yapabilir.
 
 
-önemli not : tür dönüşümlerinde dikkat edilmesi gereken tek husus dönüşüm yapılacak verinin türüne uygun bir hedef belirlemektir.
+    string ------> Parse ------> char (olur)
+    string ------> Parse ------> int (olur)
+    string ------> Parse ------> bool (olur)
+    int    ------> Parse ------> string (olmazzzzzz)
 
-dynamic x1 = "12";
+    kullanımı : 
 
-Console.WriteLine(short.Parse(x1)*2); -----> // 24
+    string x = "123";
 
-var a = "9";
+    Console.WriteLine(int.Parse(x) * 2); -----> // 246 
 
-Console.WriteLine(double.Parse(a)*2); -----> // 18
+    çözülmesi gereken soru:
 
-object a1 = "7";
+    dışarıdan elimze string bir ifade geldi ve biz bu ifadenin 2 katını alacağız.
 
-string b = (string)a;       ---> object türündeki veriyi burada unboxing yaparak string bir veriye dönüştürdük.
+    çözüm :
 
-Console.WriteLine(int.Parse(b)*3);  -----> // 21
+    sonuca ulaşmak için 2 ile çarpabilmek için matematiksel bir ifadeizin olması gerekir. 
+    bu sebepten dolayı elimizdeki veriyi matematiksel bir veriye dönüştürdük ve sonuca ulaştık.
 
-bu son örnekte object türünden bir veri üzerinde işlem yaptığımızdan kaynaklı olarak boxing-unboxing işlemine tabi tutma ihtiyacı oluştu.
+
+    önemli not : tür dönüşümlerinde dikkat edilmesi gereken tek husus dönüşüm yapılacak verinin türüne uygun bir hedef belirlemektir.
+
+    dynamic x1 = "12";
+
+    Console.WriteLine(short.Parse(x1)*2); -----> // 24
+
+    var a = "9";
+
+    Console.WriteLine(double.Parse(a)*2); -----> // 18
+
+    object a1 = "7";
+
+    string b = (string)a;       ---> object türündeki veriyi burada unboxing yaparak string bir veriye dönüştürdük.
+
+    Console.WriteLine(int.Parse(b)*3);  -----> // 21
+
+    bu son örnekte object türünden bir veri üzerinde işlem yaptığımızdan kaynaklı olarak boxing-unboxing işlemine tabi tutma ihtiyacı oluştu.
 
 /// convert fonksiyonu : 
 
-herhangi bir türü herhangi bir türe dönüştürmek için kullanılır. Parse komutunun yaptıklarını da yapabilir.
+    herhangi bir türü herhangi bir türe dönüştürmek için kullanılır. Parse komutunun yaptıklarını da yapabilir.
 
-not : int16 - short türüdür
-      int32 - int türüdür
-      int64 - long türüdür.
+    not : int16 - short türüdür
+        int32 - int türüdür
+        int64 - long türüdür.
 
 
-parse fonksiyonu ile dönüşüm : 
+    parse fonksiyonu ile dönüşüm : 
 
-string x = "123";
+    string x = "123";
 
-Console.WriteLine(int.Parse(x) * 2); -----> // 246 
+    Console.WriteLine(int.Parse(x) * 2); -----> // 246 
 
-convert fonksiyonu ile dönüşüm:
+    convert fonksiyonu ile dönüşüm:
 
-string x = "123";
+    string x = "123";
 
-Console.WriteLine(Convert.ToDouble(x) * 2); -----> // 246 
+    Console.WriteLine(Convert.ToDouble(x) * 2); -----> // 246 
 
-int a = 100 ;
+    int a = 100 ;
 
-Console.WriteLine(Convert.ToString(a)+2);         -----> // 1002
-Console.WriteLine(typeof(a));                     -----> tür dönüşümü yapılan bir değişkenin typeof ile türünü bulamadık.
+    Console.WriteLine(Convert.ToString(a)+2);         -----> // 1002
+    Console.WriteLine(typeof(a));                     -----> tür dönüşümü yapılan bir değişkenin typeof ile türünü bulamadık.
 
 /// metinsel olmayan ifadeleri metinsel ifadeye dönüştürmeye alternatif 
 
@@ -2672,7 +2650,6 @@ Console.WriteLine(typeof(a));                     -----> tür dönüşümü yap�
     kritik : object olan a değeri string türündedir ama null da olabilme ihtimalinden dolayı if scopu dışında cast edildikten sonra değeri istediğimiz gibi kullanamayız.
     if scope ları içerisinde nullable lık aranmaz, ancak dışardan erişim istenmez ise nullable ihtimalinden dolayı kullanamayız.
 
-
 /// constant pattern
 
     constant nedir? 
@@ -2711,4 +2688,177 @@ Console.WriteLine(typeof(a));                     -----> tür dönüşümü yap�
 
     bunlar constant pattern ile gelen özelliklerdir.
 
+/// var pattern
+    var nedir ? 
+        verilen değerin türüne bürünen bir keywordu dur. bürünme işlemi runtime da yapılır.
+    var pattern nedir?
+        elimizdeki veriyi if sorgusu sırasında 'var' değişkeni ile elde etmemizi sağalamaktadır. 
+    
+    örnek :
 
+    object x = "türkiye";
+
+    if (x is var a)
+        Console.WriteLine(a);
+
+    type pattern in bir üstü var pattern dir.
+
+    object x2 = "abcde";
+    if(x2 is strign a2)
+        Console.WriteLine(a2);
+    
+    burada x2 değişkenini a2 değişkeni olarak strign ture cast ettik. (type pattern kullandık)
+
+    object x3 = "abcde";
+    if(x2 is var a3)
+        Console.WriteLine(a3);
+    
+    burada x3 türünü bilmememize gerek olmadan consolda yazdırabiliyoruz.
+
+    önemli not: normalde var atanan değer deleme zamanında bürünürken var patterndeki var ise runtime da atandığı değere bürünür.
+    
+/// Recusive pattern
+    switch - case yapılanmasında önceden sadece değer türlü değişkenleri kontrol edebiliyorduk ,
+    ancak c# 7.0 den sonra referans türlü değişkenleri de kontrol edebiliyoruz.
+
+    Not: recursive pattern tür kontrolü yaptığı için type pattern i kapsamaktadır.
+
+    bu pattern switch-case yapılanmasına bir çok yenilik getirdi. 
+        1- önceden sadece değer türlü değişkenleri kontrol edebiliyorken şimdi referans türlü değişkenleri üzerinde de kontrol yapabiliyoruz.
+        2- önceden when şartı ile herhangi bir ikinci özellik üzerinden kontrol yapamıyorduk ancak şimdi yapabiliyoruz.
+    
+    type ve var pattern üzerine kritik
+        type ve var patternler if koşulundan bağımsız olarakta çalışırlar.
+
+    örnek :
+    
+    object x = "abc";
+
+    bool result = x is string a;
+
+    x string ise yola a olarak devam etsin dedik. if koşulundaki gibi nullable durumu burada da devam etmektedir.
+
+/// C# 9.0 pattern maching enhancements
+    geliştrilmiş pattern yapılarıdır.
+
+    1- Simple type pattern
+    2- Relational pattern
+    3- Logical pattern
+    4- not pattern
+
+/// simple pattern
+    bir değişken içerisindeki değerin belli bir türde olup olmadığının hızlı bir şekilde kontrol edilmesini sağlayan patterndir.
+    daha önceki type pattern in gelişmiş halidir.
+
+    C# 9.0 dan önce type pattern ile yapılan tür bildirimlerinin yanına değişken adı tanımlaması yahut discord ifadesinin kullanılması zorunlu idi.
+    C# 9.0 dan sonra bu artık zorunlu değildir.
+
+    örnek : eski yöntem 
+
+    object obj = new person();
+
+    switch (obj)
+    {
+        case Person p :
+        //
+        break;
+    }
+
+    yeni yöntem ;
+
+    object obj = new person();
+
+    switch (obj)
+    {
+        case Person :
+        //
+        break;
+    }
+
+    örnek2 : eski yöntem
+
+    string GetProduct(IProduct p) => p switch
+    {
+        technologic _ => "teknolojik",
+        Coputer_ => "bilgisayar",
+        Goggles _ => "gözlük",
+    };
+
+    yeni yöntem ;
+
+     string GetProduct(IProduct p) => p switch
+    {
+        technologic => "teknolojik",
+        Coputer => "bilgisayar",
+        Goggles => "gözlük",
+    };
+
+/// Relational pattern
+    Desenlerde < , > , => , =< operatörleri kullanılabilmekte ve belirli karşılaştırmaları hızlıca gerçekleştirebilmektedir.
+
+    Not : Switch-case özü itibari ile sadece eşitlik durumlarını kontrol edebilen bir akış kontrol mekanizması idi.
+    ancak yeni gelen patternler sayesinde artık if gibi her türlü kontrol yapılabilmektedir.
+
+    örnek :
+
+    int number = 100;
+
+    string result = number Switch
+    {
+        < 50 => "50 den küçüktür.",
+        > 50 => "50 den büyüktür.",
+        = 50 => "50 ye eşittir.",
+        _ => "hiçbirisi",
+    };
+
+/// Logical pattern
+    and , or , not gibi mantıksal operaötleri destekler.
+
+    örnek :
+
+     string GetProduct(IProduct p) => p switch
+    {
+        technologic => "teknolojik",
+        Coputer and Googles => "bilgisayar",
+    };
+
+/// not pattern
+
+    not operatörünün kullanıldığı bir patterndir.
+
+     string GetProduct(IProduct p) => p switch
+    {
+        technologic => "teknolojik",
+        Coputer => "bilgisayar",
+        not Goggles => "gözlük",
+    };
+
+/// akış kontrol mekanizmalarından neler öğrendik.
+
+    1- akış kontrol mekanizmaları nelerdir.
+    2- switch - case yapısı
+    3- when
+    4- goto
+    5- switch excpression (C# 8.0)
+    6- switch excpression
+    7- switch excpression when şartı uygulayarak
+    8- Tuple pattern
+    9- Tuple pattern when şartı uygulayarak
+    10- Property pattern
+    11- Property pattern when şartı uygulayarak
+    12- Positional pattern
+    13- Positional pattern when şartı uygulayarak
+    14- if - else yapısı
+    15- if yapısı
+    16- if else if yapısı
+    17- scopesuz if yapısı
+    18- pattern maching (C# 7.0)
+    19- type pattern
+    20- Constant pattern
+    21- var pattern
+    22- recursive pattern
+    23- pattern machine(C# 9.0)
+    24- simple type pattern
+    25- Relational pattern
+    26- logical pattern
+    27- not pattern
