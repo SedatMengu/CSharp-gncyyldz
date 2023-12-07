@@ -1027,9 +1027,17 @@ using System.Runtime.CompilerServices;
 //     Console.WriteLine("mesaj : " + ex.Message);
 // }
 
-Console.Write("1.sayıyı giriniz : ");
-int sayi1 = Convert.ToInt32(Console.ReadLine());
-Console.Write("2.sayıyı giriniz : ");
-int sayi2 = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("toplam : " +(sayi1+sayi2));
+
+try
+{
+    Console.Write("1.sayıyı giriniz : ");
+    int sayi1 = Convert.ToInt32(Console.ReadLine());
+    Console.Write("2.sayıyı giriniz : ");
+    int sayi2 = Convert.ToInt32(Console.ReadLine());  
+    Console.WriteLine("toplam : " +(sayi1+sayi2));
+}   
+catch (FormatException ex)
+{
+    Console.WriteLine("mesaj : " + ex.Message);
+}
