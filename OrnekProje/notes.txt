@@ -2955,3 +2955,74 @@ literal düzenleme : int x = 1000000; şeklinde gösterimi int x=1_000_000; şek
     }
 
     önemli not: try da hata yoksa catch çalışmaz.
+
+    try
+    {
+        Console.Write("1.sayıyı giriniz : ");
+        int sayi1 = Convert.ToInt32(Console.ReadLine());
+        Console.Write("2.sayıyı giriniz : ");
+        int sayi2 = Convert.ToInt32(Console.ReadLine());  
+        Console.WriteLine("toplam : " +(sayi1+sayi2));
+    }   
+        catch
+    {
+        Console.WriteLine("hatalı değer girildi.");
+    }
+
+    kullanıcı herhangi bir değer girme aşamasında convert edilemeyen bir değer girdiğinde kodlar otomatik olarak catch bloğuna sıçrayıp oradan okumaya devam eder.
+
+    kritik : try-catch yapılanması hatanın muhtemel olduğu kodları (try içerisindeki yapıyı) sürekli kontrol eden maliyetli bir yapıdır. bu sebepten dolayı bütün kodlar try içerisinde olmamalıdır.
+
+/// try - catch yapılanmasındaki hata parametreleri
+
+    runtime da alınan hataya dair bizlere bilgi veren/taşıyan parametreler vardır.
+
+    try
+    {
+
+    }
+    catch (Exception ex)    ---> buradaki Exception bizlere fırlatılacak hata ile ilgili tüm bilgileri getirecek üst türdür. bütün hataları karşılayabilen bir türdür.
+    {
+
+    }
+
+    alınan hataya dair bilgileri edinebilmek için "ex" keywordü kullanılır. (hata , ali , ahmet , 5 gibi ifadeler de olabilir ama ex genel kullanımdır.) 
+    "ex" üzerinden gerekli loglamaları vs operasyonları da yapabilmekteyiz.
+
+    (Exception ex) yazılmak zorunda değil, yazılmadan da çalışabilir. ancak yazmak gereklidir.
+
+    örnek : 
+
+    try
+    {
+        Console.Write("1.sayıyı giriniz : ");
+        int sayi1 = Convert.ToInt32(Console.ReadLine());
+        Console.Write("2.sayıyı giriniz : ");
+        int sayi2 = Convert.ToInt32(Console.ReadLine());  
+        Console.WriteLine("toplam : " +(sayi1+sayi2));
+    }   
+    catch (FormatException ex)
+    {
+        Console.WriteLine("mesaj : " + ex.Message);
+    }
+
+    burada fırlatılan hata int ile metinsel bir ifadeyi toplamayı çalıştığı için FormatException hatası fırlatıldı.
+
+
+    "ex" ile neleri bulabilir.
+
+    1- Data             : Hatanın ek verilerini içeren bir 'IDictionary' döndürür.
+
+    2- HelpLink         : yardım bağlantısını içeren bir 'string' döndürür.
+
+    3- HResult          : hatanın bir tür sınıflandırması olan bir hata kodunu döndürür.
+
+    4- InnerException   : hatanın iç içe geçmiş (inner) bir istisnasını temsil eden bir 'Exception' nesnesi döndürür.
+
+    5- Message          : hatanın açıklamasını içeren bir 'string' döndürürür.
+
+    6- Source           : hata oluşan uygulamanın veya nesnenin adını döndürür.
+
+    7- StackTrace       : hatanın oluştuğu yerdeki yönetilen çağrı yığınını temsil eden bir 'string' dizini döndürür.
+
+    8- TargetSite       : hata oluştuğu metodun bilgisini içeren 'MethodBase' türünde bir nesne döndürür.
