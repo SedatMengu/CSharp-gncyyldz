@@ -3006,8 +3006,7 @@ literal düzenleme : int x = 1000000; şeklinde gösterimi int x=1_000_000; şek
         Console.WriteLine("mesaj : " + ex.Message);
     }
 
-    burada fırlatılan hata int ile metinsel bir ifadeyi toplamayı çalıştığı için FormatException hatası fırlatıldı...
-    .
+    burada fırlatılan hata int ile metinsel bir ifadeyi toplamayı çalıştığı için FormatException hatası fırlatıldı.
 
 
     "ex" ile neleri bulabilir.
