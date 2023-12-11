@@ -3026,3 +3026,4 @@ literal düzenleme : int x = 1000000; şeklinde gösterimi int x=1_000_000; şek
     7- StackTrace       : hatanın oluştuğu yerdeki yönetilen çağrı yığınını temsil eden bir 'string' dizini döndürür.
 
     8- TargetSite       : hata oluştuğu metodun bilgisini içeren 'MethodBase' türünde bir nesne döndürür.
+    .
