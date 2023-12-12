@@ -1029,18 +1029,18 @@ using System.Runtime.CompilerServices;
 
 
 
-try
-{
-    Console.Write("1.sayıyı giriniz : ");
-    int sayi1 = Convert.ToInt32(Console.ReadLine());
-    Console.Write("2.sayıyı giriniz : ");
-    int sayi2 = Convert.ToInt32(Console.ReadLine());  
-    Console.WriteLine("toplam : " +(sayi1+sayi2));
-}   
-catch (FormatException ex)
-{
-    Console.WriteLine("mesaj : " + ex.Message);
-}
+// try
+// {
+//     Console.Write("1.sayıyı giriniz : ");
+//     int sayi1 = Convert.ToInt32(Console.ReadLine());
+//     Console.Write("2.sayıyı giriniz : ");
+//     int sayi2 = Convert.ToInt32(Console.ReadLine());  
+//     Console.WriteLine("toplam : " +(sayi1+sayi2));
+// }   
+// catch (FormatException ex)
+// {
+//     Console.WriteLine("mesaj : " + ex.Message);
+// }
 // 1- ArgumentException
 // 2- ArgumentNullException
 // 3- ArgumentOutOfRangeException
@@ -1057,3 +1057,29 @@ catch (FormatException ex)
 // 14- StackOverflowException
 // 15- TimeoutException
 
+string x = "a";
+    try
+    {
+        int s1 = 0 , s2=5;
+        int a = s2/s1;
+    }
+    catch(DivideByZeroException ex) when (x=="a")
+    {
+        Console.WriteLine("mesaj1 : " +ex.Message);
+    }
+     catch(DivideByZeroException ex) when (x=="b")
+    {
+        Console.WriteLine("mesaj2 : " +ex.Message);
+    }
+     catch(DivideByZeroException ex)
+    {
+        Console.WriteLine("mesaj3 : " +ex.Message);
+    }
+    catch(FormatException ex)
+    {
+        Console.WriteLine("mesaj : " +ex.Message);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("mesaj : " +ex.Message);
+    }

@@ -3066,3 +3066,183 @@ literal düzenleme : int x = 1000000; şeklinde gösterimi int x=1_000_000; şek
 
     Not : bütün veri türlerinin atası 'object' tir. referans türlüdür.
 
+/// try - catch 'exception' dışında farklı bir keyword ile hata yakalama.
+
+    try 
+    {
+        int s1 = 0 , s2 = 5;
+        int a = s2/s1;
+    }
+    catch (DivideByZeroException ex)
+    {
+        Console.WriteLine("mesaj : "+ ex.Message)
+    }
+
+    bu örnekten yola çıkarak catch bloğunda ( ) içerisinde tanımlı olan şey 'Exception' ise yakalayacak olan tüm hatalar için (hangi tür olursa olsun) aynı çalışma yapılır,
+    eğer DivideByZeroException gibi özelleştirilmiş bir exception yazılır ise sadece DivideByZeroException hatası (eğer var ise bu kısım çalışır) yakalayıp çalışma yapar.
+
+    try - catch bloğu içerisinde bir kodun bulunması catch bloğunun çalışacağı anlamı taşımaz. bu keyword ü tetikleyecek bir hatanın oluşması gerekir. 
+
+    catch yapılanmasında exception özelleştirilmiş ise dikkatli olunması gerekir. Farklı hata ihtimalleri var ise birden fazla catch bloğu kullanabiliriz.
+
+/// birden fazla catch durumu
+
+    örnek :
+
+    try
+    {
+        int s1 = 0 , s2=5;
+        int a = s2/s1;                       ---> burası DivideByZeroException hatası fırlatılacak.
+        int b = convert.ToInt32("abcd");     ---> burası FormatException hatası fırlatılacak.
+    }
+    catch (exception ex)
+    {
+        // kodlar                            ---> her 2 durumda da aynı kod parçası çalışır. 
+    }
+
+    bu örnekte DivideByZeroException ve FormatException şeklide 2 farklı hata fırtlattı ancak catch blokları içerisinde (exception ex) yazarak genel tür sınıfı ile karşıladığımızdan dolayı 
+    her 2 hataya da aynı şekilde çalışma yapar.
+
+    örnek : olması gereken
+
+    try
+    {
+        int s1 = 0 , s2=5;
+        int a = s2/s1;                       
+        int b = convert.ToInt32("abcd");
+    }
+    catch (DivideByZeroException ex)                    ---> DivideByZeroException hatası burada karşılanacak.
+    {
+        Console.WriteLine("mesaj : " + ex.Message);                 
+    }
+    catch (FormatException ex)                          ---> FormatException hatası burada karşılanacak.
+    {
+        Console.WriteLine("mesaj : " + ex.Message);             
+    }
+    catch (exception ex)                                ---> yukarıdaki hataların dışında bir hata ile karşılaşırsak emniyet olarak en sona bu kodları yazarız.
+    {
+        Console.WriteLine("mesaj : " + ex.Message);
+    }
+
+    try - catch yapılanmasında birden fazla catch var ise senkron bir şekilde yukarıdan aşağıya doğru bütün catch leri teker teker dolaşacaktır.
+    Bu sebepten dolayı sıralama önemlidir. en sona genel hata karşılaması olan (exception ex) en sona yazılır.
+    
+    önemli not : Eğer en başa (exception ex) yazılırsa diğer catch lere uğramadan kod yola devam eder. 
+    özelleştirilmiş catch ler için herhangi bir sıralama yoktur ancak genel hata karşılaması olan (exception ex) en sona yazılması gerekir.
+
+/// try - catch finally bloğu
+    try 
+    {
+        // kontrol edilecek kodlar
+    }
+    catch
+    {
+        // yukarıda hata alınan kodlara karşı davranışlar
+    }
+    finally
+    {
+        // catch bloğu çalışsa da çalışmasa da çalışacak kod blokları
+    }
+
+ Not : finally bloğu catch bloğundan sonra gelmek zorundadır.
+
+ örnek:
+ try 
+    {
+        // veri tabanına bağlan
+    }
+    catch
+    {
+        // isteyerek veya istemeyerek veri tabanı bağlantısı kopabilir. kopunca burada hata mesjaı göster
+    }
+    finally
+    {
+        // bağlantı kopsa da kopmasa da veri tabanı bağlantısını kes.
+    }
+
+/// try - catch yapılanmasında when yapısı ile hata filtreleme (C# 6.0)
+    C# 6.0 ile birlikte hatalara when şartı ekleyerek hataları detaylı filtreleme özellikleri gelmiştir.
+
+    try 
+    {
+        // kontrol edilecek kodlar
+    }
+    catch (exception ex) when (3==3)                                    
+    {
+        // yukarıda hata alınan kodlara karşı davranışlar
+    }
+    finally
+    {
+        // catch bloğu çalışsa da çalışmasa da çalışacak kod blokları
+    }
+
+    catch bloğunda düşecek bir hata oluşması durumunda catch içerisindeki kodların çalışması için when şartı eklenebilir.
+
+    önemli not: when false döenrse catch çalışmaz.
+
+    örnek : 
+    string x = "a";
+    try
+    {
+        int s1 = 0 , s2=5;
+        int a = s2/s1;
+    }
+    catch(DivideByZeroException ex) when (x=="a")
+    {
+        Console.WriteLine("mesaj1 : " +ex.Message);
+    }
+     catch(DivideByZeroException ex) when (x=="b")
+    {
+        Console.WriteLine("mesaj2 : " +ex.Message);
+    }
+     catch(DivideByZeroException ex)
+    {
+        Console.WriteLine("mesaj3 : " +ex.Message);
+    }
+    catch(FormatException ex)
+    {
+        Console.WriteLine("mesaj : " +ex.Message);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("mesaj : " +ex.Message);
+    }
+
+    analiz : DivideByZeroException hatasını alacağımızı biliyorduk. when ile ilave bir şart daha ekledik. 
+             when şartı true sonuç verdiği ilk catch bloğu içerisinde hata çözülür ve aynı hata türü girilen catch bloklarına uğramadan kodu devam etti.
+
+/// mantıksal hatalar
+    programın mantığında , akışında, algoritmasında, sttatejisinde bir takım şeylerin yanlış hesaplanması düşünülmesi , tasarlanması neticesinde oluşan hatalardır.
+
+    günlük hayattaki mantıksal hataların karşılığı 'bug' dır.
+
+    tespiti çok zor olduğu için hata türleri arasında en tehlikeli olan türdür. 
+
+    mantıksa hatalarda bazen tek çözüm debug dur. (adım adım çözüm.)
+
+/// Hata kontrol mekanizmalarında neler öğrendik.
+
+    1- hata kontrol mekanizmaları nelerdir ve ne amaçla kullanılır.
+
+    2- hata türleri nelerdir
+
+    3- Derleme /syntax / Sözdizimi hataları
+
+    4- runtime hataları
+
+    5- try-catch blokları
+
+    6- hata parametreleri
+
+    7- hata türleri
+
+    8- exception dışında farklı bir hata yakalama
+
+    9- birden fazla catch bloğu
+
+    10- finally bloğu
+
+    11- when yapısı ile hata filtreleme (C# 6.0)
+
+    12- mantıksal hatalar (bug - debug)
+
