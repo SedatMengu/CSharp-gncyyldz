@@ -3026,3 +3026,43 @@ literal düzenleme : int x = 1000000; şeklinde gösterimi int x=1_000_000; şek
     7- StackTrace       : hatanın oluştuğu yerdeki yönetilen çağrı yığınını temsil eden bir 'string' dizini döndürür.
 
     8- TargetSite       : hata oluştuğu metodun bilgisini içeren 'MethodBase' türünde bir nesne döndürür.
+
+/// runtime da alınabilecek hatalar
+
+
+    // 1- ArgumentException             : Bir metodun geçersiz bir argümanla çağrılması durumunda fırlatılır.
+
+    // 2- ArgumentNullException         : Bir metoda null bir argümanın iletilmesi durumunda fırlatılır.
+
+    // 3- ArgumentOutOfRangeException   : Bir metodun geçerli aralık dışında bir argümanla çağrılması durumunda fırlatılır.
+
+    // 4- DivideByZeroException         : Bir tamsayı veya ondalık sıfıra bölünmeye çalışıldığında fırlatılır.
+    
+    // 5- FileNotFoundException         : Var olmayan bir dosyaya erişilmeye çalışıldığında fırlatılır.
+    
+    // 6- FormatException               : Bir argümanın biçimi geçersiz olduğunda fırlatılır.
+
+    // 7- IndexOutOfRangeException      : Bir dizinin veya koleksiyonun sınırları dışındaki bir indeksle erişilmeye çalışıldığında fırlatılır.
+
+    // 8- InvalidOperationException     : Bir nesnenin uygun olmayan bir durumdayken bir metodun çağrılması durumunda fırlatılır.
+
+    // 9- KeyNotFoundException          : Bir sözlük veya benzeri veri yapısının belirtilen anahtarı içermemesi durumunda fırlatılır.
+
+    // 10- NotSupportedException        : Bir metodun veya işlemin desteklenmediği durumda fırlatılır.
+
+    // 11- NullReferenceException       : Bir nesne veya null başvurusu üzerinde bir metodun çağrılması durumunda fırlatılır.
+
+    // 12- OverflowException            : Bir aritmetik işlemin veri türünün sınırlarını aştığında fırlatılır.
+
+    // 13- OutOfMemoryException         : Bir programın devam etmesi için yeterli belleğin olmaması durumunda fırlatılır.
+
+    // 14- StackOverflowException       : Aşırı rekürsif işlemler nedeniyle yığın taşması durumunda fırlatılır.
+
+    // 15- TimeoutException             : Bir işlemin zaman aşımına uğraması durumunda fırlatılır. 
+                                          Yani belirli bir süre içinde tamamlanmayan bir işlem sonlandırılır ve bu istisna fırlatılır.
+
+    sistemde tanımlanmış bir hata ile karşılaşırsak bunlardan bir tanesi fırlatılacaktır.
+
+
+    Not : bütün veri türlerinin atası 'object' tir. referans türlüdür.
+

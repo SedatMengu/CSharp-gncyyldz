@@ -1041,3 +1041,19 @@ catch (FormatException ex)
 {
     Console.WriteLine("mesaj : " + ex.Message);
 }
+// 1- ArgumentException
+// 2- ArgumentNullException
+// 3- ArgumentOutOfRangeException
+// 4- DivideByZeroException)
+// 5- FileNotFoundException
+// 6- FormatException
+// 7- IndexOutOfRangeException
+// 8- InvalidOperationException
+// 9- KeyNotFoundException
+// 10- NotSupportedException
+// 11- NullReferenceException
+// 12- OverflowException
+// 13- OutOfMemoryException
+// 14- StackOverflowException
+// 15- TimeoutException
+
