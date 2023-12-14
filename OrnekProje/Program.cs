@@ -1101,3 +1101,5 @@ for ( int i = 1 ; i<=sayi ; i++)
     sonuc *= i;
 }
 Console.WriteLine("Girilen sayının Faktöriyeli : " + sonuc);
+.
+.
