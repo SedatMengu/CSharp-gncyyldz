@@ -1092,12 +1092,43 @@ using System.Runtime.CompilerServices;
 // }
 // Console.WriteLine(toplam);
 
-Console.Write("Lütfen Bir Sayı Giriniz : ");
-int sayi = Convert.ToInt32(Console.ReadLine());
-int sonuc = 1;
+/// klavyeden girilen sayının faktöriyelini hesaplama;
 
-for ( int i = 1 ; i<=sayi ; i++)
+#region 1.çözüm
+    // Console.Write("Lütfen Bir Sayı Giriniz : ");
+    // int sonuc = 1;
+    // try
+    // {
+    //     int sayi = Convert.ToInt32(Console.ReadLine());
+    //     for (int i = 1; i <= sayi; i++)
+    //     {
+    //         sonuc *=i;
+    //     }
+    //     Console.WriteLine("Girilen sayının Faktöriyeli : " + sonuc);
+    // }
+
+    // catch (FormatException ex)
+    // {
+    //     Console.WriteLine("sayı dışında bir değer girildi. : " + ex.Message);
+    // }
+#endregion
+
+#region 2.çözüm
+    Console.Write("Lütfen Bir Sayı Giriniz : ");
+    int sonuc = 1;
+try
 {
-    sonuc *= i;
+    int sayi = Convert.ToInt32(Console.ReadLine());
+    for (int i = sayi; i > 0; i--)
+    {
+        sonuc *=i;
+    }
+    Console.WriteLine("Girilen sayının Faktöriyeli : " + sonuc);
 }
-Console.WriteLine("Girilen sayının Faktöriyeli : " + sonuc);
+
+catch (FormatException ex)
+{
+    Console.WriteLine("sayı dışında bir değer girildi. : " + ex.Message);
+}
+
+#endregion
