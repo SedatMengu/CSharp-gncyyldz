@@ -3272,3 +3272,23 @@ literal düzenleme : int x = 1000000; şeklinde gösterimi int x=1_000_000; şek
     1- ardışık bir sayı işlemi oluyorsa 'for' döngüsü kullanılır.
     2- sonsuz bir döngü var ise 'while' döngüsü kullanılır.
     3- manevratik yapılarda 'do-while' döngüsü kullanılır.
+
+/// for döngüsü
+
+    genellikle ardışık durumlarda kullanılan bir döngüdür. 
+
+    yapısı:
+
+    for ( I ; II ; III)
+    {
+        // kodlar
+    }
+
+    I : genellikle başlangıç değeri burada tanımlanır. bu değer dışarda tanımlanarak bu kısım boş da geçilebilir.
+        ardışık işlemlere başlayabilmek için bir ilk değere ihityacımız vardır. 
+
+    II : bu kısımda boolean türünde değer dönen ve true olduğu sürece döngünün tekrar edeceği 'şart' kısmı yazılır.
+        değişkenden bağımsız herhangi bir şart/koşul ifadesi tanımlanabilir.
+
+    III : genellikle başlangıç değerinin arttırma ve azaltma durumlarının gösterildiği yerdir. döngü içerisinde de gösterilebilir olduğundan dolayı bu kısım da burada boş geçilebilir.
+        değişkene bağlı olmak zorunda değildir.
