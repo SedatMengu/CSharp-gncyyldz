@@ -3247,3 +3247,28 @@ literal düzenleme : int x = 1000000; şeklinde gösterimi int x=1_000_000; şek
     12- mantıksal hatalar (bug - debug)
 
 /// döngüler
+
+    döngüler neden vardır?
+
+    tanım : 
+    tekrar eden veya tekrar etmesi gereken programları bir koşula bağlı olarak ( bir kombinasyon sürecine bağlı olarak ) 
+    belirli sayıda tekrarlayabilen / işleyebilen yapılara döngü denir. 
+
+    döngüler progmalamanın temel yapı taşlarından biridir.
+
+    3 adaet döngü vardır.
+
+    1- for döngüsü
+    2- while döngüsü (her dilde olan döngüdür.) döngülerin atasıdır.
+    3- do while döngüsü
+
+    önemli not: foreach bir döngü değil iterasyondur.
+
+/// neden birden fazla döngü var ?
+
+    bir tane döngüyü bilmemiz yeterlidir. her bir döngü diğerinin yerine kullanılabilir. 
+    bazı senaryolara bazı döngüler daha yatkındır.
+
+    1- ardışık bir sayı işlemi oluyorsa 'for' döngüsü kullanılır.
+    2- sonsuz bir döngü var ise 'while' döngüsü kullanılır.
+    3- manevratik yapılarda 'do-while' döngüsü kullanılır.
