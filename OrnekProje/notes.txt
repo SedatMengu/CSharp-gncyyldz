@@ -3292,3 +3292,335 @@ literal düzenleme : int x = 1000000; şeklinde gösterimi int x=1_000_000; şek
 
     III : genellikle başlangıç değerinin arttırma ve azaltma durumlarının gösterildiği yerdir. döngü içerisinde de gösterilebilir olduğundan dolayı bu kısım da burada boş geçilebilir.
         değişkene bağlı olmak zorunda değildir.
+
+/// for döngüsü akışı
+
+    1.adım : for keywordunu gören compiler döngü olacağını anladı ve içeri girdi.
+    2.adım : eğer değişken tanımlama işlemi var ise bu işlemi yapacak ve ram da ilgili türde alan tahsis ederek içeriye değişken atamasını yapacaktır.
+        not : eğer değişken dışarda tanımlandıysa (ki bu ihtimal de var) burada başlangıç değeri almak zorundadır. 
+    3.adım : Copiler koşuk kısmına geldi ve koşulu kontrol ediyor. eğer true ise kodları çalıştıracak değil ise döngüden çıkacak.
+    4.adım : döngüden çıkamyıp kodları çalıştırır ise arttırma/azaltma kısmına gidecek ve oradaki adımı gerçekleştirecek.
+    5.adım : arttırma / azaltma işlei yaptıktan sonra true / false durumunu kontrol edecek ve true ise kodları tekrar çalıştıracak.
+    .
+    .
+    son adım : arttırma / azaltma kısmına giren compiler burada işini bitirdikten sonra true / false durumunu kontrol edecek. false durumu olursa for döngüsünden çıkarak yoluna devam edecek.
+
+/// örnek : 5 defa ekrana A değerini yazdıralım
+
+    for (int i = 0 ; i < 5 ; i++)
+        Console.WriteLine("A");
+    
+/// örnek : 1 den 10 a kadar olan sayıları alt alta ekrana yazdıralım.
+
+    for (int i = 1; i < 11 ; i++)
+        Console.WriteLine(i);
+
+/// örnek : 1 ile 40 arasındaki çift sayıları toplayarak sonucu ekrana yazdıralım.
+
+    int toplam = 0;
+    for (int i = 0; i < 41; i++)
+    {
+        if(i%2 ==0)
+            toplam += i;
+        
+    }
+    Console.WriteLine("toplam: " +toplam );
+
+/// örnek : klavyeden girilen sayının faktöriyelini hesaplayıp ekrana yazdıralım.
+
+    Console.Write("Lütfen bir sayı giriniz : ");
+    int sayi = Convert.ToInt32(Console.ReadLine());
+    int fakt = 1;
+
+    for (int i = 1; i <= sayi ; i++)
+    {
+        fakt *=i;
+    }
+    Console.WriteLine("faktöriyel : " + fakt);
+
+/// for döngüsü kritik - 1 / klasik for gösterimi
+
+    for (int i = 1; i <= 6 ; i++)
+    {
+    // kodlar
+    }
+
+/// for döngüsü kritik - 2  / başlangıç değerini dışarda verebiliriz.
+    int i = 1
+
+    for (; i <= 6 ; i++)
+    {
+    // kodlar
+    }
+
+/// for döngüsü kritik - 3 / başlangıç değerini dışarda verip içeride başka bir başlangıç değeri ile ezebiliriz.
+    int i = 1
+
+    for (i = 5; i <= 6 ; i++)
+    {
+    // kodlar
+    }
+    
+/// for döngüsü kritik - 4  / arttırma / azaltma işlemini döngü içerisinde herhangi bir yerde yapabiliriz. ( dikkatlı olmak gerekir.)
+
+     for (int i = 1; i <= 6 ; )
+    {
+    // kodlar
+    i++;
+    }
+
+/// for döngüsü kritik - 5 / şart başlangıç değerina bağlı olmak zorunda değil.
+
+    int a = 9
+    for (int i = 1; a <= 6 ; i++)
+    {
+    // kodlar
+    }
+
+/// for döngüsü kritik - 6 / başlangıç , şart , arttırma / azaltma olmadan da for döngüsü yapılabilir (başlangıç , arttırme veya şart olmadığınnda dolayı sonsuz döngü olur).
+    
+    for (; ;)
+        {
+        // kodlar
+        }
+
+/// for döngüsü kritik - 7 / şart olmadığından dolayı sonsuza kadar kodlar tetiklenecektir.
+    
+    for (int i = 0 ;   ; i++) 
+        {
+        // kodlar
+        }
+
+/// for döngüsü kritik - 8 / birden fazla değişken tanımlayarak for döngüsü kurulabilir.
+    
+    for (int i = 0 , j = 10 ; i<10, j<0  ; i++ , j--) 
+        {
+        // kodlar
+        }
+
+    burada tanımlanan her 2 değişken için de şart ve arttıma / azaltma yapılabilir.
+
+/// while döngüsü
+
+    prototip 
+
+    int i = 0;
+    while( şart )
+    {
+        // kodlar
+        i++;
+    }
+
+    while döngüsü şart =true olduğu sürece tetiklenir.
+
+    for dönügüsüne kıyasla daha ilkel bir döngüdür , programlamanın ilk tasrlanan döngüsüdür.
+
+    while döngüsü bütün dillerde vardır.
+
+    genellikler süreci bilinmeyen / sonsuz döngü oluşacak durumlarda kullanılır.
+
+/// while döngüsü ile for döngüsü kıyaslamak
+
+     for (int i = 1; i <= 6 ; i++)
+    {
+    // kodlar
+    }
+
+        int i = 0;          ---> for döngüsü I.kısım
+    while( şart )           ---> for döngüsü II.kısım
+    {
+        // kodlar
+        i++;                ---> for döngüsü III.kısım
+    }
+
+/// örnek ekrana 10 defa "merhaba dünya" yazalım.
+
+    int i = 0;
+
+    while (i <10)
+    {
+        Console.WriteLine("Merhaba Dünya");
+    }
+
+/// Örnek : klavyeden girilen sayıdan geriye doğru 0'a kadar sayan bir sayaç hazırlayalım.
+
+    Console.Write("lütfen bir sayı giriniz : ");
+
+    int i = Convert.ToInt32(Console.ReadLine());
+
+    while (i > 0)
+    {
+        Console.WriteLine(i);
+        i--;
+    }
+
+/// Örnek : 0 ile 100 arasındaki tek sayıları toplayarak sonucu ekrana bastıralım.
+
+    int i = 0 , toplam = 0;
+
+    while (i<=100)
+    {
+        if (i % 2 ==0)
+        {
+            toplam +=i;
+        }
+        i++;
+    }
+    Console.WriteLine("tek sayıların toplamı : " + toplam);
+
+/// Örnek : klavyeden girilen sayının faktörüyelini bulalım.    
+
+    Console.Write("lütfen bir sayı giriniz : ");
+    int i = Convert.ToInt32(Console.ReadLine());
+    int faktoriyel = 1;
+    while (i>0)
+    {
+        faktoriyel *=i;
+        i--;
+    }
+    Console.WriteLine("Girilen Değerin Faktöriyeli : " + faktoriyel);
+
+/// Örnek : O anki tarihin saniye değeri 5in katı ise tarhini ekrana bastıralım.
+
+    while (true)
+    {
+        if (DateTime.Now.Second % 5 == 0)
+            Console.WriteLine(DateTime.Now);
+    }
+
+/// do-while döngüsü :
+
+    prototip 
+
+    do 
+    {
+
+    } while(true)
+
+    not : while ile do-while arasındaki fark ,
+            while önce şarta bakar ve sonra kodu çalıştırır.
+            do-while ise hera halukarda bir defa kodu çalıştırır ve sonra şartı kontrol eder.
+
+    hangi durum olursa olsun kodu while döngüsü ile çalıştırıyorsak döngü içerisindeki kodların hiç tetiklenmeme ihtimali var, do - while döngüsü ile çalıştırıyorsak döngü içerisindeki kodların minimum 1 kere çalışır.
+
+    while döngüsü önce havaya bakıp sonra şemsiyeyi almak, do-while döngüsü önce şemsiyeyi almak sonra havaya bakmak gibidir.
+
+   birden fazla veri tabanı sorgusu çalıştırılacaksa bu sorguları tek tek string olarak yazarız ve do - while ile işleme sokarız. 1.sorgu her halukarda çalışır, 2.sorgu varsa çalışır , 3.sorgu varsa çalışır...
+
+/// do - while ile while döngüsü kıyaslamak
+
+    while döngüsü : 
+
+    while(true)
+    {
+        // kodlar
+    }
+
+    do-while döngüsü :
+
+    do
+    {
+        // kodlar
+    } while(true)
+
+///  scopesuz döngüler
+    tek satırlık kodlar çalışıtırlacaksa scope kullanmaya gerek yoktur.
+
+    for (int i = 0; i < 10; i++)
+    Console.WriteLine("a");
+
+    while (true)
+        Console.WriteLine("b");
+
+    do Console.WriteLine("c");  while (true);
+
+/// sonsuz döngüler
+
+    şart koşulunun sonsuza kadar sağlanması durumunda oluşan döngü hareketi sonsuz döngü olarak isimlendirilir. bazı durumlarda bilerek bazı durumlarda istemeden sonsuz döngü meydana gelebilir.
+
+    istisna :
+
+    for (int i = 0; true ; i++)
+    {
+        // kodlar
+    }
+
+    bu döngü aslında sonsuz bir döngü değildir. çünkü i++ ile i değerini 1er arttırma komutu verdik, bu arttırma int sınırına ulaşana kadar tetiklenecektir.
+
+    for (; true ; ) ---> sonsuz döngü
+    {
+        // kodlar
+    }
+
+    for ( ; ; )     ---> sonsuz döngü
+    {
+        // kodlar
+    }
+
+    bilinçli sonsuz döngü neden kullanılır.
+
+    - örnek 1 : Bir internet sitesi üzerinden satışa çıakcak bi bir bileti almanız gerek ve ne zaman satışa çıkacağını bilemiyoruz.
+                bu tür durumlarda bilinçi sonsuz döngü kullanılabilir.
+
+    - örnek 2 : herhangi bir düğmeye tıklandığında bir işlem yapmamız gerekiyor ancak düğmeye ne zaman basılacağını bilmiyoruz diyelim.
+                bu tür durumlarda da bilinçli sonsuz döngü kullanılabilir.
+
+    bilinçli sonsuz döngüden nasıl çıkabiliriz.
+    
+    / for döngüsü ile 
+
+    bool dongu = true;
+
+    for( ; true ; )
+    {
+        if(true)
+            dongu !=dongu;
+    }
+
+    / while döngüsü ile 
+
+    bool durum = true;
+
+    while(true)
+    {
+        if (true)
+            durum !=durum
+    }
+
+    not : fıtrat olarak while döngüleri sonsuz döngülere daha yatkındırlar.
+
+    / do - while döngüsü ile 
+
+    bool durum = true;
+
+    do 
+    {
+        if (true)
+            durum !=durum
+    }
+    while(durum)
+
+/// iç içe döngüler
+
+    kendi içinden olsun veya olmasın bir döngü içerisinde farklı bir döngü başlatabiliriz.
+
+    not : döngüler maliyetlidir. iç içe döngüler daha da maliyetlidir.
+
+    for ile iç içe döngü yapma : 
+
+    for (int i = 0; i < length; i++)            ---> burada i değişken ismini kullandığımız için bu scope içerisinde herhangi bir yerde başka bir i değişken ismi olamaz.
+    {
+        for (int j = 0; j < length; j++)
+        {
+            for (int k = 0; k < length; k++)
+            {
+                // kodlar
+            }
+        }
+    }
+
+/// foreach bir döngü müdür ? 
+
+    iterasyon : bir sornaki veriyi getirebileceğimiz yapılanmalardır. kombinasyon veya şart yoktur. iterasyonda bir veri kümesi olması gerekmektedir.
+
+    döngülerde başlangıç ve bitiş değerlerini kendimiz belirleyebilriz ancak iterasyon veri kümesinin 1.elemanı ile başlayıp son elemanına kadar gitmesi gerekir. yarıda kesilemez.

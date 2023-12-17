@@ -1094,41 +1094,110 @@ using System.Runtime.CompilerServices;
 
 /// klavyeden girilen sayının faktöriyelini hesaplama;
 
-#region 1.çözüm
-    // Console.Write("Lütfen Bir Sayı Giriniz : ");
-    // int sonuc = 1;
-    // try
-    // {
-    //     int sayi = Convert.ToInt32(Console.ReadLine());
-    //     for (int i = 1; i <= sayi; i++)
-    //     {
-    //         sonuc *=i;
-    //     }
-    //     Console.WriteLine("Girilen sayının Faktöriyeli : " + sonuc);
-    // }
+// #region 1.çözüm
+//     // Console.Write("Lütfen Bir Sayı Giriniz : ");
+//     // int sonuc = 1;
+//     // try
+//     // {
+//     //     int sayi = Convert.ToInt32(Console.ReadLine());
+//     //     for (int i = 1; i <= sayi; i++)
+//     //     {
+//     //         sonuc *=i;
+//     //     }
+//     //     Console.WriteLine("Girilen sayının Faktöriyeli : " + sonuc);
+//     // }
 
-    // catch (FormatException ex)
-    // {
-    //     Console.WriteLine("sayı dışında bir değer girildi. : " + ex.Message);
-    // }
-#endregion
+//     // catch (FormatException ex)
+//     // {
+//     //     Console.WriteLine("sayı dışında bir değer girildi. : " + ex.Message);
+//     // }
+// #endregion
 
-#region 2.çözüm
-    Console.Write("Lütfen Bir Sayı Giriniz : ");
-    int sonuc = 1;
-try
+// #region 2.çözüm
+//     //     Console.Write("Lütfen Bir Sayı Giriniz : ");
+//     //     int sonuc = 1;
+//     // try
+//     // {
+//     //     int sayi = Convert.ToInt32(Console.ReadLine());
+//     //     for (int i = sayi; i > 0; i--)
+//     //     {
+//     //         sonuc *=i;
+//     //     }
+//     //     Console.WriteLine("Girilen sayının Faktöriyeli : " + sonuc);
+//     // }
+
+//     // catch (FormatException ex)
+//     // {
+//     //     Console.WriteLine("sayı dışında bir değer girildi. : " + ex.Message);
+//     // }
+
+// #endregion
+
+
+// ekrana 10 defa "merhaba dünya" yaz.
+
+// int i =1;
+
+// while (i<=10)
+// {
+//     Console.WriteLine("merhaba dünya!!!");
+//     i++;
+// }
+
+/// klavyeden girilen değerden başlayarak 0 a kadar olan değerleri ekrana yazdır.
+
+// Console.Write("Lütfen Ekrana bir Değer Girin : ");      /// ekrana bir değer girin dedik.
+// int i = 0;
+// try
+// {
+//     i = Convert.ToInt32(Console.ReadLine());            /// girilen değeri i değişkenine atadık.
+
+// }
+// catch (FormatException ex)
+// {
+//     Console.WriteLine("format hatası : " + ex.Message);
+// }
+
+// while (i>0)                                             /// i değeri 0 dan küçük olduğu sürece döngü devam edecek.
+// {
+//     Console.WriteLine(i);
+//     i--;
+// }
+
+/// 0 dan 100 e kadar olan tek sayıların toplamının ekrana bastıralım.
+
+// int i = 0 , toplam = 0;
+
+// while(i <= 100)
+// {
+//     if (i %2==0)
+//         toplam +=i;
+//     i++;
+// }
+// Console.WriteLine("toplam : " + toplam);
+
+/// klavyeden girilen değerin faktöriyelini hesaplayalım.
+/// 
+
+// Console.Write("lütfen bir değer giriniz : ");
+// int i = Convert.ToInt32(Console.ReadLine());
+
+// int fakt = 1;
+
+// while(i > 0)
+// {
+//     fakt *=i;
+//     i--;
+// }
+// Console.WriteLine("faktöriyeli : " + fakt);
+
+for (int i = 0; i < length; i++)
 {
-    int sayi = Convert.ToInt32(Console.ReadLine());
-    for (int i = sayi; i > 0; i--)
+    for (int j = 0; j < length; j++)
     {
-        sonuc *=i;
+        for (int k = 0; k < length; k++)
+        {
+            // kodlar
+        }
     }
-    Console.WriteLine("Girilen sayının Faktöriyeli : " + sonuc);
 }
-
-catch (FormatException ex)
-{
-    Console.WriteLine("sayı dışında bir değer girildi. : " + ex.Message);
-}
-
-#endregion
