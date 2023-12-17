@@ -1191,13 +1191,3 @@ using System.Runtime.CompilerServices;
 // }
 // Console.WriteLine("faktöriyeli : " + fakt);
 
-for (int i = 0; i < length; i++)
-{
-    for (int j = 0; j < length; j++)
-    {
-        for (int k = 0; k < length; k++)
-        {
-            // kodlar
-        }
-    }
-}

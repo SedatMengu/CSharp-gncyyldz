@@ -3624,3 +3624,19 @@ literal düzenleme : int x = 1000000; şeklinde gösterimi int x=1_000_000; şek
     iterasyon : bir sornaki veriyi getirebileceğimiz yapılanmalardır. kombinasyon veya şart yoktur. iterasyonda bir veri kümesi olması gerekmektedir.
 
     döngülerde başlangıç ve bitiş değerlerini kendimiz belirleyebilriz ancak iterasyon veri kümesinin 1.elemanı ile başlayıp son elemanına kadar gitmesi gerekir. yarıda kesilemez.
+
+
+    önemli not : her döngü olabilen yapı döngü değildir.
+
+
+/// döngülerde neler öğrendik.
+
+    1- döngü nedir?
+
+    2- hangi döngü nereye yakışır.
+
+    3- for döngüsü 
+
+    4- while döngüsü 
+
+    5- do while döngüsü
