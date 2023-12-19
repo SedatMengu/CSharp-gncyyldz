@@ -3640,3 +3640,7 @@ literal düzenleme : int x = 1000000; şeklinde gösterimi int x=1_000_000; şek
     4- while döngüsü 
 
     5- do while döngüsü
+
+.
+.
+.
