@@ -1191,3 +1191,39 @@ using System.Runtime.CompilerServices;
 // }
 // Console.WriteLine("faktöriyeli : " + fakt);
 
+// int toplam = 0;
+// while(true)
+// {
+// Console.Write("sayı : ");
+// int sayi = Convert.ToInt32(Console.ReadLine());
+//     if(sayi == 9)
+//         break;
+//     toplam +=sayi;
+// }
+// Console.WriteLine("girilen değerlerin toplamı : " + toplam);
+
+// kullanıcıdan t değeri girilene kadar girilen sayıları toplayıp "t" harfine basınca toplayan bi uygulama yazalım.
+
+// int toplam = 0;
+// while(true)
+// {
+//     Console.Write("Lütfen Sayısal Değer Giriniz : ");
+//     string sayi = Console.ReadLine();
+    
+//     if (sayi =="t")
+//         break;
+//     else
+//         toplam += Convert.ToInt32(sayi);
+// }
+// Console.WriteLine("toplam : " + toplam);
+
+// kullanıcıdan alınan sonsuz sayıda sayıdan 37nin katı olan girilince uygulamadn çıkan uygualama yazalım.
+
+
+while(true)
+{
+    Console.Write("Lütfen bir sayı giriniz : ");
+    int sayi = Convert.ToInt32(Console.ReadLine());
+    if(sayi %37 == 0)
+        break;
+}
