@@ -3,6 +3,7 @@ using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Common;
+using System.Diagnostics.Contracts;
 using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
 
@@ -1220,10 +1221,70 @@ using System.Runtime.CompilerServices;
 // kullanıcıdan alınan sonsuz sayıda sayıdan 37nin katı olan girilince uygulamadn çıkan uygualama yazalım.
 
 
+// while(true)
+// {
+//     Console.Write("Lütfen bir sayı giriniz : ");
+//     int sayi = Convert.ToInt32(Console.ReadLine());
+//     if(sayi %37 == 0)
+//         break;
+// }
+
+// for(int i =0;i<10;i++)
+// {
+//     if(i %2!=0)
+//         continue;
+//     Console.WriteLine(i);
+// }
+   
+/// kullanıcının girdiği sınırsız sayıda sayıdan pozitif olanları çarpan ve "t" tuşuna basınca sonucu ekrana yazdıran uygulama yazalım.
+// int carpim = 1;
+// while (true)
+// {
+//     Console.Write("Lütfen bir sayı giriniz : ");
+//     string girilenDeger = Console.ReadLine();
+//     if(girilenDeger == "ç")
+//     {
+//         Console.WriteLine(carpim);
+//         break;  
+//     }   
+//     else
+//     {   
+//         int sayi = Convert.ToInt32(girilenDeger);
+//         if(sayi <0)
+//             continue;
+//         carpim *= sayi;
+       
+//     }
+// }
+
+/// 1 ile 100 arasında 7nin katı olmayan sayıları ekrana yazdıralım.
+/// 
+
+// for (int i =1 ; i<=10;i++)
+// {
+//     if (i%7!=0)
+//     Console.WriteLine(i);
+//     continue;
+// }
+
+// for (int i =1 ; i<=10;i++)
+// {
+//     if (i%7==0)
+//     continue;
+//     Console.Write(i);
+    
+// }
+
+/// kullanıcı "c" tuşuna basana kadar sonsuza kadar dönen uygulamayı yazınız.
+/// 
+
 while(true)
 {
-    Console.Write("Lütfen bir sayı giriniz : ");
-    int sayi = Convert.ToInt32(Console.ReadLine());
-    if(sayi %37 == 0)
-        break;
+    if(Console.ReadKey().KeyChar == 'c')
+    {  
+        Console.WriteLine("program sonlandırılıyor.");
+     return;
+    }
+   else
+    Console.WriteLine("program çalışıyor");
 }
