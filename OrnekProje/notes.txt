@@ -507,7 +507,7 @@ tutulduğu bir bölümdür.
 
 heap : nesnelerin tutulduğu bölümdür.
 
-not : stack içerisinde tutualn değişken ismine nadiren de olsa 'referans' dendiğini görebilirsiniz.
+not : stack içerisinde tutulan değişken ismine nadiren de olsa 'referans' dendiğini görebilirsiniz.
 not : stack alanıda değişkene herhangi bir değer ataması yapılamasa dahi yer tahsisi yapılır.
 not : metotların/fonksiyonların bellek adresleri de stack de tutulur.
 
@@ -3639,3 +3639,416 @@ literal düzenleme : int x = 1000000; şeklinde gösterimi int x=1_000_000; şek
     4- while döngüsü 
 
     5- do while döngüsü
+
+/// keyword nedir ? kodlamaya kullanılan başlıca keywordler.
+
+    keyword : derleyici için daha önceden tnaımlanmış ve özel anlamlara sahip olan anahtar sözcüklerdir. berlili opersayonları sağlamamızı sağlar.
+
+    başılca keywordler : 
+
+    abstract
+    asbase
+    bool
+    add
+    alias
+    ascending
+    break
+    byte
+    case
+    catch
+    async
+    await
+    by
+    char
+    checked
+    class
+    cont
+    descendinng
+    dynamic
+    Equals
+    continue
+    decimal
+    default
+    delegate
+    from
+    get
+    global
+    do
+    double
+    else
+    enum
+    group
+    Into
+    join
+    event
+    explicit
+    extern
+    false
+    let
+    nameof
+    notnull
+    finally
+    fixed
+    float
+    for
+    on
+    orderby
+    partial (type)
+    foreach
+    goto
+    if
+    implicit
+    partial(method)
+    rename
+    Select
+    in
+    int
+    interface
+    internal
+    Set
+    unmanaged (generic type constraint)
+    value
+    is
+    lock
+    long
+    namespace
+    var
+    when(filter condition)
+    where(generic type constraint)
+    new
+    null
+    object
+    operatör.
+    where (query clause)
+    width
+    yield.
+    out.
+    override.
+    params.
+    private.
+    protected
+    public.
+    readonly.
+    ref.
+    return
+    sbyte.
+    sealed
+    short.
+    sizeof
+    stackalloc
+    static
+    string
+    struct
+    switch
+    this.
+    throw.
+    true.
+    try.
+    typeof
+    unit.
+    ulong
+    unchecked
+    unsafe
+    ushort
+    using
+    virtual
+    void
+    volatile
+    while
+
+/// keywordler
+
+    keywordler proglamanın atomik parçalarıdır. derleyici için ön tanımlı olan nerede hangi amaca hizmet edeceği belli olan ve kod içerisinde hangi nokalardan çağırılabileceği
+    kurallar ile sınırlandırılmış olan anahtar sözcüklerdir.
+
+    operatörler ile keywordler arasındaki fark nedir ?
+
+    operatör : esas olarak belirli bir operasyonu / eylemi üstlenen yapılardır.
+
+    keywordler : operatörlerden daha geniş kapsamlıdır.
+
+    her operatör aynı zamanda bir keyworddür ancak her keyword operatör olmayabilir.
+
+/// konseptli ve konseptsiz keywordler
+
+    konsepli keywordler : tek başlarına kullanılamayan , ve bir konsepte bağlı olarak kullanılan keywordlerdir. ( namespace , class , for , while , do , int , short ...)
+    genel itibair ile keywordler konseptlidir. konseptsiz keyword sayısı çok azdır.
+
+    konseptsiz keywordler : yapısal olarak tek başına kullanılabilen ve bir konsepte bağlı olmayan keywordlerdir. ( return , break , continue , goto)
+
+/// Yardımcı manevratik komutlar
+
+    oluşturduğumuz algoritme (döngü , metot vs gayet güzel çalışıyor) ancak ihtiyaca binaen herhangi bir zaman diliminde bunu kesmek veya döngüden çıkmamız gerekebilir.
+    
+
+    1- döngü tamamlanmadan herhangi bir çalışma anında istediğimiz değere ulaştığında vs çıkmamız gerekebilir , 
+    2- döngü devam ederken bazı adımları atlamamız ama döngüye devam da etmemiz gerekebilir , 
+    3- çalışan veya çalışmaya devam edecek olan döngüyü sonlandırmak gerekebilir.
+
+    bunu gibi durumlarda manevratik komutlar yardımcı olurlar.
+
+    yardımcı manevratik komutlar olmadan da sonuca ulaşabiliriz ancak uzun ve yorucu olabilir.
+    daha efektif kod yazmak ve yeniliklere açık olmak adına manevratik koutları kullanmak gerekir.
+
+    manevratik komutlar bize yapamacağımız şeyleri yapmamızı sağlamazlar , mevcutta yapılabilir olan bir şeyi daha efektif yapmamızı sağlarlar.
+
+    manevratik komut kullanmadan for döngüsünden çıkma : 
+
+    for (int i = 0; i<10;i++)
+    {
+        if(i ==5)
+        {
+            i=10;
+        }
+    }
+
+    analiz : for döngüsünde i nin değeri 5 olunca if true olacak ve ekrana i=10 yazılarak döngü sonlandırılmış olacak.
+
+    manevratik komutlar ;
+
+    1- break,
+    2- continue,
+    3- return,
+    4- goto,
+
+/// 1- break keywordu : 
+
+    kullanıldığı yerler : 
+
+    1- switch case yapılanması içerisinde kullanılır ,
+    2- döngülerde( for , while , do while ) kullanılır.
+    3- foreach iterasyonlarında,
+
+
+    1- switch örnek : 
+
+
+        switch (16)
+    {
+        case 5 :
+        Console.WriteLine("değer 5");
+        break;
+        case 10:
+        Console.WriteLine("değer 10");
+        break;
+        default:
+        Console.WriteLine("değeri bilemedik.");
+        break;
+    }
+
+    Önemli not : break kullanıldığı scope dan dışarı çıkmayı sağlar. 
+
+    örnek : 
+
+        for (int i = 0; i < 5; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            if(j==1)
+                break;
+
+            Console.WriteLine("i : " + i + " j : " + j );
+        }
+    }
+
+    burada kullanılan break j nin olduğu for döngüsünden çıktı , i nin olduğu döngü görevini tamamladı.
+
+    örnek1 : kullanıcıdan "t" harfi girilene kadar alınan sınırsız sayıda sayıyı toplayan ve sonucu ekrana yazdıran uygulamayı yazalım.
+
+    int toplam = 0;
+    while(true)
+    {
+        Console.Write("Lütfen bir sayı giriniz : ");
+        string girilenDeger = Console.ReadLine();
+        if (girilenDeger =="t")
+            break;
+        else
+        toplam += Convert.ToInt32(girilenDeger);
+    }
+    Console.WriteLine("toplam : " + toplam);
+
+    Örnek2 : kullancıdan alınan sonsuz adet sayı değerlerinin 37nin katı girildiğinde sonlanan uygulamayı yazalım.
+
+    
+    while(true)
+    {
+        Console.Write("lütfen sayı giriniz : ");
+        int sayi = Convert.ToInt32(Console.ReadLine());
+        if (sayi %37 ==0)
+        {
+            Console.WriteLine("37 nin katı değer girdiğiniz için uygulama sonlandırıldı.");
+            break;
+
+        }
+    }
+
+/// Continue keywordu
+
+    kullanıldığı yerler : 
+
+    1- bütün döngüler,
+
+    kullanım amacı : 
+
+    döngülerde bazen yapmış olduğumuz kombinasyona göre elde ettiğimiz değerlerden kullanmak istemediklerimiz olabilir.
+    bu kullanmak istemediğimiz değerleri kullanmadan ama döngüden de çıkmadan kodun akmaya devam etmesini sağlar.
+
+    o anki turu es geçip bir sonraki turdan devam eder.
+
+    önemli not: continue keywordunden sonraki kodlar derlenmezler. compiler döngünün başına geri döner.
+
+    örnek : 1 den 10 a kadar olan tek sayıları ekrana yazdıralım.
+
+        for (int i = 0; i < 10; i++)
+    {
+        if (i%2==0)
+            continue;
+        Console.WriteLine(i);
+    }
+
+    örnek2 : kullanıcın girdiği sonsuz adet sayıdan pozitif olanları çarpan ve "ç" tuşuna basıldığında sonucu ekrana bastıran bir uygulama yapalım.
+
+    int carpim = 1;
+        int sayi;
+        while(true)
+        {
+            Console.Write("Lütfen bir sayı giriniz : ");
+            string girilenDeger = Console.ReadLine();
+            if (girilenDeger == "ç")
+            {
+                Console.WriteLine("Girilen Değerlerin Çarpımı : " + carpim);
+                break;
+            }
+            
+            else
+            {
+                sayi = Convert.ToInt32(girilenDeger);
+                if (sayi < 0)
+                    continue;
+                carpim *=sayi;
+            } 
+        }
+    örnek3: 1 ile 100 arasındaki 7 nin katı olmayan sayıları ekrana yazdıralım.
+
+        for(int i = 0; i <101 ; i++)
+    {
+        if(i%7==0)
+            continue;
+        Console.WriteLine(i);
+    }
+
+/// return keywordu 
+
+   kullanıldığı yerler : 
+
+    1- method içerisinde her yerde kullanılabilir.
+
+    kullanım amacı : 
+
+    nerede çağırılırsa çağırılsın bulunduğu metottan çıkış yapar/ metodu sonlandırır.
+    ileride göreceğimiz metotlar konusunda geriye değer döndürme sorumluluğunu da üstlenen bir keyworddür.
+
+    main
+    {
+        for
+        {
+            while()
+            {
+                if()
+                return ;                ---> complier for döngüsünün de dışına çıkar.
+            }
+        }
+        compiler buradan koda devam eder.
+    }
+
+/// goto keywordu
+
+    nedir? = kodun senkronzasyonunu değiştiren, akışın referans olarak işaretlenen alana geri dönmesini sağlayan bir keyworddür.
+
+    kullanıldığı yerler : 
+
+    1- switch case yapılanmasında dahili olarak kullanılabilir.
+    2- metot içerisinde herhangi bir yerde kullanılabilir.
+
+    kullanım amacı : 
+
+    davranışsal olarak döngülere benzerler.
+
+    a:
+    .
+    .
+    .
+    .
+    goto a; ---> compiler 3977.satıra geri döner. tekrar bu satıra gelince tekrar 3977.satıra geri döner. sonsuz döngü olabilir.
+
+    switch case yapılanmasında herhangi bir case e yönelim yapılabilir, kendinden önceki olmak zorunda değildir. 
+
+    teknik olarak programı yavaşlattığı söylenmekte olup daha maliyetlidir. pek tavsiye edilmez.
+
+    örnek:
+
+    1 den 100 e kdaar goto keywordu kullanarak sayalım.
+
+    int i =0;
+    a:
+    Console.WriteLine(i++);
+    if(i!=101)
+        goto a;
+
+
+    kritik 1 : goto keywordu tanımlanan referansa gideken scope lar dikkate almaz. (main metotu içerisinde olduğu sürece)
+
+    scope lar dışına çıkabiliyor olması onun kritik öneme sahip olduğu anlamına gelir.
+
+/// manevratik keywordlerde neler öğrendik.
+
+    manevratik keyword neden vardır?
+
+    kodun akışına müdahale etmeden araya keywordler ekleyerek akışı değiştirebiliyoruz. 
+
+    break , döngüyü kırmaya yarar.
+    continue, döngüde adım atlamaya yarar.
+    return, döngüyü sonlandırmaya yarar.
+    goto, referasn olarak işaretlenen bir noktaya geri dönerek sonsuz döngü yapmaya yarar.
+
+/// ekstra bilgi ,
+
+    döngülerde boş scope yerine ";" operatörü ile daha temiz kod yazabiliriz. asenkron programlamada içi boş sonsuz döngülere ihtiyacımız olabilir.
+
+    while(true)
+    {
+                            
+    }
+
+    yerine : 
+
+    while(true);
+
+    for(;;)
+    {
+
+    }
+    yerine :
+
+    for(;;);
+
+    do
+    {
+        
+    } while (true);
+
+    yerine :
+
+    do;
+    while(true);
+
+
+    if(true)
+    {
+
+    }
+    yerine :
+
+    if(true);
+
+    kullanılabilir.
