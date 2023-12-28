@@ -1236,7 +1236,7 @@ using System.Runtime.CompilerServices;
 //     Console.WriteLine(i);
 // }
    
-/// kullanıcının girdiği sınırsız sayıda sayıdan pozitif olanları çarpan ve "t" tuşuna basınca sonucu ekrana yazdıran uygulama yazalım.
+/// kullanıcının girdiği sınırsız sayıda sayıdan pozitif olanları çarpan ve "ç" tuşuna basınca sonucu ekrana yazdıran uygulama yazalım.
 // int carpim = 1;
 // while (true)
 // {
@@ -1278,13 +1278,25 @@ using System.Runtime.CompilerServices;
 /// kullanıcı "c" tuşuna basana kadar sonsuza kadar dönen uygulamayı yazınız.
 /// 
 
-while(true)
+// while(true)
+// {
+//     if(Console.ReadKey().KeyChar == 'c')
+//     {  
+//         Console.WriteLine("program sonlandırılıyor.");
+//      return;
+//     }
+//    else
+//     Console.WriteLine("program çalışıyor");
+// }
+
+// int i = 1;
+// a:
+// Console.WriteLine(i);
+// i++;
+// if(i !=101)
+//     goto a;
+
+do
 {
-    if(Console.ReadKey().KeyChar == 'c')
-    {  
-        Console.WriteLine("program sonlandırılıyor.");
-     return;
-    }
-   else
-    Console.WriteLine("program çalışıyor");
-}
+    
+} while (true);
