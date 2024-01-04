@@ -1304,3 +1304,7 @@ personeller[3] = "";
 
 for (int i = 0; i < personeller.Length; i++)
     Console.WriteLine(personeller[i]);
+    .
+    .
+    .
+    
