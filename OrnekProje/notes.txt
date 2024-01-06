@@ -4249,5 +4249,10 @@ literal düzenleme : int x = 1000000; şeklinde gösterimi int x=1_000_000; şek
         object[] number = new[] {30,24,32,55}
         object[] isimler = new[] {"ali" ,"veli","can","cem"}
 
+/// Array sınıfı nedir?
 
+    dizi denince Array sınıfı , Array sınıfı denince akla dizi gelmelidir.
 
+    Not : referans türlü değişkenler sınıflardan türeyen nesnelerdir.
+
+    
