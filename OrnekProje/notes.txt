@@ -4052,4 +4052,202 @@ literal düzenleme : int x = 1000000; şeklinde gösterimi int x=1_000_000; şek
     if(true);
 
     kullanılabilir.
+
+// diziler 
+
+    bir sınıf dolusu öğrncinin yaşları ile ilgili bir işlem yapmak istediğimizi düşünelim.
+
+    dizileri kullanamdan bu yaş verilerini şu şekilde saklayabilirdik,
+
+    int ogrenciYasi1 = 23;
+    int ogrenciYasi2 = 21;
+    int OgrenciYasi3 = 22;
     .
+    .
+    .
+    int ogrenciYasi30 = 22;
+
+    not : eğer programlamada " aynı türde" birden fazla değer varsa bunları 2 şekilde tutabiliriz.
+
+        1- her bir değeri farklı bi değişkene atarat (yukard yaptığımız gibi zor yöntem)
+        2- tek bir değişken altında veri kümsei olarak ( dizi )
+
+    diziler nedir ? 
+
+    tek bir değişken altında birden fazla aynı türde değeri basındırmamızı sağlayan veri kümesine dizi denir.
+
+    birden fazla farklı türde veri tutamazlar.
+
+    diziler veri kümeleri oldukları için , içlerindeki birden fazla veri üzerinde kümesel işlemler yapmamızı sağlayabilirler.
+
+    diziler prosedürel programlamanın temel yapıtaşları oldukları için daha gelişmiş yapılar ve koleksiyonların da temelini teşkil etmektedirler ve gelişmelerine katkıda bulunmaktadırlar.
+
+    dizilerde bazı sınırlamalar mevcuttur. bu sınırlamalar (önceden eleman sayısının bilinmesi , çalışrıken index lere dikkat etmek gibi) koleksiyon yapılarının icad olmasına yol açmıştır.
+
+    1- diziler referanas türlü değerlerdir
+    2- diziler nesnel yapılardır
+    3- diziler özelinde class dırlar.
+
+    yapısal olarak Ram de "heap" alanında tutulurlar.
+
+    diziler referans türlü yapılardır dedik ancak referans türlü değişkenleri de değer türlü değişkenleri de içlerine alabilirler.
+
+    bir dizi sade ve sadece "tek bir türde değer alabilir." eğer dizi int türünde tanımlanmış ise int türü dışında değer alamaz
+    var keywordu ile tanımlandıysa aynı türde veri barındırmak zorundadır.
+    farklı türde veriler saklamak gerekiyor ise diziyi "object" türünde oluşturmak gerekir.
+
+// yazılımda veri kümeleri neden vardır ? 
+
+    verile üzerinde kimi zaman istatistiksel hesaplamalar , kimi zaman başka çalışmalar yapmak isteriz. bu çalışmaya dahil olacak verileri bir küme halinde tutabilirsek daha efektif çalışma yapabiliriz.
+    bu sebeple veri kümeleri icad edilmiştir.
+
+    dizi kavramı yazılıma "index" kavramını getirmiştir. 
+
+// index kavramı nedir?
+
+    bir çöp kutusuna rastgele attığımız çöpler ortamı karmaşıklaştırır.
+    dizilerin icad edilmesindeki amaç birden fazla veri ile eşzamanlı olarak çalışma yapmak , ihtiva edilen veriler üzerinden çalışma yapmak olduğundan dolayı
+    elimizdeki veri kümseine net bir hakimiyet kurmamız gerekir. ( kaç eleman var , hangi eleman nerde durur gibi)
+    çünkü biz bu veri kümesi üzerinde daha sonra verileri değiştirebiliriz, veriler üzerinde işlemler yapabiliriz.
+    bu sebepten dolayı fişleme dediğimiz icad devreye giriyor ve her elemana benzersiz bir numara veriliyor. bu numaraya index numarası denir.
+
+    index 0 dan başlar ve sistem otomatik olarak 1-2-3-4.. diye devam eder.
+
+// dizi prototipi
+
+    int a ;     ---> bu bir a isiminde ve int türünde bir değişken
+
+    int[] a;    ---> bu bir a isminde ve int türünde bir dizi dir. 
+
+    type[] name = mew int[eleman sayısı] ;      ---> temel dizi tanımlama formatı.
+
+// dizi tanımlarken dikkat edilecekler,
+
+    1- dizinin türü
+        eşitliğin her iki tarafında da aynı türde olmak zorundadır.
+        int[] name = new string[]  ---> Olmaz.
+        string[] name = new string[] ---> olur
+    2- dizinin eleman sayısı
+        string[] name = new string[] ---> olmaz.
+        string[] name = new string[7] ---> olur.
+    3- dizinin ismi
+        string[] = new string[7] ---> olmaz.
+        string[] name = new string[7] ---> olur.
+
+    olmazsa bir dizi tanımlanamaz.
+
+    yazılım demek verilerin işlenmesi demektir , basit bir veriyi basit bir değişkende tutabiliriz ve bu değişkekn üzerinden işlemler yapabiliriz.
+    milyon tane veri var ise , bu milyon tane veriyi nasıl tutup nasıl saklayacağız ? saklamak için daha komplex yapılara ihtiyaç vardır
+
+    dizi - koleksşyon - object ..... (basitten komplexe) 
+
+    RAM Bellekte 2 alan vardır.
+
+    stack : 
+
+        değişkenin türü,
+        değişkenin değeri,
+        referansın türü , 
+
+    tutulur.
+
+    heap :
+        
+        referansın değeri 
+
+    tutulur.
+
+    bir dizi tanımlandığı an (kullanılsın veya kullanılmasın) eleman sayısı kadar RAM de alan tahsisi yapılır , indexlenir ve default değerler atanır.
+    biz diziye eleman ataması yaparken default değerleri ezerek yaparız.
+
+    default değerler,
+
+        - int : 0,
+        - string : null,
+        - bool : false,
+        - char : /0
+
+// tanımlanmış bir diziye değer atama
+
+    int[] name = new int[3];        ---> int türinde name adında ve 3 elemanlı bir dizi oluşturduk. tam bu esnada index numaraları ve default değerleri atandı.
+
+    name[1] = 3;        ---> default olarak 0 atanan 1.indexteki elemanın değerini 3 olarak ezdik.
+
+
+    not : dizinin içerisindeki elemanlara değer ataması yapılırken değişken davranışı gösterirler. (ezilebilirler)
+    not2: dizilerde sıralı tanılmaya yapmak zorunda değiliz ,hangi elemanda değişiklik yapcağımızı yazdığımız için herhangi bir sıra takip etmemiz gerekmiyor.
+    not3: dizi sınırlarını aşan (yukarıdaki dizide 4.elemana değer atamaya çalışırsak ) runtime de hata alırız ve program sonlandırılır.
+    not4: türüne uygun değer ataması yapmamız gerekir. int türünde tanımlanmış bir dizi için bool türünde değer veremeyiz.
+
+// tanımlanmış bir diziden değer okuma 
+
+    int[] name = new int[3]; 
+    Console.WriteLine(name[2]);         ---> 2.indexteki elemanı ekrana bastırır , eğer tanımlama yapılmadıysa dafault olarak 0 döner.
+
+// diziler içinde döngü ile dönme 
+ 
+    string[] personeller = new string[5];
+    personeller[0] = "hilmi";
+    personeller[1] = "hüseyin";
+    personeller[2] = "rıfki";
+    personeller[3] = "şuayip";
+    personeller[4] = "naci";
+
+    for (int i = 0 ; i < personeller.length;i++)
+        Console.WriteLine(i);                           ----> personel sayısı kadar i değeri döner. 0-1-2-3-4 
+
+    for (int i = 0 ; i < personeller.length;i++)
+        Console.WriteLine(personeller[i]);              ----> personeler isimlerini döner. hilmi-hüseyin-rıfkı-şuayip-naci
+
+    diziler genellikle döngüler ile birlikte kullanılır. (hangi döngü ile kullanıldığı tercih sebebidir. bütün döngüler ile kullanılabilir.)
+
+// dizilerdeki sınırlılıklar
+
+    1- eleman sayısını vermek zorunda olmak
+    2- kullansak da kullanmasak da alan tahsisi gerçekleşmiş olması
+    3- eleman sayısının sınırlı olması IndexOutOfRangeException hatasına sebep olabilir
+    4- index üzerinden değer ataması yapıldığından dolayı karışıklığa yol açabilir.
+
+    bu kadar sınırlılık olmasına rağmen neden dizileri kullanıyoruz ?
+
+    hızlı ve kullanışlı olduğundan dolayı
+
+// dizi tanımlama varyasyonları
+
+    varyasyon - 1
+
+        tanımlama : 
+
+        int[] number = new int[5];
+
+        yazma : 
+
+        number[3]; 100;
+
+        okuma : 
+
+        Console.WriteLine(number[3]);       ---> // 100
+
+    varyasyon - 2
+
+        int[] number = {30,24,32,55}
+        string[] isimler = {"ali" ,"veli","can","cem"}
+
+
+    varyasyon - 3
+
+        int[] number = new int[] {30,24,32,55}
+        string[] isimler = new stirng[] {"ali" ,"veli","can","cem"}
+    
+    varyasyon - 4
+
+        int[] number = new int[4] {30,24,32,55}
+        string[] isimler = new stirng[4] {"ali" ,"veli","can","cem"}
+
+    varyasyon - 5
+
+        object[] number = new[] {30,24,32,55}
+        object[] isimler = new[] {"ali" ,"veli","can","cem"}
+
+
+

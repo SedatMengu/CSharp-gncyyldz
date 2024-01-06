@@ -1296,12 +1296,14 @@ using System.Runtime.CompilerServices;
 // if(i !=101)
 //     goto a;
 
-string [] personeller = new string[5];
-personeller[0] = "hilmi";
-personeller[1] = "hüseyin";
-personeller[2] = "rıfkı";
-personeller[3] = "";
+// string [] personeller = new string[5];
+// personeller[0] = "hilmi";
+// personeller[1] = "hüseyin";
+// personeller[2] = "rıfkı";
+// personeller[3] = "";
 
-for (int i = 0; i < personeller.Length; i++)
-    Console.WriteLine(personeller[i]);
+// for (int i = 0; i < personeller.Length; i++)
+//     Console.WriteLine(personeller[i]);
 
+
+object[] varlı = new[]{"ali","veli","can","cem"};
