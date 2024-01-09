@@ -1306,5 +1306,22 @@ using System.Runtime.CompilerServices;
 //     Console.WriteLine(personeller[i]);
 
 
-object[] varlı = new[]{"ali","veli","can","cem"};
-object[] var = new[] {2,3,4,5,6,7};
+// bool[] dizi = new bool[3];
+// dizi[0]=true;
+// dizi[1]=true;
+// dizi[2]=true;
+
+// Array dizi2 = dizi;
+
+// dizi[2] = false;
+
+// Array.Clear(dizi2,0,dizi2.Length);
+// for (int i = 0; i < dizi2.Length; i++)
+//     Console.WriteLine(dizi[i]);
+
+bool[] dizi2 = new[]{true,true,true,true,true,true};
+
+Array.Clear(dizi2,0,4);
+for (int i = 0; i < dizi2.Length; i++)
+    Console.WriteLine(dizi2.GetValue(i));
+
