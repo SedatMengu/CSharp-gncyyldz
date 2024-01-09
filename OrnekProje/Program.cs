@@ -1307,3 +1307,4 @@ using System.Runtime.CompilerServices;
 
 
 object[] varlı = new[]{"ali","veli","can","cem"};
+object[] var = new[] {2,3,4,5,6,7};
