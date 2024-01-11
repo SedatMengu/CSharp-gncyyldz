@@ -1315,7 +1315,3 @@ using System.Runtime.CompilerServices;
 
 // dizi[2] = false;
 
-// Array.Clear(dizi2,0,dizi2.Length);
-// for (int i = 0; i < dizi2.Length; i++)
-//     Console.WriteLine(dizi[i]);
-
