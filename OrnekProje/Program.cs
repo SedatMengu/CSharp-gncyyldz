@@ -1319,9 +1319,3 @@ using System.Runtime.CompilerServices;
 // for (int i = 0; i < dizi2.Length; i++)
 //     Console.WriteLine(dizi[i]);
 
-bool[] dizi2 = new[]{true,true,true,true,true,true};
-
-Array.Clear(dizi2,0,4);
-for (int i = 0; i < dizi2.Length; i++)
-    Console.WriteLine(dizi2.GetValue(i));
-
