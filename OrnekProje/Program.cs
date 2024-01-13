@@ -1320,3 +1320,9 @@ string[] isimler = new string[]{"ozan","naz","ali","inci"};
 
 for (int i = 0; i < isimler.Length; i++)
     Console.WriteLine(isimler[i]);
+
+
+int[] sayi = new int[] {1,2,3,4,5,6,7,8,9};
+
+for (int i = 0; i < sayi.Length; i++)
+    Console.WriteLine(sayi);
