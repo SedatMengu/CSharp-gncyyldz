@@ -26,3 +26,17 @@
 /Users/sedatmengu/Documents/GitHub/CSharp-gncyyldz/OrnekProje/obj/Debug/net7.0/OrnekProje.pdb
 /Users/sedatmengu/Documents/GitHub/CSharp-gncyyldz/OrnekProje/obj/Debug/net7.0/OrnekProje.genruntimeconfig.cache
 /Users/sedatmengu/Documents/GitHub/CSharp-gncyyldz/OrnekProje/obj/Debug/net7.0/ref/OrnekProje.dll
+/Users/sedatmengu/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/CSharp-gncyyldz/OrnekProje/bin/Debug/net7.0/OrnekProje
+/Users/sedatmengu/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/CSharp-gncyyldz/OrnekProje/bin/Debug/net7.0/OrnekProje.deps.json
+/Users/sedatmengu/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/CSharp-gncyyldz/OrnekProje/bin/Debug/net7.0/OrnekProje.runtimeconfig.json
+/Users/sedatmengu/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/CSharp-gncyyldz/OrnekProje/bin/Debug/net7.0/OrnekProje.dll
+/Users/sedatmengu/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/CSharp-gncyyldz/OrnekProje/bin/Debug/net7.0/OrnekProje.pdb
+/Users/sedatmengu/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/CSharp-gncyyldz/OrnekProje/obj/Debug/net7.0/OrnekProje.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sedatmengu/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/CSharp-gncyyldz/OrnekProje/obj/Debug/net7.0/OrnekProje.AssemblyInfoInputs.cache
+/Users/sedatmengu/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/CSharp-gncyyldz/OrnekProje/obj/Debug/net7.0/OrnekProje.AssemblyInfo.cs
+/Users/sedatmengu/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/CSharp-gncyyldz/OrnekProje/obj/Debug/net7.0/OrnekProje.csproj.CoreCompileInputs.cache
+/Users/sedatmengu/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/CSharp-gncyyldz/OrnekProje/obj/Debug/net7.0/OrnekProje.dll
+/Users/sedatmengu/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/CSharp-gncyyldz/OrnekProje/obj/Debug/net7.0/refint/OrnekProje.dll
+/Users/sedatmengu/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/CSharp-gncyyldz/OrnekProje/obj/Debug/net7.0/OrnekProje.pdb
+/Users/sedatmengu/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/CSharp-gncyyldz/OrnekProje/obj/Debug/net7.0/OrnekProje.genruntimeconfig.cache
+/Users/sedatmengu/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/CSharp-gncyyldz/OrnekProje/obj/Debug/net7.0/ref/OrnekProje.dll

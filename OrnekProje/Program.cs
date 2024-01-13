@@ -1315,3 +1315,8 @@ using System.Runtime.CompilerServices;
 
 // dizi[2] = false;
 
+
+string[] isimler = new string[]{"ozan","naz","ali","inci"};
+
+for (int i = 0; i < isimler.Length; i++)
+    Console.WriteLine(isimler[i]);
