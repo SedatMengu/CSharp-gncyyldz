@@ -1332,3 +1332,5 @@ int sayi2 = 100;
 string name = "customer";
 
 .
+.
+.
