@@ -4254,10 +4254,3 @@ literal düzenleme : int x = 1000000; şeklinde gösterimi int x=1_000_000; şek
     dizi denince Array sınıfı , Array sınıfı denince akla dizi gelmelidir.
 
     Not : referans türlü değişkenler sınıflardan türeyen nesnelerdir.
-20.02.2024
-20.02.2024
-
-21.02.2024
-21.02.2024
-
-22.02.20224
