@@ -4255,16 +4255,3 @@ literal düzenleme : int x = 1000000; şeklinde gösterimi int x=1_000_000; şek
 
     Not : referans türlü değişkenler sınıflardan türeyen nesnelerdir.
 
-23.02.2023
-23.03.3
-0242.2024
-24.02.2024
-
-25.02.2024
-25.02.2024
-
-26.02.2024
-26.02.2024
-
-27.02.2024
-27.02.2024
