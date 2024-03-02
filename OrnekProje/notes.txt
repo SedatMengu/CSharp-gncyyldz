@@ -4256,3 +4256,5 @@ literal düzenleme : int x = 1000000; şeklinde gösterimi int x=1_000_000; şek
     Not : referans türlü değişkenler sınıflardan türeyen nesnelerdir.
 
 02.03.2024
+
+03.03.2024
