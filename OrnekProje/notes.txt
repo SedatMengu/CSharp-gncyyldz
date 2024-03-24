@@ -4260,3 +4260,4 @@ literal düzenleme : int x = 1000000; şeklinde gösterimi int x=1_000_000; şek
 3
 4
 5
+6
