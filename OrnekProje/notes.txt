@@ -4258,3 +4258,4 @@ literal düzenleme : int x = 1000000; şeklinde gösterimi int x=1_000_000; şek
 
 bugün yazılım için bir dönüm noktasıdır. 24.04.2024
 .
+1
